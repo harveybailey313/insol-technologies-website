@@ -1,5 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
+import { BASE_PATH } from "@/lib/site";
 
 type LogoProps = {
   className?: string;
@@ -14,7 +15,7 @@ export function Logo({ className = "", showWordmark = true }: LogoProps) {
       aria-label="InSol Technologies home"
     >
       <Image
-        src="/brand/insol-mark.png"
+        src={`${BASE_PATH}/brand/insol-mark.png`}
         alt=""
         width={36}
         height={36}

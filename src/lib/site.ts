@@ -1,6 +1,9 @@
+/** Empty for local/dev; set via NEXT_PUBLIC_BASE_PATH for GH Pages project path. */
+export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
 export const SITE = {
   name: "InSol Technologies",
-  url: "https://insoltechnologies.com",
+  url: "https://harveybailey313.github.io/insol-technologies-website",
   phone: "+1 (480) 918-3323",
   phoneHref: "tel:+14809183323",
   address: {
