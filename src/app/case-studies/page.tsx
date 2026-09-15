@@ -34,9 +34,9 @@ export default function CaseStudiesPage() {
         <SectionHeader title="Case studies in preparation" />
         <div className="card-surface max-w-2xl p-8 hover:transform-none hover:shadow-none">
           <p className="text-text-secondary">
-            No public case studies are published yet. We do not invent clients,
-            metrics, or results. Speak with us about relevant engagements under NDA,
-            or check back as cleared work is published.
+            No public case studies are live yet. We do not invent clients, metrics,
+            or awards. Discuss relevant engagements under NDA, or return as cleared
+            work is published.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href={CTAS.talkExpert.href}>{CTAS.talkExpert.label}</Button>

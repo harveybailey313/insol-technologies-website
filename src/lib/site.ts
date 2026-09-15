@@ -51,32 +51,32 @@ export const PROCESS_STEPS = [
   {
     number: "01",
     label: "Discover",
-    copy: "We map the business problem, constraints, stakeholders, and success criteria before recommending technology.",
+    copy: "Map the business problem, constraints, stakeholders, and success criteria before recommending technology.",
   },
   {
     number: "02",
     label: "Strategize",
-    copy: "We define the roadmap, architecture options, risks, and sequencing so investment maps to outcomes.",
+    copy: "Define roadmap, architecture options, risks, and sequencing so investment maps to outcomes.",
   },
   {
     number: "03",
     label: "Design",
-    copy: "Experience and system design stay aligned — usable interfaces backed by sound architecture.",
+    copy: "Keep experience and system design aligned — usable interfaces backed by sound architecture.",
   },
   {
     number: "04",
     label: "Build",
-    copy: "Engineering delivers in iterations you can review, with quality built into the pipeline.",
+    copy: "Deliver in reviewable iterations, with quality built into the engineering pipeline.",
   },
   {
     number: "05",
     label: "Deploy",
-    copy: "We launch to production with operational readiness — monitoring, runbooks, and handover clarity.",
+    copy: "Launch to production with operational readiness — monitoring, runbooks, and clear handover.",
   },
   {
     number: "06",
     label: "Scale",
-    copy: "We optimize, maintain, and evolve the system as your business and users grow.",
+    copy: "Optimize, maintain, and evolve the system as the business and users grow.",
   },
 ] as const;
 

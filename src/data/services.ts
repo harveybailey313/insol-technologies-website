@@ -126,15 +126,15 @@ export const services: Service[] = [
   },
   {
     slug: "product-engineering",
-    title: "Product Engineering",
+    title: "Software Engineering",
     shortDescription:
-      "Custom platforms, products, and internal systems engineered for reliability, clarity, and long-term change.",
+      "Custom software platforms and business applications built for scalability, reliability, and long-term growth.",
     businessOutcome: "Software that matches how your business works — and can grow with it.",
     chips: ["Node", ".NET", "Java", "Python", "Microservices", "Event-driven"],
-    h1: "Products and platforms built to last",
-    metaTitle: "Product Engineering Services",
+    h1: "Software products and platforms built to last",
+    metaTitle: "Software Engineering",
     metaDescription:
-      "Custom platforms, products, and internal systems engineered for reliability, clarity, and long-term change — from strategy through production.",
+      "Custom software platforms and business applications engineered for scalability, reliability, and long-term growth — from strategy through production.",
     heroSupport:
       "We engineer custom platforms, products, and internal systems meant to last — with clear architecture, reviewable delivery, and foundations your team can operate and evolve.",
     problemIntro:
@@ -642,15 +642,15 @@ export const services: Service[] = [
   },
   {
     slug: "saas-products",
-    title: "SaaS Products",
+    title: "SaaS Product Development",
     shortDescription:
-      "Design, build, and scale multi-tenant SaaS products — from MVP to growth architecture, billing-ready foundations, and operable platforms.",
+      "From product architecture and MVP development to production-ready SaaS platforms and ongoing engineering.",
     businessOutcome: "A product your customers can rely on — and a codebase your team can evolve.",
     chips: ["Multi-tenant", "Subscription", "APIs", "Observability", "Product analytics"],
     h1: "SaaS products engineered to scale",
-    metaTitle: "SaaS Products",
+    metaTitle: "SaaS Product Development",
     metaDescription:
-      "Design, build, and scale multi-tenant SaaS products — from MVP to growth architecture, with foundations your team can operate and evolve.",
+      "Design, build, and scale multi-tenant SaaS products — from product architecture and MVP to production-ready platforms and ongoing engineering.",
     heroSupport:
       "Building a SaaS product is not the same as shipping a website. We help founders and product leaders design, engineer, and scale multi-tenant SaaS — from early MVP through growth architecture — so customers get a reliable product and your team keeps a codebase they can evolve.",
     problemIntro:

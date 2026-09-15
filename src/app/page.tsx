@@ -37,28 +37,28 @@ const aiCapabilities = [
 
 const whyItems = [
   {
-    title: "Software and product engineering",
-    body: "We design and build products, platforms, and integrations with clear architecture, maintainable codebases, and delivery discipline.",
+    title: "Software engineering depth",
+    body: "Custom platforms, products, and integrations with clear architecture, maintainable codebases, and delivery discipline.",
   },
   {
     title: "SaaS product development",
-    body: "Multi-tenant SaaS is a first-class capability — product foundations, APIs, operability, and growth architecture, not a side offering.",
+    body: "Multi-tenant SaaS as a first-class capability — product foundations, APIs, operability, and growth architecture.",
   },
   {
     title: "Practical AI and automation",
-    body: "We put GenAI, agents, ML, NLP, and automation into real workflows with integration, evaluation, and operational ownership.",
+    body: "GenAI, agents, ML, NLP, and automation embedded in real workflows — with integration, evaluation, and operational ownership.",
   },
   {
     title: "Cloud, data, and enterprise systems",
-    body: "Cloud and DevOps, data and analytics, and enterprise applications are delivered as durable foundations — not bolt-ons.",
+    body: "Cloud & DevOps, data & analytics, and enterprise applications delivered as durable foundations — not bolt-ons.",
   },
   {
     title: "Problem framing before stack",
-    body: "We clarify the business problem, constraints, and success criteria before locking architecture or tooling.",
+    body: "Business problem, constraints, and success criteria clarified before architecture or tooling is locked.",
   },
   {
-    title: "One path from strategy to scale",
-    body: "Strategy → Design → Engineering → AI → Deployment → Scale is how we work with you — continuous ownership through production.",
+    title: "Strategy through scale",
+    body: "Strategy → Design → Engineering → AI → Deployment → Scale — continuous ownership from framing through production.",
   },
 ];
 
@@ -349,8 +349,8 @@ export default function HomePage() {
       {/* How We Work */}
       <Section>
         <SectionHeader
-          title="From problem definition to production systems."
-          intro="A transparent delivery sequence so technical and business stakeholders know what happens next — and why."
+          title="From discovery to production systems."
+          intro="A transparent engineering path — discovery through delivery — so technical and business stakeholders know what happens next, and why."
         />
         <ProcessStepper />
       </Section>
@@ -422,11 +422,11 @@ export default function HomePage() {
       <Section>
         <SectionHeader
           title="Selected work, published when cleared."
-          intro="Case studies appear only when challenge, approach, and outcomes are approved for public use."
+          intro="Engagements appear here only when challenge, approach, and outcomes are approved for public use."
         />
         <div className="card-surface max-w-2xl p-8 hover:transform-none hover:shadow-none">
           <p className="text-text-secondary">
-            Public case studies are not published yet. We do not invent clients, metrics, or results. Ask about relevant engagements under NDA, or check back as cleared work is released.
+            Public case studies are not live yet. We do not invent clients, metrics, or awards. Discuss relevant work under NDA, or return as cleared engagements are published.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/case-studies" variant="secondary">
@@ -442,8 +442,8 @@ export default function HomePage() {
       {/* Why InSol */}
       <Section band="secondary">
         <SectionHeader
-          title="Why companies work with InSol Technologies."
-          intro="An engineering partner for product, SaaS, AI, and enterprise technology — measured by systems you can run and evolve."
+          title="Why teams choose InSol Technologies."
+          intro="Software engineering, SaaS, AI, cloud, data, and enterprise systems — partnered from problem framing through strategy to scale."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {whyItems.map((item, i) => (
@@ -487,7 +487,7 @@ export default function HomePage() {
           <div className="card-surface p-8 hover:transform-none hover:shadow-none">
             <FrameStrip />
             <p className="mt-6 text-sm text-text-secondary">
-              Strategy → Design → Engineering → AI → Deployment → Scale — continuous ownership from problem framing through production.
+              Strategy → Design → Engineering → AI → Deployment → Scale — one continuous path from discovery through production.
             </p>
           </div>
         </div>
