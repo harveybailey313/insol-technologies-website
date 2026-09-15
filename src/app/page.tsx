@@ -81,11 +81,20 @@ export default function HomePage() {
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
             InSol Technologies partners with startups, growth-stage companies, mid-market, and enterprise teams to engineer digital products and SaaS platforms, apply AI and automation, and strengthen cloud, data, and enterprise systems — from strategy through production.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Button href={CTAS.startProject.href} size="lg">
+          <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+            <Button
+              href={CTAS.startProject.href}
+              size="md"
+              className="w-full sm:w-auto md:!h-[52px] md:!px-7"
+            >
               {CTAS.startProject.label}
             </Button>
-            <Button href={CTAS.exploreCapabilities.href} variant="secondary" size="lg">
+            <Button
+              href={CTAS.exploreCapabilities.href}
+              variant="secondary"
+              size="md"
+              className="w-full sm:w-auto md:!h-[52px] md:!px-7"
+            >
               {CTAS.exploreCapabilities.label}
             </Button>
           </div>
@@ -269,9 +278,17 @@ export default function HomePage() {
             <p className="mt-4 text-body-lg text-text-secondary">
               InSol Technologies helps organizations move from fragmented tools and aging platforms to software, AI, cloud, and data foundations they can operate. Under founder <strong className="text-text">Innam Dustgir</strong>, we emphasize clear discovery, rigorous engineering, and practical use of AI — without unsupported claims.
             </p>
-            <Button href="/about" className="mt-8" variant="secondary">
-              Read our story
-            </Button>
+            <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3">
+              <Button href="/about" variant="secondary">
+                Read our story
+              </Button>
+              <Link
+                href="/founder"
+                className="text-sm font-semibold text-accent transition-colors hover:text-accent-hover"
+              >
+                Meet the Founder →
+              </Link>
+            </div>
           </div>
           <div className="card-surface p-8 hover:transform-none hover:shadow-none">
             <FrameStrip />

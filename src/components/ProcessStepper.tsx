@@ -18,7 +18,7 @@ export function ProcessStepper({
           return (
             <li
               key={step.number}
-              className={`card-surface accent-card flex flex-col p-5 hover:transform-none ${accentClass(accent)}`}
+              className={`card-surface accent-card flex flex-col p-4 sm:p-5 hover:transform-none ${accentClass(accent)}`}
             >
               <span className="accent-text mb-3 font-mono text-sm font-semibold">
                 {step.number}

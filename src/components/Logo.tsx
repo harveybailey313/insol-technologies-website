@@ -20,7 +20,7 @@ export function Logo({ className = "" }: LogoProps) {
         alt="InSol Technologies"
         width={220}
         height={110}
-        className="h-9 w-auto max-w-[min(100%,200px)] object-contain object-left sm:h-10 sm:max-w-[240px]"
+        className="h-8 w-auto max-w-[min(100%,148px)] object-contain object-left min-[375px]:h-9 min-[375px]:max-w-[min(100%,180px)] sm:h-10 sm:max-w-[240px]"
         priority
       />
     </Link>

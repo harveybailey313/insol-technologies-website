@@ -116,6 +116,7 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: clip;
   }
 
   body {
@@ -124,6 +125,7 @@
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+    overflow-x: clip;
   }
 
   ::selection {
@@ -147,7 +149,13 @@
     width: 100%;
     max-width: var(--container-max);
     margin-inline: auto;
-    padding-inline: max(24px, calc((100% - var(--container-max)) / 2 + 24px));
+    padding-inline: max(16px, calc((100% - var(--container-max)) / 2 + 16px));
+  }
+
+  @media (min-width: 480px) {
+    .container-insol {
+      padding-inline: max(24px, calc((100% - var(--container-max)) / 2 + 24px));
+    }
   }
 
   @media (min-width: 1024px) {
@@ -463,6 +471,7 @@
     height: min(420px, 55vw);
     top: -8%;
     left: -4%;
+    max-width: 100%;
   }
 
   .glow-blob-cyan {
@@ -471,6 +480,7 @@
     height: min(380px, 50vw);
     top: -4%;
     right: -6%;
+    max-width: 100%;
   }
 
   .glow-blob-magenta {
@@ -521,32 +531,33 @@
   .frame-strip {
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem 0.75rem;
     align-items: center;
+    column-gap: 0.5rem;
+    row-gap: 0.5rem;
+    min-width: 0;
+    max-width: 100%;
     color: var(--color-text-secondary);
-    font-size: 0.875rem;
+    font-size: 0.8125rem;
     font-weight: 500;
   }
 
-  .frame-strip span:not(:last-child)::after {
-    content: "→";
-    margin-left: 0.75rem;
-    opacity: 0.7;
+  @media (min-width: 640px) {
+    .frame-strip {
+      font-size: 0.875rem;
+      column-gap: 0.625rem;
+    }
   }
 
-  .frame-strip span:nth-child(1)::after { color: var(--accent-cyan); }
-  .frame-strip span:nth-child(2)::after { color: var(--accent-violet); }
-  .frame-strip span:nth-child(3)::after { color: var(--accent-magenta); }
-  .frame-strip span:nth-child(4)::after { color: var(--accent-emerald); }
-  .frame-strip span:nth-child(5)::after { color: var(--accent-amber); }
-  .frame-strip span:nth-child(6)::after { color: var(--accent-blue); }
+  .frame-strip-step {
+    min-width: 0;
+    white-space: nowrap;
+  }
 
-  .frame-strip span:nth-child(1) { color: color-mix(in srgb, var(--accent-cyan) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(2) { color: color-mix(in srgb, var(--accent-violet) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(3) { color: color-mix(in srgb, var(--accent-magenta) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(4) { color: color-mix(in srgb, var(--accent-emerald) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(5) { color: color-mix(in srgb, var(--accent-amber) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(6) { color: color-mix(in srgb, var(--accent-blue) 70%, var(--color-text-secondary)); }
+  .frame-strip-arrow {
+    flex: 0 0 auto;
+    opacity: 0.75;
+    line-height: 1;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -18,11 +18,20 @@ export function FinalCTA({
           <span className="text-gradient">{headline}</span>
         </h2>
         <p className="mt-4 text-body-lg text-text-secondary">{support}</p>
-        <div className="mt-8 flex flex-wrap gap-3">
-          <Button href={CTAS.startProject.href} size="lg">
+        <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+          <Button
+            href={CTAS.startProject.href}
+            size="md"
+            className="w-full sm:w-auto md:!h-[52px] md:!px-7"
+          >
             {CTAS.startProject.label}
           </Button>
-          <Button href={CTAS.talkExpert.href} variant="secondary" size="lg">
+          <Button
+            href={CTAS.talkExpert.href}
+            variant="secondary"
+            size="md"
+            className="w-full sm:w-auto md:!h-[52px] md:!px-7"
+          >
             {CTAS.talkExpert.label}
           </Button>
         </div>

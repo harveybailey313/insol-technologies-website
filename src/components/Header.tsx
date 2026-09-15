@@ -213,7 +213,11 @@ export function Header() {
         </nav>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <Button href={CTAS.startProject.href} size="sm" className="hidden sm:inline-flex">
+          <Button
+            href={CTAS.startProject.href}
+            size="sm"
+            className="hidden min-[375px]:inline-flex !h-8 !px-2.5 !text-xs sm:!h-9 sm:!px-3.5 sm:!text-sm"
+          >
             {CTAS.startProject.label}
           </Button>
           <button
