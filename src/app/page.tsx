@@ -123,6 +123,59 @@ const saasProductPath = [
   "Scale",
 ] as const;
 
+const homepageIndustries = [
+  {
+    slug: "healthcare",
+    title: "Healthcare",
+    challenge:
+      "Fragmented clinical and admin systems, compliance pressure, and workflows that still depend on manual handoffs.",
+    opportunity:
+      "Connected data, better tools for care teams, and automation where policy allows.",
+    capability:
+      "Secure software, data platforms, integration, and practical AI for operational workflows.",
+  },
+  {
+    slug: "financial-services",
+    title: "Financial Services",
+    challenge:
+      "Legacy cores, regulatory scrutiny, and rising expectations for speed and transparency.",
+    opportunity:
+      "Modern customer journeys and internal platforms without weakening control.",
+    capability:
+      "Software engineering, secure cloud, data & analytics, and practical AI for operations and insight.",
+  },
+  {
+    slug: "ecommerce",
+    title: "E-commerce",
+    challenge:
+      "Fragmented commerce stacks, uneven digital experience, and operational strain at peak demand.",
+    opportunity:
+      "Reliable catalog and checkout journeys, plus data that informs merchandising and operations.",
+    capability:
+      "Web & mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
+  },
+  {
+    slug: "travel-hospitality",
+    title: "Travel & Hospitality",
+    challenge:
+      "Multi-channel bookings, partner complexity, and guest experience stretched across systems.",
+    opportunity:
+      "Cleaner reconciliation, better guest-facing tools, and operations that keep pace with demand.",
+    capability:
+      "Platforms, automation, data pipelines, and AI applied to high-volume operational workflows.",
+  },
+  {
+    slug: "technology",
+    title: "Technology",
+    challenge:
+      "Product and SaaS teams that need delivery capacity without giving up architectural ownership.",
+    opportunity:
+      "Accelerate roadmaps with an engineering partner who can own defined slices of the stack end to end.",
+    capability:
+      "Software engineering, SaaS product development, AI features, cloud & DevOps, and quality engineering.",
+  },
+] as const;
+
 export default function HomePage() {
   return (
     <>
@@ -305,17 +358,17 @@ export default function HomePage() {
       {/* Industries */}
       <Section band="secondary">
         <SectionHeader
-          title="Sector context for technology decisions."
-          intro="We apply software, AI, cloud, and data capabilities in the context of healthcare, financial services, e-commerce, travel and hospitality, and technology companies — for startups through enterprise."
+          title="Industries we build technology for."
+          intro="Software engineering, AI, SaaS, cloud, and data capabilities applied in sector context — for startups, growth-stage companies, mid-market, and enterprise teams."
         />
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {industries.map((ind) => {
+        <div className="grid min-w-0 gap-5 md:grid-cols-2 xl:grid-cols-3">
+          {homepageIndustries.map((ind) => {
             const accent = INDUSTRY_ACCENTS[ind.slug] ?? "cyan";
             return (
               <Link
                 key={ind.slug}
                 href={`/industries/${ind.slug}`}
-                className={`card-surface accent-card group flex flex-col p-6 md:p-8 ${accentClass(accent)}`}
+                className={`card-surface accent-card group flex min-w-0 flex-col p-5 sm:p-6 md:p-8 ${accentClass(accent)}`}
               >
                 <span className="accent-icon-chip mb-4" aria-hidden>
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
@@ -331,18 +384,24 @@ export default function HomePage() {
                 <h3 className="text-h3 mb-4 transition-colors group-hover:text-[var(--card-accent)]">
                   {ind.title}
                 </h3>
-                <dl className="space-y-3 text-sm">
+                <dl className="space-y-3 text-sm leading-relaxed">
                   <div>
                     <dt className="font-semibold text-text-muted">Challenge</dt>
-                    <dd className="mt-1 text-text-secondary">{ind.challenge}</dd>
+                    <dd className="mt-1 text-pretty text-text-secondary">
+                      {ind.challenge}
+                    </dd>
                   </div>
                   <div>
                     <dt className="font-semibold text-text-muted">Opportunity</dt>
-                    <dd className="mt-1 text-text-secondary">{ind.opportunity}</dd>
+                    <dd className="mt-1 text-pretty text-text-secondary">
+                      {ind.opportunity}
+                    </dd>
                   </div>
                   <div>
                     <dt className="font-semibold text-text-muted">Capability</dt>
-                    <dd className="mt-1 text-text-secondary">{ind.capability}</dd>
+                    <dd className="mt-1 text-pretty text-text-secondary">
+                      {ind.capability}
+                    </dd>
                   </div>
                 </dl>
                 <span className="accent-text mt-6 inline-flex items-center gap-1 text-sm font-semibold">
@@ -351,6 +410,11 @@ export default function HomePage() {
               </Link>
             );
           })}
+        </div>
+        <div className="mt-10">
+          <Button href="/industries" variant="secondary" size="md">
+            Explore all industries
+          </Button>
         </div>
       </Section>
 

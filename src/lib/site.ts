@@ -4,7 +4,7 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 export const SITE = {
   name: "InSol Technologies",
   legalName: "InSol Technologies Inc.",
-  url: "https://harveybailey313.github.io/insol-technologies-website",
+  url: "https://insoltechnologies.com",
   phone: "+1 (480) 918-3323",
   phoneHref: "tel:+14809183323",
   address: {
