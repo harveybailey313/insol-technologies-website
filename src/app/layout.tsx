@@ -58,7 +58,12 @@ const organizationJsonLd = {
   founder: {
     "@type": "Person",
     name: SITE.founder,
-    url: `${SITE.url}/founder`,
+    url: `${SITE.url}/founder/`,
+    sameAs: [
+      "https://www.innamdustgir.com/",
+      "https://www.linkedin.com/in/innam-dustgir-aa18a38a",
+      "https://www.wikidata.org/wiki/Q130943937",
+    ],
   },
   contactPoint: [
     {

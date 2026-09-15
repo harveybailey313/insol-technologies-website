@@ -26,6 +26,12 @@ const focusItems = [
 
 const founderImageUrl = `${SITE.url}/brand/innam-dustgir-founder.jpg`;
 
+const founderSameAs = [
+  "https://www.innamdustgir.com/",
+  "https://www.linkedin.com/in/innam-dustgir-aa18a38a",
+  "https://www.wikidata.org/wiki/Q130943937",
+] as const;
+
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
@@ -38,7 +44,8 @@ const personJsonLd = {
     legalName: SITE.legalName,
     url: SITE.url,
   },
-  url: `${SITE.url}/founder`,
+  url: `${SITE.url}/founder/`,
+  sameAs: [...founderSameAs],
 };
 
 const organizationJsonLd = {
@@ -52,7 +59,8 @@ const organizationJsonLd = {
     name: SITE.founder,
     jobTitle: "Founder & CEO",
     image: founderImageUrl,
-    url: `${SITE.url}/founder`,
+    url: `${SITE.url}/founder/`,
+    sameAs: [...founderSameAs],
   },
 };
 
@@ -128,6 +136,17 @@ export default function FounderPage() {
                   {CTAS.talkExpert.label}
                 </Button>
               </div>
+              <p className="mt-6 text-sm text-text-secondary">
+                Official site —{" "}
+                <a
+                  href="https://www.innamdustgir.com/"
+                  className="font-semibold text-accent hover:text-accent-hover"
+                  rel="noopener noreferrer"
+                  target="_blank"
+                >
+                  Innam Dustgir
+                </a>
+              </p>
             </div>
 
             <aside className="flex w-full shrink-0 justify-start lg:w-auto lg:justify-center lg:pt-2">
@@ -178,6 +197,16 @@ export default function FounderPage() {
                     Founder &amp; CEO
                   </p>
                   <p className="mt-0.5 text-sm text-text-secondary">{SITE.name}</p>
+                  <p className="mt-3 text-sm">
+                    <a
+                      href="https://www.innamdustgir.com/"
+                      className="font-medium text-accent hover:text-accent-hover"
+                      rel="noopener noreferrer"
+                      target="_blank"
+                    >
+                      Official site — Innam Dustgir
+                    </a>
+                  </p>
                 </div>
               </div>
             </aside>
