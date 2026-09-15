@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { Button } from "@/components/Button";
 import { industries } from "@/data/industries";
 import { CTAS } from "@/lib/site";
+import { INDUSTRY_ACCENTS, accentClass } from "@/lib/accents";
 
 export const metadata: Metadata = {
   title: "Industries",
@@ -18,7 +19,7 @@ export default function IndustriesHubPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-primary section-pad !pt-12">
-        <div className="pointer-events-none absolute inset-0 gradient-glow opacity-40" />
+        <div className="pointer-events-none absolute inset-0 hero-mesh opacity-50" />
         <div className="container-insol relative">
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Industries" }]}
@@ -39,21 +40,24 @@ export default function IndustriesHubPage() {
       <Section band="secondary">
         <SectionHeader title="Sectors we serve" />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {industries.map((ind) => (
-            <Link
-              key={ind.slug}
-              href={`/industries/${ind.slug}`}
-              className="card-surface group flex flex-col p-6 md:p-8"
-            >
-              <h2 className="text-h3 mb-4 group-hover:text-accent transition-colors">
-                {ind.title}
-              </h2>
-              <p className="text-sm text-text-secondary">{ind.challenge}</p>
-              <span className="mt-6 inline-flex text-sm font-semibold text-accent">
-                Explore industry →
-              </span>
-            </Link>
-          ))}
+          {industries.map((ind) => {
+            const accent = INDUSTRY_ACCENTS[ind.slug] ?? "cyan";
+            return (
+              <Link
+                key={ind.slug}
+                href={`/industries/${ind.slug}`}
+                className={`card-surface accent-card group flex flex-col p-6 md:p-8 ${accentClass(accent)}`}
+              >
+                <h2 className="text-h3 mb-4 transition-colors group-hover:text-[var(--card-accent)]">
+                  {ind.title}
+                </h2>
+                <p className="text-sm text-text-secondary">{ind.challenge}</p>
+                <span className="accent-text mt-6 inline-flex text-sm font-semibold">
+                  Explore industry →
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </Section>
 

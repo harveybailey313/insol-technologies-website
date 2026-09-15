@@ -1,5 +1,4 @@
 import { Button } from "./Button";
-import { Section } from "./Section";
 import { CTAS, SITE } from "@/lib/site";
 
 type FinalCTAProps = {
@@ -12,10 +11,12 @@ export function FinalCTA({
   support = "Tell us what you’re building, modernizing, or solving. We’ll respond with clear next steps — not a generic pitch deck.",
 }: FinalCTAProps) {
   return (
-    <Section band="secondary" className="relative overflow-hidden">
-      <div className="pointer-events-none absolute inset-0 gradient-glow opacity-60" />
-      <div className="relative max-w-3xl">
-        <h2 className="text-h2">{headline}</h2>
+    <section className="cta-band relative overflow-hidden section-pad">
+      <div className="pointer-events-none absolute inset-0 hero-mesh opacity-40" />
+      <div className="container-insol relative max-w-3xl">
+        <h2 className="text-h2">
+          <span className="text-gradient">{headline}</span>
+        </h2>
         <p className="mt-4 text-body-lg text-text-secondary">{support}</p>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={CTAS.startProject.href} size="lg">
@@ -36,6 +37,6 @@ export function FinalCTA({
           We respect your inbox. No spam — just a human reply.
         </p>
       </div>
-    </Section>
+    </section>
   );
 }

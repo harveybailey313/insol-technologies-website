@@ -9,6 +9,12 @@ import { FrameStrip } from "@/components/FrameStrip";
 import { services } from "@/data/services";
 import { industries } from "@/data/industries";
 import { CTAS, SITE } from "@/lib/site";
+import {
+  SERVICE_ACCENTS,
+  INDUSTRY_ACCENTS,
+  accentAt,
+  accentClass,
+} from "@/lib/accents";
 
 export const metadata: Metadata = {
   title: "InSol Technologies | Software, AI & Cloud for Modern Business",
@@ -59,11 +65,17 @@ export default function HomePage() {
     <>
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary section-pad !pt-16 md:!pt-24 lg:!pt-28">
-        <div className="pointer-events-none absolute inset-0 gradient-glow" />
+        <div className="pointer-events-none absolute inset-0 hero-mesh" />
+        <div className="glow-blob glow-blob-violet" aria-hidden />
+        <div className="glow-blob glow-blob-cyan" aria-hidden />
+        <div className="glow-blob glow-blob-magenta" aria-hidden />
         <div className="container-insol relative">
-          <p className="eyebrow mb-4">Technology, AI & software engineering partner</p>
+          <p className="eyebrow eyebrow-gradient mb-4">
+            Technology, AI & software engineering partner
+          </p>
           <h1 className="text-display max-w-4xl">
-            Engineering what’s next for your business.
+            Engineering{" "}
+            <span className="text-gradient">what’s next</span> for your business.
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
             We help startups, growing companies, mid-market, and enterprise teams
@@ -85,7 +97,7 @@ export default function HomePage() {
 
       {/* Trust — verified location only; no empty logo walls */}
       <Section band="secondary">
-        <p className="eyebrow mb-3">Trusted by teams who ship</p>
+        <p className="eyebrow eyebrow-gradient mb-3">Trusted by teams who ship</p>
         <p className="max-w-2xl text-text-secondary">
           Published location: Austin, TX — {SITE.address.full}
         </p>
@@ -106,6 +118,7 @@ export default function HomePage() {
               outcome={s.businessOutcome}
               chips={s.chips}
               href={`/services/${s.slug}`}
+              accent={SERVICE_ACCENTS[s.slug] ?? "cyan"}
             />
           ))}
         </div>
@@ -113,7 +126,7 @@ export default function HomePage() {
 
       {/* AI Spotlight */}
       <Section band="secondary" className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 gradient-glow opacity-40" />
+        <div className="pointer-events-none absolute inset-0 hero-mesh opacity-35" />
         <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeader
@@ -136,12 +149,15 @@ export default function HomePage() {
             </div>
           </div>
           <ul className="grid gap-3 sm:grid-cols-2">
-            {aiCapabilities.map((cap) => (
+            {aiCapabilities.map((cap, i) => (
               <li
                 key={cap}
-                className="card-surface flex items-center gap-3 p-4 hover:transform-none hover:shadow-none"
+                className={`card-surface accent-card flex items-center gap-3 p-4 hover:transform-none hover:shadow-none ${accentClass(accentAt(i))}`}
               >
-                <span className="h-2 w-2 shrink-0 rounded-full bg-accent" aria-hidden />
+                <span
+                  className="accent-dot h-2 w-2 shrink-0 rounded-full"
+                  aria-hidden
+                />
                 <span className="text-sm font-medium text-text">{cap}</span>
               </li>
             ))}
@@ -165,34 +181,48 @@ export default function HomePage() {
           intro="We frame technology around the pressures your sector actually faces — then apply the capabilities that fit. Built for startups, growing companies, mid-market, and enterprise; SaaS builders; legacy modernizers; and AI adopters."
         />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {industries.map((ind) => (
-            <Link
-              key={ind.slug}
-              href={`/industries/${ind.slug}`}
-              className="card-surface group flex flex-col p-6 md:p-8"
-            >
-              <h3 className="text-h3 mb-4 group-hover:text-accent transition-colors">
-                {ind.title}
-              </h3>
-              <dl className="space-y-3 text-sm">
-                <div>
-                  <dt className="font-semibold text-text-muted">Challenge</dt>
-                  <dd className="mt-1 text-text-secondary">{ind.challenge}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-text-muted">Opportunity</dt>
-                  <dd className="mt-1 text-text-secondary">{ind.opportunity}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-text-muted">Capability</dt>
-                  <dd className="mt-1 text-text-secondary">{ind.capability}</dd>
-                </div>
-              </dl>
-              <span className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-accent">
-                Explore industry →
-              </span>
-            </Link>
-          ))}
+          {industries.map((ind) => {
+            const accent = INDUSTRY_ACCENTS[ind.slug] ?? "cyan";
+            return (
+              <Link
+                key={ind.slug}
+                href={`/industries/${ind.slug}`}
+                className={`card-surface accent-card group flex flex-col p-6 md:p-8 ${accentClass(accent)}`}
+              >
+                <span className="accent-icon-chip mb-4" aria-hidden>
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
+                    <path
+                      d="M4 19h16M6 16V9l6-4 6 4v7"
+                      stroke="currentColor"
+                      strokeWidth="1.6"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                </span>
+                <h3 className="text-h3 mb-4 transition-colors group-hover:text-[var(--card-accent)]">
+                  {ind.title}
+                </h3>
+                <dl className="space-y-3 text-sm">
+                  <div>
+                    <dt className="font-semibold text-text-muted">Challenge</dt>
+                    <dd className="mt-1 text-text-secondary">{ind.challenge}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-text-muted">Opportunity</dt>
+                    <dd className="mt-1 text-text-secondary">{ind.opportunity}</dd>
+                  </div>
+                  <div>
+                    <dt className="font-semibold text-text-muted">Capability</dt>
+                    <dd className="mt-1 text-text-secondary">{ind.capability}</dd>
+                  </div>
+                </dl>
+                <span className="accent-text mt-6 inline-flex items-center gap-1 text-sm font-semibold">
+                  Explore industry →
+                </span>
+              </Link>
+            );
+          })}
         </div>
       </Section>
 
@@ -229,9 +259,9 @@ export default function HomePage() {
           {whyItems.map((item, i) => (
             <div
               key={item.title}
-              className="card-surface p-6 hover:transform-none hover:shadow-none"
+              className={`card-surface accent-card p-6 hover:transform-none ${accentClass(accentAt(i))}`}
             >
-              <span className="font-mono text-sm font-semibold text-accent">
+              <span className="accent-text font-mono text-sm font-semibold">
                 {String(i + 1).padStart(2, "0")}
               </span>
               <h3 className="mt-3 text-lg font-semibold text-text">{item.title}</h3>
@@ -247,7 +277,7 @@ export default function HomePage() {
       <Section>
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
-            <p className="eyebrow mb-3">About InSol Technologies</p>
+            <p className="eyebrow eyebrow-gradient mb-3">About InSol Technologies</p>
             <h2 className="text-h2">Built to turn ambition into working systems.</h2>
             <p className="mt-4 text-body-lg text-text-secondary">
               InSol Technologies exists to help organizations move from fragmented

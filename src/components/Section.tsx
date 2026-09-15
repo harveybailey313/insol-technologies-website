@@ -39,7 +39,7 @@ export function SectionHeader({
   const Tag = TitleTag;
   return (
     <div className={`mb-10 max-w-3xl md:mb-14 ${className}`}>
-      {eyebrow && <p className="eyebrow mb-3">{eyebrow}</p>}
+      {eyebrow && <p className="eyebrow eyebrow-gradient mb-3">{eyebrow}</p>}
       <Tag className={TitleTag === "h1" ? "text-display" : "text-h2"}>{title}</Tag>
       {intro && (
         <p className="mt-4 text-body-lg text-text-secondary">{intro}</p>

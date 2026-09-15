@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { Button } from "@/components/Button";
 import { services } from "@/data/services";
 import { CTAS } from "@/lib/site";
+import { SERVICE_ACCENTS } from "@/lib/accents";
 
 export const metadata: Metadata = {
   title: "What We Do",
@@ -18,7 +19,7 @@ export default function ServicesHubPage() {
   return (
     <>
       <section className="relative overflow-hidden bg-primary section-pad !pt-12">
-        <div className="pointer-events-none absolute inset-0 gradient-glow opacity-40" />
+        <div className="pointer-events-none absolute inset-0 hero-mesh opacity-50" />
         <div className="container-insol relative">
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "What We Do" }]}
@@ -51,6 +52,7 @@ export default function ServicesHubPage() {
               outcome={s.businessOutcome}
               chips={s.chips}
               href={`/services/${s.slug}`}
+              accent={SERVICE_ACCENTS[s.slug] ?? "cyan"}
             />
           ))}
         </div>

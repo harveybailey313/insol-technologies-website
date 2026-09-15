@@ -3,6 +3,7 @@ import { Logo } from "./Logo";
 import { SITE } from "@/lib/site";
 import { services } from "@/data/services";
 import { industries } from "@/data/industries";
+import { SERVICE_ACCENTS, INDUSTRY_ACCENTS, accentClass, accentAt } from "@/lib/accents";
 
 const aboutLinks = [
   { label: "Our Story", href: "/about" },
@@ -16,7 +17,7 @@ export function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="border-t border-border bg-secondary">
+    <footer className="footer-border-gradient bg-secondary">
       <div className="container-insol section-pad !pb-10 !pt-14">
         <div className="grid gap-10 lg:grid-cols-12">
           <div className="lg:col-span-4">
@@ -43,58 +44,64 @@ export function Footer() {
             <div>
               <h4 className="mb-4 text-sm font-semibold text-text">What We Do</h4>
               <ul className="space-y-2">
-                {services.map((s) => (
-                  <li key={s.slug}>
-                    <Link
-                      href={`/services/${s.slug}`}
-                      className="text-sm text-text-secondary hover:text-accent"
-                    >
-                      {s.title}
-                    </Link>
-                  </li>
-                ))}
+                {services.map((s) => {
+                  const accent = SERVICE_ACCENTS[s.slug] ?? "cyan";
+                  return (
+                    <li key={s.slug} className={accentClass(accent)}>
+                      <Link
+                        href={`/services/${s.slug}`}
+                        className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
+                      >
+                        {s.title}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div>
               <h4 className="mb-4 text-sm font-semibold text-text">Industries</h4>
               <ul className="space-y-2">
-                {industries.map((i) => (
-                  <li key={i.slug}>
-                    <Link
-                      href={`/industries/${i.slug}`}
-                      className="text-sm text-text-secondary hover:text-accent"
-                    >
-                      {i.title}
-                    </Link>
-                  </li>
-                ))}
+                {industries.map((i) => {
+                  const accent = INDUSTRY_ACCENTS[i.slug] ?? "cyan";
+                  return (
+                    <li key={i.slug} className={accentClass(accent)}>
+                      <Link
+                        href={`/industries/${i.slug}`}
+                        className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
+                      >
+                        {i.title}
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </div>
             <div>
               <h4 className="mb-4 text-sm font-semibold text-text">Company</h4>
               <ul className="space-y-2">
-                {aboutLinks.map((l) => (
-                  <li key={l.href}>
+                {aboutLinks.map((l, idx) => (
+                  <li key={l.href} className={accentClass(accentAt(idx))}>
                     <Link
                       href={l.href}
-                      className="text-sm text-text-secondary hover:text-accent"
+                      className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
                     >
                       {l.label}
                     </Link>
                   </li>
                 ))}
-                <li>
+                <li className={accentClass(accentAt(5))}>
                   <Link
                     href="/case-studies"
-                    className="text-sm text-text-secondary hover:text-accent"
+                    className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
                   >
                     Case Studies
                   </Link>
                 </li>
-                <li>
+                <li className={accentClass(accentAt(6))}>
                   <Link
                     href="/insights"
-                    className="text-sm text-text-secondary hover:text-accent"
+                    className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
                   >
                     Insights
                   </Link>
@@ -104,18 +111,18 @@ export function Footer() {
             <div>
               <h4 className="mb-4 text-sm font-semibold text-text">Legal</h4>
               <ul className="space-y-2">
-                <li>
+                <li className={accentClass("blue")}>
                   <Link
                     href="/privacy-policy"
-                    className="text-sm text-text-secondary hover:text-accent"
+                    className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
                   >
                     Privacy Policy
                   </Link>
                 </li>
-                <li>
+                <li className={accentClass("coral")}>
                   <Link
                     href="/terms-and-conditions"
-                    className="text-sm text-text-secondary hover:text-accent"
+                    className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
                   >
                     Terms & Conditions
                   </Link>
