@@ -22,7 +22,7 @@ export function ServiceCard({
   return (
     <Link
       href={href}
-      className={`card-surface accent-card group flex h-full flex-col p-6 md:p-8 ${accentClass(accent)}`}
+      className={`card-surface accent-card group flex h-full min-w-0 flex-col p-5 sm:p-6 md:p-8 ${accentClass(accent)}`}
     >
       <span className="accent-icon-chip mb-4" aria-hidden>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none">

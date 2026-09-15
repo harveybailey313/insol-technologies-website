@@ -62,6 +62,57 @@ const whyItems = [
   },
 ];
 
+const homepageCapabilities = [
+  {
+    slug: "product-engineering",
+    title: "Software Engineering",
+    description:
+      "Custom software platforms and business applications built for scalability, reliability, and long-term growth.",
+  },
+  {
+    slug: "ai-intelligent-automation",
+    title: "AI & Intelligent Automation",
+    description:
+      "AI-powered applications, intelligent workflows, automation, and practical machine-learning solutions.",
+  },
+  {
+    slug: "saas-products",
+    title: "SaaS Product Development",
+    description:
+      "From product architecture and MVP development to production-ready SaaS platforms and ongoing engineering.",
+  },
+  {
+    slug: "web-mobile-development",
+    title: "Web & Mobile Development",
+    description:
+      "Modern web applications, mobile applications, APIs, and digital products designed for performance and usability.",
+  },
+  {
+    slug: "cloud-devops",
+    title: "Cloud & DevOps",
+    description:
+      "Cloud architecture, infrastructure, deployment automation, monitoring, security, and scalable systems.",
+  },
+  {
+    slug: "data-analytics",
+    title: "Data & Analytics",
+    description:
+      "Data platforms, analytics systems, dashboards, reporting, and technology that turns business data into useful insights.",
+  },
+  {
+    slug: "enterprise-applications",
+    title: "Enterprise Applications",
+    description:
+      "Secure and scalable business applications designed around complex organizational requirements and workflows.",
+  },
+  {
+    slug: "quality-engineering",
+    title: "Quality Engineering",
+    description:
+      "Automated testing, performance testing, reliability engineering, and quality processes for production software.",
+  },
+];
+
 export default function HomePage() {
   return (
     <>
@@ -106,24 +157,26 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* What We Do */}
+      {/* What We Do — Capabilities */}
       <Section>
         <SectionHeader
-          title="Capabilities built for software-led businesses."
-          intro="Software engineering, SaaS product development, AI and automation, cloud and DevOps, data and analytics, and enterprise technology — delivered as connected capabilities, not a generic agency catalog."
+          title="Capabilities for software, AI, and digital products."
+          intro="Eight technology capabilities — clearly scoped so you can see how InSol Technologies supports build, modernization, and scale."
         />
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {services.map((s) => (
-            <ServiceCard
-              key={s.slug}
-              title={s.title}
-              description={s.shortDescription}
-              outcome={s.businessOutcome}
-              chips={s.chips}
-              href={`/services/${s.slug}`}
-              accent={SERVICE_ACCENTS[s.slug] ?? "cyan"}
-            />
-          ))}
+        <div className="grid min-w-0 gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          {homepageCapabilities.map((cap) => {
+            const service = services.find((s) => s.slug === cap.slug);
+            return (
+              <ServiceCard
+                key={cap.slug}
+                title={cap.title}
+                description={cap.description}
+                chips={service?.chips}
+                href={`/services/${cap.slug}`}
+                accent={SERVICE_ACCENTS[cap.slug] ?? "cyan"}
+              />
+            );
+          })}
         </div>
       </Section>
 
