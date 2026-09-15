@@ -113,6 +113,16 @@ const homepageCapabilities = [
   },
 ];
 
+const saasProductPath = [
+  "Product Strategy",
+  "Architecture",
+  "Development",
+  "AI & Automation",
+  "Cloud Infrastructure",
+  "Launch",
+  "Scale",
+] as const;
+
 export default function HomePage() {
   return (
     <>
@@ -177,6 +187,56 @@ export default function HomePage() {
               />
             );
           })}
+        </div>
+      </Section>
+
+
+      {/* SaaS Products — capability-focused (no invented products) */}
+      <Section band="secondary" className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 hero-mesh opacity-30" />
+        <div className="relative">
+          <p className="eyebrow eyebrow-gradient mb-3">SaaS & Product Development</p>
+          <SectionHeader
+            title="Building Software Products That Scale"
+            intro="InSol Technologies works across product strategy, architecture, engineering, AI, cloud infrastructure, and ongoing development to turn software ideas into scalable digital products."
+            className="mb-8 md:mb-10"
+          />
+          <div
+            className="frame-strip min-w-0"
+            aria-label="SaaS product delivery path"
+          >
+            {saasProductPath.map((step, i) => (
+              <span key={step} className="contents">
+                <span className="frame-strip-step">{step}</span>
+                {i < saasProductPath.length - 1 ? (
+                  <span className="frame-strip-arrow" aria-hidden>
+                    →
+                  </span>
+                ) : null}
+              </span>
+            ))}
+          </div>
+          <p className="mt-8 max-w-2xl text-sm text-text-muted md:text-base">
+            Capability presentation only — named SaaS products and metrics appear
+            here when cleared for public use.
+          </p>
+          <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+            <Button
+              href="/contact?intent=start-project&focus=saas"
+              size="md"
+              className="w-full sm:w-auto md:!h-[52px] md:!px-7"
+            >
+              Build Your Product
+            </Button>
+            <Button
+              href="/services/saas-products"
+              variant="secondary"
+              size="md"
+              className="w-full sm:w-auto md:!h-[52px] md:!px-7"
+            >
+              Explore SaaS Products
+            </Button>
+          </div>
         </div>
       </Section>
 
