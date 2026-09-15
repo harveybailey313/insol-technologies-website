@@ -1,0 +1,4 @@
+User-Agent: *
+Allow: /
+
+Sitemap: https://harveybailey313.github.io/insol-technologies-website/sitemap.xml

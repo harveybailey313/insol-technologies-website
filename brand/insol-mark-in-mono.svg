@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" fill="none" role="img" aria-label="InSol In monogram">
+  <!-- I -->
+  <path d="M30 26 L46 20 L46 108 L30 102 Z" fill="#F5F7FA"/>
+  <!-- Cyan middle arm (N diagonal start) -->
+  <path d="M46 58 H74 L94 38 L104 46 L78 72 H46 Z" fill="#00D4FF"/>
+  <!-- N right stem -->
+  <path d="M86 28 L102 22 L102 106 L86 100 Z" fill="#F5F7FA"/>
+</svg>

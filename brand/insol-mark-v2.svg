@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="InSol mark">
+  <rect width="128" height="128" rx="28" fill="#07111F"/>
+  <!-- rounded frame -->
+  <rect x="12" y="12" width="104" height="104" rx="20" fill="none" stroke="#F5F7FA" stroke-width="6"/>
+  <!-- vertical bar (I) -->
+  <rect x="38" y="36" width="16" height="56" rx="2" fill="#F5F7FA"/>
+  <!-- ascending nodes suggesting Sol / scale -->
+  <rect x="62" y="68" width="28" height="24" rx="2" fill="#F5F7FA"/>
+  <rect x="62" y="36" width="28" height="24" rx="2" fill="#F5F7FA" opacity="0.35"/>
+  <path d="M38 100 H70 L86 84" fill="none" stroke="#00D4FF" stroke-width="6" stroke-linecap="square"/>
+</svg>
