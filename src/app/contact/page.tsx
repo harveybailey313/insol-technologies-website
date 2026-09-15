@@ -57,9 +57,10 @@ export default function ContactPage() {
                   Address
                 </h2>
                 <p className="mt-2 text-lg font-semibold text-text sm:text-xl">
-                  Austin, TX
+                  InSol Technologies Inc.
                 </p>
-                <p className="mt-2 text-text-secondary">
+                <p className="mt-1 text-text-secondary">Austin, Texas</p>
+                <p className="mt-3 text-text-secondary">
                   {SITE.address.street}
                   <br />
                   {SITE.address.city}, {SITE.address.state} {SITE.address.zip}

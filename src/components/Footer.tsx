@@ -27,8 +27,23 @@ export function Footer() {
               software, practical AI, SaaS products, data, cloud, and enterprise
               applications from strategy through production.
             </p>
-            <div className="mt-6 space-y-1 text-sm text-text-secondary">
-              <p>{SITE.address.full}</p>
+            <div className="mt-6 space-y-3 text-sm text-text-secondary">
+              <div>
+                <p className="font-semibold text-text">InSol Technologies Inc.</p>
+                <p className="mt-1 text-text-secondary">Austin, Texas</p>
+                <a
+                  href={SITE.mapsHref}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 block text-text-secondary transition-colors hover:text-accent"
+                >
+                  {SITE.address.street}
+                  <br />
+                  {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
+                  <br />
+                  {SITE.address.country}
+                </a>
+              </div>
               <p>
                 <a
                   href={SITE.phoneHref}

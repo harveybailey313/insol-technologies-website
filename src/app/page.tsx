@@ -95,14 +95,6 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Trust — verified location only; no empty logo walls */}
-      <Section band="secondary">
-        <p className="eyebrow eyebrow-gradient mb-3">Trusted by teams who ship</p>
-        <p className="max-w-2xl text-text-secondary">
-          Published location: Austin, TX — {SITE.address.full}
-        </p>
-      </Section>
-
       {/* What We Do */}
       <Section>
         <SectionHeader
@@ -298,22 +290,6 @@ export default function HomePage() {
               continuous partnership from problem framing through production.
             </p>
           </div>
-        </div>
-      </Section>
-
-      {/* Presence */}
-      <Section band="secondary">
-        <SectionHeader title="Where to reach us." />
-        <div className="card-surface max-w-xl p-8 hover:transform-none hover:shadow-none">
-          <p className="text-text">{SITE.address.full}</p>
-          <p className="mt-2">
-            <a href={SITE.phoneHref} className="text-accent hover:text-accent-hover">
-              {SITE.phone}
-            </a>
-          </p>
-          <Button href="/contact" className="mt-6">
-            Get in touch
-          </Button>
         </div>
       </Section>
 

@@ -30,8 +30,6 @@ export function FinalCTA({
           <a href={SITE.phoneHref} className="text-accent hover:text-accent-hover">
             {SITE.phone}
           </a>
-          {" · "}
-          {SITE.address.full}
         </p>
         <p className="mt-2 text-sm text-text-muted">
           We respect your inbox. No spam — just a human reply.
