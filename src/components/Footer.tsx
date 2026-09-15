@@ -45,7 +45,7 @@ export function Footer() {
               <h4 className="mb-4 text-sm font-semibold text-text">What We Do</h4>
               <ul className="space-y-2">
                 {services.map((s) => {
-                  const accent = SERVICE_ACCENTS[s.slug] ?? "burgundy";
+                  const accent = SERVICE_ACCENTS[s.slug] ?? "cyan";
                   return (
                     <li key={s.slug} className={accentClass(accent)}>
                       <Link
@@ -63,7 +63,7 @@ export function Footer() {
               <h4 className="mb-4 text-sm font-semibold text-text">Industries</h4>
               <ul className="space-y-2">
                 {industries.map((i) => {
-                  const accent = INDUSTRY_ACCENTS[i.slug] ?? "burgundy";
+                  const accent = INDUSTRY_ACCENTS[i.slug] ?? "cyan";
                   return (
                     <li key={i.slug} className={accentClass(accent)}>
                       <Link
@@ -111,7 +111,7 @@ export function Footer() {
             <div>
               <h4 className="mb-4 text-sm font-semibold text-text">Legal</h4>
               <ul className="space-y-2">
-                <li className={accentClass("silver")}>
+                <li className={accentClass("blue")}>
                   <Link
                     href="/privacy-policy"
                     className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
@@ -119,7 +119,7 @@ export function Footer() {
                     Privacy Policy
                   </Link>
                 </li>
-                <li className={accentClass("blush")}>
+                <li className={accentClass("coral")}>
                   <Link
                     href="/terms-and-conditions"
                     className="text-sm text-text-secondary transition-colors hover:text-[var(--card-accent)]"
@@ -135,9 +135,6 @@ export function Footer() {
         <div className="mt-12 flex flex-col gap-3 border-t border-border pt-8 text-sm text-text-muted sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {year} {SITE.name}. All rights reserved.
-          </p>
-          <p className="tracking-[0.18em] text-[0.6875rem] uppercase">
-            BUILD · SOLVE · SCALE · TOGETHER
           </p>
           <p>Austin, TX</p>
         </div>

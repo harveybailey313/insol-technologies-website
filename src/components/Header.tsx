@@ -10,7 +10,7 @@ export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border bg-[rgba(11,11,12,0.85)] backdrop-blur-[12px]">
+    <header className="sticky top-0 z-50 border-b border-border bg-[rgba(7,17,31,0.85)] backdrop-blur-[12px]">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-accent focus:px-3 focus:py-2 focus:text-primary"

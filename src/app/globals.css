@@ -1,68 +1,75 @@
 @import "tailwindcss";
 
 :root {
-  --color-primary: #0B0B0C;
-  --color-secondary: #141416;
-  --color-surface: #161618;
-  --color-surface-elevated: #1C1C1F;
-  --color-border: #2A2A2E;
-  --color-border-strong: #3A3A40;
-  --color-text: #EAECEF;
-  --color-text-secondary: #C9C9CB;
-  --color-text-muted: #8B8B8F;
+  --color-primary: #07111f;
+  --color-secondary: #0d1b2a;
+  --color-surface: #111c2b;
+  --color-surface-elevated: #162334;
+  --color-border: #1e2d42;
+  --color-border-strong: #2a3f5a;
+  --color-text: #f5f7fa;
+  --color-text-secondary: #9aa7b7;
+  --color-text-muted: #6b7a8d;
 
-  /* Primary accent — burgundy */
-  --color-accent: #7A1F2D;
-  --color-accent-hover: #9A2838;
-  --color-accent-muted: rgba(122, 31, 45, 0.16);
-  --color-accent-border: rgba(122, 31, 45, 0.45);
+  /* Primary accent (cyan) — default brand */
+  --color-accent: #00d4ff;
+  --color-accent-hover: #33ddff;
+  --color-accent-muted: rgba(0, 212, 255, 0.12);
+  --color-accent-border: rgba(0, 212, 255, 0.35);
 
-  /* Burgundy / silver multi-accent family */
-  --accent-burgundy: #7A1F2D;
-  --accent-burgundy-muted: rgba(122, 31, 45, 0.16);
+  /* Multi-accent palette */
+  --accent-cyan: #00d4ff;
+  --accent-cyan-muted: rgba(0, 212, 255, 0.12);
+  --accent-cyan-border: rgba(0, 212, 255, 0.4);
+  --accent-cyan-glow: rgba(0, 212, 255, 0.22);
+
+  --accent-violet: #8b5cf6;
+  --accent-violet-muted: rgba(139, 92, 246, 0.14);
+  --accent-violet-border: rgba(139, 92, 246, 0.42);
+  --accent-violet-glow: rgba(139, 92, 246, 0.24);
+
+  --accent-magenta: #ec4899;
+  --accent-magenta-muted: rgba(236, 72, 153, 0.14);
+  --accent-magenta-border: rgba(236, 72, 153, 0.4);
+  --accent-magenta-glow: rgba(236, 72, 153, 0.22);
+
+  --accent-emerald: #34d399;
+  --accent-emerald-muted: rgba(52, 211, 153, 0.12);
+  --accent-emerald-border: rgba(52, 211, 153, 0.4);
+  --accent-emerald-glow: rgba(52, 211, 153, 0.22);
+
+  --accent-amber: #fbbf24;
+  --accent-amber-muted: rgba(251, 191, 36, 0.12);
+  --accent-amber-border: rgba(251, 191, 36, 0.38);
+  --accent-amber-glow: rgba(251, 191, 36, 0.2);
+
+  --accent-blue: #60a5fa;
+  --accent-blue-muted: rgba(96, 165, 250, 0.14);
+  --accent-blue-border: rgba(96, 165, 250, 0.42);
+  --accent-blue-glow: rgba(96, 165, 250, 0.22);
+
+  --accent-coral: #fb7185;
+  --accent-coral-muted: rgba(251, 113, 133, 0.14);
+  --accent-coral-border: rgba(251, 113, 133, 0.4);
+  --accent-coral-glow: rgba(251, 113, 133, 0.22);
+
+
+  --accent-burgundy: #7a1f2d;
+  --accent-burgundy-hover: #9a2838;
+  --accent-burgundy-muted: rgba(122, 31, 45, 0.18);
   --accent-burgundy-border: rgba(122, 31, 45, 0.45);
   --accent-burgundy-glow: rgba(122, 31, 45, 0.28);
 
-  --accent-bright: #9A2838;
-  --accent-bright-muted: rgba(154, 40, 56, 0.16);
-  --accent-bright-border: rgba(154, 40, 56, 0.45);
-  --accent-bright-glow: rgba(154, 40, 56, 0.28);
-
-  --accent-rose: #B85A68;
-  --accent-rose-muted: rgba(184, 90, 104, 0.16);
-  --accent-rose-border: rgba(184, 90, 104, 0.42);
-  --accent-rose-glow: rgba(184, 90, 104, 0.24);
-
-  --accent-silver: #C9C9CB;
-  --accent-silver-muted: rgba(201, 201, 203, 0.12);
-  --accent-silver-border: rgba(201, 201, 203, 0.38);
-  --accent-silver-glow: rgba(201, 201, 203, 0.2);
-
-  --accent-muted: #8B8B8F;
-  --accent-muted-muted: rgba(139, 139, 143, 0.14);
-  --accent-muted-border: rgba(139, 139, 143, 0.4);
-  --accent-muted-glow: rgba(139, 139, 143, 0.2);
-
-  --accent-wine: #5A1520;
-  --accent-wine-muted: rgba(90, 21, 32, 0.2);
-  --accent-wine-border: rgba(90, 21, 32, 0.5);
-  --accent-wine-glow: rgba(90, 21, 32, 0.3);
-
-  --accent-blush: #D4A0A8;
-  --accent-blush-muted: rgba(212, 160, 168, 0.14);
-  --accent-blush-border: rgba(212, 160, 168, 0.4);
-  --accent-blush-glow: rgba(212, 160, 168, 0.22);
-
   /* Scoped card/step accent (overridden by .accent-* modifiers) */
-  --card-accent: var(--accent-burgundy);
-  --card-accent-muted: var(--accent-burgundy-muted);
-  --card-accent-border: var(--accent-burgundy-border);
-  --card-accent-glow: var(--accent-burgundy-glow);
+  --card-accent: var(--accent-cyan);
+  --card-accent-muted: var(--accent-cyan-muted);
+  --card-accent-border: var(--accent-cyan-border);
+  --card-accent-glow: var(--accent-cyan-glow);
 
   --color-success: #3ddc97;
   --color-warning: #f5c542;
   --color-error: #ff6b7a;
-  --color-overlay: rgba(11, 11, 12, 0.72);
+  --color-overlay: rgba(7, 17, 31, 0.72);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -230,9 +237,9 @@
   .eyebrow-gradient {
     background: linear-gradient(
       105deg,
-      var(--accent-burgundy) 0%,
-      var(--accent-rose) 45%,
-      var(--accent-silver) 100%
+      var(--accent-cyan) 0%,
+      var(--accent-violet) 45%,
+      var(--accent-magenta) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -284,48 +291,55 @@
     font-family: var(--font-mono);
   }
 
-  /* —— Multi-accent modifiers (burgundy family) —— */
+  /* —— Multi-accent modifiers —— */
+  .accent-cyan {
+    --card-accent: var(--accent-cyan);
+    --card-accent-muted: var(--accent-cyan-muted);
+    --card-accent-border: var(--accent-cyan-border);
+    --card-accent-glow: var(--accent-cyan-glow);
+  }
+  .accent-violet {
+    --card-accent: var(--accent-violet);
+    --card-accent-muted: var(--accent-violet-muted);
+    --card-accent-border: var(--accent-violet-border);
+    --card-accent-glow: var(--accent-violet-glow);
+  }
+  .accent-magenta {
+    --card-accent: var(--accent-magenta);
+    --card-accent-muted: var(--accent-magenta-muted);
+    --card-accent-border: var(--accent-magenta-border);
+    --card-accent-glow: var(--accent-magenta-glow);
+  }
+  .accent-emerald {
+    --card-accent: var(--accent-emerald);
+    --card-accent-muted: var(--accent-emerald-muted);
+    --card-accent-border: var(--accent-emerald-border);
+    --card-accent-glow: var(--accent-emerald-glow);
+  }
+  .accent-amber {
+    --card-accent: var(--accent-amber);
+    --card-accent-muted: var(--accent-amber-muted);
+    --card-accent-border: var(--accent-amber-border);
+    --card-accent-glow: var(--accent-amber-glow);
+  }
+  .accent-blue {
+    --card-accent: var(--accent-blue);
+    --card-accent-muted: var(--accent-blue-muted);
+    --card-accent-border: var(--accent-blue-border);
+    --card-accent-glow: var(--accent-blue-glow);
+  }
+  .accent-coral {
+    --card-accent: var(--accent-coral);
+    --card-accent-muted: var(--accent-coral-muted);
+    --card-accent-border: var(--accent-coral-border);
+    --card-accent-glow: var(--accent-coral-glow);
+  }
+
   .accent-burgundy {
     --card-accent: var(--accent-burgundy);
     --card-accent-muted: var(--accent-burgundy-muted);
     --card-accent-border: var(--accent-burgundy-border);
     --card-accent-glow: var(--accent-burgundy-glow);
-  }
-  .accent-bright {
-    --card-accent: var(--accent-bright);
-    --card-accent-muted: var(--accent-bright-muted);
-    --card-accent-border: var(--accent-bright-border);
-    --card-accent-glow: var(--accent-bright-glow);
-  }
-  .accent-rose {
-    --card-accent: var(--accent-rose);
-    --card-accent-muted: var(--accent-rose-muted);
-    --card-accent-border: var(--accent-rose-border);
-    --card-accent-glow: var(--accent-rose-glow);
-  }
-  .accent-silver {
-    --card-accent: var(--accent-silver);
-    --card-accent-muted: var(--accent-silver-muted);
-    --card-accent-border: var(--accent-silver-border);
-    --card-accent-glow: var(--accent-silver-glow);
-  }
-  .accent-muted {
-    --card-accent: var(--accent-muted);
-    --card-accent-muted: var(--accent-muted-muted);
-    --card-accent-border: var(--accent-muted-border);
-    --card-accent-glow: var(--accent-muted-glow);
-  }
-  .accent-wine {
-    --card-accent: var(--accent-wine);
-    --card-accent-muted: var(--accent-wine-muted);
-    --card-accent-border: var(--accent-wine-border);
-    --card-accent-glow: var(--accent-wine-glow);
-  }
-  .accent-blush {
-    --card-accent: var(--accent-blush);
-    --card-accent-muted: var(--accent-blush-muted);
-    --card-accent-border: var(--accent-blush-border);
-    --card-accent-glow: var(--accent-blush-glow);
   }
 
   .accent-card:hover {
@@ -377,9 +391,9 @@
     border-radius: 2px;
     background: linear-gradient(
       90deg,
-      var(--accent-burgundy),
-      var(--accent-rose),
-      var(--accent-silver)
+      var(--accent-cyan),
+      var(--accent-violet),
+      var(--accent-magenta)
     );
     opacity: 0.85;
   }
@@ -387,10 +401,10 @@
   .text-gradient {
     background: linear-gradient(
       105deg,
-      #EAECEF 0%,
-      var(--accent-silver) 28%,
-      var(--accent-rose) 62%,
-      var(--accent-burgundy) 100%
+      #e8f7ff 0%,
+      var(--accent-cyan) 28%,
+      var(--accent-violet) 62%,
+      var(--accent-magenta) 100%
     );
     -webkit-background-clip: text;
     background-clip: text;
@@ -398,39 +412,41 @@
   }
 
   .text-gradient-cyan-violet {
-    background: linear-gradient(105deg, var(--accent-burgundy), var(--accent-silver));
+    background: linear-gradient(105deg, var(--accent-cyan), var(--accent-violet));
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .btn-gradient {
-    background: var(--color-accent);
-    color: var(--color-text);
+    background: linear-gradient(135deg, var(--accent-cyan) 0%, var(--accent-blue) 48%, var(--accent-violet) 100%);
+    color: var(--color-primary);
     border: none;
     box-shadow: 0 0 0 0 transparent;
   }
 
   .btn-gradient:hover {
-    background: var(--color-accent-hover);
-    filter: none;
-    box-shadow: 0 0 28px rgba(122, 31, 45, 0.35);
+    filter: brightness(1.06);
+    box-shadow:
+      0 0 28px rgba(0, 212, 255, 0.28),
+      0 0 48px rgba(139, 92, 246, 0.18);
   }
 
   /* Legacy single-orb glow (kept for inner pages) */
   .gradient-glow {
     background:
-      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(122, 31, 45, 0.18), transparent),
-      radial-gradient(ellipse 60% 40% at 90% 10%, rgba(201, 201, 203, 0.08), transparent);
+      radial-gradient(ellipse 80% 50% at 50% -20%, rgba(0, 212, 255, 0.15), transparent),
+      radial-gradient(ellipse 60% 40% at 90% 10%, rgba(139, 92, 246, 0.08), transparent);
   }
 
-  /* Hero mesh — burgundy + silver on black */
+  /* Hero multi-color mesh */
   .hero-mesh {
     background:
-      radial-gradient(ellipse 55% 45% at 18% 20%, rgba(122, 31, 45, 0.28), transparent 70%),
-      radial-gradient(ellipse 50% 40% at 82% 18%, rgba(201, 201, 203, 0.12), transparent 70%),
-      radial-gradient(ellipse 45% 38% at 55% 75%, rgba(154, 40, 56, 0.16), transparent 72%),
-      radial-gradient(ellipse 35% 30% at 30% 85%, rgba(90, 21, 32, 0.14), transparent 70%);
+      radial-gradient(ellipse 55% 45% at 18% 20%, rgba(139, 92, 246, 0.22), transparent 70%),
+      radial-gradient(ellipse 50% 40% at 82% 18%, rgba(0, 212, 255, 0.2), transparent 70%),
+      radial-gradient(ellipse 40% 35% at 72% 68%, rgba(122, 31, 45, 0.16), transparent 72%),
+      radial-gradient(ellipse 45% 38% at 55% 75%, rgba(236, 72, 153, 0.14), transparent 72%),
+      radial-gradient(ellipse 35% 30% at 30% 85%, rgba(52, 211, 153, 0.08), transparent 70%);
   }
 
   .glow-blob {
@@ -441,35 +457,8 @@
     opacity: 0.55;
   }
 
-  .glow-blob-burgundy {
-    background: var(--accent-burgundy);
-    width: min(420px, 55vw);
-    height: min(420px, 55vw);
-    top: -8%;
-    left: -4%;
-  }
-
-  .glow-blob-silver {
-    background: var(--accent-silver);
-    width: min(380px, 50vw);
-    height: min(380px, 50vw);
-    top: -4%;
-    right: -6%;
-    opacity: 0.28;
-  }
-
-  .glow-blob-rose {
-    background: var(--accent-rose);
-    width: min(320px, 42vw);
-    height: min(320px, 42vw);
-    bottom: 5%;
-    left: 35%;
-    opacity: 0.3;
-  }
-
-  /* Back-compat aliases for old blob class names used in pages */
   .glow-blob-violet {
-    background: var(--accent-burgundy);
+    background: var(--accent-violet);
     width: min(420px, 55vw);
     height: min(420px, 55vw);
     top: -8%;
@@ -477,28 +466,27 @@
   }
 
   .glow-blob-cyan {
-    background: var(--accent-silver);
+    background: var(--accent-cyan);
     width: min(380px, 50vw);
     height: min(380px, 50vw);
     top: -4%;
     right: -6%;
-    opacity: 0.28;
   }
 
   .glow-blob-magenta {
-    background: var(--accent-rose);
+    background: var(--accent-magenta);
     width: min(320px, 42vw);
     height: min(320px, 42vw);
     bottom: 5%;
     left: 35%;
-    opacity: 0.3;
+    opacity: 0.35;
   }
 
   .cta-band {
     background:
-      radial-gradient(ellipse 70% 80% at 100% 50%, rgba(122, 31, 45, 0.22), transparent 55%),
-      radial-gradient(ellipse 55% 70% at 0% 80%, rgba(201, 201, 203, 0.08), transparent 50%),
-      linear-gradient(125deg, #0B0B0C 0%, #141416 28%, #1A1014 58%, #120C0E 82%, #0B0B0C 100%);
+      radial-gradient(ellipse 70% 80% at 100% 50%, rgba(0, 212, 255, 0.18), transparent 55%),
+      radial-gradient(ellipse 55% 70% at 0% 80%, rgba(236, 72, 153, 0.1), transparent 50%),
+      linear-gradient(125deg, #07111f 0%, #0d1b2a 28%, #1a1040 58%, #0a2a3a 82%, #07111f 100%);
   }
 
   .footer-border-gradient {
@@ -516,12 +504,14 @@
     background: linear-gradient(
       90deg,
       transparent 0%,
-      var(--accent-burgundy) 20%,
-      var(--accent-rose) 50%,
-      var(--accent-silver) 80%,
+      var(--accent-cyan) 15%,
+      var(--accent-violet) 35%,
+      var(--accent-magenta) 50%,
+      var(--accent-emerald) 65%,
+      var(--accent-amber) 80%,
       transparent 100%
     );
-    opacity: 0.75;
+    opacity: 0.7;
   }
 
   .link-hover-variety:hover {
@@ -544,19 +534,19 @@
     opacity: 0.7;
   }
 
-  .frame-strip span:nth-child(1)::after { color: var(--accent-burgundy); }
-  .frame-strip span:nth-child(2)::after { color: var(--accent-bright); }
-  .frame-strip span:nth-child(3)::after { color: var(--accent-rose); }
-  .frame-strip span:nth-child(4)::after { color: var(--accent-silver); }
-  .frame-strip span:nth-child(5)::after { color: var(--accent-muted); }
-  .frame-strip span:nth-child(6)::after { color: var(--accent-wine); }
+  .frame-strip span:nth-child(1)::after { color: var(--accent-cyan); }
+  .frame-strip span:nth-child(2)::after { color: var(--accent-violet); }
+  .frame-strip span:nth-child(3)::after { color: var(--accent-magenta); }
+  .frame-strip span:nth-child(4)::after { color: var(--accent-emerald); }
+  .frame-strip span:nth-child(5)::after { color: var(--accent-amber); }
+  .frame-strip span:nth-child(6)::after { color: var(--accent-blue); }
 
-  .frame-strip span:nth-child(1) { color: color-mix(in srgb, var(--accent-burgundy) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(2) { color: color-mix(in srgb, var(--accent-bright) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(3) { color: color-mix(in srgb, var(--accent-rose) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(4) { color: color-mix(in srgb, var(--accent-silver) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(5) { color: color-mix(in srgb, var(--accent-muted) 70%, var(--color-text-secondary)); }
-  .frame-strip span:nth-child(6) { color: color-mix(in srgb, var(--accent-wine) 70%, var(--color-text-secondary)); }
+  .frame-strip span:nth-child(1) { color: color-mix(in srgb, var(--accent-cyan) 70%, var(--color-text-secondary)); }
+  .frame-strip span:nth-child(2) { color: color-mix(in srgb, var(--accent-violet) 70%, var(--color-text-secondary)); }
+  .frame-strip span:nth-child(3) { color: color-mix(in srgb, var(--accent-magenta) 70%, var(--color-text-secondary)); }
+  .frame-strip span:nth-child(4) { color: color-mix(in srgb, var(--accent-emerald) 70%, var(--color-text-secondary)); }
+  .frame-strip span:nth-child(5) { color: color-mix(in srgb, var(--accent-amber) 70%, var(--color-text-secondary)); }
+  .frame-strip span:nth-child(6) { color: color-mix(in srgb, var(--accent-blue) 70%, var(--color-text-secondary)); }
 }
 
 @media (prefers-reduced-motion: reduce) {

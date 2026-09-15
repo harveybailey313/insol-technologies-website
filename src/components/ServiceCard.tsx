@@ -17,7 +17,7 @@ export function ServiceCard({
   outcome,
   chips,
   href,
-  accent = "burgundy",
+  accent = "cyan",
 }: ServiceCardProps) {
   return (
     <Link

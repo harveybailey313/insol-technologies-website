@@ -1,56 +1,58 @@
-/** Burgundy / silver multi-accent family — cycle across services, steps, and industries. */
+/** Premium multi-accent palette — cycle across services, steps, and industries. */
 
 export const ACCENT_KEYS = [
+  "cyan",
+  "violet",
+  "magenta",
+  "emerald",
+  "amber",
+  "blue",
+  "coral",
   "burgundy",
-  "bright",
-  "rose",
-  "silver",
-  "muted",
-  "wine",
-  "blush",
 ] as const;
 
 export type AccentKey = (typeof ACCENT_KEYS)[number];
 
 export const ACCENT_HEX: Record<AccentKey, string> = {
+  cyan: "#00D4FF",
+  violet: "#8B5CF6",
+  magenta: "#EC4899",
+  emerald: "#34D399",
+  amber: "#FBBF24",
+  blue: "#60A5FA",
+  coral: "#FB7185",
   burgundy: "#7A1F2D",
-  bright: "#9A2838",
-  rose: "#B85A68",
-  silver: "#C9C9CB",
-  muted: "#8B8B8F",
-  wine: "#5A1520",
-  blush: "#D4A0A8",
 };
 
 /** Fixed map: one distinct accent per service (order matches services.ts). */
 export const SERVICE_ACCENTS: Record<string, AccentKey> = {
-  "ai-intelligent-automation": "bright",
-  "product-engineering": "burgundy",
-  "web-mobile-development": "silver",
-  "cloud-devops": "wine",
-  "data-analytics": "rose",
-  "enterprise-applications": "muted",
-  "quality-engineering": "blush",
-  "saas-products": "burgundy",
+  "ai-intelligent-automation": "violet",
+  "product-engineering": "cyan",
+  "web-mobile-development": "blue",
+  "cloud-devops": "emerald",
+  "data-analytics": "amber",
+  "enterprise-applications": "burgundy",
+  "quality-engineering": "coral",
+  "saas-products": "cyan",
 };
 
 /** Process stepper — one accent per step (Discover → Scale). */
 export const PROCESS_ACCENTS: AccentKey[] = [
-  "burgundy",
-  "bright",
-  "rose",
-  "silver",
-  "muted",
-  "wine",
+  "cyan",
+  "violet",
+  "magenta",
+  "emerald",
+  "amber",
+  "blue",
 ];
 
 /** Industry cards — rotating accents. */
 export const INDUSTRY_ACCENTS: Record<string, AccentKey> = {
-  healthcare: "wine",
-  "financial-services": "silver",
-  ecommerce: "rose",
-  "travel-hospitality": "bright",
-  technology: "burgundy",
+  healthcare: "emerald",
+  "financial-services": "blue",
+  ecommerce: "amber",
+  "travel-hospitality": "magenta",
+  technology: "violet",
 };
 
 export function accentClass(key: AccentKey): string {

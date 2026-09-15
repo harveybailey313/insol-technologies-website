@@ -14,7 +14,7 @@ export function ProcessStepper({
     <div className={className}>
       <ol className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-6">
         {PROCESS_STEPS.map((step, index) => {
-          const accent = PROCESS_ACCENTS[index] ?? "burgundy";
+          const accent = PROCESS_ACCENTS[index] ?? "cyan";
           return (
             <li
               key={step.number}

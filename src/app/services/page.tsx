@@ -52,7 +52,7 @@ export default function ServicesHubPage() {
               outcome={s.businessOutcome}
               chips={s.chips}
               href={`/services/${s.slug}`}
-              accent={SERVICE_ACCENTS[s.slug] ?? "burgundy"}
+              accent={SERVICE_ACCENTS[s.slug] ?? "cyan"}
             />
           ))}
         </div>
