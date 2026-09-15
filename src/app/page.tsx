@@ -29,7 +29,7 @@ const aiCapabilities = [
   "AI applications",
   "AI agents",
   "Intelligent automation",
-  "AI integration",
+  "AI systems integration",
   "Machine learning (ML)",
   "Natural language processing (NLP)",
   "AI-powered workflows",
@@ -240,40 +240,53 @@ export default function HomePage() {
         </div>
       </Section>
 
-      {/* AI Spotlight */}
-      <Section band="secondary" className="relative overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 hero-mesh opacity-35" />
-        <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
-          <div>
+      {/* AI & Automation */}
+      <Section className="relative overflow-hidden">
+        <div className="pointer-events-none absolute inset-0 hero-mesh opacity-25" />
+        <div className="relative grid min-w-0 gap-10 lg:grid-cols-2 lg:items-center">
+          <div className="min-w-0">
             <SectionHeader
-              eyebrow="AI & Automation"
-              title="AI integrated into products and operations."
-              intro="We build and integrate GenAI, AI applications, agents, intelligent automation, ML, and NLP where they improve a defined workflow — with the engineering required to run in production."
+              eyebrow="AI & Intelligent Automation"
+              title="AI engineered for real products and operations."
+              intro="InSol Technologies builds and integrates generative AI, AI applications, agents, intelligent automation, machine learning, and NLP where they improve a defined business workflow — with the engineering required to run in production."
               className="mb-0"
             />
-            <p className="mt-6 text-sm text-text-secondary md:text-base">
-              Integration, data quality, evaluation, and oversight matter as much as the model.
+            <p className="mt-6 max-w-xl text-pretty text-sm leading-relaxed text-text-secondary md:text-base">
+              Models matter. Integration, data quality, evaluation, and human
+              oversight matter more — so capability ships as operable software,
+              not a demo that never leaves the lab.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button href="/services/ai-intelligent-automation">
+            <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
+              <Button
+                href="/services/ai-intelligent-automation"
+                size="md"
+                className="w-full sm:w-auto md:!h-[52px] md:!px-7"
+              >
                 Explore AI & Automation
               </Button>
-              <Button href="/services/saas-products" variant="secondary">
-                Explore SaaS Products
+              <Button
+                href={CTAS.talkExpert.href}
+                variant="secondary"
+                size="md"
+                className="w-full sm:w-auto md:!h-[52px] md:!px-7"
+              >
+                {CTAS.talkExpert.label}
               </Button>
             </div>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
+          <ul className="grid min-w-0 gap-3 sm:grid-cols-2">
             {aiCapabilities.map((cap, i) => (
               <li
                 key={cap}
-                className={`card-surface accent-card flex items-center gap-3 p-4 hover:transform-none hover:shadow-none ${accentClass(accentAt(i))}`}
+                className={`card-surface accent-card flex min-w-0 items-center gap-3 p-4 hover:transform-none hover:shadow-none ${accentClass(accentAt(i))}`}
               >
                 <span
                   className="accent-dot h-2 w-2 shrink-0 rounded-full"
                   aria-hidden
                 />
-                <span className="text-sm font-medium text-text">{cap}</span>
+                <span className="text-sm font-medium leading-snug text-text">
+                  {cap}
+                </span>
               </li>
             ))}
           </ul>
