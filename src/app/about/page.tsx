@@ -224,6 +224,11 @@ export default function AboutPage() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {[
             {
+              href: "/founder",
+              title: "Founder",
+              line: "Innam Dustgir — Founder & CEO of InSol Technologies.",
+            },
+            {
               href: "/about/leadership",
               title: "Leadership",
               line: "The people accountable for how we partner and deliver.",
@@ -237,11 +242,6 @@ export default function AboutPage() {
               href: "/careers",
               title: "Careers",
               line: "Roles for builders who want outcome ownership.",
-            },
-            {
-              href: "/case-studies",
-              title: "Case Studies",
-              line: "Work we can stand behind — when cleared for public use.",
             },
           ].map((item) => (
             <Link key={item.href} href={item.href} className="card-surface group p-5">

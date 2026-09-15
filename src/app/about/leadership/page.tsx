@@ -56,6 +56,12 @@ export default function LeadershipPage() {
             Founder of InSol Technologies — accountable for how we partner, engineer,
             and deliver from strategy through production.
           </p>
+          <Link
+            href="/founder"
+            className="mt-5 inline-flex text-sm font-semibold text-accent hover:text-accent-hover"
+          >
+            Read the Founder page →
+          </Link>
         </div>
         <p className="mt-8 max-w-2xl text-sm text-text-muted">
           Additional leadership profiles publish when approved. For partnership

@@ -7,6 +7,7 @@ import { SERVICE_ACCENTS, INDUSTRY_ACCENTS, accentClass, accentAt } from "@/lib/
 
 const aboutLinks = [
   { label: "Our Story", href: "/about" },
+  { label: "Founder", href: "/founder" },
   { label: "Leadership", href: "/about/leadership" },
   { label: "Our Approach", href: "/about/approach" },
   { label: "Careers", href: "/careers" },

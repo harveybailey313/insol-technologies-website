@@ -1,10 +1,182 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
-import { CTAS, NAV_LINKS } from "@/lib/site";
+import { CTAS, NAV_LINKS, type NavLink } from "@/lib/site";
+
+function DesktopNavItem({ link }: { link: NavLink }) {
+  const [open, setOpen] = useState(false);
+  const wrapRef = useRef<HTMLDivElement>(null);
+  const menuId = useId();
+  const hasChildren = Boolean(link.children?.length);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    const onPointer = (e: MouseEvent) => {
+      if (wrapRef.current && !wrapRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    document.addEventListener("mousedown", onPointer);
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.removeEventListener("mousedown", onPointer);
+    };
+  }, [open]);
+
+  if (!hasChildren) {
+    return (
+      <Link
+        href={link.href}
+        className="text-sm font-medium text-text-secondary transition-colors hover:text-accent"
+      >
+        {link.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div
+      ref={wrapRef}
+      className="relative"
+      onMouseEnter={() => setOpen(true)}
+      onMouseLeave={() => setOpen(false)}
+    >
+      <button
+        type="button"
+        className="inline-flex items-center gap-1 text-sm font-medium text-text-secondary transition-colors hover:text-accent focus-visible:outline-none focus-visible:text-accent"
+        aria-expanded={open}
+        aria-haspopup="menu"
+        aria-controls={menuId}
+        onClick={() => setOpen((v) => !v)}
+        onFocus={() => setOpen(true)}
+      >
+        {link.label}
+        <svg
+          width="12"
+          height="12"
+          viewBox="0 0 12 12"
+          fill="none"
+          aria-hidden
+          className={`transition-transform ${open ? "rotate-180" : ""}`}
+        >
+          <path
+            d="M3 4.5L6 7.5L9 4.5"
+            stroke="currentColor"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </button>
+      <div
+        id={menuId}
+        role="menu"
+        aria-label={link.label}
+        className={`absolute left-0 top-full z-50 min-w-[200px] pt-2 transition-opacity ${
+          open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"
+        }`}
+      >
+        <div className="rounded-[10px] border border-border bg-surface-elevated py-2 shadow-[0_12px_40px_rgba(0,0,0,0.45)]">
+          {link.children!.map((child) => (
+            <Link
+              key={child.href + child.label}
+              href={child.href}
+              role="menuitem"
+              className="block px-4 py-2.5 text-sm text-text-secondary transition-colors hover:bg-accent-muted hover:text-accent focus-visible:bg-accent-muted focus-visible:text-accent focus-visible:outline-none"
+              onClick={() => setOpen(false)}
+            >
+              {child.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MobileNavItem({
+  link,
+  onNavigate,
+}: {
+  link: NavLink;
+  onNavigate: () => void;
+}) {
+  const [expanded, setExpanded] = useState(false);
+  const panelId = useId();
+  const hasChildren = Boolean(link.children?.length);
+
+  if (!hasChildren) {
+    return (
+      <Link
+        href={link.href}
+        className="rounded-md px-3 py-3.5 text-base font-medium text-text hover:bg-accent-muted hover:text-accent"
+        onClick={onNavigate}
+      >
+        {link.label}
+      </Link>
+    );
+  }
+
+  return (
+    <div className="flex flex-col">
+      <div className="flex items-center">
+        <Link
+          href={link.href}
+          className="flex-1 rounded-md px-3 py-3.5 text-base font-medium text-text hover:bg-accent-muted hover:text-accent"
+          onClick={onNavigate}
+        >
+          {link.label}
+        </Link>
+        <button
+          type="button"
+          className="mr-1 inline-flex h-11 w-11 items-center justify-center rounded-md text-text-secondary hover:bg-accent-muted hover:text-accent"
+          aria-expanded={expanded}
+          aria-controls={panelId}
+          aria-label={`${expanded ? "Collapse" : "Expand"} ${link.label} submenu`}
+          onClick={() => setExpanded((v) => !v)}
+        >
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 12 12"
+            fill="none"
+            aria-hidden
+            className={`transition-transform ${expanded ? "rotate-180" : ""}`}
+          >
+            <path
+              d="M3 4.5L6 7.5L9 4.5"
+              stroke="currentColor"
+              strokeWidth="1.5"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </button>
+      </div>
+      {expanded && (
+        <div id={panelId} className="mb-1 ml-3 flex flex-col border-l border-border pl-2">
+          {link.children!.map((child) => (
+            <Link
+              key={child.href + child.label}
+              href={child.href}
+              className="rounded-md px-3 py-2.5 text-sm font-medium text-text-secondary hover:bg-accent-muted hover:text-accent"
+              onClick={onNavigate}
+            >
+              {child.label}
+            </Link>
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -36,13 +208,7 @@ export function Header() {
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
           {NAV_LINKS.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm font-medium text-text-secondary transition-colors hover:text-accent"
-            >
-              {link.label}
-            </Link>
+            <DesktopNavItem key={link.label} link={link} />
           ))}
         </nav>
 
@@ -87,14 +253,11 @@ export function Header() {
         >
           <nav className="container-insol flex flex-col gap-1 py-3 sm:py-4" aria-label="Mobile">
             {NAV_LINKS.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="rounded-md px-3 py-3.5 text-base font-medium text-text hover:bg-accent-muted hover:text-accent"
-                onClick={() => setOpen(false)}
-              >
-                {link.label}
-              </Link>
+              <MobileNavItem
+                key={link.label}
+                link={link}
+                onNavigate={() => setOpen(false)}
+              />
             ))}
             <div className="mt-2 px-3 pb-3 pt-1">
               <Button

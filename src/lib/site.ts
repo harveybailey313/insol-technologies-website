@@ -79,11 +79,31 @@ export const PROCESS_STEPS = [
   },
 ] as const;
 
-export const NAV_LINKS = [
+export type NavChild = {
+  label: string;
+  href: string;
+};
+
+export type NavLink = {
+  label: string;
+  href: string;
+  children?: NavChild[];
+};
+
+export const NAV_LINKS: NavLink[] = [
   { label: "What We Do", href: "/services" },
   { label: "Industries", href: "/industries" },
   { label: "Case Studies", href: "/case-studies" },
-  { label: "About", href: "/about" },
+  {
+    label: "About",
+    href: "/about",
+    children: [
+      { label: "Our Story", href: "/about" },
+      { label: "Founder", href: "/founder" },
+      { label: "Our Approach", href: "/about/approach" },
+      { label: "Leadership", href: "/about/leadership" },
+    ],
+  },
   { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
-] as const;
+];
