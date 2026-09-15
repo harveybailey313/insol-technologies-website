@@ -7,8 +7,8 @@ type FinalCTAProps = {
 };
 
 export function FinalCTA({
-  headline = "Ready to build what’s next?",
-  support = "Tell us what you’re building, modernizing, or solving. We’ll respond with clear next steps — not a generic pitch deck.",
+  headline = "Ready to discuss your next build?",
+  support = "Share what you are building, modernizing, or scaling. We will respond with clear next steps.",
 }: FinalCTAProps) {
   return (
     <section className="cta-band relative overflow-hidden section-pad">

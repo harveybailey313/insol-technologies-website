@@ -17,7 +17,7 @@ import {
 } from "@/lib/accents";
 
 export const metadata: Metadata = {
-  title: "InSol Technologies | Software, AI & Cloud for Modern Business",
+  title: "InSol Technologies | Software, AI & Cloud Engineering",
   description: SITE.description,
   alternates: { canonical: "/" },
 };
@@ -35,28 +35,28 @@ const aiCapabilities = [
 
 const whyItems = [
   {
-    title: "Engineering depth",
-    body: "We build products, platforms, and integrations meant to last — not disposable demos.",
+    title: "Software and product engineering",
+    body: "We design and build products, platforms, and integrations with clear architecture, maintainable codebases, and delivery discipline.",
   },
   {
-    title: "SaaS & product focus",
-    body: "SaaS Products and Product Engineering are first-class pillars — not afterthoughts under a generic outsourcing catalog.",
+    title: "SaaS product development",
+    body: "Multi-tenant SaaS is a first-class capability — product foundations, APIs, operability, and growth architecture, not a side offering.",
   },
   {
-    title: "Business-first problem framing",
-    body: "Technology follows the outcome. We clarify the operating problem before locking a stack.",
+    title: "Practical AI and automation",
+    body: "We put GenAI, agents, ML, NLP, and automation into real workflows with integration, evaluation, and operational ownership.",
   },
   {
-    title: "Practical AI in the delivery path",
-    body: "AI is treated as a capability inside real workflows — evaluated, integrated, and operable.",
+    title: "Cloud, data, and enterprise systems",
+    body: "Cloud and DevOps, data and analytics, and enterprise applications are delivered as durable foundations — not bolt-ons.",
   },
   {
-    title: "Architecture built to scale",
-    body: "We design for change: clear boundaries, observability, and cloud foundations that grow with demand.",
+    title: "Problem framing before stack",
+    body: "We clarify the business problem, constraints, and success criteria before locking architecture or tooling.",
   },
   {
-    title: "Partnership beyond launch",
-    body: "Strategy → Design → Engineering → AI → Deployment → Scale is a relationship model, not a sales slogan.",
+    title: "One path from strategy to scale",
+    body: "Strategy → Design → Engineering → AI → Deployment → Scale is how we work with you — continuous ownership through production.",
   },
 ];
 
@@ -71,17 +71,15 @@ export default function HomePage() {
         <div className="glow-blob glow-blob-magenta" aria-hidden />
         <div className="container-insol relative">
           <p className="eyebrow eyebrow-gradient mb-4">
-            Technology, AI & software engineering partner
+            Software engineering · AI · Cloud
           </p>
           <h1 className="text-display max-w-4xl">
             Engineering{" "}
-            <span className="text-gradient">what’s next</span> for your business.
+            <span className="text-gradient">software, AI & cloud</span>{" "}
+            for companies that ship.
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
-            We help startups, growing companies, mid-market, and enterprise teams
-            build digital products, modernize legacy systems, apply practical AI,
-            and scale SaaS and enterprise technology — from strategy through
-            production.
+            InSol Technologies partners with startups, growth-stage companies, mid-market, and enterprise teams to engineer digital products and SaaS platforms, apply AI and automation, and strengthen cloud, data, and enterprise systems — from strategy through production.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={CTAS.startProject.href} size="lg">
@@ -98,8 +96,8 @@ export default function HomePage() {
       {/* What We Do */}
       <Section>
         <SectionHeader
-          title="Technology built around your business."
-          intro="Every engagement starts with the outcome you need — then we design the architecture, engineer the product, apply AI where it earns its place, and leave you with systems your teams can run and evolve."
+          title="Capabilities built for software-led businesses."
+          intro="Software engineering, SaaS product development, AI and automation, cloud and DevOps, data and analytics, and enterprise technology — delivered as connected capabilities, not a generic agency catalog."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
@@ -122,14 +120,13 @@ export default function HomePage() {
         <div className="relative grid gap-10 lg:grid-cols-2 lg:items-center">
           <div>
             <SectionHeader
-              eyebrow="Practical AI"
-              title="AI that earns its place in the workflow."
-              intro="We build AI for clients as part of real products and operations — not as a slide-deck promise. Capabilities ship when they map to a clear business job."
+              eyebrow="AI & Automation"
+              title="AI integrated into products and operations."
+              intro="We build and integrate GenAI, AI applications, agents, intelligent automation, ML, and NLP where they improve a defined workflow — with the engineering required to run in production."
               className="mb-0"
             />
             <p className="mt-6 text-sm text-text-secondary md:text-base">
-              Models matter. Integration, data quality, evaluation, and human
-              oversight matter more.
+              Integration, data quality, evaluation, and oversight matter as much as the model.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <Button href="/services/ai-intelligent-automation">
@@ -160,8 +157,8 @@ export default function HomePage() {
       {/* How We Work */}
       <Section>
         <SectionHeader
-          title="A clear path from problem to production."
-          intro="We work in a transparent sequence so stakeholders always know what happens next — and why."
+          title="From problem definition to production systems."
+          intro="A transparent delivery sequence so technical and business stakeholders know what happens next — and why."
         />
         <ProcessStepper />
       </Section>
@@ -169,8 +166,8 @@ export default function HomePage() {
       {/* Industries */}
       <Section band="secondary">
         <SectionHeader
-          title="Industry context, not generic playbooks."
-          intro="We frame technology around the pressures your sector actually faces — then apply the capabilities that fit. Built for startups, growing companies, mid-market, and enterprise; SaaS builders; legacy modernizers; and AI adopters."
+          title="Sector context for technology decisions."
+          intro="We apply software, AI, cloud, and data capabilities in the context of healthcare, financial services, e-commerce, travel and hospitality, and technology companies — for startups through enterprise."
         />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {industries.map((ind) => {
@@ -221,14 +218,12 @@ export default function HomePage() {
       {/* Case Studies — honest empty state */}
       <Section>
         <SectionHeader
-          title="Work that stands up to scrutiny."
-          intro="We publish case studies only when challenge, approach, and outcomes are cleared for public use. Additional case studies are in preparation."
+          title="Selected work, published when cleared."
+          intro="Case studies appear only when challenge, approach, and outcomes are approved for public use."
         />
         <div className="card-surface max-w-2xl p-8 hover:transform-none hover:shadow-none">
           <p className="text-text-secondary">
-            No public case studies are published yet. We do not invent clients,
-            metrics, or results. Speak with us about relevant engagements under NDA,
-            or check back as cleared work is published.
+            Public case studies are not published yet. We do not invent clients, metrics, or results. Ask about relevant engagements under NDA, or check back as cleared work is released.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/case-studies" variant="secondary">
@@ -244,8 +239,8 @@ export default function HomePage() {
       {/* Why InSol */}
       <Section band="secondary">
         <SectionHeader
-          title="Why teams choose InSol Technologies."
-          intro="Differentiation that we can stand behind — evidence where we have it, honesty where we still need proof."
+          title="Why companies work with InSol Technologies."
+          intro="An engineering partner for product, SaaS, AI, and enterprise technology — measured by systems you can run and evolve."
         />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {whyItems.map((item, i) => (
@@ -270,14 +265,9 @@ export default function HomePage() {
         <div className="grid gap-8 lg:grid-cols-2 lg:items-center">
           <div>
             <p className="eyebrow eyebrow-gradient mb-3">About InSol Technologies</p>
-            <h2 className="text-h2">Built to turn ambition into working systems.</h2>
+            <h2 className="text-h2">A technology company focused on shipped systems.</h2>
             <p className="mt-4 text-body-lg text-text-secondary">
-              InSol Technologies exists to help organizations move from fragmented
-              tools and aging systems to software, AI, and cloud foundations they can
-              actually run. Under founder <strong className="text-text">Innam Dustgir</strong>,
-              we believe strong technology partnerships are measured in shipped
-              outcomes — clarity in discovery, rigor in engineering, and honesty about
-              what AI can and cannot do.
+              InSol Technologies helps organizations move from fragmented tools and aging platforms to software, AI, cloud, and data foundations they can operate. Under founder <strong className="text-text">Innam Dustgir</strong>, we emphasize clear discovery, rigorous engineering, and practical use of AI — without unsupported claims.
             </p>
             <Button href="/about" className="mt-8" variant="secondary">
               Read our story
@@ -286,8 +276,7 @@ export default function HomePage() {
           <div className="card-surface p-8 hover:transform-none hover:shadow-none">
             <FrameStrip />
             <p className="mt-6 text-sm text-text-secondary">
-              Strategy → Design → Engineering → AI → Deployment → Scale — one
-              continuous partnership from problem framing through production.
+              Strategy → Design → Engineering → AI → Deployment → Scale — continuous ownership from problem framing through production.
             </p>
           </div>
         </div>

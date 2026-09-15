@@ -8,7 +8,7 @@ type ProcessStepperProps = {
 
 export function ProcessStepper({
   className = "",
-  closing = "Strategy → Design → Engineering → AI → Deployment → Scale — one continuous partnership, not a handoff theater.",
+  closing = "Strategy → Design → Engineering → AI → Deployment → Scale — continuous ownership from problem framing through production.",
 }: ProcessStepperProps) {
   return (
     <div className={className}>

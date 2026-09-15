@@ -17,9 +17,9 @@ export const SITE = {
   mapsHref:
     "https://maps.google.com/?q=5900+Balcones+Drive,+STE+100,+Austin,+TX+78731",
   founder: "Innam Dustgir",
-  tagline: "Technology, AI and software engineering partner",
+  tagline: "Software engineering, AI, and cloud for modern business",
   description:
-    "Partner with InSol Technologies to build products, modernize systems, apply practical AI, and scale SaaS and enterprise technology — from strategy through production.",
+    "InSol Technologies designs and builds software products, SaaS platforms, practical AI and automation, cloud and DevOps foundations, data systems, and enterprise applications — from strategy through production.",
 } as const;
 
 export const CTAS = {
