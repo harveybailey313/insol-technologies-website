@@ -17,9 +17,9 @@ type ButtonProps = {
 
 const variantClasses: Record<Variant, string> = {
   primary:
-    "btn-gradient shadow-[0_0_0_0_transparent] transition-[filter,box-shadow] duration-200",
+    "bg-accent text-text border border-transparent hover:bg-accent-hover shadow-[0_0_0_0_transparent] transition-[background-color,box-shadow] duration-200 hover:shadow-[0_0_28px_rgba(122,31,45,0.35)]",
   secondary:
-    "bg-transparent text-text border border-border-strong hover:border-accent hover:text-accent",
+    "bg-transparent text-text border border-[color:var(--color-text-secondary)] hover:border-accent hover:text-accent",
   ghost: "bg-transparent text-accent hover:bg-accent-muted",
 };
 

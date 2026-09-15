@@ -66,12 +66,15 @@ export default function HomePage() {
       {/* Hero */}
       <section className="relative overflow-hidden bg-primary section-pad !pt-16 md:!pt-24 lg:!pt-28">
         <div className="pointer-events-none absolute inset-0 hero-mesh" />
-        <div className="glow-blob glow-blob-violet" aria-hidden />
-        <div className="glow-blob glow-blob-cyan" aria-hidden />
-        <div className="glow-blob glow-blob-magenta" aria-hidden />
+        <div className="glow-blob glow-blob-burgundy" aria-hidden />
+        <div className="glow-blob glow-blob-silver" aria-hidden />
+        <div className="glow-blob glow-blob-rose" aria-hidden />
         <div className="container-insol relative">
           <p className="eyebrow eyebrow-gradient mb-4">
             Technology, AI & software engineering partner
+          </p>
+          <p className="mb-4 text-[0.6875rem] font-medium tracking-[0.22em] text-text-muted">
+            BUILD · SOLVE · SCALE · TOGETHER
           </p>
           <h1 className="text-display max-w-4xl">
             Engineering{" "}
@@ -118,7 +121,7 @@ export default function HomePage() {
               outcome={s.businessOutcome}
               chips={s.chips}
               href={`/services/${s.slug}`}
-              accent={SERVICE_ACCENTS[s.slug] ?? "cyan"}
+              accent={SERVICE_ACCENTS[s.slug] ?? "burgundy"}
             />
           ))}
         </div>
@@ -182,7 +185,7 @@ export default function HomePage() {
         />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {industries.map((ind) => {
-            const accent = INDUSTRY_ACCENTS[ind.slug] ?? "cyan";
+            const accent = INDUSTRY_ACCENTS[ind.slug] ?? "burgundy";
             return (
               <Link
                 key={ind.slug}

@@ -41,7 +41,7 @@ export default function IndustriesHubPage() {
         <SectionHeader title="Sectors we serve" />
         <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
           {industries.map((ind) => {
-            const accent = INDUSTRY_ACCENTS[ind.slug] ?? "cyan";
+            const accent = INDUSTRY_ACCENTS[ind.slug] ?? "burgundy";
             return (
               <Link
                 key={ind.slug}
