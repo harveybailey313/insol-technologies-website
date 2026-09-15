@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { Suspense } from "react";
 import { Section, SectionHeader } from "@/components/Section";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { ContactForm } from "@/components/ContactForm";
 import { SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact",
+export const metadata = pageMetadata({
+  title: "Contact — Start a Project",
   description:
-    "Contact InSol Technologies — Start a Project or Talk to an Expert. Phone +1 (480) 918-3323 · Austin, TX.",
-  alternates: { canonical: "/contact" },
-};
+    "Contact InSol Technologies to start a project or talk with an expert. Austin, TX — 5900 Balcones Drive, STE 100 · +1 (480) 918-3323.",
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (

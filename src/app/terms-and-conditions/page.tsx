@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Terms & Conditions",
-  description: "Terms and Conditions draft notice for InSol Technologies.",
-  alternates: { canonical: "/terms-and-conditions" },
-  robots: { index: false, follow: true },
-};
+  description:
+    "Terms and Conditions draft notice for InSol Technologies Inc. Final legal language is pending review.",
+  path: "/terms-and-conditions",
+  noIndex: true,
+});
 
 export default function TermsPage() {
   return (

@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { Section, SectionHeader } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Button } from "@/components/Button";
 import { CTAS } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Case Studies",
   description:
-    "Work that stands up to scrutiny. InSol Technologies publishes case studies only when challenge, approach, and outcomes are cleared for public use.",
-  alternates: { canonical: "/case-studies" },
-};
+    "Selected InSol Technologies engagements — challenge, approach, and outcomes we can stand behind. Published only when cleared for public use.",
+  path: "/case-studies",
+});
 
 export default function CaseStudiesPage() {
   return (

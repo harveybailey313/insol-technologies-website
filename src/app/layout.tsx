@@ -11,10 +11,12 @@ const inter = Inter({
   display: "swap",
 });
 
+const defaultTitle = "InSol Technologies | Software Engineering, AI & Cloud";
+
 export const metadata: Metadata = {
   metadataBase: new URL(SITE.url),
   title: {
-    default: "InSol Technologies | Software, AI & Cloud for Modern Business",
+    default: defaultTitle,
     template: "%s | InSol Technologies",
   },
   description: SITE.description,
@@ -22,13 +24,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: SITE.url,
-    siteName: SITE.name,
-    title: "InSol Technologies | Software, AI & Cloud for Modern Business",
+    siteName: "InSol Technologies",
+    title: defaultTitle,
     description: SITE.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "InSol Technologies | Software, AI & Cloud for Modern Business",
+    title: defaultTitle,
     description: SITE.description,
   },
   robots: {
@@ -41,7 +43,9 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: SITE.name,
+  legalName: SITE.legalName,
   url: SITE.url,
+  logo: `${SITE.url}/brand/insol-logo-full.png`,
   telephone: SITE.phone,
   address: {
     "@type": "PostalAddress",
@@ -54,7 +58,31 @@ const organizationJsonLd = {
   founder: {
     "@type": "Person",
     name: SITE.founder,
+    url: `${SITE.url}/founder`,
   },
+  contactPoint: [
+    {
+      "@type": "ContactPoint",
+      telephone: SITE.phone,
+      contactType: "customer service",
+      areaServed: "US",
+      availableLanguage: "English",
+    },
+    {
+      "@type": "ContactPoint",
+      telephone: SITE.phone,
+      contactType: "sales",
+      areaServed: "US",
+      availableLanguage: "English",
+    },
+  ],
+};
+
+const websiteJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  name: SITE.name,
+  url: SITE.url,
 };
 
 export default function RootLayout({
@@ -69,6 +97,12 @@ export default function RootLayout({
           type="application/ld+json"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify(organizationJsonLd),
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(websiteJsonLd),
           }}
         />
         <Header />

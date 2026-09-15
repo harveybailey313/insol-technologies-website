@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
 import Image from "next/image";
 import { Button } from "@/components/Button";
 import { Section, SectionHeader } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { BASE_PATH, CTAS, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Founder — Innam Dustgir",
   description:
-    "Meet Innam Dustgir, Founder & CEO of InSol Technologies — building modern software, AI-powered solutions, digital products, and scalable technology infrastructure with a long-term vision.",
-  alternates: { canonical: "/founder" },
-};
+    "Meet Innam Dustgir, Founder & CEO of InSol Technologies Inc. — building modern software, AI-powered solutions, digital products, and scalable technology infrastructure.",
+  path: "/founder",
+});
 
 const focusItems = [
   "Build and scale digital products",
@@ -35,6 +35,7 @@ const personJsonLd = {
   worksFor: {
     "@type": "Organization",
     name: SITE.name,
+    legalName: SITE.legalName,
     url: SITE.url,
   },
   url: `${SITE.url}/founder`,
@@ -44,6 +45,7 @@ const organizationJsonLd = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: SITE.name,
+  legalName: SITE.legalName,
   url: SITE.url,
   founder: {
     "@type": "Person",

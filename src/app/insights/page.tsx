@@ -1,14 +1,14 @@
-import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Insights",
   description:
-    "Perspectives on building and modernizing — AI, software engineering, digital transformation, cloud, data, cybersecurity, and SaaS.",
-  alternates: { canonical: "/insights" },
-};
+    "Perspectives from InSol Technologies on software engineering, practical AI, SaaS, cloud, data, and modernization — written for teams who ship.",
+  path: "/insights",
+});
 
 const categories = [
   "AI",

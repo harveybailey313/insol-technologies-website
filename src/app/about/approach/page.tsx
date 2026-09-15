@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Section, SectionHeader } from "@/components/Section";
@@ -8,13 +7,14 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { FrameStrip } from "@/components/FrameStrip";
 import { CTAS } from "@/lib/site";
 import { services } from "@/data/services";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Our Approach | Discover to Scale",
+export const metadata = pageMetadata({
+  title: "Our Approach — Discover to Scale",
   description:
-    "How InSol Technologies works: Discover → Strategize → Design → Build → Deploy → Scale — a transparent partnership from problem framing through production.",
-  alternates: { canonical: "/about/approach" },
-};
+    "InSol Technologies methodology: Discover → Strategize → Design → Build → Deploy → Scale — a clear path from problem framing through production.",
+  path: "/about/approach",
+});
 
 export default function ApproachPage() {
   return (

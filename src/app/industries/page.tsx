@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Section, SectionHeader } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -7,13 +6,14 @@ import { Button } from "@/components/Button";
 import { industries } from "@/data/industries";
 import { CTAS } from "@/lib/site";
 import { INDUSTRY_ACCENTS, accentClass } from "@/lib/accents";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Industries",
+export const metadata = pageMetadata({
+  title: "Industries We Serve",
   description:
-    "Industry context for Healthcare, Financial Services, E-commerce, Travel & Hospitality, and Technology — not generic playbooks.",
-  alternates: { canonical: "/industries" },
-};
+    "Technology framed for healthcare, financial services, ecommerce, travel and hospitality, and technology companies — not generic playbooks.",
+  path: "/industries",
+});
 
 export default function IndustriesHubPage() {
   return (

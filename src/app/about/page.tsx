@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Section, SectionHeader } from "@/components/Section";
@@ -6,13 +5,14 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { FrameStrip } from "@/components/FrameStrip";
 import { CTAS, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About InSol Technologies | Our Story",
+export const metadata = pageMetadata({
+  title: { absolute: "About InSol Technologies" },
   description:
-    "Why InSol Technologies exists: a technology, AI and software engineering partner helping businesses build, modernize, and scale — from strategy through production.",
-  alternates: { canonical: "/about" },
-};
+    "Company story of InSol Technologies — a software, AI, and SaaS engineering partner helping organizations build, modernize, and scale from strategy through production.",
+  path: "/about",
+});
 
 const problems = [
   {

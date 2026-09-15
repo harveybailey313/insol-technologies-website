@@ -34,7 +34,7 @@ export const services: Service[] = [
       "Faster cycle times and clearer decisions without disrupting how your teams already operate.",
     chips: ["GenAI", "Agents", "NLP", "ML", "Workflows", "API integration"],
     h1: "AI and automation that fit how you work",
-    metaTitle: "AI & Intelligent Automation | InSol Technologies",
+    metaTitle: "AI & Intelligent Automation",
     metaDescription:
       "Practical AI and intelligent automation for real workflows — GenAI, apps, agents, ML, NLP, and AI-powered workflows that fit how your teams operate.",
     heroSupport:
@@ -132,7 +132,7 @@ export const services: Service[] = [
     businessOutcome: "Software that matches how your business works — and can grow with it.",
     chips: ["Node", ".NET", "Java", "Python", "Microservices", "Event-driven"],
     h1: "Products and platforms built to last",
-    metaTitle: "Product Engineering Services | InSol Technologies",
+    metaTitle: "Product Engineering Services",
     metaDescription:
       "Custom platforms, products, and internal systems engineered for reliability, clarity, and long-term change — from strategy through production.",
     heroSupport:
@@ -218,9 +218,9 @@ export const services: Service[] = [
     businessOutcome: "Interfaces people trust — fast, accessible, and aligned with your brand.",
     chips: ["React", "Next.js", "Flutter", "React Native", "Progressive Web Apps"],
     h1: "Web and mobile experiences that perform",
-    metaTitle: "Web & Mobile Development | InSol Technologies",
+    metaTitle: "Web & Mobile Development",
     metaDescription:
-      "Customer- and employee-facing web and mobile experiences built for performance, accessibility, and long-term maintainability.",
+      "Web application and mobile app development for customer- and employee-facing experiences — built for performance, accessibility, and long-term maintainability.",
     heroSupport:
       "We build web and mobile experiences people trust — fast, accessible, and maintainable — whether you’re shipping a customer product or employee-facing tools.",
     problemIntro:
@@ -304,9 +304,9 @@ export const services: Service[] = [
     businessOutcome: "Safer deployments, clearer ownership, and infrastructure that scales with demand.",
     chips: ["AWS", "Azure", "GCP", "Kubernetes", "Terraform", "Observability"],
     h1: "Cloud foundations you can operate",
-    metaTitle: "Cloud & DevOps Services | InSol Technologies",
+    metaTitle: "Cloud & DevOps Services",
     metaDescription:
-      "Cloud foundations, CI/CD, observability, and operational discipline so releases are routine — not risky.",
+      "Cloud consulting and DevOps services — foundations, CI/CD, observability, and operational discipline so releases are routine and infrastructure scales cleanly.",
     heroSupport:
       "We build cloud foundations, CI/CD, and observability so releases become routine — with infrastructure and ownership models that scale with demand.",
     problemIntro:
@@ -390,9 +390,9 @@ export const services: Service[] = [
     businessOutcome: "Decisions grounded in data you can explain and defend.",
     chips: ["ETL / ELT", "Warehousing", "BI", "Streaming", "Data quality"],
     h1: "Data that supports decisions",
-    metaTitle: "Data & Analytics Services | InSol Technologies",
+    metaTitle: "Data & Analytics Services",
     metaDescription:
-      "Pipelines, warehouses, and decision-ready analytics so leaders and operators share one reliable picture of the business.",
+      "Data analytics and engineering services — pipelines, warehouses, and decision-ready analytics so leaders and operators share one reliable picture of the business.",
     heroSupport:
       "We build pipelines, warehouses, and analytics so leaders and operators share one reliable picture — data you can explain and defend.",
     problemIntro:
@@ -476,7 +476,7 @@ export const services: Service[] = [
     businessOutcome: "Connected processes instead of disconnected tools and spreadsheet bridges.",
     chips: ["ERP", "CRM", "Integration", "Low-code", "Custom extensions"],
     h1: "Enterprise applications that connect the business",
-    metaTitle: "Enterprise Applications | InSol Technologies",
+    metaTitle: "Enterprise Applications",
     metaDescription:
       "Implementation, integration, and extension of ERP, CRM, and industry platforms — connected processes instead of spreadsheet bridges.",
     heroSupport:
@@ -562,7 +562,7 @@ export const services: Service[] = [
     businessOutcome: "Confidence to release often with fewer production surprises.",
     chips: ["Test automation", "API testing", "Performance", "CI quality gates"],
     h1: "Quality engineered into every release",
-    metaTitle: "Quality Engineering Services | InSol Technologies",
+    metaTitle: "Quality Engineering Services",
     metaDescription:
       "Test strategy, automation, and quality gates woven into the delivery pipeline — confidence to release often with fewer production surprises.",
     heroSupport:
@@ -648,7 +648,7 @@ export const services: Service[] = [
     businessOutcome: "A product your customers can rely on — and a codebase your team can evolve.",
     chips: ["Multi-tenant", "Subscription", "APIs", "Observability", "Product analytics"],
     h1: "SaaS products engineered to scale",
-    metaTitle: "SaaS Products | InSol Technologies",
+    metaTitle: "SaaS Products",
     metaDescription:
       "Design, build, and scale multi-tenant SaaS products — from MVP to growth architecture, with foundations your team can operate and evolve.",
     heroSupport:

@@ -1,14 +1,15 @@
-import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Privacy Policy",
-  description: "Privacy Policy draft notice for InSol Technologies.",
-  alternates: { canonical: "/privacy-policy" },
-  robots: { index: false, follow: true },
-};
+  description:
+    "Privacy Policy draft notice for InSol Technologies Inc. Final legal language is pending review.",
+  path: "/privacy-policy",
+  noIndex: true,
+});
 
 export default function PrivacyPolicyPage() {
   return (

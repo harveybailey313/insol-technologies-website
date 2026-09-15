@@ -3,6 +3,7 @@ export const BASE_PATH = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
 
 export const SITE = {
   name: "InSol Technologies",
+  legalName: "InSol Technologies Inc.",
   url: "https://harveybailey313.github.io/insol-technologies-website",
   phone: "+1 (480) 918-3323",
   phoneHref: "tel:+14809183323",
@@ -19,7 +20,7 @@ export const SITE = {
   founder: "Innam Dustgir",
   tagline: "Software engineering, AI, and cloud for modern business",
   description:
-    "InSol Technologies designs and builds software products, SaaS platforms, practical AI and automation, cloud and DevOps foundations, data systems, and enterprise applications — from strategy through production.",
+    "InSol Technologies builds software products, SaaS platforms, practical AI, and cloud systems — from strategy through production for modern enterprises.",
 } as const;
 
 export const CTAS = {

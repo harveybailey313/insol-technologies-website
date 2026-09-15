@@ -1,17 +1,17 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Section, SectionHeader } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CTAS, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Leadership",
   description:
-    "Meet Innam Dustgir, founder of InSol Technologies — accountable for how we partner, engineer, and deliver from strategy through production.",
-  alternates: { canonical: "/about/leadership" },
-};
+    "Leadership at InSol Technologies Inc. — Innam Dustgir, Founder & CEO, accountable for how we partner, engineer, and deliver from strategy through production.",
+  path: "/about/leadership",
+});
 
 export default function LeadershipPage() {
   return (

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { industries, getIndustry } from "@/data/industries";
 import { IndustryPageView } from "@/components/IndustryPageView";
+import { pageMetadata, stripBrandSuffix } from "@/lib/seo";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -13,11 +14,11 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const industry = getIndustry(slug);
   if (!industry) return {};
-  return {
-    title: industry.metaTitle.replace(" | InSol Technologies", ""),
+  return pageMetadata({
+    title: stripBrandSuffix(industry.metaTitle),
     description: industry.metaDescription,
-    alternates: { canonical: `/industries/${industry.slug}` },
-  };
+    path: `/industries/${industry.slug}`,
+  });
 }
 
 export default async function IndustryPage({ params }: Props) {

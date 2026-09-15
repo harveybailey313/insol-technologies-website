@@ -1,16 +1,16 @@
-import type { Metadata } from "next";
 import { Section } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { Button } from "@/components/Button";
 import { CTAS } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
+export const metadata = pageMetadata({
   title: "Careers",
   description:
-    "Build systems that matter with InSol Technologies — roles for people who care about craft, clarity, and shipped outcomes.",
-  alternates: { canonical: "/careers" },
-};
+    "Explore careers at InSol Technologies — open roles for engineers and builders who care about craft, clarity, and shipping software that matters.",
+  path: "/careers",
+});
 
 export default function CareersPage() {
   return (

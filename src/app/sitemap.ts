@@ -7,40 +7,40 @@ export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
-  const staticRoutes = [
-    "",
-    "/about",
-    "/founder",
-    "/about/leadership",
-    "/about/approach",
-    "/services",
-    "/industries",
-    "/case-studies",
-    "/insights",
-    "/careers",
-    "/contact",
-    "/privacy-policy",
-    "/terms-and-conditions",
+
+  const staticRoutes: { path: string; priority: number; changeFrequency: MetadataRoute.Sitemap[number]["changeFrequency"] }[] = [
+    { path: "", priority: 1.0, changeFrequency: "weekly" },
+    { path: "/services", priority: 0.9, changeFrequency: "weekly" },
+    { path: "/industries", priority: 0.8, changeFrequency: "weekly" },
+    { path: "/about", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/founder", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/about/leadership", priority: 0.6, changeFrequency: "monthly" },
+    { path: "/about/approach", priority: 0.7, changeFrequency: "monthly" },
+    { path: "/case-studies", priority: 0.6, changeFrequency: "weekly" },
+    { path: "/insights", priority: 0.6, changeFrequency: "weekly" },
+    { path: "/careers", priority: 0.5, changeFrequency: "monthly" },
+    { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
+    // privacy-policy and terms-and-conditions excluded (noindex)
   ];
 
   return [
-    ...staticRoutes.map((path) => ({
+    ...staticRoutes.map(({ path, priority, changeFrequency }) => ({
       url: `${SITE.url}${path}`,
       lastModified: now,
-      changeFrequency: "weekly" as const,
-      priority: path === "" ? 1 : 0.7,
+      changeFrequency,
+      priority,
     })),
     ...services.map((s) => ({
       url: `${SITE.url}/services/${s.slug}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: 0.8,
+      priority: 0.85,
     })),
     ...industries.map((i) => ({
       url: `${SITE.url}/industries/${i.slug}`,
       lastModified: now,
       changeFrequency: "weekly" as const,
-      priority: 0.7,
+      priority: 0.75,
     })),
   ];
 }

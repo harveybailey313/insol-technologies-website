@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Section, SectionHeader } from "@/components/Section";
@@ -9,6 +8,7 @@ import { FrameStrip } from "@/components/FrameStrip";
 import { services } from "@/data/services";
 import { industries } from "@/data/industries";
 import { CTAS, SITE } from "@/lib/site";
+import { pageMetadata } from "@/lib/seo";
 import {
   SERVICE_ACCENTS,
   INDUSTRY_ACCENTS,
@@ -16,11 +16,13 @@ import {
   accentClass,
 } from "@/lib/accents";
 
-export const metadata: Metadata = {
-  title: "InSol Technologies | Software, AI & Cloud Engineering",
+export const metadata = pageMetadata({
+  title: {
+    absolute: "InSol Technologies | Software Engineering, AI & Cloud",
+  },
   description: SITE.description,
-  alternates: { canonical: "/" },
-};
+  path: "/",
+});
 
 const aiCapabilities = [
   "Generative AI (GenAI)",

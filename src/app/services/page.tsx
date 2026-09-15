@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Section, SectionHeader } from "@/components/Section";
 import { ServiceCard } from "@/components/ServiceCard";
 import { FinalCTA } from "@/components/FinalCTA";
@@ -7,13 +6,14 @@ import { Button } from "@/components/Button";
 import { services } from "@/data/services";
 import { CTAS } from "@/lib/site";
 import { SERVICE_ACCENTS } from "@/lib/accents";
+import { pageMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "What We Do",
+export const metadata = pageMetadata({
+  title: "Software Development & Technology Capabilities",
   description:
-    "Eight capabilities from AI and product engineering to SaaS, cloud, data, and quality — built around business outcomes from strategy through production.",
-  alternates: { canonical: "/services" },
-};
+    "Explore InSol Technologies capabilities: software engineering, SaaS products, AI automation, web and mobile, cloud, data, enterprise applications, and quality.",
+  path: "/services",
+});
 
 export default function ServicesHubPage() {
   return (

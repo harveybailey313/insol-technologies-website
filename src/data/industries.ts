@@ -19,7 +19,7 @@ export const industries: Industry[] = [
     opportunity: "Safer data flow, better care-team tools, and automation where policy allows.",
     capability:
       "Secure software, data platforms, AI-assisted workflows, and integration across clinical and operational systems.",
-    metaTitle: "Healthcare Technology | InSol Technologies",
+    metaTitle: "Healthcare Technology",
     metaDescription:
       "Technology for healthcare organizations: secure software, data platforms, AI-assisted workflows, and integration across clinical and operational systems.",
     heroSupport:
@@ -40,7 +40,7 @@ export const industries: Industry[] = [
     opportunity: "Modern customer journeys and internal platforms without compromising control.",
     capability:
       "Product engineering, secure cloud, data & analytics, and practical AI for operations and insight.",
-    metaTitle: "Financial Services Technology | InSol Technologies",
+    metaTitle: "Financial Services Technology",
     metaDescription:
       "Technology for financial services: product engineering, secure cloud, data & analytics, and practical AI for operations and insight.",
     heroSupport:
@@ -62,9 +62,9 @@ export const industries: Industry[] = [
       "Unified journeys, reliable catalogs/checkout, and data that informs merchandising and ops.",
     capability:
       "Web & mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
-    metaTitle: "E-commerce Technology | InSol Technologies",
+    metaTitle: "E-commerce Technology",
     metaDescription:
-      "Technology for e-commerce: web & mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
+      "Ecommerce technology and retail digital platforms — web and mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
     heroSupport:
       "We help commerce teams unify journeys, harden checkout, and scale operations — with web, mobile, cloud, analytics, and automation across the order lifecycle.",
     relatedServiceSlugs: [
@@ -83,9 +83,9 @@ export const industries: Industry[] = [
     opportunity: "Cleaner reconciliation, better guest tools, and operations that keep up with demand.",
     capability:
       "Platforms, automation, data pipelines, and AI applied to high-volume operational workflows.",
-    metaTitle: "Travel & Hospitality Technology | InSol Technologies",
+    metaTitle: "Travel & Hospitality Technology",
     metaDescription:
-      "Technology for travel and hospitality: platforms, automation, data pipelines, and AI for high-volume operational workflows.",
+      "Travel and hospitality technology — booking platforms, partner integrations, automation, data pipelines, and AI for high-volume operational workflows.",
     heroSupport:
       "We help travel and hospitality operators connect bookings, partners, and guest experience — with platforms, automation, data, and practical AI for high-volume workflows.",
     relatedServiceSlugs: [
@@ -105,7 +105,7 @@ export const industries: Industry[] = [
       "Accelerate roadmaps with a partner who can own slices of the stack end to end.",
     capability:
       "Product engineering, SaaS products, AI features, DevOps, and quality engineering embedded with your teams.",
-    metaTitle: "Technology & SaaS Companies | InSol Technologies",
+    metaTitle: "Technology & SaaS Companies",
     metaDescription:
       "Engineering partnership for technology and SaaS companies: product engineering, SaaS products, AI features, DevOps, and quality engineering.",
     heroSupport:
