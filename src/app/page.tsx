@@ -73,15 +73,17 @@ export default function HomePage() {
         <div className="glow-blob glow-blob-magenta" aria-hidden />
         <div className="container-insol relative">
           <p className="eyebrow eyebrow-gradient mb-4">
-            Software engineering · AI · Cloud
+            Software · AI · SaaS · Cloud
           </p>
-          <h1 className="text-display max-w-4xl">
-            Engineering{" "}
-            <span className="text-gradient">software, AI & cloud</span>{" "}
-            for companies that ship.
+          <h1 className="text-display max-w-4xl text-balance">
+            Engineering the{" "}
+            <span className="text-gradient">Technology</span> Behind
+            Ambitious Businesses.
           </h1>
-          <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
-            InSol Technologies partners with startups, growth-stage companies, mid-market, and enterprise teams to engineer digital products and SaaS platforms, apply AI and automation, and strengthen cloud, data, and enterprise systems — from strategy through production.
+          <p className="mt-6 max-w-2xl text-pretty text-body-lg leading-relaxed text-text-secondary">
+            InSol Technologies builds software, SaaS products, AI-powered
+            solutions, and scalable digital infrastructure for businesses ready
+            to build and grow.
           </p>
           <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
             <Button
