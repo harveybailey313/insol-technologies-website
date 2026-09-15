@@ -11,6 +11,8 @@ export const SITE = {
     country: "USA",
     full: "5900 Balcones Drive, STE 100, Austin, TX 78731, USA",
   },
+  mapsHref:
+    "https://maps.google.com/?q=5900+Balcones+Drive,+STE+100,+Austin,+TX+78731",
   founder: "Innam Dustgir",
   tagline: "Technology, AI and software engineering partner",
   description:

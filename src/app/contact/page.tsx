@@ -33,31 +33,43 @@ export default function ContactPage() {
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
             <SectionHeader title="Reach us" className="mb-6" />
-            <div className="space-y-6">
-              <div>
+            <div className="space-y-4">
+              <a
+                href={SITE.phoneHref}
+                className="card-surface block rounded-[16px] border border-accent-border bg-accent-muted/40 p-5 transition-colors hover:border-accent hover:bg-accent-muted focus-visible:outline-none sm:p-6"
+              >
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
                   Phone
                 </h2>
-                <a
-                  href={SITE.phoneHref}
-                  className="mt-2 block text-xl font-semibold text-accent hover:text-accent-hover"
-                >
+                <p className="mt-2 text-2xl font-semibold tracking-tight text-accent sm:text-[1.75rem]">
                   {SITE.phone}
-                </a>
-              </div>
-              <div>
+                </p>
+                <p className="mt-1 text-sm text-text-secondary">Tap to call</p>
+              </a>
+
+              <a
+                href={SITE.mapsHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="card-surface block rounded-[16px] border border-border p-5 transition-colors hover:border-accent-border hover:bg-surface-elevated focus-visible:outline-none sm:p-6"
+              >
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
                   Address
                 </h2>
-                <p className="mt-2 text-text">
+                <p className="mt-2 text-lg font-semibold text-text sm:text-xl">
+                  Austin, TX
+                </p>
+                <p className="mt-2 text-text-secondary">
                   {SITE.address.street}
                   <br />
                   {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
                   <br />
                   {SITE.address.country}
                 </p>
-              </div>
-              <div>
+                <p className="mt-2 text-sm text-accent">Open in Maps</p>
+              </a>
+
+              <div className="rounded-[16px] border border-border p-5 sm:p-6">
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
                   Intents
                 </h2>

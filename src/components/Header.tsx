@@ -1,13 +1,27 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 import { CTAS, NAV_LINKS } from "@/lib/site";
 
 export function Header() {
   const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prev = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prev;
+    };
+  }, [open]);
 
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-[rgba(7,17,31,0.85)] backdrop-blur-[12px]">
@@ -17,7 +31,7 @@ export function Header() {
       >
         Skip to content
       </a>
-      <div className="container-insol flex h-16 items-center justify-between lg:h-[72px]">
+      <div className="container-insol flex h-14 items-center justify-between gap-3 sm:h-16 lg:h-[72px]">
         <Logo />
 
         <nav className="hidden items-center gap-7 lg:flex" aria-label="Primary">
@@ -32,13 +46,13 @@ export function Header() {
           ))}
         </nav>
 
-        <div className="flex items-center gap-3">
+        <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           <Button href={CTAS.startProject.href} size="sm" className="hidden sm:inline-flex">
             {CTAS.startProject.label}
           </Button>
           <button
             type="button"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-border-strong text-text lg:hidden"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-[10px] border border-border-strong text-text transition-colors hover:border-accent-border hover:text-accent lg:hidden"
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? "Close menu" : "Open menu"}
@@ -69,20 +83,20 @@ export function Header() {
       {open && (
         <div
           id="mobile-nav"
-          className="border-t border-border bg-surface lg:hidden"
+          className="max-h-[calc(100dvh-3.5rem)] overflow-y-auto border-t border-border bg-surface sm:max-h-[calc(100dvh-4rem)] lg:hidden"
         >
-          <nav className="container-insol flex flex-col gap-1 py-4" aria-label="Mobile">
+          <nav className="container-insol flex flex-col gap-1 py-3 sm:py-4" aria-label="Mobile">
             {NAV_LINKS.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className="rounded-md px-3 py-3 text-base font-medium text-text hover:bg-accent-muted hover:text-accent"
+                className="rounded-md px-3 py-3.5 text-base font-medium text-text hover:bg-accent-muted hover:text-accent"
                 onClick={() => setOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
-            <div className="mt-3 px-3 pb-2">
+            <div className="mt-2 px-3 pb-3 pt-1">
               <Button
                 href={CTAS.startProject.href}
                 className="w-full"

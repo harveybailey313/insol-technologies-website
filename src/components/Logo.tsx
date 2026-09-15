@@ -10,7 +10,7 @@ export function Logo({ className = "", showWordmark = true }: LogoProps) {
   return (
     <Link
       href="/"
-      className={`inline-flex items-center gap-3 focus-visible:outline-none ${className}`}
+      className={`inline-flex min-w-0 items-center gap-2 focus-visible:outline-none sm:gap-3 ${className}`}
       aria-label="InSol Technologies home"
     >
       <Image
@@ -18,15 +18,15 @@ export function Logo({ className = "", showWordmark = true }: LogoProps) {
         alt=""
         width={36}
         height={36}
-        className="h-9 w-9 shrink-0 rounded-[8px]"
+        className="h-8 w-8 shrink-0 rounded-[7px] sm:h-9 sm:w-9 sm:rounded-[8px]"
         priority
       />
       {showWordmark && (
-        <span className="flex flex-col leading-none">
-          <span className="text-[1.125rem] font-bold tracking-tight text-text">
+        <span className="flex min-w-0 flex-col leading-none">
+          <span className="text-base font-bold tracking-tight text-text sm:text-[1.125rem]">
             InSol
           </span>
-          <span className="text-[0.625rem] font-medium tracking-[0.2em] text-text-secondary">
+          <span className="text-[0.5625rem] font-medium tracking-[0.18em] text-text-secondary sm:text-[0.625rem] sm:tracking-[0.2em]">
             TECHNOLOGIES
           </span>
         </span>
