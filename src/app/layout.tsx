@@ -4,12 +4,22 @@ import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SITE } from "@/lib/site";
+import { Analytics } from "@/components/Analytics";
 
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
+
+const ogImage = {
+  url: `${SITE.url}/brand/insol-og-default.png`,
+  width: 1200,
+  height: 630,
+  alt: "InSol Technologies",
+};
+
+const gscVerification = process.env.NEXT_PUBLIC_GSC_VERIFICATION;
 
 const defaultTitle = "InSol Technologies | Software Engineering, AI & Cloud";
 
@@ -27,16 +37,21 @@ export const metadata: Metadata = {
     siteName: "InSol Technologies",
     title: defaultTitle,
     description: SITE.description,
+    images: [ogImage],
   },
   twitter: {
     card: "summary_large_image",
     title: defaultTitle,
     description: SITE.description,
+    images: [ogImage.url],
   },
   robots: {
     index: true,
     follow: true,
   },
+  ...(gscVerification
+    ? { verification: { google: gscVerification } }
+    : {}),
 };
 
 const organizationJsonLd = {
@@ -113,6 +128,7 @@ export default function RootLayout({
         <Header />
         <main id="main-content">{children}</main>
         <Footer />
+        <Analytics />
       </body>
     </html>
   );

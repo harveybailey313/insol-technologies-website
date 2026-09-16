@@ -1,7 +1,10 @@
+import Link from "next/link";
 import { Section } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
+import { insights } from "@/data/insights";
 import { pageMetadata } from "@/lib/seo";
+import { accentAt, accentClass } from "@/lib/accents";
 
 export const metadata = pageMetadata({
   title: "Insights",
@@ -20,7 +23,18 @@ const categories = [
   "SaaS",
 ];
 
+function formatDate(iso: string) {
+  const d = new Date(iso + "T12:00:00");
+  return d.toLocaleDateString("en-US", {
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+  });
+}
+
 export default function InsightsPage() {
+  const sorted = [...insights].sort((a, b) => b.date.localeCompare(a.date));
+
   return (
     <>
       <section className="bg-primary section-pad !pt-12">
@@ -32,8 +46,8 @@ export default function InsightsPage() {
             Perspectives on building and modernizing.
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
-            Coming soon. We will publish articles when they meet our editorial bar —
-            no fabricated blog cards.
+            Practical writing on AI, engineering, SaaS, cloud, and data —
+            grounded in how teams ship, not buzzword theater.
           </p>
         </div>
       </section>
@@ -47,12 +61,28 @@ export default function InsightsPage() {
             </span>
           ))}
         </div>
-        <div className="card-surface mt-10 max-w-xl p-8 hover:transform-none hover:shadow-none">
-          <h2 className="text-h3">Insights hub launching soon</h2>
-          <p className="mt-3 text-text-secondary">
-            Check back for practical writing on AI, engineering, cloud, data, and
-            SaaS — grounded in real delivery, not buzzword theater.
-          </p>
+
+        <div className="mt-10 grid gap-5 md:grid-cols-2">
+          {sorted.map((article, i) => (
+            <Link
+              key={article.slug}
+              href={`/insights/${article.slug}`}
+              className={`card-surface accent-card block p-6 transition-transform hover:-translate-y-0.5 ${accentClass(accentAt(i))}`}
+            >
+              <p className="accent-text text-xs font-semibold uppercase tracking-wide">
+                {article.category}
+              </p>
+              <h2 className="mt-2 text-lg font-semibold text-text">
+                {article.title}
+              </h2>
+              <p className="mt-3 text-sm leading-relaxed text-text-secondary">
+                {article.description}
+              </p>
+              <p className="mt-4 text-xs text-text-muted">
+                <time dateTime={article.date}>{formatDate(article.date)}</time>
+              </p>
+            </Link>
+          ))}
         </div>
       </Section>
 

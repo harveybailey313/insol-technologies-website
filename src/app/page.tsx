@@ -422,12 +422,26 @@ export default function HomePage() {
       <Section>
         <SectionHeader
           title="Selected work, published when cleared."
-          intro="Engagements appear here only when challenge, approach, and outcomes are approved for public use."
+          intro="Engagements appear here only when challenge, approach, and outcomes are approved for public use — never invented clients, logos, or metrics."
         />
         <div className="card-surface max-w-2xl p-8 hover:transform-none hover:shadow-none">
           <p className="text-text-secondary">
-            Public case studies are not live yet. We do not invent clients, metrics, or awards. Discuss relevant work under NDA, or return as cleared engagements are published.
+            Public case studies are not live yet. We publish when a story meets our criteria and is cleared for sharing. For active opportunities, discuss relevant work under NDA via Talk to an Expert or Contact.
           </p>
+          <ul className="mt-4 space-y-2 text-sm text-text-secondary">
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              Cleared narrative — challenge, approach, outcomes
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              No confidential detail without approval
+            </li>
+            <li className="flex gap-2">
+              <span className="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+              Named logos and quotes only with permission
+            </li>
+          </ul>
           <div className="mt-6 flex flex-wrap gap-3">
             <Button href="/case-studies" variant="secondary">
               View case studies

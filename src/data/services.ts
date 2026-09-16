@@ -38,7 +38,7 @@ export const services: Service[] = [
     metaDescription:
       "Practical AI and intelligent automation for real workflows — GenAI, apps, agents, ML, NLP, and AI-powered workflows that fit how your teams operate.",
     heroSupport:
-      "Too many AI initiatives stall as demos. We embed practical AI into the workflows your teams already run — GenAI, AI apps, agents, intelligent automation, ML, NLP, and AI-powered workflows that reduce manual work, improve decisions, and integrate with the systems you depend on.",
+      "AI & Intelligent Automation at InSol means AI-powered applications, intelligent workflows, automation, and practical machine-learning solutions — embedded in the systems your teams already run, not stranded as demos.",
     problemIntro:
       "Leaders are under pressure to “do something with AI” while operations still run on fragmented tools, uneven data, and manual handoffs. The risk is not missing a model — it is shipping something that cannot be trusted, operated, or integrated.",
     problems: [
@@ -58,7 +58,7 @@ export const services: Service[] = [
       "Production path — Evaluation, monitoring, and handover — not a slide-deck handoff",
     ],
     outcomeParagraph:
-      "Faster cycle times and clearer decisions without forcing your teams into a parallel “AI universe.” You leave with systems operators can run, improve, and trust — or with an honest recommendation that AI is not the right lever yet.",
+      "Practical AI in production workflows: faster cycle times and clearer decisions without a parallel “AI universe.” You leave with systems operators can run and trust — or an honest recommendation that AI is not the right lever yet.",
     capabilities: [
       { name: "Generative AI (GenAI)", outcome: "People get generative assistance grounded in approved context" },
       { name: "AI applications", outcome: "AI features ship as part of real products and internal tools" },
@@ -78,10 +78,10 @@ export const services: Service[] = [
       { name: "Insight on operational data", shape: "ML-assisted forecasting and anomaly assistance where data quality supports it" },
     ],
     whyItems: [
-      "Business job before model choice",
-      "Engineering depth behind the AI layer",
-      "Evaluation and oversight in the path",
-      "Partnership past the pilot",
+      "Business job before model choice — GenAI, agents, ML, NLP when they fit",
+      "Engineering depth behind the AI layer and system integration",
+      "Evaluation, oversight, and operational ownership in the path",
+      "Partnership past the pilot through Deploy and Scale",
     ],
     faqs: [
       {
@@ -136,7 +136,7 @@ export const services: Service[] = [
     metaDescription:
       "Custom software platforms and business applications engineered for scalability, reliability, and long-term growth — from strategy through production.",
     heroSupport:
-      "We engineer custom platforms, products, and internal systems meant to last — with clear architecture, reviewable delivery, and foundations your team can operate and evolve.",
+      "Software Engineering at InSol: custom software platforms and business applications built for scalability, reliability, and long-term growth — with clear architecture and reviewable delivery your team can operate and evolve.",
     problemIntro:
       "Many organizations outgrow patched systems and one-off builds. The cost shows up as slow change, unclear ownership, and software that no longer matches how the business works.",
     problems: [
@@ -155,7 +155,7 @@ export const services: Service[] = [
       "Knowledge transfer so your team retains ownership",
     ],
     outcomeParagraph:
-      "Software that matches how your business works — and a codebase and architecture your teams can grow with, not rewrite every year.",
+      "Reliable custom platforms and business applications that match how your business works — with architecture your teams can grow with, not rewrite every year.",
     capabilities: [
       { name: "Custom product development", outcome: "Customer-facing and internal products built for reliability" },
       { name: "Platform engineering", outcome: "Shared foundations that accelerate multiple product teams" },
@@ -173,10 +173,10 @@ export const services: Service[] = [
       { name: "Post-MVP hardening", shape: "Turn early products into operable long-term systems" },
     ],
     whyItems: [
-      "Engineering depth over disposable demos",
+      "Software engineering depth over disposable demos",
       "Business-first problem framing before stack lock-in",
-      "Architecture designed for change",
-      "Partnership beyond launch",
+      "Architecture designed for scalability and change",
+      "Partnership beyond launch through Deploy and Scale",
     ],
     faqs: [
       {
@@ -214,15 +214,15 @@ export const services: Service[] = [
     slug: "web-mobile-development",
     title: "Web & Mobile Development",
     shortDescription:
-      "Customer- and employee-facing experiences across web and mobile, built for performance and maintainability.",
+      "Modern web applications, mobile applications, APIs, and digital products designed for performance and usability.",
     businessOutcome: "Interfaces people trust — fast, accessible, and aligned with your brand.",
     chips: ["React", "Next.js", "Flutter", "React Native", "Progressive Web Apps"],
     h1: "Web and mobile experiences that perform",
     metaTitle: "Web & Mobile Development",
     metaDescription:
-      "Web application and mobile app development for customer- and employee-facing experiences — built for performance, accessibility, and long-term maintainability.",
+      "Web & Mobile Development — modern web applications, mobile apps, APIs, and digital products designed for performance, accessibility, and usability.",
     heroSupport:
-      "We build web and mobile experiences people trust — fast, accessible, and maintainable — whether you’re shipping a customer product or employee-facing tools.",
+      "Web & Mobile Development at InSol: modern web applications, mobile applications, APIs, and digital products designed for performance and usability — experiences people trust on every device.",
     problemIntro:
       "Interfaces often lag behind the business: slow pages, fragmented mobile experiences, and frontends that are hard to evolve safely.",
     problems: [
@@ -241,7 +241,7 @@ export const services: Service[] = [
       "Release readiness with monitoring and handover",
     ],
     outcomeParagraph:
-      "Interfaces people trust — fast, accessible, and aligned with your brand — backed by code your team can keep shipping.",
+      "Performant, usable web and mobile products aligned with your brand — backed by maintainable code your team can keep shipping.",
     capabilities: [
       { name: "Web applications", outcome: "Modern web apps with strong performance budgets" },
       { name: "Mobile apps", outcome: "iOS/Android experiences that match product quality bars" },
@@ -259,9 +259,9 @@ export const services: Service[] = [
       { name: "Commerce storefronts", shape: "Reliable catalog and checkout experiences" },
     ],
     whyItems: [
-      "Performance and accessibility as first-class requirements",
-      "Alignment between experience design and system architecture",
-      "Maintainable frontends, not disposable demos",
+      "Performance, accessibility, and usability as first-class requirements",
+      "Alignment between experience design, APIs, and system architecture",
+      "Maintainable web and mobile codebases, not disposable demos",
       "Partnership through Deploy and Scale",
     ],
     faqs: [
@@ -300,15 +300,15 @@ export const services: Service[] = [
     slug: "cloud-devops",
     title: "Cloud & DevOps",
     shortDescription:
-      "Cloud foundations, CI/CD, observability, and operational discipline so releases are routine — not risky.",
+      "Cloud architecture, infrastructure, deployment automation, monitoring, security, and scalable systems.",
     businessOutcome: "Safer deployments, clearer ownership, and infrastructure that scales with demand.",
     chips: ["AWS", "Azure", "GCP", "Kubernetes", "Terraform", "Observability"],
     h1: "Cloud foundations you can operate",
     metaTitle: "Cloud & DevOps Services",
     metaDescription:
-      "Cloud consulting and DevOps services — foundations, CI/CD, observability, and operational discipline so releases are routine and infrastructure scales cleanly.",
+      "Cloud & DevOps — cloud architecture, infrastructure, deployment automation, monitoring, security, and scalable systems that make releases routine.",
     heroSupport:
-      "We build cloud foundations, CI/CD, and observability so releases become routine — with infrastructure and ownership models that scale with demand.",
+      "Cloud & DevOps at InSol: cloud architecture, infrastructure, deployment automation, monitoring, security, and scalable systems — so releases become routine and ownership is clear.",
     problemIntro:
       "Cloud spend without operational clarity creates risk: fragile releases, unclear ownership, and environments that only a few people understand.",
     problems: [
@@ -327,7 +327,7 @@ export const services: Service[] = [
       "Security and access patterns appropriate to your risk profile",
     ],
     outcomeParagraph:
-      "Safer deployments, clearer ownership, and infrastructure that scales with demand — systems your teams can actually run.",
+      "Safer deployments, clearer ownership, and cloud infrastructure that scales with demand — monitored, secured, and operable by your teams.",
     capabilities: [
       { name: "Cloud architecture", outcome: "Foundations designed for growth and operability" },
       { name: "CI/CD", outcome: "Releases that are routine and reviewable" },
@@ -345,10 +345,10 @@ export const services: Service[] = [
       { name: "SaaS operability", shape: "Multi-tenant platforms ready for Deploy and Scale" },
     ],
     whyItems: [
-      "Operability designed in, not bolted on",
-      "Quality gates in the delivery path",
-      "Architecture that grows with demand",
-      "Partnership through Scale",
+      "Operability, monitoring, and security designed in — not bolted on",
+      "Deployment automation and quality gates in the delivery path",
+      "Cloud architecture that grows with demand",
+      "Partnership through Deploy and Scale",
     ],
     faqs: [
       {
@@ -386,15 +386,15 @@ export const services: Service[] = [
     slug: "data-analytics",
     title: "Data & Analytics",
     shortDescription:
-      "Pipelines, warehouses, and decision-ready analytics so leaders and operators share one reliable picture.",
+      "Data platforms, analytics systems, dashboards, reporting, and technology that turns business data into useful insights.",
     businessOutcome: "Decisions grounded in data you can explain and defend.",
     chips: ["ETL / ELT", "Warehousing", "BI", "Streaming", "Data quality"],
     h1: "Data that supports decisions",
     metaTitle: "Data & Analytics Services",
     metaDescription:
-      "Data analytics and engineering services — pipelines, warehouses, and decision-ready analytics so leaders and operators share one reliable picture of the business.",
+      "Data & Analytics — data platforms, analytics systems, dashboards, and reporting that turn business data into insights leaders can trust.",
     heroSupport:
-      "We build pipelines, warehouses, and analytics so leaders and operators share one reliable picture — data you can explain and defend.",
+      "Data & Analytics at InSol: data platforms, analytics systems, dashboards, and reporting — so leaders and operators share one reliable picture they can explain and defend.",
     problemIntro:
       "When data is fragmented or untrusted, every decision meeting becomes a debate about whose numbers are right.",
     problems: [
@@ -413,7 +413,7 @@ export const services: Service[] = [
       "Foundations that support future AI and automation",
     ],
     outcomeParagraph:
-      "Decisions grounded in data you can explain and defend — with pipelines and ownership your teams can sustain.",
+      "Decision-ready analytics and trusted reporting — with pipelines, ownership, and data platforms your teams can sustain.",
     capabilities: [
       { name: "Data pipelines", outcome: "Reliable movement from sources to usable stores" },
       { name: "Warehousing", outcome: "Structured foundations for analytics and reporting" },
@@ -431,9 +431,9 @@ export const services: Service[] = [
       { name: "Streaming ops views", shape: "Monitor high-volume processes in near real time" },
     ],
     whyItems: [
-      "Business questions before tool catalogs",
-      "Quality and ownership as first-class work",
-      "Foundations that support practical AI later",
+      "Business questions before tool catalogs and vanity dashboards",
+      "Data quality and ownership as first-class work",
+      "Platforms that support reporting today and practical AI later",
       "Partnership beyond the first dashboard",
     ],
     faqs: [
@@ -472,15 +472,15 @@ export const services: Service[] = [
     slug: "enterprise-applications",
     title: "Enterprise Applications",
     shortDescription:
-      "Implementation, integration, and extension of core business systems — ERP, CRM, and industry platforms.",
+      "Secure and scalable business applications designed around complex organizational requirements and workflows.",
     businessOutcome: "Connected processes instead of disconnected tools and spreadsheet bridges.",
     chips: ["ERP", "CRM", "Integration", "Low-code", "Custom extensions"],
     h1: "Enterprise applications that connect the business",
     metaTitle: "Enterprise Applications",
     metaDescription:
-      "Implementation, integration, and extension of ERP, CRM, and industry platforms — connected processes instead of spreadsheet bridges.",
+      "Enterprise Applications — secure, scalable business applications and ERP/CRM integrations designed around complex organizational workflows.",
     heroSupport:
-      "We implement, integrate, and extend core business systems — ERP, CRM, and industry platforms — so processes connect instead of relying on spreadsheet bridges.",
+      "Enterprise Applications at InSol: secure, scalable business applications designed around complex organizational requirements — including implementation, integration, and extension of ERP, CRM, and industry platforms.",
     problemIntro:
       "Core systems that don’t talk create shadow processes, duplicate data entry, and decisions made on incomplete pictures.",
     problems: [
@@ -499,7 +499,7 @@ export const services: Service[] = [
       "Training and operational handover",
     ],
     outcomeParagraph:
-      "Connected processes instead of disconnected tools — platforms your operators can run with clearer ownership.",
+      "Connected enterprise processes instead of disconnected tools — secure, scalable platforms your operators can run with clearer ownership.",
     capabilities: [
       { name: "ERP implementation & extension", outcome: "Core finance and ops systems aligned to real workflows" },
       { name: "CRM platforms", outcome: "Customer processes that match how you sell and serve" },
@@ -517,9 +517,9 @@ export const services: Service[] = [
       { name: "Workflow automation around ERP/CRM", shape: "Reduce manual handoffs between systems" },
     ],
     whyItems: [
-      "Process clarity before platform configuration",
+      "Process and workflow clarity before platform configuration",
       "Integration designed as architecture, not afterthought",
-      "Extensions that don’t trap you on upgrades",
+      "Secure extensions that don’t trap you on upgrades",
       "Partnership through Deploy and Scale",
     ],
     faqs: [
@@ -558,15 +558,15 @@ export const services: Service[] = [
     slug: "quality-engineering",
     title: "Quality Engineering",
     shortDescription:
-      "Test strategy, automation, and quality gates woven into the delivery pipeline — not bolted on at the end.",
+      "Automated testing, performance testing, reliability engineering, and quality processes for production software.",
     businessOutcome: "Confidence to release often with fewer production surprises.",
     chips: ["Test automation", "API testing", "Performance", "CI quality gates"],
     h1: "Quality engineered into every release",
     metaTitle: "Quality Engineering Services",
     metaDescription:
-      "Test strategy, automation, and quality gates woven into the delivery pipeline — confidence to release often with fewer production surprises.",
+      "Quality Engineering — automated testing, performance testing, reliability engineering, and quality processes for production software.",
     heroSupport:
-      "We weave test strategy, automation, and quality gates into the delivery pipeline — so quality is how you ship, not a gate bolted on at the end.",
+      "Quality Engineering at InSol: automated testing, performance testing, reliability engineering, and quality processes woven into the delivery pipeline — so quality is how you ship, not a gate at the end.",
     problemIntro:
       "When testing is late or manual-only, releases slow down and production surprises become normal.",
     problems: [
@@ -585,7 +585,7 @@ export const services: Service[] = [
       "Handover so your team can sustain the practice",
     ],
     outcomeParagraph:
-      "Confidence to release often with fewer production surprises — quality as part of how engineering ships.",
+      "Confidence to release production software often — with automated tests, performance checks, and reliability practices as part of how engineering ships.",
     capabilities: [
       { name: "Test strategy", outcome: "Risk-based coverage that matches how you release" },
       { name: "Test automation", outcome: "Sustainable automation for critical paths" },
@@ -603,9 +603,9 @@ export const services: Service[] = [
       { name: "CI maturity", shape: "Meaningful gates without theater coverage metrics" },
     ],
     whyItems: [
-      "Quality in the pipeline, not at the end",
-      "Risk-based strategy over vanity coverage",
-      "Partnership with product engineering teams",
+      "Automated testing and quality gates in the pipeline, not at the end",
+      "Risk-based strategy over vanity coverage metrics",
+      "Reliability engineering alongside product engineering teams",
       "Sustainable automation your team can own",
     ],
     faqs: [
@@ -652,7 +652,7 @@ export const services: Service[] = [
     metaDescription:
       "Design, build, and scale multi-tenant SaaS products — from product architecture and MVP to production-ready platforms and ongoing engineering.",
     heroSupport:
-      "Building a SaaS product is not the same as shipping a website. We help founders and product leaders design, engineer, and scale multi-tenant SaaS — from early MVP through growth architecture — so customers get a reliable product and your team keeps a codebase they can evolve.",
+      "SaaS Product Development at InSol: from product architecture and MVP development to production-ready SaaS platforms and ongoing engineering — multi-tenant products customers can rely on and codebases your team can evolve.",
     problemIntro:
       "SaaS buyers and investors expect reliability, tenancy isolation, clear upgrade paths, and operable systems. Many teams discover too late that their “MVP that worked for ten users” cannot survive the next hundred — or that billing, identity, and observability were never designed in.",
     problems: [
@@ -672,7 +672,7 @@ export const services: Service[] = [
       "Partnership past MVP — A path from first release to iteration under real usage",
     ],
     outcomeParagraph:
-      "A SaaS product customers can rely on — and a technical foundation your team can operate, extend, and scale without rewriting from scratch every funding round.",
+      "A production-ready SaaS platform customers can rely on — and foundations your team can operate, extend, and scale without rewriting from scratch every funding round.",
     capabilities: [
       { name: "SaaS product strategy & MVP scoping", outcome: "Build the smallest product that proves value without trapping you in dead-end architecture" },
       { name: "Multi-tenant architecture", outcome: "Tenant isolation and shared efficiency designed deliberately — not accidentally" },
@@ -695,9 +695,9 @@ export const services: Service[] = [
       { name: "SaaS with embedded AI", shape: "Product features that use GenAI/agents/workflows with measurable quality" },
     ],
     whyItems: [
-      "SaaS is a first-class pillar — not a footnote under generic outsourcing",
-      "Architecture for the next stage, not only the demo",
-      "Engineering + practical AI when the product needs it",
+      "SaaS product development as a first-class capability — not generic outsourcing",
+      "Architecture from MVP through growth — not only the demo",
+      "Product engineering plus practical AI when the product needs it",
       "Partnership through Deploy and Scale",
     ],
     faqs: [
