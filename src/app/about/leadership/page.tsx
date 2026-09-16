@@ -51,17 +51,27 @@ export default function LeadershipPage() {
             ID
           </div>
           <h2 className="text-h3">Innam Dustgir</h2>
-          <p className="mt-1 text-sm text-accent">Founder</p>
+          <p className="mt-1 text-sm text-accent">Founder &amp; CEO</p>
           <p className="mt-4 text-text-secondary">
-            Founder of InSol Technologies — accountable for how we partner, engineer,
-            and deliver from strategy through production.
+            Founder &amp; CEO of InSol Technologies — accountable for how we partner,
+            engineer, and deliver from strategy through production.
           </p>
-          <Link
-            href="/founder"
-            className="mt-5 inline-flex text-sm font-semibold text-accent hover:text-accent-hover"
-          >
-            Read the Founder page →
-          </Link>
+          <div className="mt-5 flex flex-col gap-2 sm:flex-row sm:flex-wrap sm:gap-x-5">
+            <Link
+              href="/founder"
+              className="inline-flex text-sm font-semibold text-accent hover:text-accent-hover"
+            >
+              Read the Founder page →
+            </Link>
+            <a
+              href="https://www.innamdustgir.com/"
+              className="inline-flex text-sm font-semibold text-accent hover:text-accent-hover"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Official site — Innam Dustgir
+            </a>
+          </div>
         </div>
         <p className="mt-8 max-w-2xl text-sm text-text-muted">
           Additional leadership profiles publish when approved. For partnership

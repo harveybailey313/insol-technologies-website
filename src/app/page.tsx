@@ -496,6 +496,14 @@ export default function HomePage() {
               >
                 Meet the Founder →
               </Link>
+              <a
+                href="https://www.innamdustgir.com/"
+                className="text-sm font-semibold text-accent transition-colors hover:text-accent-hover"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                Official site — Innam Dustgir
+              </a>
             </div>
           </div>
           <div className="card-surface p-8 hover:transform-none hover:shadow-none">

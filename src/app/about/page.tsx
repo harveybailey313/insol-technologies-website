@@ -112,6 +112,16 @@ export default function AboutPage() {
             including SaaS products — apply practical AI where it earns its place, and
             leave you with foundations your teams can operate and evolve.
           </p>
+          <p className="text-sm">
+            <a
+              href="https://www.innamdustgir.com/"
+              className="font-semibold text-accent hover:text-accent-hover"
+              rel="noopener noreferrer"
+              target="_blank"
+            >
+              Official site — Innam Dustgir
+            </a>
+          </p>
         </div>
         <FrameStrip className="mt-8" />
       </Section>
@@ -226,7 +236,7 @@ export default function AboutPage() {
             {
               href: "/founder",
               title: "Founder",
-              line: "Innam Dustgir — Founder & CEO of InSol Technologies.",
+              line: "Innam Dustgir — Founder & CEO. Official site: innamdustgir.com",
             },
             {
               href: "/about/leadership",
