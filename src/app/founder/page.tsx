@@ -10,7 +10,8 @@ export const metadata = pageMetadata({
   title: "Founder — Innam Dustgir",
   description:
     "Meet Innam Dustgir, Founder & CEO of InSol Technologies Inc. — building modern software, AI-powered solutions, digital products, and scalable technology infrastructure.",
-  path: "/founder",
+  path: "/founder/",
+  images: `${SITE.url}/brand/innam-dustgir-founder.jpg`,
 });
 
 const focusItems = [
@@ -35,6 +36,7 @@ const founderSameAs = [
 const personJsonLd = {
   "@context": "https://schema.org",
   "@type": "Person",
+  "@id": "https://www.innamdustgir.com/#person",
   name: SITE.founder,
   jobTitle: "Founder & CEO",
   image: founderImageUrl,
@@ -44,24 +46,14 @@ const personJsonLd = {
     legalName: SITE.legalName,
     url: SITE.url,
   },
+  founderOf: {
+    "@type": "Organization",
+    name: SITE.name,
+    legalName: SITE.legalName,
+    url: SITE.url,
+  },
   url: `${SITE.url}/founder/`,
   sameAs: [...founderSameAs],
-};
-
-const organizationJsonLd = {
-  "@context": "https://schema.org",
-  "@type": "Organization",
-  name: SITE.name,
-  legalName: SITE.legalName,
-  url: SITE.url,
-  founder: {
-    "@type": "Person",
-    name: SITE.founder,
-    jobTitle: "Founder & CEO",
-    image: founderImageUrl,
-    url: `${SITE.url}/founder/`,
-    sameAs: [...founderSameAs],
-  },
 };
 
 export default function FounderPage() {
@@ -70,12 +62,6 @@ export default function FounderPage() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(organizationJsonLd),
-        }}
       />
 
       <section className="relative overflow-hidden bg-primary section-pad !pt-12">

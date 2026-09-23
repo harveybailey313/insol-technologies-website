@@ -8,6 +8,8 @@ export type PageMetadataInput = {
   /** Path relative to site root, e.g. "/services" or "/". */
   path: string;
   noIndex?: boolean;
+  /** Absolute or site-relative image URL(s) for Open Graph / Twitter. */
+  images?: string | string[];
 };
 
 /** Strip a trailing brand suffix so title.template does not duplicate. */
@@ -25,6 +27,15 @@ function resolveOgTitle(title: string | { absolute: string }): string {
   return title.absolute;
 }
 
+function resolveImages(images?: string | string[]) {
+  const list = images
+    ? Array.isArray(images)
+      ? images
+      : [images]
+    : [`${SITE.url}/brand/insol-og-default.png`];
+  return list.map((url) => ({ url }));
+}
+
 /**
  * Shared Metadata builder: unique title/description, canonical, OG, Twitter.
  * Paths are resolved against layout metadataBase (SITE.url).
@@ -34,8 +45,10 @@ export function pageMetadata({
   description,
   path,
   noIndex = false,
+  images,
 }: PageMetadataInput): Metadata {
   const ogTitle = resolveOgTitle(title);
+  const ogImages = resolveImages(images);
 
   return {
     title,
@@ -47,11 +60,13 @@ export function pageMetadata({
       url: path,
       type: "website",
       siteName: SITE.name,
+      images: ogImages,
     },
     twitter: {
       card: "summary_large_image",
       title: ogTitle,
       description,
+      images: ogImages.map((i) => i.url),
     },
     ...(noIndex
       ? {
