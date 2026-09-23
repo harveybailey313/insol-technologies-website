@@ -2,8 +2,24 @@
   "redirects": [
     {
       "source": "/:path*",
-      "has": [{ "type": "host", "value": "insoltechnologies.com" }],
+      "has": [
+        {
+          "type": "host",
+          "value": "insoltechnologies.com"
+        }
+      ],
       "destination": "https://www.insoltechnologies.com/:path*",
+      "permanent": true
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "insoltechnologies.com"
+        }
+      ],
+      "destination": "https://www.insoltechnologies.com/",
       "permanent": true
     }
   ]
