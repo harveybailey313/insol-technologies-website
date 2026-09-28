@@ -11,7 +11,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Industries We Serve",
   description:
-    "Technology framed for healthcare, financial services, e-commerce, travel and hospitality, and technology companies — not generic playbooks.",
+    "Technology framed for healthcare, e-commerce, travel and hospitality, and technology companies — not generic playbooks.",
   path: "/industries",
 });
 

@@ -115,7 +115,6 @@ export const services: Service[] = [
     relatedSlugs: ["product-engineering", "saas-products", "data-analytics", "cloud-devops"],
     industryLines: {
       healthcare: "Safer data flow and AI-assisted workflows where policy allows",
-      "financial-services": "Practical AI for operations and insight under regulatory scrutiny",
       ecommerce: "Automation across catalog, order, and service workflows",
       "travel-hospitality": "High-volume operational workflows across partners and channels",
       technology: "AI features embedded with product/SaaS teams who keep architectural ownership",
@@ -202,7 +201,6 @@ export const services: Service[] = [
     relatedSlugs: ["saas-products", "web-mobile-development", "quality-engineering", "cloud-devops"],
     industryLines: {
       healthcare: "Secure software and platforms across clinical and operational systems",
-      "financial-services": "Product engineering under regulatory scrutiny and legacy pressure",
       ecommerce: "Commerce platforms and internal systems that survive peak demand",
       "travel-hospitality": "Booking and operations platforms across partners and channels",
       technology: "Build capacity without losing architectural ownership",
@@ -288,7 +286,6 @@ export const services: Service[] = [
     relatedSlugs: ["product-engineering", "saas-products", "quality-engineering", "cloud-devops"],
     industryLines: {
       healthcare: "Care-team and patient-facing tools designed for clarity and trust",
-      "financial-services": "Modern customer journeys with control and transparency",
       ecommerce: "Unified journeys and reliable checkout experiences",
       "travel-hospitality": "Guest and operator tools across channels",
       technology: "Product UI delivered with your engineering standards",
@@ -374,7 +371,6 @@ export const services: Service[] = [
     relatedSlugs: ["product-engineering", "saas-products", "quality-engineering", "data-analytics"],
     industryLines: {
       healthcare: "Secure cloud foundations with operational clarity",
-      "financial-services": "Controlled cloud and release discipline under scrutiny",
       ecommerce: "Infrastructure that scales with peak demand",
       "travel-hospitality": "Reliable platforms across high-volume channels",
       technology: "DevOps embedded with product teams who keep ownership",
@@ -460,7 +456,6 @@ export const services: Service[] = [
     relatedSlugs: ["ai-intelligent-automation", "cloud-devops", "enterprise-applications", "product-engineering"],
     industryLines: {
       healthcare: "Safer data flow across clinical and operational systems",
-      "financial-services": "Analytics under scrutiny with explainable metrics",
       ecommerce: "Data that informs merchandising and operations",
       "travel-hospitality": "Pipelines across bookings, partners, and guest experience",
       technology: "Product and usage analytics foundations for SaaS teams",
@@ -546,7 +541,6 @@ export const services: Service[] = [
     relatedSlugs: ["product-engineering", "data-analytics", "ai-intelligent-automation", "cloud-devops"],
     industryLines: {
       healthcare: "Integration across clinical and operational systems",
-      "financial-services": "Core platforms with control and clarity",
       ecommerce: "Commerce and ops systems that share one picture",
       "travel-hospitality": "Bookings, partners, and ops systems connected",
       technology: "Enterprise platforms integrated with product stacks",
@@ -632,7 +626,6 @@ export const services: Service[] = [
     relatedSlugs: ["product-engineering", "saas-products", "cloud-devops", "web-mobile-development"],
     industryLines: {
       healthcare: "Quality gates appropriate to regulated workflows",
-      "financial-services": "Release confidence under scrutiny",
       ecommerce: "Protect peak journeys with targeted automation",
       "travel-hospitality": "Reliability across high-volume booking paths",
       technology: "Quality engineering embedded with product teams",
@@ -739,7 +732,6 @@ export const services: Service[] = [
     industryLines: {
       technology: "Product and SaaS teams that need engineering depth without losing ownership",
       healthcare: "Subscription products and platforms under workflow and compliance pressure",
-      "financial-services": "Fintech and FS platforms engineered with control and clarity",
       ecommerce: "Merchant and commerce-adjacent SaaS that must survive peak load",
       "travel-hospitality": "Operator and guest-facing subscription platforms across channels",
     },

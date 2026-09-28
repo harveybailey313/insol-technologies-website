@@ -49,7 +49,6 @@ export const PROCESS_ACCENTS: AccentKey[] = [
 /** Industry cards — rotating accents. */
 export const INDUSTRY_ACCENTS: Record<string, AccentKey> = {
   healthcare: "emerald",
-  "financial-services": "blue",
   ecommerce: "amber",
   "travel-hospitality": "magenta",
   technology: "violet",

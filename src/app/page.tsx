@@ -52,7 +52,7 @@ const aiCapabilities = [
 
 const facts = [
   { value: "8", label: "Connected service lines across software, AI, cloud, and data" },
-  { value: "5", label: "Industry focus areas, from healthcare to technology companies" },
+  { value: "4", label: "Industry focus areas, from healthcare to technology companies" },
   { value: "6", label: "Steps in one delivery model, from discovery to scale" },
 ];
 

@@ -33,27 +33,6 @@ export const industries: Industry[] = [
     ],
   },
   {
-    slug: "financial-services",
-    title: "Financial Services",
-    challenge:
-      "Legacy cores, regulatory scrutiny, and rising expectations for speed and transparency.",
-    opportunity: "Modern customer journeys and internal platforms without compromising control.",
-    capability:
-      "Product engineering, secure cloud, data & analytics, and practical AI for operations and insight.",
-    metaTitle: "Financial Services Technology",
-    metaDescription:
-      "Technology for financial services: product engineering, secure cloud, data & analytics, and practical AI for operations and insight.",
-    heroSupport:
-      "We help financial services teams modernize customer journeys and internal platforms without compromising control under regulatory scrutiny.",
-    relatedServiceSlugs: [
-      "product-engineering",
-      "cloud-devops",
-      "data-analytics",
-      "ai-intelligent-automation",
-      "saas-products",
-    ],
-  },
-  {
     slug: "ecommerce",
     title: "E-commerce",
     challenge:

@@ -21,6 +21,16 @@
       ],
       "destination": "https://www.insoltechnologies.com/",
       "permanent": true
+    },
+    {
+      "source": "/industries/financial-services",
+      "destination": "/industries/",
+      "permanent": true
+    },
+    {
+      "source": "/industries/financial-services/",
+      "destination": "/industries/",
+      "permanent": true
     }
   ]
 }
