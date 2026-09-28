@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CaseSafe } from "@/components/CaseSafe";
 import { Section } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -63,7 +64,7 @@ export default function InsightsPage() {
               className={`card-surface accent-card block p-6 transition-transform hover:-translate-y-0.5 ${accentClass(accentAt(i))}`}
             >
               <p className="accent-text text-xs font-semibold uppercase tracking-wide">
-                {article.category}
+                <CaseSafe text={article.category} />
               </p>
               <h2 className="mt-2 text-lg font-semibold text-text">
                 {article.title}

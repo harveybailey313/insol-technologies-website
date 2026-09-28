@@ -1,50 +1,55 @@
 @import "tailwindcss";
 
 /*
- * InSol Technologies design system — "Enterprise Ink"
- * Light, spacious content surfaces framed by deep ink hero, CTA and footer bands.
- * Brand accents come from the InSol mark: crimson + signal cyan.
+ * InSol Technologies design system — charcoal + purple/magenta, orange highlights.
+ * Light, spacious content surfaces framed by charcoal hero, CTA and footer bands.
+ * Contrast targets WCAG AA (values noted beside tokens, measured on their surfaces).
  */
 :root {
   /* Core brand */
-  --insol-ink-950: #070b16;
-  --insol-ink-900: #0b1222;
-  --insol-ink-800: #121a2e;
-  --insol-ink-700: #1c2640;
-  --insol-crimson: #c8102e;
-  --insol-crimson-600: #a50d27;
-  --insol-crimson-300: #f0526b;
-  --insol-cyan: #0fb5d4;
-  --insol-cyan-700: #0b7f98;
-  --insol-cyan-300: #5fd8ee;
-  --insol-mist: #f3f5f9;
-  --insol-cloud: #e6eaf1;
+  --brand-ink: #161616;          /* charcoal band base */
+  --brand-ink-2: #1c1e27;        /* charcoal secondary */
+  --brand-navy: #262b3f;         /* dark surfaces / cards */
+  --brand-navy-2: #30364d;
+  --brand-purple: #772587;       /* 8.75:1 on white */
+  --brand-purple-600: #5e1d6b;   /* hover, 11.3:1 on white */
+  --brand-violet: #a100ff;       /* 5.3:1 on white; decorative on dark */
+  --brand-violet-light: #b85cff; /* 5.2:1 on #161616 */
+  --brand-orchid: #d76eeb;       /* 6.3:1 on #161616 */
+  --brand-orchid-light: #e7a3f3;
+  --brand-orange: #f26223;       /* CTA fill with #161616 text (5.6:1); text on charcoal */
+  --brand-orange-hover: #ff7a45;
+  --brand-orange-deep: #c2410c;  /* orange text on white, 5.2:1 */
+  --brand-mist: #f6f6f8;
+  --brand-cloud: #e4e4ea;
+  --brand-gradient: linear-gradient(100deg, #772587 0%, #a100ff 55%, #d76eeb 100%);
 
   /* Semantic tokens (light surfaces by default) */
   --color-primary: #ffffff;
-  --color-secondary: #f3f5f9;
+  --color-secondary: #f6f6f8;
   --color-surface: #ffffff;
   --color-surface-elevated: #ffffff;
-  --color-border: #e3e7ee;
-  --color-border-strong: #c9d0dc;
-  --color-text: #0e1526;
-  --color-text-secondary: #4a5468;
-  --color-text-muted: #6b7486;
+  --color-border: #e4e4ea;
+  --color-border-strong: #c9cad3;
+  --color-text: #161616;
+  --color-text-secondary: #4a4d5a;  /* 8.4:1 */
+  --color-text-muted: #6b6e7b;      /* 5.1:1 white, 4.7:1 mist */
 
-  --color-accent: var(--insol-crimson);
-  --color-accent-hover: var(--insol-crimson-600);
-  --color-accent-muted: rgba(200, 16, 46, 0.07);
-  --color-accent-border: rgba(200, 16, 46, 0.3);
+  --color-accent: var(--brand-purple);
+  --color-accent-hover: var(--brand-purple-600);
+  --color-accent-muted: rgba(119, 37, 135, 0.07);
+  --color-accent-border: rgba(119, 37, 135, 0.3);
+  --color-link: var(--brand-orange-deep);
 
   /* Retuned accent family: deeper tones that read on white. */
-  --accent-cyan: #0b7f98;
-  --accent-violet: #5a3fb0;
-  --accent-magenta: #c8102e;
-  --accent-emerald: #0f8a6a;
-  --accent-amber: #b26b00;
-  --accent-blue: #2457c5;
+  --accent-cyan: #772587;
+  --accent-violet: #8a1fc7;
+  --accent-magenta: #a3237f;
+  --accent-emerald: #5e1d6b;
+  --accent-amber: #c2410c;
+  --accent-blue: #6b2fb3;
   --accent-coral: #c2410c;
-  --accent-burgundy: #8c1c32;
+  --accent-burgundy: #772587;
 
   --card-accent: var(--accent-cyan);
   --card-accent-muted: color-mix(in srgb, var(--card-accent) 8%, transparent);
@@ -53,11 +58,11 @@
 
   --color-success: #0f8a6a;
   --color-warning: #b26b00;
-  --color-error: #c8102e;
-  --color-overlay: rgba(7, 11, 22, 0.72);
+  --color-error: #b3261e;
+  --color-overlay: rgba(22, 22, 22, 0.72);
 
-  --shadow-card: 0 1px 2px rgba(14, 21, 38, 0.04), 0 8px 24px rgba(14, 21, 38, 0.06);
-  --shadow-card-hover: 0 2px 4px rgba(14, 21, 38, 0.05), 0 18px 40px rgba(14, 21, 38, 0.1);
+  --shadow-card: 0 1px 2px rgba(22, 22, 22, 0.04), 0 8px 24px rgba(22, 22, 22, 0.06);
+  --shadow-card-hover: 0 2px 4px rgba(22, 22, 22, 0.05), 0 18px 40px rgba(38, 43, 63, 0.12);
 
   --space-1: 4px;
   --space-2: 8px;
@@ -82,27 +87,28 @@
 
 /* Dark bands: hero, header, CTA, footer. Re-declares the same tokens. */
 .theme-dark {
-  --color-primary: var(--insol-ink-950);
-  --color-secondary: var(--insol-ink-900);
-  --color-surface: var(--insol-ink-800);
-  --color-surface-elevated: var(--insol-ink-700);
+  --color-primary: var(--brand-ink);
+  --color-secondary: var(--brand-ink-2);
+  --color-surface: var(--brand-navy);
+  --color-surface-elevated: var(--brand-navy-2);
   --color-border: rgba(255, 255, 255, 0.1);
-  --color-border-strong: rgba(255, 255, 255, 0.24);
+  --color-border-strong: rgba(255, 255, 255, 0.26);
   --color-text: #ffffff;
-  --color-text-secondary: #b7c0d1;
-  --color-text-muted: #8a94a8;
-  --color-accent: var(--insol-cyan-300);
-  --color-accent-hover: #8ae6f5;
-  --color-accent-muted: rgba(95, 216, 238, 0.12);
-  --color-accent-border: rgba(95, 216, 238, 0.4);
-  --accent-cyan: #5fd8ee;
-  --accent-violet: #a996ff;
-  --accent-magenta: #f0526b;
-  --accent-emerald: #4fd1a5;
-  --accent-amber: #f5b94a;
-  --accent-blue: #7aa7ff;
-  --accent-coral: #ff8a65;
-  --accent-burgundy: #f0526b;
+  --color-text-secondary: #b7bccb;  /* 9.5:1 on #161616 */
+  --color-text-muted: #9aa0b0;      /* 6.9:1 on #161616 */
+  --color-accent: var(--brand-orchid);
+  --color-accent-hover: var(--brand-orchid-light);
+  --color-accent-muted: rgba(215, 110, 235, 0.12);
+  --color-accent-border: rgba(215, 110, 235, 0.42);
+  --color-link: var(--brand-orange);
+  --accent-cyan: #d76eeb;
+  --accent-violet: #b85cff;
+  --accent-magenta: #e27ad8;
+  --accent-emerald: #d76eeb;
+  --accent-amber: #f26223;
+  --accent-blue: #b85cff;
+  --accent-coral: #f26223;
+  --accent-burgundy: #e7a3f3;
   color: var(--color-text);
   background-color: var(--color-primary);
 }
@@ -124,11 +130,12 @@
   --color-success: var(--color-success);
   --color-warning: var(--color-warning);
   --color-error: var(--color-error);
-  --color-ink: var(--insol-ink-950);
-  --color-ink-900: var(--insol-ink-900);
-  --color-crimson: var(--insol-crimson);
-  --color-cyan: var(--insol-cyan);
-  --color-mist: var(--insol-mist);
+  --color-ink: var(--brand-ink);
+  --color-navy: var(--brand-navy);
+  --color-purple: var(--brand-purple);
+  --color-orchid: var(--brand-orchid);
+  --color-orange: var(--brand-orange);
+  --color-mist: var(--brand-mist);
   --font-sans: var(--font-brand), "Segoe UI", system-ui, -apple-system, sans-serif;
   --font-mono: "JetBrains Mono", "SF Mono", Consolas, monospace;
 }
@@ -149,7 +156,7 @@
   }
 
   ::selection {
-    background: rgba(200, 16, 46, 0.16);
+    background: rgba(161, 0, 255, 0.18);
     color: inherit;
   }
 
@@ -390,20 +397,20 @@
     width: 100%;
     height: 0.1em;
     border-radius: 2px;
-    background: linear-gradient(90deg, var(--insol-crimson), var(--insol-cyan));
-    opacity: 0.85;
+    background: var(--brand-gradient);
+    opacity: 0.9;
   }
 
-  /* Brand gradient text: crimson → cyan (from the InSol mark). */
+  /* Brand gradient text: purple → violet on light (≥5.3:1), violet → orchid on charcoal (≥5.2:1). */
   .text-gradient {
-    background: linear-gradient(100deg, var(--insol-crimson) 0%, #9b2a6b 45%, var(--insol-cyan-700) 100%);
+    background: linear-gradient(100deg, var(--brand-purple) 0%, var(--brand-violet) 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
   }
 
   .theme-dark .text-gradient {
-    background: linear-gradient(100deg, var(--insol-crimson-300) 0%, #e86a9a 38%, var(--insol-cyan-300) 100%);
+    background: linear-gradient(100deg, var(--brand-violet-light) 0%, var(--brand-orchid) 100%);
     -webkit-background-clip: text;
     background-clip: text;
   }
@@ -412,41 +419,42 @@
     color: var(--color-accent);
   }
 
-  /* Primary action: solid crimson, pill; on dark bands becomes a white pill. */
+  /* Primary action: purple pill on light (white text 8.75:1);
+     orange pill on charcoal (charcoal text 5.6:1). */
   .btn-gradient {
-    background: var(--insol-crimson);
+    background: var(--brand-purple);
     color: #ffffff;
-    border: 1px solid var(--insol-crimson);
+    border: 1px solid var(--brand-purple);
   }
 
   .btn-gradient:hover {
-    background: var(--insol-crimson-600);
-    border-color: var(--insol-crimson-600);
+    background: var(--brand-purple-600);
+    border-color: var(--brand-purple-600);
   }
 
   .theme-dark .btn-gradient {
-    background: #ffffff;
-    color: var(--insol-ink-950);
-    border-color: #ffffff;
+    background: var(--brand-orange);
+    color: var(--brand-ink);
+    border-color: var(--brand-orange);
   }
 
   .theme-dark .btn-gradient:hover {
-    background: #e9eef6;
-    border-color: #e9eef6;
+    background: var(--brand-orange-hover);
+    border-color: var(--brand-orange-hover);
   }
 
   .gradient-glow {
     background:
-      radial-gradient(ellipse 70% 60% at 85% 0%, rgba(15, 181, 212, 0.18), transparent 60%),
-      radial-gradient(ellipse 60% 55% at 10% 100%, rgba(200, 16, 46, 0.16), transparent 60%);
+      radial-gradient(ellipse 70% 60% at 85% 0%, rgba(215, 110, 235, 0.18), transparent 60%),
+      radial-gradient(ellipse 60% 55% at 10% 100%, rgba(161, 0, 255, 0.16), transparent 60%);
   }
 
   /* Hero art: layered brand light over ink. */
   .hero-mesh {
     background:
-      radial-gradient(ellipse 45% 60% at 88% 20%, rgba(15, 181, 212, 0.28), transparent 65%),
-      radial-gradient(ellipse 40% 55% at 70% 90%, rgba(200, 16, 46, 0.3), transparent 65%),
-      radial-gradient(ellipse 50% 50% at 10% 10%, rgba(90, 63, 176, 0.18), transparent 70%);
+      radial-gradient(ellipse 45% 60% at 88% 20%, rgba(215, 110, 235, 0.28), transparent 65%),
+      radial-gradient(ellipse 40% 55% at 70% 90%, rgba(161, 0, 255, 0.3), transparent 65%),
+      radial-gradient(ellipse 50% 50% at 10% 10%, rgba(119, 37, 135, 0.18), transparent 70%);
   }
 
   .glow-blob {
@@ -458,7 +466,7 @@
   }
 
   .glow-blob-violet {
-    background: #5a3fb0;
+    background: var(--brand-purple);
     width: min(420px, 55vw);
     height: min(420px, 55vw);
     top: -8%;
@@ -466,7 +474,7 @@
   }
 
   .glow-blob-cyan {
-    background: var(--insol-cyan);
+    background: var(--brand-orchid);
     width: min(380px, 50vw);
     height: min(380px, 50vw);
     top: -4%;
@@ -474,7 +482,7 @@
   }
 
   .glow-blob-magenta {
-    background: var(--insol-crimson);
+    background: var(--brand-violet);
     width: min(320px, 42vw);
     height: min(320px, 42vw);
     bottom: 5%;
@@ -484,17 +492,17 @@
 
   .cta-band {
     background:
-      radial-gradient(ellipse 55% 90% at 100% 100%, rgba(200, 16, 46, 0.35), transparent 60%),
-      radial-gradient(ellipse 40% 70% at 85% 0%, rgba(15, 181, 212, 0.22), transparent 60%),
-      var(--insol-ink-950);
+      radial-gradient(ellipse 55% 90% at 100% 100%, rgba(161, 0, 255, 0.35), transparent 60%),
+      radial-gradient(ellipse 40% 70% at 85% 0%, rgba(215, 110, 235, 0.22), transparent 60%),
+      var(--brand-ink);
   }
 
   /* Soft brand wash used behind light card rows (services band). */
   .band-wash {
     background:
-      radial-gradient(ellipse 60% 70% at 0% 100%, rgba(200, 16, 46, 0.06), transparent 60%),
-      radial-gradient(ellipse 50% 60% at 100% 0%, rgba(15, 181, 212, 0.08), transparent 60%),
-      linear-gradient(180deg, #ffffff 0%, var(--insol-mist) 100%);
+      radial-gradient(ellipse 60% 70% at 0% 100%, rgba(161, 0, 255, 0.06), transparent 60%),
+      radial-gradient(ellipse 50% 60% at 100% 0%, rgba(215, 110, 235, 0.08), transparent 60%),
+      linear-gradient(180deg, #ffffff 0%, var(--brand-mist) 100%);
   }
 
   .footer-border-gradient {
@@ -508,7 +516,7 @@
     left: 0;
     right: 0;
     height: 3px;
-    background: linear-gradient(90deg, var(--insol-crimson) 0%, #9b2a6b 45%, var(--insol-cyan) 100%);
+    background: var(--brand-gradient);
   }
 
   /* Top rule used over stat / principle columns */
@@ -524,7 +532,7 @@
     left: 0;
     width: 72%;
     height: 2px;
-    background: linear-gradient(90deg, var(--insol-crimson), var(--insol-cyan));
+    background: var(--brand-gradient);
   }
 
   .link-arrow {
@@ -535,7 +543,7 @@
     font-weight: 700;
     letter-spacing: 0.12em;
     text-transform: uppercase;
-    color: var(--color-accent);
+    color: var(--color-link);
   }
 
   .link-arrow svg {
@@ -583,6 +591,11 @@
   }
 }
 
+/* Keep mixed-case tokens like "SaaS" inside uppercase labels. */
+.keep-case {
+  text-transform: none;
+}
+
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
@@ -596,9 +609,9 @@
 /* Inner-page hero banner: ink with brand light, echoing the homepage hero. */
 .inner-hero {
   background:
-    radial-gradient(ellipse 45% 80% at 100% 0%, rgba(15, 181, 212, 0.22), transparent 60%),
-    radial-gradient(ellipse 40% 70% at 85% 110%, rgba(200, 16, 46, 0.28), transparent 60%),
-    linear-gradient(180deg, #070b16 0%, #0b1222 100%);
+    radial-gradient(ellipse 45% 80% at 100% 0%, rgba(215, 110, 235, 0.22), transparent 60%),
+    radial-gradient(ellipse 40% 70% at 85% 110%, rgba(161, 0, 255, 0.28), transparent 60%),
+    linear-gradient(180deg, #161616 0%, #1c1e27 100%);
 }
 
 .inner-hero::after {

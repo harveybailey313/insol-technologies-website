@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { CaseSafe } from "@/components/CaseSafe";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Arrow } from "@/components/Arrow";
@@ -56,9 +57,9 @@ const facts = [
 ];
 
 const cardArt = [
-  "radial-gradient(120% 90% at 100% 100%, rgba(200,16,46,0.55), transparent 60%), radial-gradient(90% 80% at 0% 100%, rgba(15,181,212,0.45), transparent 60%), #0b1222",
-  "radial-gradient(120% 90% at 0% 100%, rgba(90,63,176,0.6), transparent 60%), radial-gradient(90% 80% at 100% 0%, rgba(15,181,212,0.45), transparent 60%), #0b1222",
-  "radial-gradient(120% 90% at 50% 120%, rgba(15,181,212,0.6), transparent 60%), radial-gradient(90% 80% at 100% 0%, rgba(200,16,46,0.35), transparent 60%), #0b1222",
+  "radial-gradient(120% 90% at 100% 100%, rgba(161,0,255,0.6), transparent 60%), radial-gradient(90% 80% at 0% 100%, rgba(215,110,235,0.45), transparent 60%), #262b3f",
+  "radial-gradient(120% 90% at 0% 100%, rgba(119,37,135,0.75), transparent 60%), radial-gradient(90% 80% at 100% 0%, rgba(242,98,35,0.35), transparent 60%), #262b3f",
+  "radial-gradient(120% 90% at 50% 120%, rgba(215,110,235,0.6), transparent 60%), radial-gradient(90% 80% at 100% 0%, rgba(161,0,255,0.45), transparent 60%), #262b3f",
 ];
 
 function formatDate(iso: string) {
@@ -78,7 +79,7 @@ export default function HomePage() {
       {/* Hero */}
       <section className="theme-dark relative isolate overflow-hidden">
         <HeroArt className="absolute inset-0 -z-10 h-full w-full" />
-        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#070b16] via-[#070b16]/80 to-transparent" />
+        <div className="absolute inset-0 -z-10 bg-gradient-to-r from-[#161616] via-[#161616]/80 to-transparent" />
         <div className="container-insol flex min-h-[620px] flex-col justify-center py-24 lg:min-h-[720px] lg:py-32">
           <p className="eyebrow mb-6">Software engineering · AI · Cloud</p>
           <h1 className="text-display max-w-4xl">
@@ -200,7 +201,7 @@ export default function HomePage() {
           </div>
           <ul className="grid gap-px overflow-hidden rounded-[12px] border border-white/10 bg-white/10 sm:grid-cols-2 lg:col-span-7">
             {aiCapabilities.map((c, i) => (
-              <li key={c} className="flex items-center gap-4 bg-[#0b1222]/90 p-5 lg:p-6">
+              <li key={c} className="flex items-center gap-4 bg-[#161616]/85 p-5 lg:p-6">
                 <span className="font-mono text-xs text-accent">
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -293,7 +294,7 @@ export default function HomePage() {
                 height={1600}
                 className="aspect-[4/5] h-auto w-full object-cover"
               />
-              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#c8102e] to-[#0fb5d4]" />
+              <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#772587] via-[#a100ff] to-[#d76eeb]" />
             </div>
           </div>
           <div className="lg:col-span-7">
@@ -346,7 +347,7 @@ export default function HomePage() {
               <Link
                 key={post.slug}
                 href={`/insights/${post.slug}`}
-                className="group flex flex-col overflow-hidden rounded-[12px] bg-[#0b1222] text-white shadow-[var(--shadow-card)] transition-transform duration-300 hover:-translate-y-1"
+                className="group flex flex-col overflow-hidden rounded-[12px] bg-[#161616] text-white shadow-[var(--shadow-card)] transition-transform duration-300 hover:-translate-y-1"
               >
                 <div
                   className="aspect-[16/9] transition-transform duration-500 group-hover:scale-[1.03]"
@@ -355,7 +356,7 @@ export default function HomePage() {
                 />
                 <div className="flex flex-1 flex-col p-6">
                   <p className="text-[0.6875rem] font-bold uppercase tracking-[0.16em] text-white/60">
-                    {post.category}
+                    <CaseSafe text={post.category} />
                   </p>
                   <h3 className="mt-3 text-lg font-semibold leading-snug">{post.title}</h3>
                   <p className="mt-auto pt-6 text-sm text-white/60">{formatDate(post.date)}</p>

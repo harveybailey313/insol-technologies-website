@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CaseSafe } from "@/components/CaseSafe";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import { Section } from "@/components/Section";
@@ -49,7 +50,7 @@ export default async function InsightArticlePage({ params }: Props) {
               { label: article.title },
             ]}
           />
-          <p className="eyebrow mb-4">{article.category}</p>
+          <p className="eyebrow mb-4"><CaseSafe text={article.category} /></p>
           <h1 className="text-display max-w-3xl">{article.title}</h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
             {article.description}

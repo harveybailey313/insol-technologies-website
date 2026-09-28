@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
+import { Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SITE } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
 
-const brandFont = Manrope({
+const brandFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
   variable: "--font-brand",
   display: "swap",

@@ -1,5 +1,5 @@
 /**
- * Original generative line-field for InSol hero bands.
+ * Original generative line-field for InSol hero bands (purple → magenta → orange).
  * Deterministic (no randomness) so static export output is stable.
  */
 export function HeroArt({ className = "" }: { className?: string }) {
@@ -29,18 +29,18 @@ export function HeroArt({ className = "" }: { className?: string }) {
     >
       <defs>
         <linearGradient id="insol-hero-stroke" x1="0" y1="1" x2="1" y2="0">
-          <stop offset="0%" stopColor="#c8102e" stopOpacity="0" />
-          <stop offset="30%" stopColor="#e0314f" />
-          <stop offset="62%" stopColor="#8b3fa8" />
-          <stop offset="100%" stopColor="#3fd0ea" />
+          <stop offset="0%" stopColor="#772587" stopOpacity="0" />
+          <stop offset="30%" stopColor="#a100ff" />
+          <stop offset="62%" stopColor="#d76eeb" />
+          <stop offset="100%" stopColor="#f26223" />
         </linearGradient>
         <radialGradient id="insol-hero-glow" cx="78%" cy="30%" r="55%">
-          <stop offset="0%" stopColor="#0fb5d4" stopOpacity="0.28" />
-          <stop offset="100%" stopColor="#0fb5d4" stopOpacity="0" />
+          <stop offset="0%" stopColor="#a100ff" stopOpacity="0.28" />
+          <stop offset="100%" stopColor="#a100ff" stopOpacity="0" />
         </radialGradient>
         <radialGradient id="insol-hero-glow-2" cx="55%" cy="95%" r="50%">
-          <stop offset="0%" stopColor="#c8102e" stopOpacity="0.3" />
-          <stop offset="100%" stopColor="#c8102e" stopOpacity="0" />
+          <stop offset="0%" stopColor="#d76eeb" stopOpacity="0.26" />
+          <stop offset="100%" stopColor="#d76eeb" stopOpacity="0" />
         </radialGradient>
       </defs>
       <rect width="1440" height="760" fill="url(#insol-hero-glow)" />

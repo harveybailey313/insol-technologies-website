@@ -56,7 +56,7 @@ export const insights: Insight[] = [
       {
         heading: "Know when to stop",
         paragraphs: [
-          "Sometimes the honest recommendation is that AI is not the right move yet — because data quality, process clarity, or ownership is missing. A deliberate stop after a scoped discovery is cheaper than a year of pilot theater. Production workflows reward teams that can say no as clearly as they can ship.",
+          "Sometimes the honest recommendation is that AI is not the right move yet — because data quality, process clarity, or ownership is missing. A deliberate stop after a scoped discovery is cheaper than a year of pilots that never reach production. Production workflows reward teams that can say no as clearly as they can ship.",
         ],
       },
     ],

@@ -90,7 +90,7 @@ export const services: Service[] = [
       },
       {
         q: "How do you avoid “AI demos that never ship”?",
-        a: "We define success criteria, integration boundaries, evaluation, and operational ownership before build scales. Pilots are designed as paths to production — or as deliberate stop points — not as theater.",
+        a: "We define success criteria, integration boundaries, evaluation, and operational ownership before build scales. Pilots are designed as paths to production — or as deliberate stop points — never as open-ended experiments.",
       },
       {
         q: "Who owns IP and models?",

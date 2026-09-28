@@ -87,7 +87,7 @@ function DesktopNavItem({ link }: { link: NavLink }) {
     >
       <button
         type="button"
-        className={`${base} ${open ? "border-[var(--insol-crimson)] text-white" : idle} focus-visible:outline-none focus-visible:text-white`}
+        className={`${base} ${open ? "border-[var(--brand-purple)] text-white" : idle} focus-visible:outline-none focus-visible:text-white`}
         aria-expanded={open}
         aria-haspopup="menu"
         aria-controls={menuId}
@@ -105,7 +105,7 @@ function DesktopNavItem({ link }: { link: NavLink }) {
           link.mega ? "-left-40 w-[760px]" : "left-0 min-w-[240px]"
         } ${open ? "pointer-events-auto opacity-100" : "pointer-events-none opacity-0"}`}
       >
-        <div className="overflow-hidden rounded-b-[12px] border border-t-0 border-[#e3e7ee] bg-white text-[#0e1526] shadow-[0_24px_60px_rgba(7,11,22,0.28)]">
+        <div className="overflow-hidden rounded-b-[12px] border border-t-0 border-[#e4e4ea] bg-white text-[#161616] shadow-[0_24px_60px_rgba(22,22,22,0.28)]">
           {link.mega ? (
             <div className="grid grid-cols-[1fr_220px]">
               <div className="grid grid-cols-2 gap-1 p-4">
@@ -113,18 +113,18 @@ function DesktopNavItem({ link }: { link: NavLink }) {
                   <MenuLink key={child.href} child={child} onClick={() => setOpen(false)} rich />
                 ))}
               </div>
-              <div className="flex flex-col justify-between bg-[#f3f5f9] p-6">
+              <div className="flex flex-col justify-between bg-[#f6f6f8] p-6">
                 <div>
-                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--insol-crimson)]">
+                  <p className="text-xs font-bold uppercase tracking-[0.14em] text-[var(--brand-purple)]">
                     Services
                   </p>
-                  <p className="mt-3 text-sm leading-relaxed text-[#4a5468]">
+                  <p className="mt-3 text-sm leading-relaxed text-[#4a4d5a]">
                     Eight connected service lines, delivered through one Discover-to-Scale model.
                   </p>
                 </div>
                 <Link
                   href="/services"
-                  className="link-arrow mt-6 !text-[var(--insol-crimson)]"
+                  className="link-arrow mt-6 !text-[var(--brand-purple)]"
                   onClick={() => setOpen(false)}
                 >
                   All services <Arrow />
@@ -152,17 +152,17 @@ function MenuLink({ child, onClick, rich = false }: { child: NavChild; onClick: 
       onClick={onClick}
       className={
         rich
-          ? "group block rounded-[8px] p-3 transition-colors hover:bg-[#f3f5f9] focus-visible:bg-[#f3f5f9] focus-visible:outline-none"
-          : "block px-5 py-2.5 text-sm font-medium text-[#4a5468] transition-colors hover:bg-[#f3f5f9] hover:text-[var(--insol-crimson)] focus-visible:bg-[#f3f5f9] focus-visible:outline-none"
+          ? "group block rounded-[8px] p-3 transition-colors hover:bg-[#f6f6f8] focus-visible:bg-[#f6f6f8] focus-visible:outline-none"
+          : "block px-5 py-2.5 text-sm font-medium text-[#4a4d5a] transition-colors hover:bg-[#f6f6f8] hover:text-[var(--brand-purple)] focus-visible:bg-[#f6f6f8] focus-visible:outline-none"
       }
     >
       {rich ? (
         <>
-          <span className="block text-sm font-semibold text-[#0e1526] group-hover:text-[var(--insol-crimson)]">
+          <span className="block text-sm font-semibold text-[#161616] group-hover:text-[var(--brand-purple)]">
             {child.label}
           </span>
           {child.description && (
-            <span className="mt-1 block text-xs leading-relaxed text-[#6b7486]">{child.description}</span>
+            <span className="mt-1 block text-xs leading-relaxed text-[#6b6e7b]">{child.description}</span>
           )}
         </>
       ) : (
@@ -203,7 +203,7 @@ function MobileNavItem({ link, onNavigate }: { link: NavLink; onNavigate: () => 
       </button>
       {expanded && (
         <div id={panelId} className="flex flex-col pb-3">
-          <Link href={link.href} className="py-2 pl-3 text-sm font-semibold text-[var(--insol-cyan-300)]" onClick={onNavigate}>
+          <Link href={link.href} className="py-2 pl-3 text-sm font-semibold text-[var(--brand-orchid)]" onClick={onNavigate}>
             {link.label} overview
           </Link>
           {children.map((child) => (
@@ -238,7 +238,7 @@ export function Header() {
   }, [open]);
 
   return (
-    <header className="theme-dark sticky top-0 z-50 border-b border-white/10 !bg-[rgba(7,11,22,0.94)] backdrop-blur-md">
+    <header className="theme-dark sticky top-0 z-50 border-b border-white/10 !bg-[rgba(22,22,22,0.95)] backdrop-blur-md">
       <a
         href="#main-content"
         className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-md focus:bg-white focus:px-3 focus:py-2 focus:text-black"
@@ -287,7 +287,7 @@ export function Header() {
       {open && (
         <div
           id="mobile-nav"
-          className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 bg-[var(--insol-ink-950)] lg:hidden"
+          className="h-[calc(100dvh-4rem)] overflow-y-auto border-t border-white/10 bg-[var(--brand-ink)] lg:hidden"
         >
           <nav className="container-insol flex flex-col py-4" aria-label="Mobile">
             {LINKS.map((link) => (
