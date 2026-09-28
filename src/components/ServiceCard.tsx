@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { AccentKey } from "@/lib/accents";
 import { accentClass } from "@/lib/accents";
+import { Arrow } from "./Arrow";
 
 type ServiceCardProps = {
   title: string;
@@ -24,16 +25,7 @@ export function ServiceCard({
       href={href}
       className={`card-surface accent-card group flex h-full min-w-0 flex-col p-5 sm:p-6 md:p-8 ${accentClass(accent)}`}
     >
-      <span className="accent-icon-chip mb-4" aria-hidden>
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 3l2.4 4.9L20 9.3l-4 3.9.9 5.5L12 16.1 7.1 18.7 8 13.2 4 9.3l5.6-1.4L12 3z"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </span>
+      <span className="mb-6 block h-[3px] w-10 rounded-full bg-[var(--card-accent)] transition-all duration-300 group-hover:w-16" aria-hidden />
       <h3 className="text-h3 mb-3 transition-colors group-hover:text-[var(--card-accent)]">
         {title}
       </h3>
@@ -52,11 +44,8 @@ export function ServiceCard({
           ))}
         </div>
       )}
-      <span className="accent-text mt-auto inline-flex items-center gap-1 pt-6 text-sm font-semibold">
-        Explore
-        <span aria-hidden className="transition-transform group-hover:translate-x-0.5">
-          →
-        </span>
+      <span className="link-arrow mt-auto pt-6">
+        Learn more <Arrow />
       </span>
     </Link>
   );

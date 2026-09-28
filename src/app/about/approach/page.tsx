@@ -19,7 +19,7 @@ export const metadata = pageMetadata({
 export default function ApproachPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol relative">
           <Breadcrumb
             items={[
@@ -35,7 +35,7 @@ export default function ApproachPage() {
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
             We work in a transparent sequence so stakeholders always know what happens
             next — and why. Strategy, design, engineering, practical AI, deployment,
-            and scale are one continuous partnership, not handoff theater.
+            and scale are one continuous partnership, not a series of handoffs.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={CTAS.startProject.href}>{CTAS.startProject.label}</Button>
@@ -49,7 +49,7 @@ export default function ApproachPage() {
 
       <Section band="secondary">
         <SectionHeader
-          title="How we partner — without the body-shop script."
+          title="How we partner — beyond staff augmentation."
           intro="Many vendors sell “resources.” We sell a path to working systems: shared problem framing, architecture you can defend, delivery you can review, and operational readiness when you go live."
         />
         <div className="grid gap-6 md:grid-cols-2">

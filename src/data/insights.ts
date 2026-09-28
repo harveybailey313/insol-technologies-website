@@ -214,7 +214,7 @@ export const insights: Insight[] = [
         ],
       },
       {
-        heading: "References without theater",
+        heading: "References without hype",
         paragraphs: [
           "Public case studies and logos are useful when they are real and cleared. Absence of published cases is not automatically a red flag — many engagements stay under NDA. What matters is whether the partner can discuss relevant work under appropriate confidentiality, and whether their process matches how you need to operate after they leave.",
           "Use this guide as a conversation checklist. The best fit is the partner who can explain tradeoffs clearly — and still be accountable when systems are live.",

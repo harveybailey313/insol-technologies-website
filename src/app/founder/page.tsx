@@ -64,7 +64,7 @@ export default function FounderPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
       />
 
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 gradient-glow opacity-40" />
         <div className="pointer-events-none absolute -right-24 top-20 h-72 w-72 rounded-full bg-[var(--accent-burgundy-muted)] blur-3xl" />
         <div className="pointer-events-none absolute -left-16 bottom-0 h-56 w-56 rounded-full bg-[var(--accent-cyan-muted)] blur-3xl" />

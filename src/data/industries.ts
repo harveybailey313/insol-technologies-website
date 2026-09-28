@@ -64,7 +64,7 @@ export const industries: Industry[] = [
       "Web & mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
     metaTitle: "E-commerce Technology",
     metaDescription:
-      "Ecommerce technology and retail digital platforms — web and mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
+      "E-commerce technology and retail digital platforms — web and mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
     heroSupport:
       "We help commerce teams unify journeys, harden checkout, and scale operations — with web, mobile, cloud, analytics, and automation across the order lifecycle.",
     relatedServiceSlugs: [

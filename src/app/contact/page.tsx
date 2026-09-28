@@ -15,7 +15,7 @@ export const metadata = pageMetadata({
 export default function ContactPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 gradient-glow opacity-40" />
         <div className="container-insol relative">
           <Breadcrumb
@@ -44,7 +44,7 @@ export default function ContactPage() {
                 <p className="mt-2 text-2xl font-semibold tracking-tight text-accent sm:text-[1.75rem]">
                   {SITE.phone}
                 </p>
-                <p className="mt-1 text-sm text-text-secondary">Tap to call</p>
+                <p className="mt-1 text-sm text-text-secondary">Mon–Fri, US Central Time</p>
               </a>
 
               <a
@@ -59,7 +59,6 @@ export default function ContactPage() {
                 <p className="mt-2 text-lg font-semibold text-text sm:text-xl">
                   InSol Technologies Inc.
                 </p>
-                <p className="mt-1 text-text-secondary">Austin, Texas</p>
                 <p className="mt-3 text-text-secondary">
                   {SITE.address.street}
                   <br />
@@ -72,11 +71,11 @@ export default function ContactPage() {
 
               <div className="rounded-[16px] border border-border p-5 sm:p-6">
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
-                  Intents
+                  How we can help
                 </h2>
                 <ul className="mt-2 space-y-1 text-text-secondary">
-                  <li>Start a Project</li>
-                  <li>Talk to an Expert</li>
+                  <li>Start a new build, modernization, or SaaS product</li>
+                  <li>Talk to an expert about AI, cloud, or data</li>
                 </ul>
               </div>
             </div>

@@ -8,7 +8,7 @@ type ProcessStepperProps = {
 
 export function ProcessStepper({
   className = "",
-  closing = "Strategy → Design → Engineering → AI → Deployment → Scale — one continuous path from discovery through production.",
+  closing = "Discover → Strategize → Design → Build → Deploy → Scale — one continuous path from first conversation to production.",
 }: ProcessStepperProps) {
   return (
     <div className={className}>

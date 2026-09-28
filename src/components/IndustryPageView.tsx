@@ -5,7 +5,7 @@ import { FinalCTA } from "./FinalCTA";
 import { Breadcrumb } from "./Breadcrumb";
 import type { Industry } from "@/data/industries";
 import { services } from "@/data/services";
-import { CTAS, SITE } from "@/lib/site";
+import { CTAS } from "@/lib/site";
 
 export function IndustryPageView({ industry }: { industry: Industry }) {
   const related = services.filter((s) =>
@@ -14,7 +14,7 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
 
   return (
     <>
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 gradient-glow opacity-40" />
         <div className="container-insol relative">
           <Breadcrumb
@@ -33,8 +33,8 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
             <Button href={CTAS.startProject.href} size="lg">
               {CTAS.startProject.label}
             </Button>
-            <Button href="/case-studies" variant="secondary" size="lg">
-              Related case studies
+            <Button href={CTAS.talkExpert.href} variant="secondary" size="lg">
+              {CTAS.talkExpert.label}
             </Button>
           </div>
         </div>
@@ -66,7 +66,7 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
       <Section>
         <SectionHeader
           title={`How we apply this in ${industry.title}`}
-          intro="Relevant capabilities from our service architecture — no invented case results."
+          intro="The InSol Technologies services most relevant to this sector."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {related.map((s) => (
@@ -87,16 +87,6 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
             </Link>
           ))}
         </div>
-        <p className="mt-8 text-sm text-text-muted">
-          Case studies filtered by industry publish when cleared:{" "}
-          <Link
-            href={`/case-studies?industry=${industry.slug}`}
-            className="text-accent hover:text-accent-hover"
-          >
-            /case-studies?industry={industry.slug}
-          </Link>
-        </p>
-        <p className="mt-2 text-xs text-text-muted">{SITE.address.full}</p>
       </Section>
 
       <FinalCTA

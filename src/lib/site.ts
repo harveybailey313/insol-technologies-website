@@ -33,17 +33,18 @@ export const CTAS = {
     href: "/contact?intent=talk-expert",
   },
   exploreCapabilities: {
-    label: "Explore Our Capabilities",
+    label: "Explore Our Services",
     href: "/services",
   },
 } as const;
 
+/** Single delivery model used site-wide (matches PROCESS_STEPS). */
 export const FRAME_STEPS = [
-  "Strategy",
+  "Discover",
+  "Strategize",
   "Design",
-  "Engineering",
-  "AI",
-  "Deployment",
+  "Build",
+  "Deploy",
   "Scale",
 ] as const;
 
@@ -83,18 +84,22 @@ export const PROCESS_STEPS = [
 export type NavChild = {
   label: string;
   href: string;
+  description?: string;
 };
 
 export type NavLink = {
   label: string;
   href: string;
   children?: NavChild[];
+  /** Render children as a wide two-column panel. */
+  mega?: boolean;
 };
 
+/** Primary navigation. Service and industry children are filled in by the Header from data files. */
 export const NAV_LINKS: NavLink[] = [
-  { label: "What We Do", href: "/services" },
+  { label: "Services", href: "/services", mega: true },
   { label: "Industries", href: "/industries" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Insights", href: "/insights" },
   {
     label: "About",
     href: "/about",
@@ -103,8 +108,9 @@ export const NAV_LINKS: NavLink[] = [
       { label: "Founder", href: "/founder" },
       { label: "Our Approach", href: "/about/approach" },
       { label: "Leadership", href: "/about/leadership" },
+      { label: "Case Studies", href: "/case-studies" },
+      { label: "Careers", href: "/careers" },
     ],
   },
-  { label: "Insights", href: "/insights" },
   { label: "Contact", href: "/contact" },
 ];

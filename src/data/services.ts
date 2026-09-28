@@ -42,7 +42,7 @@ export const services: Service[] = [
     problemIntro:
       "Leaders are under pressure to “do something with AI” while operations still run on fragmented tools, uneven data, and manual handoffs. The risk is not missing a model — it is shipping something that cannot be trusted, operated, or integrated.",
     problems: [
-      "Pilot theater — Promising prototypes that never connect to identity, data, or production systems.",
+      "Stalled pilots — Promising prototypes that never connect to identity, data, or production systems.",
       "Unclear job-to-be-done — Models selected before the workflow and success criteria are defined.",
       "Data and context gaps — Assistants invent answers when retrieval, permissions, and quality are weak.",
       "Automation bolted sideways — Scripts or bots that break when processes or UIs change.",
@@ -552,7 +552,7 @@ export const services: Service[] = [
       technology: "Enterprise platforms integrated with product stacks",
     },
     stackFallback:
-      "Platform choices follow your landscape and constraints — verified vendor lists publish when cleared.",
+      "Platform choices follow your existing landscape, constraints, and team skills.",
   },
   {
     slug: "quality-engineering",
@@ -600,7 +600,7 @@ export const services: Service[] = [
       { name: "SaaS multi-tenant quality", shape: "Protect tenant isolation and critical journeys" },
       { name: "Performance hardening", shape: "Find bottlenecks before peak events" },
       { name: "Legacy modernization QA", shape: "Guard behavior while systems evolve" },
-      { name: "CI maturity", shape: "Meaningful gates without theater coverage metrics" },
+      { name: "CI maturity", shape: "Meaningful quality gates instead of vanity coverage metrics" },
     ],
     whyItems: [
       "Automated testing and quality gates in the pipeline, not at the end",
@@ -619,7 +619,7 @@ export const services: Service[] = [
       },
       {
         q: "How do you choose what to automate?",
-        a: "By risk and change frequency — not by chasing 100% coverage theater.",
+        a: "By risk and change frequency — not by chasing a 100% coverage number.",
       },
       {
         q: "Do you replace our QA team?",
@@ -668,7 +668,7 @@ export const services: Service[] = [
       "End-to-end product engineering — Web/API backends, admin surfaces, and customer experiences built to last",
       "Integration-ready platforms — APIs, webhooks, and extension points for the ecosystem your customers expect",
       "Release and operations readiness — CI/CD, observability, and handover so Deploy and Scale are real",
-      "Practical AI where it fits the product — Optional GenAI/agents/workflows inside the SaaS — not bolted-on theater",
+      "Practical AI where it fits the product — Optional GenAI/agents/workflows inside the SaaS — not bolted on for show",
       "Partnership past MVP — A path from first release to iteration under real usage",
     ],
     outcomeParagraph:

@@ -18,11 +18,11 @@ export const metadata = pageMetadata({
 export default function ServicesHubPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 hero-mesh opacity-50" />
         <div className="container-insol relative">
           <Breadcrumb
-            items={[{ label: "Home", href: "/" }, { label: "What We Do" }]}
+            items={[{ label: "Home", href: "/" }, { label: "Services" }]}
           />
           <h1 className="text-display max-w-3xl">
             Technology built around your business.
@@ -42,7 +42,7 @@ export default function ServicesHubPage() {
       </section>
 
       <Section band="secondary">
-        <SectionHeader title="Our capabilities" />
+        <SectionHeader title="Our eight services" />
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map((s) => (
             <ServiceCard

@@ -8,12 +8,12 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Case Studies",
   description:
-    "Selected InSol Technologies engagements — challenge, approach, and outcomes we can stand behind. Published only when cleared for public use.",
+    "InSol Technologies case studies — challenge, approach, and outcomes, published with client approval. Ask us about relevant work under NDA.",
   path: "/case-studies",
 });
 
 const publishCriteria = [
-  "Client (or authorized stakeholder) has cleared the narrative for public use",
+  "The client (or an authorized stakeholder) has approved the story for public use",
   "Challenge, approach, and outcomes can be stated honestly — no invented metrics",
   "No confidential architecture, data, or competitive detail is exposed without approval",
   "Named logos and quotes appear only with explicit permission",
@@ -23,14 +23,14 @@ const caseStudyIncludes = [
   "Business context and the problem we were asked to solve",
   "Constraints that shaped the approach (systems, timeline, risk)",
   "What we designed and built — at a level safe to publish",
-  "Outcomes we can stand behind (qualitative or quantitative when cleared)",
+  "Outcomes we can stand behind (qualitative, or quantitative when approved)",
   "What we would advise similar teams facing the same class of problem",
 ];
 
 export default function CaseStudiesPage() {
   return (
     <>
-      <section className="bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol">
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Case Studies" }]}
@@ -39,9 +39,9 @@ export default function CaseStudiesPage() {
             Work that stands up to scrutiny.
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
-            We publish case studies only when challenge, approach, and outcomes are
-            cleared for public use. Until then, this hub stays empty of invented
-            clients, logos, and results.
+            We publish case studies only when the client approves the challenge,
+            approach, and outcomes for public use. Much of our work is under NDA,
+            so we are happy to discuss relevant experience directly.
           </p>
         </div>
       </section>
@@ -49,7 +49,7 @@ export default function CaseStudiesPage() {
       <Section band="secondary">
         <SectionHeader
           title="No public case studies yet"
-          intro="Discuss relevant engagements under NDA, or return as cleared work is published. We do not invent clients, metrics, awards, or testimonials."
+          intro="Published case studies will appear here as clients approve them. In the meantime, we can discuss relevant engagements under NDA."
         />
         <div className="card-surface max-w-2xl p-8 hover:transform-none hover:shadow-none">
           <p className="text-text-secondary">
@@ -92,8 +92,7 @@ export default function CaseStudiesPage() {
           <div>
             <h2 className="text-h3">What a published case study includes</h2>
             <p className="mt-3 text-text-secondary">
-              Structure we use when a story is cleared — still zero fabricated
-              projects.
+              The structure every published InSol Technologies case study follows.
             </p>
             <ul className="mt-5 space-y-3">
               {caseStudyIncludes.map((item) => (

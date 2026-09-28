@@ -123,7 +123,7 @@ export default function TermsPage() {
           </p>
           <p className="mt-3">
             “InSol,” “InSol Technologies,” and related marks are used to identify{" "}
-            {SITE.legalName}. Unauthorized use of our marks is prohibited.
+            {SITE.legalName} Unauthorized use of our marks is prohibited.
           </p>
         </section>
 

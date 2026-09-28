@@ -7,42 +7,33 @@ type FinalCTAProps = {
 };
 
 export function FinalCTA({
-  headline = "Ready to move from idea to production?",
-  support = "Tell us what you are building, modernizing, or scaling. We will respond with clear next steps — not a generic pitch.",
+  headline = "Have a system to build, modernize, or scale?",
+  support = "Tell us where you are and what needs to change. You will hear back from a person with clear, practical next steps.",
 }: FinalCTAProps) {
   return (
-    <section className="cta-band relative overflow-hidden section-pad">
-      <div className="pointer-events-none absolute inset-0 hero-mesh opacity-40" />
-      <div className="container-insol relative max-w-3xl">
-        <h2 className="text-h2">
-          <span className="text-gradient">{headline}</span>
-        </h2>
-        <p className="mt-4 text-body-lg text-text-secondary">{support}</p>
-        <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row sm:flex-wrap">
-          <Button
-            href={CTAS.startProject.href}
-            size="md"
-            className="w-full sm:w-auto md:!h-[52px] md:!px-7"
-          >
-            {CTAS.startProject.label}
-          </Button>
-          <Button
-            href={CTAS.talkExpert.href}
-            variant="secondary"
-            size="md"
-            className="w-full sm:w-auto md:!h-[52px] md:!px-7"
-          >
-            {CTAS.talkExpert.label}
-          </Button>
+    <section className="theme-dark cta-band relative overflow-hidden section-pad">
+      <div className="container-insol relative grid gap-10 lg:grid-cols-12 lg:items-end">
+        <div className="lg:col-span-7">
+          <p className="eyebrow mb-5">Let’s talk</p>
+          <h2 className="text-h2 max-w-2xl">{headline}</h2>
+          <p className="mt-5 max-w-xl text-body-lg text-text-secondary">{support}</p>
         </div>
-        <p className="mt-6 text-sm text-text-muted">
-          <a href={SITE.phoneHref} className="text-accent hover:text-accent-hover">
-            {SITE.phone}
-          </a>
-        </p>
-        <p className="mt-2 text-sm text-text-muted">
-          We respect your inbox. No spam — just a human reply.
-        </p>
+        <div className="flex flex-col gap-4 lg:col-span-5 lg:items-end">
+          <div className="flex w-full flex-col gap-3 sm:flex-row lg:justify-end">
+            <Button href={CTAS.startProject.href} size="lg" className="w-full sm:w-auto">
+              {CTAS.startProject.label}
+            </Button>
+            <Button href={CTAS.talkExpert.href} variant="secondary" size="lg" className="w-full sm:w-auto">
+              {CTAS.talkExpert.label}
+            </Button>
+          </div>
+          <p className="text-sm text-text-secondary">
+            Or call{" "}
+            <a href={SITE.phoneHref} className="font-semibold text-white hover:text-accent">
+              {SITE.phone}
+            </a>
+          </p>
+        </div>
       </div>
     </section>
   );

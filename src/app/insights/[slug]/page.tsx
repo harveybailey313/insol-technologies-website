@@ -40,7 +40,7 @@ export default async function InsightArticlePage({ params }: Props) {
 
   return (
     <>
-      <section className="bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol">
           <Breadcrumb
             items={[

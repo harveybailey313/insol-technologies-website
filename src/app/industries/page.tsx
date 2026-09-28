@@ -11,14 +11,14 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Industries We Serve",
   description:
-    "Technology framed for healthcare, financial services, ecommerce, travel and hospitality, and technology companies — not generic playbooks.",
+    "Technology framed for healthcare, financial services, e-commerce, travel and hospitality, and technology companies — not generic playbooks.",
   path: "/industries",
 });
 
 export default function IndustriesHubPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 hero-mesh opacity-50" />
         <div className="container-insol relative">
           <Breadcrumb

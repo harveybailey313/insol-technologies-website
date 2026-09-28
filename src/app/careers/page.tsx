@@ -15,7 +15,7 @@ export const metadata = pageMetadata({
 export default function CareersPage() {
   return (
     <>
-      <section className="bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol">
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Careers" }]}
@@ -25,7 +25,7 @@ export default function CareersPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
             We’re looking for people who care about craft, clarity, and shipped
-            outcomes. If you want engineering depth without the body-shop theater,
+            outcomes. If you want engineering depth rather than staff-augmentation work,
             stay tuned for open roles.
           </p>
         </div>
@@ -35,8 +35,8 @@ export default function CareersPage() {
         <div className="card-surface max-w-2xl p-8 hover:transform-none hover:shadow-none">
           <h2 className="text-h3">No open roles listed yet</h2>
           <p className="mt-3 text-text-secondary">
-            This is a careers stub for the MVP. When roles are cleared for public
-            posting, they will appear here. In the meantime, introduce yourself.
+            Open positions will be posted here. If you would like to be considered
+            for future roles, introduce yourself and tell us what you build.
           </p>
           <Button href={CTAS.talkExpert.href} className="mt-6">
             Get in touch

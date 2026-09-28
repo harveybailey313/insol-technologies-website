@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { useSearchParams } from "next/navigation";
+import { SITE } from "@/lib/site";
 import { Button } from "./Button";
 
 export function ContactForm() {
@@ -8,17 +10,19 @@ export function ContactForm() {
   const intent = searchParams.get("intent") || "start-project";
   const intentLabel =
     intent === "talk-expert" ? "Talk to an Expert" : "Start a Project";
+  const [notice, setNotice] = useState(false);
 
   return (
     <form
       className="card-surface space-y-5 p-6 md:p-8"
       onSubmit={(e) => {
         e.preventDefault();
+        setNotice(true);
       }}
       noValidate
     >
       <div>
-        <p className="eyebrow mb-2">Intent</p>
+        <p className="eyebrow mb-2">Your enquiry</p>
         <p className="text-sm text-text-secondary">{intentLabel}</p>
         <input type="hidden" name="intent" value={intent} />
       </div>
@@ -49,10 +53,24 @@ export function ContactForm() {
       <Button type="submit" size="lg" className="w-full sm:w-auto">
         Send message
       </Button>
-      <p className="text-sm text-text-muted">
-        Form UI only for this MVP — submissions are not yet wired to a backend.
-        Prefer phone or visit us using the contact details shown.
-      </p>
+      {notice ? (
+        <p role="status" className="rounded-[8px] border border-accent-border bg-accent-muted p-4 text-sm text-text">
+          Thank you. Online submissions are not active yet, so your message has not been sent.
+          Please call us at{" "}
+          <a href={SITE.phoneHref} className="font-semibold text-accent underline">
+            {SITE.phone}
+          </a>{" "}
+          and we will pick up the conversation from there.
+        </p>
+      ) : (
+        <p className="text-sm text-text-muted">
+          Online submissions are not active yet. For the fastest response, call{" "}
+          <a href={SITE.phoneHref} className="text-accent hover:underline">
+            {SITE.phone}
+          </a>
+          .
+        </p>
+      )}
     </form>
   );
 }

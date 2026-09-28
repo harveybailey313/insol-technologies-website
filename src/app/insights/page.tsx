@@ -13,15 +13,8 @@ export const metadata = pageMetadata({
   path: "/insights",
 });
 
-const categories = [
-  "AI",
-  "Software Engineering",
-  "Digital Transformation",
-  "Cloud",
-  "Data",
-  "Cybersecurity",
-  "SaaS",
-];
+/** Only list categories that have at least one published article. */
+const categories = Array.from(new Set(insights.map((i) => i.category)));
 
 function formatDate(iso: string) {
   const d = new Date(iso + "T12:00:00");
@@ -37,7 +30,7 @@ export default function InsightsPage() {
 
   return (
     <>
-      <section className="bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol">
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Insights" }]}
@@ -47,7 +40,7 @@ export default function InsightsPage() {
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
             Practical writing on AI, engineering, SaaS, cloud, and data —
-            grounded in how teams ship, not buzzword theater.
+            grounded in how teams ship, not buzzwords.
           </p>
         </div>
       </section>

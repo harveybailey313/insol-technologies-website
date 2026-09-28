@@ -16,7 +16,7 @@ export const metadata = pageMetadata({
 export default function LeadershipPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol relative">
           <Breadcrumb
             items={[
@@ -33,7 +33,6 @@ export default function LeadershipPage() {
             InSol Technologies’ public leadership starts with founder{" "}
             <strong className="text-text">Innam Dustgir</strong> — accountable for how
             we frame problems, how we engineer, and how we partner after launch.
-            Additional profiles publish only when cleared.
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
             <Button href={CTAS.startProject.href}>{CTAS.startProject.label}</Button>
@@ -74,8 +73,7 @@ export default function LeadershipPage() {
           </div>
         </div>
         <p className="mt-8 max-w-2xl text-sm text-text-muted">
-          Additional leadership profiles publish when approved. For partnership
-          conversations, contact us.
+          For partnership conversations, reach out and we will set up a call.
         </p>
         <Button href={CTAS.talkExpert.href} className="mt-4" variant="ghost">
           {CTAS.talkExpert.label}

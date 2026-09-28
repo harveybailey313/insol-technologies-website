@@ -38,7 +38,7 @@ export function ServicePageView({ service }: { service: Service }) {
       {
         "@type": "ListItem",
         position: 2,
-        name: "What We Do",
+        name: "Services",
         item: `${SITE.url}/services`,
       },
       {
@@ -67,17 +67,17 @@ export function ServicePageView({ service }: { service: Service }) {
         }}
       />
 
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 gradient-glow opacity-50" />
         <div className="container-insol relative">
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
-              { label: "What We Do", href: "/services" },
+              { label: "Services", href: "/services" },
               { label: service.title },
             ]}
           />
-          <p className="eyebrow mb-3">What We Do</p>
+          <p className="eyebrow mb-3">Services</p>
           <h1 className="text-display max-w-4xl">{service.h1}</h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
             {service.heroSupport}
@@ -86,8 +86,8 @@ export function ServicePageView({ service }: { service: Service }) {
             <Button href={CTAS.startProject.href} size="lg">
               {CTAS.startProject.label}
             </Button>
-            <Button href="/case-studies" variant="secondary" size="lg">
-              View case studies
+            <Button href={CTAS.talkExpert.href} variant="secondary" size="lg">
+              {CTAS.talkExpert.label}
             </Button>
           </div>
           <FrameStrip className="mt-10" />
@@ -163,7 +163,7 @@ export function ServicePageView({ service }: { service: Service }) {
       <Section>
         <SectionHeader
           title="Where this tends to apply"
-          intro="Generic categories only — named clients and results appear under Case Studies when cleared."
+          intro="Typical engagement types this service is designed for."
         />
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {service.useCases.map((u) => (
@@ -199,18 +199,15 @@ export function ServicePageView({ service }: { service: Service }) {
       </Section>
 
       <Section>
-        <SectionHeader title="Relevant case studies" />
+        <SectionHeader title="Relevant experience" />
         <div className="card-surface max-w-2xl p-6 hover:transform-none hover:shadow-none">
           <p className="text-text-secondary">
-            Selected engagements — details available on request once permissions
-            allow. We do not invent case results on this page.
+            Much of our client work is under NDA. Tell us about your situation and
+            we will share relevant experience in a confidential conversation.
           </p>
           <div className="mt-5 flex flex-wrap gap-3">
             <Button href={CTAS.talkExpert.href} variant="secondary">
               {CTAS.talkExpert.label}
-            </Button>
-            <Button href="/case-studies" variant="ghost">
-              View all case studies
             </Button>
           </div>
         </div>

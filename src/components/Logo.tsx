@@ -4,23 +4,27 @@ import { BASE_PATH } from "@/lib/site";
 
 type LogoProps = {
   className?: string;
-  /** Ignored when using full ChatGPT lockup (text is in the image). */
-  showWordmark?: boolean;
+  /** Tailwind height classes for the lockup. */
+  sizeClassName?: string;
 };
 
-export function Logo({ className = "" }: LogoProps) {
+/** White InSol Technologies lockup — use on dark (ink) backgrounds only. */
+export function Logo({
+  className = "",
+  sizeClassName = "h-8 sm:h-9",
+}: LogoProps) {
   return (
     <Link
       href="/"
-      className={`inline-flex min-w-0 items-center focus-visible:outline-none ${className}`}
+      className={`inline-flex min-w-0 shrink-0 items-center focus-visible:outline-none ${className}`}
       aria-label="InSol Technologies home"
     >
       <Image
-        src={`${BASE_PATH}/brand/insol-logo-full.png`}
+        src={`${BASE_PATH}/brand/insol-logo-trim.png`}
         alt="InSol Technologies logo"
-        width={220}
-        height={110}
-        className="h-8 w-auto max-w-[min(100%,148px)] object-contain object-left min-[375px]:h-9 min-[375px]:max-w-[min(100%,180px)] sm:h-10 sm:max-w-[240px]"
+        width={560}
+        height={226}
+        className={`${sizeClassName} w-auto object-contain object-left`}
         priority
       />
     </Link>

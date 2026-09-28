@@ -51,7 +51,7 @@ const beliefs = [
     body: "Products, platforms, SaaS systems, and integrations should survive the next roadmap — not expire after the demo.",
   },
   {
-    title: "Practical AI, not AI theater",
+    title: "Practical AI, not AI hype",
     body: "GenAI, agents, automation, ML, and NLP only ship when they map to a clear business job, with evaluation and oversight.",
   },
   {
@@ -60,7 +60,7 @@ const beliefs = [
   },
   {
     title: "Partnership beyond launch",
-    body: "Strategy → Design → Engineering → AI → Deployment → Scale is a relationship model, not a handoff slogan.",
+    body: "Discover → Strategize → Design → Build → Deploy → Scale is a long-term working relationship, not a one-time handoff.",
   },
   {
     title: "Honesty over hype",
@@ -71,7 +71,7 @@ const beliefs = [
 export default function AboutPage() {
   return (
     <>
-      <section className="relative overflow-hidden bg-primary section-pad !pt-12">
+      <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 gradient-glow opacity-50" />
         <div className="container-insol relative">
           <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About" }]} />
@@ -155,8 +155,7 @@ export default function AboutPage() {
           partnerships should be measured in shipped outcomes, not slide decks. Under
           founder Innam Dustgir, we continue to deepen product engineering, SaaS
           products, practical AI, and modern foundations — always tied to business
-          outcomes, never as catalog theater. Specific milestones appear here once
-          leadership clears the fact pack.
+          outcomes rather than a list of services for its own sake.
         </p>
       </Section>
 
@@ -186,13 +185,13 @@ export default function AboutPage() {
         <p className="max-w-3xl text-text-secondary">
           We intend to remain a partner organizations trust for modernization, product
           engineering, SaaS products, and practical AI — deepening industry context
-          where we have real delivery experience, and refusing work that is only
-          buzzword theater.
+          where we have real delivery experience, and declining work that is only
+          about buzzwords.
         </p>
         <ul className="mt-6 max-w-2xl space-y-2 text-sm text-text-secondary">
-          <li>• Stronger proof surfaces (permissioned case studies, verified partnerships)</li>
+          <li>• Published case studies as client work is approved for sharing</li>
           <li>• Deeper AI-in-delivery and SaaS product capability</li>
-          <li>• Clearer industry journeys from problem → capability → case studies</li>
+          <li>• Deeper industry expertise where we have real delivery experience</li>
         </ul>
         <div className="mt-8 flex flex-wrap gap-3">
           <Button href={CTAS.startProject.href}>{CTAS.startProject.label}</Button>
@@ -222,7 +221,7 @@ export default function AboutPage() {
         <h2 className="text-h2">Build systems that matter — with us.</h2>
         <p className="mt-4 max-w-2xl text-text-secondary">
           We’re looking for people who care about craft, clarity, and shipped outcomes.
-          If you want engineering depth without the body-shop theater, see what’s open.
+          If you want real engineering ownership rather than staff-augmentation work, see what’s open.
         </p>
         <Button href="/careers" className="mt-6" variant="secondary">
           View Careers

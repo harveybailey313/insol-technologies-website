@@ -1,14 +1,14 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Manrope } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SITE } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
 
-const inter = Inter({
+const brandFont = Manrope({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-brand",
   display: "swap",
 });
 
@@ -112,7 +112,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.variable} font-sans antialiased`}>
+      <body className={`${brandFont.variable} font-sans antialiased`}>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
