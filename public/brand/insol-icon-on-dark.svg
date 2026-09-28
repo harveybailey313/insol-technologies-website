@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="InSol icon"><defs><linearGradient id="giBdark" gradientUnits="userSpaceOnUse" x1="0" y1="128" x2="128" y2="0">
+<stop offset="0" stop-color="#772587"/><stop offset="0.5" stop-color="#A100FF"/><stop offset="1" stop-color="#D76EEB"/></linearGradient>
+<linearGradient id="hiBdark" gradientUnits="userSpaceOnUse" x1="64" y1="128" x2="128" y2="0">
+<stop offset="0" stop-color="#A100FF"/><stop offset="1" stop-color="#D76EEB"/></linearGradient></defs>
+<path d="M105.35 48.95 A44 44 0 1 1 79.05 22.65" fill="none" stroke="url(#giBdark)" stroke-width="15" stroke-linecap="round"/>
+<rect x="56" y="38" width="16" height="52" rx="4" fill="#FFFFFF"/>
+<circle cx="95.11" cy="32.89" r="9" fill="#F26223"/></svg>

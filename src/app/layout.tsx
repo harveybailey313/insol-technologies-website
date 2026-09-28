@@ -60,7 +60,7 @@ const organizationJsonLd = {
   name: SITE.name,
   legalName: SITE.legalName,
   url: SITE.url,
-  logo: `${SITE.url}/brand/insol-logo-full.png`,
+  logo: `${SITE.url}/brand/insol-logo-square-512.png`,
   telephone: SITE.phone,
   address: {
     "@type": "PostalAddress",

@@ -6,13 +6,20 @@ type LogoProps = {
   className?: string;
   /** Tailwind height classes for the lockup. */
   sizeClassName?: string;
+  /**
+   * "onDark": white wordmark for charcoal surfaces (header, drawer, footer).
+   * "onLight": charcoal wordmark for white/mist surfaces.
+   */
+  variant?: "onDark" | "onLight";
 };
 
-/** White InSol Technologies lockup — use on dark (ink) backgrounds only. */
+/** InSol Technologies "Sol Orbit" lockup (concept B). */
 export function Logo({
   className = "",
-  sizeClassName = "h-8 sm:h-9",
+  sizeClassName = "h-9",
+  variant = "onDark",
 }: LogoProps) {
+  const file = variant === "onDark" ? "insol-logo-on-dark.svg" : "insol-logo-on-light.svg";
   return (
     <Link
       href="/"
@@ -20,11 +27,11 @@ export function Logo({
       aria-label="InSol Technologies home"
     >
       <Image
-        src={`${BASE_PATH}/brand/insol-logo-trim.png`}
+        src={`${BASE_PATH}/brand/${file}`}
         alt="InSol Technologies logo"
-        width={560}
-        height={226}
-        className={`${sizeClassName} w-auto object-contain object-left`}
+        width={319}
+        height={109}
+        className={`${sizeClassName} w-auto`}
         priority
       />
     </Link>

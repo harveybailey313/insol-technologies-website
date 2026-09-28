@@ -52,7 +52,7 @@ export function Footer() {
       <div className="container-insol pb-10 pt-16 lg:pt-20">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-4">
-            <Logo sizeClassName="h-9 lg:h-10" />
+            <Logo variant="onDark" sizeClassName="h-12 lg:h-14" />
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-text-secondary">
               InSol Technologies is a software engineering and AI partner. We help
               organizations design, build, modernize, and run the systems their

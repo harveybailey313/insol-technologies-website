@@ -5,7 +5,7 @@ import { useEffect, useId, useRef, useState } from "react";
 import { Logo } from "./Logo";
 import { Button } from "./Button";
 import { Arrow } from "./Arrow";
-import { CTAS, NAV_LINKS, SITE, type NavChild, type NavLink } from "@/lib/site";
+import { BASE_PATH, CTAS, NAV_LINKS, SITE, type NavChild, type NavLink } from "@/lib/site";
 import { services } from "@/data/services";
 import { industries } from "@/data/industries";
 
@@ -247,7 +247,7 @@ export function Header() {
       </a>
       <div className="container-insol flex h-16 items-center justify-between gap-6 lg:h-[76px]">
         <div className="flex items-center gap-10">
-          <Logo sizeClassName="h-7 sm:h-8 lg:h-9" />
+          <Logo variant="onDark" sizeClassName="h-9 lg:h-11" />
           <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
             {LINKS.map((link) => (
               <DesktopNavItem key={link.label} link={link} />
@@ -300,6 +300,17 @@ export function Header() {
               <a href={SITE.phoneHref} className="py-2 text-center text-sm font-semibold text-white/80">
                 {SITE.phone}
               </a>
+            </div>
+            <div className="mt-10 flex items-center gap-3 border-t border-white/10 pt-6 text-xs text-white/60">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`${BASE_PATH}/brand/insol-icon-on-dark.svg`}
+                alt=""
+                width={28}
+                height={28}
+                className="h-7 w-7"
+              />
+              <span>{SITE.legalName} · Austin, Texas</span>
             </div>
           </nav>
         </div>
