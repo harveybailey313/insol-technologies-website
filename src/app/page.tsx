@@ -288,10 +288,11 @@ export default function HomePage() {
           <div className="lg:col-span-5">
             <div className="relative overflow-hidden rounded-[12px] bg-secondary">
               <Image
-                src={`${BASE_PATH}/brand/innam-dustgir-founder.jpg`}
+                src={`${BASE_PATH}/brand/innam-dustgir-founder.webp`}
                 alt="Innam Dustgir, Founder and CEO of InSol Technologies"
-                width={1200}
-                height={1600}
+                width={720}
+                height={960}
+                sizes="(max-width: 1024px) 100vw, 40vw"
                 className="aspect-[4/5] h-auto w-full object-cover"
               />
               <div className="absolute inset-x-0 bottom-0 h-1 bg-gradient-to-r from-[#772587] via-[#a100ff] to-[#d76eeb]" />

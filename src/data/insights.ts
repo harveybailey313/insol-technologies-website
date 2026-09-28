@@ -10,6 +10,12 @@ export type Insight = {
   description: string;
   category: string;
   date: string; // ISO date
+  /** Shorter <title> segment when the headline is too long for search results. */
+  seoTitle?: string;
+  /** Service slugs this article supports (drives cross-links both ways). */
+  relatedServices: string[];
+  /** Industry slugs this article is relevant to. */
+  relatedIndustries: string[];
   body: InsightSection[];
 };
 
@@ -21,6 +27,9 @@ export const insights: Insight[] = [
       "How to move from AI pilots to production: workflow mapping, evaluation, integration, oversight, and an honest stop path when foundations are not ready.",
     category: "AI",
     date: "2026-09-16",
+    seoTitle: "AI in Production Workflows, Not Demos",
+    relatedServices: ["ai-intelligent-automation", "data-analytics"],
+    relatedIndustries: ["healthcare", "travel-hospitality"],
     body: [
       {
         heading: "Why demos stall",
@@ -65,9 +74,11 @@ export const insights: Insight[] = [
     slug: "building-saas-foundations-that-can-scale",
     title: "Building SaaS foundations that can scale",
     description:
-      "Practical SaaS architecture habits for multi-tenancy, identity, environments, observability, and MVP scoping that does not trap you later.",
+      "Practical SaaS architecture habits for multi-tenancy, identity, environments, observability, and MVP scoping that will not trap your product later.",
     category: "SaaS",
     date: "2026-09-16",
+    relatedServices: ["saas-products", "product-engineering", "cloud-devops"],
+    relatedIndustries: ["technology"],
     body: [
       {
         heading: "MVP speed without dead-end architecture",
@@ -105,9 +116,12 @@ export const insights: Insight[] = [
     slug: "cloud-devops-habits-that-reduce-release-risk",
     title: "Cloud & DevOps habits that reduce release risk",
     description:
-      "CI/CD quality gates, infrastructure as code, observability, and ownership patterns that make releases routine instead of risky events.",
+      "CI/CD quality gates, infrastructure as code, observability, and clear ownership patterns that make software releases routine instead of risky events.",
     category: "Cloud",
     date: "2026-09-16",
+    seoTitle: "DevOps Habits That Reduce Release Risk",
+    relatedServices: ["cloud-devops", "quality-engineering"],
+    relatedIndustries: ["technology", "ecommerce"],
     body: [
       {
         heading: "Make releases boring",
@@ -148,6 +162,8 @@ export const insights: Insight[] = [
       "How to build pipelines, metrics, and ownership so leaders and operators share one reliable picture — without vanity dashboards or conflicting numbers.",
     category: "Data",
     date: "2026-09-16",
+    relatedServices: ["data-analytics", "enterprise-applications", "ai-intelligent-automation"],
+    relatedIndustries: ["healthcare", "ecommerce"],
     body: [
       {
         heading: "Trust is the product",
@@ -185,9 +201,12 @@ export const insights: Insight[] = [
     slug: "choosing-product-engineering-partners",
     title: "Choosing product engineering partners — a buyer guide",
     description:
-      "A practical checklist for evaluating software and product engineering partners: discovery discipline, delivery visibility, IP, operability, and how to avoid demo-driven outsourcing.",
+      "A practical checklist for evaluating product engineering partners: discovery discipline, delivery visibility, IP ownership, operability, and red flags.",
     category: "Software Engineering",
     date: "2026-09-16",
+    seoTitle: "Choosing a Product Engineering Partner",
+    relatedServices: ["product-engineering", "web-mobile-development", "saas-products"],
+    relatedIndustries: ["technology"],
     body: [
       {
         heading: "What you are really buying",

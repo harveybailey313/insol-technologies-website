@@ -89,7 +89,6 @@ function DesktopNavItem({ link }: { link: NavLink }) {
         type="button"
         className={`${base} ${open ? "border-[var(--brand-purple)] text-white" : idle} focus-visible:outline-none focus-visible:text-white`}
         aria-expanded={open}
-        aria-haspopup="menu"
         aria-controls={menuId}
         onClick={() => setOpen((v) => !v)}
         onFocus={() => setOpen(true)}
@@ -99,7 +98,6 @@ function DesktopNavItem({ link }: { link: NavLink }) {
       </button>
       <div
         id={menuId}
-        role="menu"
         aria-label={link.label}
         className={`absolute top-full z-50 transition-opacity duration-150 ${
           link.mega ? "-left-40 w-[760px]" : "left-0 min-w-[240px]"
@@ -148,7 +146,6 @@ function MenuLink({ child, onClick, rich = false }: { child: NavChild; onClick: 
   return (
     <Link
       href={child.href}
-      role="menuitem"
       onClick={onClick}
       className={
         rich

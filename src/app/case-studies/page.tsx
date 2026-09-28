@@ -6,9 +6,9 @@ import { CTAS } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Case Studies",
+  title: "Case Studies & Client Outcomes",
   description:
-    "InSol Technologies case studies — challenge, approach, and outcomes, published with client approval. Ask us about relevant work under NDA.",
+    "InSol Technologies case studies covering the challenge, approach, and outcomes, published with client approval. Ask us about relevant work under NDA.",
   path: "/case-studies",
 });
 

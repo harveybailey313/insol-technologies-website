@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 import { accentAt, accentClass } from "@/lib/accents";
 
 export const metadata = pageMetadata({
-  title: "Insights",
+  title: "Insights on Software, AI & Cloud",
   description:
     "Perspectives from InSol Technologies on software engineering, practical AI, SaaS, cloud, data, and modernization — written for teams who ship.",
   path: "/insights",

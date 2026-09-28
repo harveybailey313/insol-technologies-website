@@ -65,7 +65,7 @@ export function ContactForm() {
       ) : (
         <p className="text-sm text-text-muted">
           Online submissions are not active yet. For the fastest response, call{" "}
-          <a href={SITE.phoneHref} className="text-accent hover:underline">
+          <a href={SITE.phoneHref} className="text-accent underline underline-offset-2 hover:text-accent-hover">
             {SITE.phone}
           </a>
           .

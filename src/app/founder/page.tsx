@@ -7,9 +7,9 @@ import { BASE_PATH, CTAS, SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Founder — Innam Dustgir",
+  title: "Innam Dustgir — Founder & CEO",
   description:
-    "Meet Innam Dustgir, Founder & CEO of InSol Technologies Inc. — building modern software, AI-powered solutions, digital products, and scalable technology infrastructure.",
+    "Meet Innam Dustgir, Founder & CEO of InSol Technologies Inc., building modern software, AI-powered solutions, digital products, and scalable infrastructure.",
   path: "/founder/",
   images: `${SITE.url}/brand/innam-dustgir-founder.jpg`,
 });
@@ -42,12 +42,14 @@ const personJsonLd = {
   image: founderImageUrl,
   worksFor: {
     "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
     name: SITE.name,
     legalName: SITE.legalName,
     url: SITE.url,
   },
   founderOf: {
     "@type": "Organization",
+    "@id": `${SITE.url}/#organization`,
     name: SITE.name,
     legalName: SITE.legalName,
     url: SITE.url,
@@ -161,7 +163,7 @@ export default function FounderPage() {
                 />
                 <div className="relative aspect-[4/5] w-full">
                   <Image
-                    src={`${BASE_PATH}/brand/innam-dustgir-founder.jpg`}
+                    src={`${BASE_PATH}/brand/innam-dustgir-founder.webp`}
                     alt="Innam Dustgir, Founder & CEO of InSol Technologies"
                     fill
                     priority

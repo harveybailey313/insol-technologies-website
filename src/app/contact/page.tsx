@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Contact — Start a Project",
   description:
-    "Contact InSol Technologies to start a project or talk with an expert. Austin, TX — 5900 Balcones Drive, STE 100 · +1 (480) 918-3323.",
+    "Contact InSol Technologies to start a project or talk with an expert. Visit 5900 Balcones Drive, STE 100, Austin, TX, or call +1 (480) 918-3323.",
   path: "/contact",
 });
 

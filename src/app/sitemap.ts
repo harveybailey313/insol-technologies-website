@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { SITE } from "@/lib/site";
+import { absUrl } from "@/lib/jsonld";
 import { services } from "@/data/services";
 import { industries } from "@/data/industries";
 import { insights } from "@/data/insights";
@@ -7,7 +7,8 @@ import { insights } from "@/data/insights";
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date();
+  /** Bump when site-wide content/templates change (keeps lastmod stable between builds). */
+  const siteUpdated = new Date("2026-09-28");
 
   const staticRoutes: {
     path: string;
@@ -31,25 +32,25 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     ...staticRoutes.map(({ path, priority, changeFrequency }) => ({
-      url: `${SITE.url}${path}`,
-      lastModified: now,
+      url: absUrl(path || "/"),
+      lastModified: siteUpdated,
       changeFrequency,
       priority,
     })),
     ...services.map((s) => ({
-      url: `${SITE.url}/services/${s.slug}`,
-      lastModified: now,
+      url: absUrl(`/services/${s.slug}`),
+      lastModified: siteUpdated,
       changeFrequency: "weekly" as const,
       priority: 0.85,
     })),
     ...industries.map((i) => ({
-      url: `${SITE.url}/industries/${i.slug}`,
-      lastModified: now,
+      url: absUrl(`/industries/${i.slug}`),
+      lastModified: siteUpdated,
       changeFrequency: "weekly" as const,
       priority: 0.75,
     })),
     ...insights.map((article) => ({
-      url: `${SITE.url}/insights/${article.slug}`,
+      url: absUrl(`/insights/${article.slug}`),
       lastModified: new Date(article.date),
       changeFrequency: "monthly" as const,
       priority: 0.65,

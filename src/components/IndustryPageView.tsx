@@ -5,11 +5,15 @@ import { FinalCTA } from "./FinalCTA";
 import { Breadcrumb } from "./Breadcrumb";
 import type { Industry } from "@/data/industries";
 import { services } from "@/data/services";
+import { insights } from "@/data/insights";
 import { CTAS } from "@/lib/site";
 
 export function IndustryPageView({ industry }: { industry: Industry }) {
   const related = services.filter((s) =>
     industry.relatedServiceSlugs.includes(s.slug)
+  );
+  const relatedInsights = insights.filter((a) =>
+    a.relatedIndustries.includes(industry.slug)
   );
 
   return (
@@ -88,6 +92,26 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
           ))}
         </div>
       </Section>
+
+      {relatedInsights.length > 0 && (
+        <Section band="secondary">
+          <SectionHeader title="Related insights" />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {relatedInsights.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/insights/${a.slug}`}
+                className="card-surface group p-5"
+              >
+                <h3 className="font-semibold group-hover:text-accent transition-colors">
+                  {a.title}
+                </h3>
+                <p className="mt-2 text-sm text-text-secondary">{a.description}</p>
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
 
       <FinalCTA
         headline={`Ready to apply technology in ${industry.title}?`}

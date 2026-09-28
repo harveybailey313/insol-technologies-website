@@ -10,6 +10,10 @@ export type PageMetadataInput = {
   noIndex?: boolean;
   /** Absolute or site-relative image URL(s) for Open Graph / Twitter. */
   images?: string | string[];
+  /** Open Graph type; articles also expose published/modified times. */
+  ogType?: "website" | "article";
+  publishedTime?: string;
+  modifiedTime?: string;
 };
 
 /** Strip a trailing brand suffix so title.template does not duplicate. */
@@ -33,7 +37,11 @@ function resolveImages(images?: string | string[]) {
       ? images
       : [images]
     : [`${SITE.url}/brand/insol-og-default.png`];
-  return list.map((url) => ({ url }));
+  return list.map((url) =>
+    url.endsWith("/insol-og-default.png")
+      ? { url, width: 1200, height: 630, alt: SITE.name }
+      : { url },
+  );
 }
 
 /**
@@ -46,6 +54,9 @@ export function pageMetadata({
   path,
   noIndex = false,
   images,
+  ogType = "website",
+  publishedTime,
+  modifiedTime,
 }: PageMetadataInput): Metadata {
   const ogTitle = resolveOgTitle(title);
   const ogImages = resolveImages(images);
@@ -58,9 +69,17 @@ export function pageMetadata({
       title: ogTitle,
       description,
       url: path,
-      type: "website",
       siteName: SITE.name,
+      locale: "en_US",
       images: ogImages,
+      ...(ogType === "article"
+        ? {
+            type: "article" as const,
+            publishedTime,
+            modifiedTime: modifiedTime ?? publishedTime,
+            authors: [SITE.name],
+          }
+        : { type: "website" as const }),
     },
     twitter: {
       card: "summary_large_image",

@@ -7,7 +7,7 @@ import { CTAS, SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Leadership",
+  title: "Leadership — Founder-Led Delivery",
   description:
     "Leadership at InSol Technologies Inc. — Innam Dustgir, Founder & CEO, accountable for how we partner, engineer, and deliver from strategy through production.",
   path: "/about/leadership",

@@ -6,9 +6,9 @@ import { CTAS } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Careers",
+  title: "Careers — Software Engineering Roles",
   description:
-    "Explore careers at InSol Technologies — open roles for engineers and builders who care about craft, clarity, and shipping software that matters.",
+    "Careers at InSol Technologies for engineers and builders who care about craft, clarity, and shipping software that matters. Share your profile with us.",
   path: "/careers",
 });
 

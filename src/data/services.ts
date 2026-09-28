@@ -131,7 +131,7 @@ export const services: Service[] = [
     businessOutcome: "Software that matches how your business works — and can grow with it.",
     chips: ["Node", ".NET", "Java", "Python", "Microservices", "Event-driven"],
     h1: "Software products and platforms built to last",
-    metaTitle: "Software Engineering",
+    metaTitle: "Custom Software Engineering Services",
     metaDescription:
       "Custom software platforms and business applications engineered for scalability, reliability, and long-term growth — from strategy through production.",
     heroSupport:
@@ -192,7 +192,7 @@ export const services: Service[] = [
       },
       {
         q: "What stacks do you use?",
-        a: "We choose based on your team’s skills, constraints, and longevity — a publishable stack list appears once verified.",
+        a: "We choose based on your team’s skills, constraints, and long-term maintainability, and we explain the trade-offs before anything is locked in.",
       },
     ],
     ctaHeadline: "Ready to build products that last?",
@@ -291,7 +291,7 @@ export const services: Service[] = [
       technology: "Product UI delivered with your engineering standards",
     },
     stackFallback:
-      "We select web and mobile stacks based on your product goals and team skills — a publishable list appears once verified.",
+      "We select web and mobile stacks based on your product goals, audience, and team skills, favoring mature, well-supported frameworks.",
   },
   {
     slug: "cloud-devops",
@@ -301,7 +301,7 @@ export const services: Service[] = [
     businessOutcome: "Safer deployments, clearer ownership, and infrastructure that scales with demand.",
     chips: ["AWS", "Azure", "GCP", "Kubernetes", "Terraform", "Observability"],
     h1: "Cloud foundations you can operate",
-    metaTitle: "Cloud & DevOps Services",
+    metaTitle: "Cloud & DevOps Engineering Services",
     metaDescription:
       "Cloud & DevOps — cloud architecture, infrastructure, deployment automation, monitoring, security, and scalable systems that make releases routine.",
     heroSupport:
@@ -350,7 +350,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Which cloud providers do you support?",
-        a: "We work with major public clouds based on your constraints — publishable stack details appear once verified.",
+        a: "We work across the major public clouds and choose based on your constraints, existing investments, and in-house skills.",
       },
       {
         q: "Do you replace our platform team?",
@@ -376,7 +376,7 @@ export const services: Service[] = [
       technology: "DevOps embedded with product teams who keep ownership",
     },
     stackFallback:
-      "We choose cloud and tooling based on your constraints — a publishable stack list appears once verified.",
+      "We choose cloud platforms and tooling based on your constraints, existing investments, and the team who will run them.",
   },
   {
     slug: "data-analytics",
@@ -461,7 +461,7 @@ export const services: Service[] = [
       technology: "Product and usage analytics foundations for SaaS teams",
     },
     stackFallback:
-      "We select data tooling based on your sources, latency, and team skills — a publishable stack list appears once verified.",
+      "We select data tooling based on your sources, latency needs, and team skills, not on vendor hype.",
   },
   {
     slug: "enterprise-applications",
@@ -471,7 +471,7 @@ export const services: Service[] = [
     businessOutcome: "Connected processes instead of disconnected tools and spreadsheet bridges.",
     chips: ["ERP", "CRM", "Integration", "Low-code", "Custom extensions"],
     h1: "Enterprise applications that connect the business",
-    metaTitle: "Enterprise Applications",
+    metaTitle: "Enterprise Application Development",
     metaDescription:
       "Enterprise Applications — secure, scalable business applications and ERP/CRM integrations designed around complex organizational workflows.",
     heroSupport:
@@ -520,7 +520,7 @@ export const services: Service[] = [
     faqs: [
       {
         q: "Which ERP/CRM platforms do you work with?",
-        a: "We work with major enterprise platforms based on your landscape — publishable vendor lists appear once verified.",
+        a: "We work with the enterprise platforms already in your landscape and integrate around them rather than forcing a rip-and-replace.",
       },
       {
         q: "Do you replace or integrate?",
@@ -558,7 +558,7 @@ export const services: Service[] = [
     h1: "Quality engineered into every release",
     metaTitle: "Quality Engineering Services",
     metaDescription:
-      "Quality Engineering — automated testing, performance testing, reliability engineering, and quality processes for production software.",
+      "Quality Engineering — automated testing, performance testing, reliability engineering, and quality processes that keep production software stable.",
     heroSupport:
       "Quality Engineering at InSol: automated testing, performance testing, reliability engineering, and quality processes woven into the delivery pipeline — so quality is how you ship, not a gate at the end.",
     problemIntro:
@@ -631,7 +631,7 @@ export const services: Service[] = [
       technology: "Quality engineering embedded with product teams",
     },
     stackFallback:
-      "We select quality tooling to fit your stack and CI — a publishable list appears once verified.",
+      "We select quality tooling to fit your stack and CI pipeline, so tests run where your team already works.",
   },
   {
     slug: "saas-products",
@@ -737,7 +737,7 @@ export const services: Service[] = [
     },
     howWeWorkNote: "SaaS inside Discover → Scale",
     stackFallback:
-      "We choose stack based on your team’s skills, latency, compliance, and cost — not on what’s trendy on social media. A publishable stack list appears here once verified.",
+      "We choose stack based on your team’s skills, latency, compliance, and cost — not on what’s trendy on social media.",
   },
 ];
 

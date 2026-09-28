@@ -5,9 +5,9 @@ import { SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Terms & Conditions",
+  title: "Terms & Conditions of Website Use",
   description:
-    "Terms and Conditions for use of the InSol Technologies Inc. website at insoltechnologies.com.",
+    "Terms and Conditions for using the InSol Technologies Inc. website at insoltechnologies.com, covering content, intellectual property, links, and liability.",
   path: "/terms-and-conditions",
 });
 

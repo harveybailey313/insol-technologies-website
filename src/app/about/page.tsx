@@ -8,9 +8,9 @@ import { CTAS, SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: { absolute: "About InSol Technologies" },
+  title: "About Us — Software & AI Engineering",
   description:
-    "Company story of InSol Technologies — a software, AI, and SaaS engineering partner helping organizations build, modernize, and scale from strategy through production.",
+    "The story of InSol Technologies, a software, AI, and SaaS engineering partner helping organizations build, modernize, and scale from strategy to production.",
   path: "/about",
 });
 
@@ -206,7 +206,7 @@ export default function AboutPage() {
         <div className="card-surface max-w-xl p-8 hover:transform-none hover:shadow-none">
           <p className="text-text">{SITE.address.full}</p>
           <p className="mt-2">
-            <a href={SITE.phoneHref} className="text-accent hover:text-accent-hover">
+            <a href={SITE.phoneHref} className="text-accent underline underline-offset-2 hover:text-accent-hover">
               {SITE.phone}
             </a>
           </p>

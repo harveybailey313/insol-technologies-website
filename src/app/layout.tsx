@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { SITE } from "@/lib/site";
 import { Analytics } from "@/components/Analytics";
+import { FOUNDER_ID, LOGO_URL, ORG_ID, WEBSITE_ID } from "@/lib/jsonld";
 
 const brandFont = Plus_Jakarta_Sans({
   subsets: ["latin"],
@@ -54,24 +55,51 @@ export const metadata: Metadata = {
     : {}),
 };
 
+const address = {
+  "@type": "PostalAddress",
+  streetAddress: SITE.address.street,
+  addressLocality: SITE.address.city,
+  addressRegion: SITE.address.state,
+  postalCode: SITE.address.zip,
+  addressCountry: "US",
+};
+
+/**
+ * Organization + ProfessionalService (a LocalBusiness subtype) for the Austin office.
+ * Only verifiable facts: no ratings, reviews, prices, or client claims.
+ */
 const organizationJsonLd = {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": ["Organization", "ProfessionalService"],
+  "@id": ORG_ID,
   name: SITE.name,
   legalName: SITE.legalName,
-  url: SITE.url,
-  logo: `${SITE.url}/brand/insol-logo-square-512.png`,
-  telephone: SITE.phone,
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: SITE.address.street,
-    addressLocality: SITE.address.city,
-    addressRegion: SITE.address.state,
-    postalCode: SITE.address.zip,
-    addressCountry: "US",
+  url: `${SITE.url}/`,
+  description: SITE.description,
+  logo: {
+    "@type": "ImageObject",
+    url: LOGO_URL,
+    width: 512,
+    height: 512,
   },
+  image: LOGO_URL,
+  telephone: SITE.phone,
+  address,
+  hasMap: SITE.mapsHref,
+  areaServed: { "@type": "Country", name: "United States" },
+  knowsAbout: [
+    "Software engineering",
+    "SaaS product development",
+    "Artificial intelligence and automation",
+    "Web and mobile development",
+    "Cloud and DevOps",
+    "Data and analytics",
+    "Enterprise applications",
+    "Quality engineering",
+  ],
   founder: {
     "@type": "Person",
+    "@id": FOUNDER_ID,
     name: SITE.founder,
     url: `${SITE.url}/founder/`,
     sameAs: [
@@ -101,8 +129,11 @@ const organizationJsonLd = {
 const websiteJsonLd = {
   "@context": "https://schema.org",
   "@type": "WebSite",
+  "@id": WEBSITE_ID,
   name: SITE.name,
-  url: SITE.url,
+  url: `${SITE.url}/`,
+  inLanguage: "en-US",
+  publisher: { "@id": ORG_ID },
 };
 
 export default function RootLayout({

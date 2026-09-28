@@ -19,7 +19,7 @@ export const industries: Industry[] = [
     opportunity: "Safer data flow, better care-team tools, and automation where policy allows.",
     capability:
       "Secure software, data platforms, AI-assisted workflows, and integration across clinical and operational systems.",
-    metaTitle: "Healthcare Technology",
+    metaTitle: "Healthcare Software & Technology",
     metaDescription:
       "Technology for healthcare organizations: secure software, data platforms, AI-assisted workflows, and integration across clinical and operational systems.",
     heroSupport:
@@ -41,7 +41,7 @@ export const industries: Industry[] = [
       "Unified journeys, reliable catalogs/checkout, and data that informs merchandising and ops.",
     capability:
       "Web & mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
-    metaTitle: "E-commerce Technology",
+    metaTitle: "E-commerce Software & Technology",
     metaDescription:
       "E-commerce technology and retail digital platforms — web and mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
     heroSupport:

@@ -9,10 +9,15 @@ import { FrameStrip } from "./FrameStrip";
 import type { Service } from "@/data/services";
 import { getRelatedServices } from "@/data/services";
 import { industries } from "@/data/industries";
-import { CTAS, SITE } from "@/lib/site";
+import { CTAS } from "@/lib/site";
+import { absUrl, ORG_ID } from "@/lib/jsonld";
+import { insights } from "@/data/insights";
 
 export function ServicePageView({ service }: { service: Service }) {
   const related = getRelatedServices(service.relatedSlugs);
+  const relatedInsights = insights.filter((a) =>
+    a.relatedServices.includes(service.slug)
+  );
   const relatedIndustries = industries.filter(
     (i) => service.industryLines[i.slug]
   );
@@ -21,44 +26,19 @@ export function ServicePageView({ service }: { service: Service }) {
     "@context": "https://schema.org",
     "@type": "Service",
     name: service.title,
-    url: `${SITE.url}/services/${service.slug}`,
+    serviceType: service.title,
+    url: absUrl(`/services/${service.slug}`),
     description: service.metaDescription,
-    provider: {
-      "@type": "Organization",
-      name: SITE.name,
-      url: SITE.url,
-    },
+    provider: { "@id": ORG_ID },
+    areaServed: { "@type": "Country", name: "United States" },
   };
 
-  const breadcrumbJsonLd = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    itemListElement: [
-      { "@type": "ListItem", position: 1, name: "Home", item: SITE.url },
-      {
-        "@type": "ListItem",
-        position: 2,
-        name: "Services",
-        item: `${SITE.url}/services`,
-      },
-      {
-        "@type": "ListItem",
-        position: 3,
-        name: service.title,
-        item: `${SITE.url}/services/${service.slug}`,
-      },
-    ],
-  };
 
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
       />
       <script
         type="application/ld+json"
@@ -234,8 +214,28 @@ export function ServicePageView({ service }: { service: Service }) {
         <FAQ items={service.faqs} title="Questions buyers usually ask" />
       </Section>
 
-      {related.length > 0 && (
+      {relatedInsights.length > 0 && (
         <Section band="secondary">
+          <SectionHeader title="Related insights" />
+          <div className="grid gap-4 sm:grid-cols-2">
+            {relatedInsights.map((a) => (
+              <Link
+                key={a.slug}
+                href={`/insights/${a.slug}`}
+                className="card-surface group p-5"
+              >
+                <h3 className="font-semibold group-hover:text-accent transition-colors">
+                  {a.title}
+                </h3>
+                <p className="mt-2 text-sm text-text-secondary">{a.description}</p>
+              </Link>
+            ))}
+          </div>
+        </Section>
+      )}
+
+      {related.length > 0 && (
+        <Section>
           <SectionHeader title="Related capabilities" />
           <div className="flex flex-wrap gap-3">
             {related.map((r) => (

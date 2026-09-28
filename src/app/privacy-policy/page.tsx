@@ -5,7 +5,7 @@ import { SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Privacy Policy",
+  title: "Privacy Policy — How We Handle Data",
   description:
     "Privacy Policy for InSol Technologies Inc. — how we collect, use, and protect information when you use insoltechnologies.com or contact us.",
   path: "/privacy-policy",
@@ -27,7 +27,7 @@ export default function PrivacyPolicyPage() {
           This Privacy Policy describes how {SITE.legalName} (“InSol,” “we,” “us,”
           or “our”) collects, uses, and shares information in connection with the
           website{" "}
-          <a href={SITE.url} className="text-accent hover:text-accent-hover">
+          <a href={SITE.url} className="text-accent underline underline-offset-2 hover:text-accent-hover">
             {SITE.url.replace("https://", "")}
           </a>{" "}
           (the “Site”) and related contact channels. This policy is intended for a
@@ -44,12 +44,12 @@ export default function PrivacyPolicyPage() {
             {SITE.address.full}
             <br />
             Phone:{" "}
-            <a href={SITE.phoneHref} className="text-accent hover:text-accent-hover">
+            <a href={SITE.phoneHref} className="text-accent underline underline-offset-2 hover:text-accent-hover">
               {SITE.phone}
             </a>
             <br />
             Contact:{" "}
-            <Link href="/contact" className="text-accent hover:text-accent-hover">
+            <Link href="/contact" className="text-accent underline underline-offset-2 hover:text-accent-hover">
               Contact page
             </Link>
           </p>
@@ -175,7 +175,7 @@ export default function PrivacyPolicyPage() {
             Depending on where you live, you may have rights to request access,
             correction, or deletion of personal information we hold about you, or
             to opt out of certain processing. To make a request, use our{" "}
-            <Link href="/contact" className="text-accent hover:text-accent-hover">
+            <Link href="/contact" className="text-accent underline underline-offset-2 hover:text-accent-hover">
               Contact page
             </Link>{" "}
             or call {SITE.phone}. We may need to verify your identity before
@@ -208,11 +208,11 @@ export default function PrivacyPolicyPage() {
           <p className="mt-3">
             For privacy questions or requests, contact {SITE.legalName} at{" "}
             {SITE.address.full}, phone{" "}
-            <a href={SITE.phoneHref} className="text-accent hover:text-accent-hover">
+            <a href={SITE.phoneHref} className="text-accent underline underline-offset-2 hover:text-accent-hover">
               {SITE.phone}
             </a>
             , or via the{" "}
-            <Link href="/contact" className="text-accent hover:text-accent-hover">
+            <Link href="/contact" className="text-accent underline underline-offset-2 hover:text-accent-hover">
               Contact page
             </Link>
             .

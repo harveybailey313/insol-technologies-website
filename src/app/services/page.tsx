@@ -9,9 +9,9 @@ import { SERVICE_ACCENTS } from "@/lib/accents";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Software Development & Technology Capabilities",
+  title: "Software, AI & Cloud Engineering Services",
   description:
-    "Explore InSol Technologies capabilities: software engineering, SaaS product development, AI automation, web and mobile, cloud, data, enterprise applications, and quality.",
+    "Explore InSol Technologies services: software engineering, SaaS products, AI automation, web and mobile, cloud and DevOps, data, enterprise apps, and QA.",
   path: "/services",
 });
 
