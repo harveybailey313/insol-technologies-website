@@ -27,7 +27,7 @@ npm run start   # serve production build
 
 - Brand: **InSol Technologies**
 - Phone: **+1 (480) 918-3323**
-- Address: **5900 Balcones Drive, STE 100, Austin, TX 78731, USA**
+- Address: **Austin, Texas, USA** (service-area business; no public street address)
 - Founder (public): **Innam Dustgir** only
 - CTAs: Start a Project · Talk to an Expert · Explore Our Capabilities
 - Accent: `#00D4FF`

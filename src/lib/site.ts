@@ -8,15 +8,11 @@ export const SITE = {
   phone: "+1 (480) 918-3323",
   phoneHref: "tel:+14809183323",
   address: {
-    street: "5900 Balcones Drive, STE 100",
     city: "Austin",
     state: "TX",
-    zip: "78731",
     country: "USA",
-    full: "5900 Balcones Drive, STE 100, Austin, TX 78731, USA",
+    full: "Austin, Texas, USA",
   },
-  mapsHref:
-    "https://maps.google.com/?q=5900+Balcones+Drive,+STE+100,+Austin,+TX+78731",
   founder: "Innam Dustgir",
   tagline: "Software engineering, AI, and cloud for modern business",
   description:

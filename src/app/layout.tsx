@@ -57,10 +57,8 @@ export const metadata: Metadata = {
 
 const address = {
   "@type": "PostalAddress",
-  streetAddress: SITE.address.street,
   addressLocality: SITE.address.city,
   addressRegion: SITE.address.state,
-  postalCode: SITE.address.zip,
   addressCountry: "US",
 };
 
@@ -85,7 +83,6 @@ const organizationJsonLd = {
   image: LOGO_URL,
   telephone: SITE.phone,
   address,
-  hasMap: SITE.mapsHref,
   areaServed: { "@type": "Country", name: "United States" },
   knowsAbout: [
     "Software engineering",

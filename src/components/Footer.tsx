@@ -59,18 +59,10 @@ export function Footer() {
               business depends on.
             </p>
             <address className="mt-8 space-y-4 text-sm not-italic text-text-secondary">
-              <a
-                href={SITE.mapsHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block transition-colors hover:text-white"
-              >
+              <div className="block">
                 <span className="block font-semibold text-white">{SITE.legalName}</span>
-                {SITE.address.street}
-                <br />
-                {SITE.address.city}, {SITE.address.state} {SITE.address.zip},{" "}
-                {SITE.address.country}
-              </a>
+                Austin, Texas, USA
+              </div>
               <a
                 href={SITE.phoneHref}
                 className="block font-semibold text-white transition-colors hover:text-accent"

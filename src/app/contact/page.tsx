@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Contact — Start a Project",
   description:
-    "Contact InSol Technologies to start a project or talk with an expert. Visit 5900 Balcones Drive, STE 100, Austin, TX, or call +1 (480) 918-3323.",
+    "Contact InSol Technologies to start a project or talk with an expert. Based in Austin, Texas — call +1 (480) 918-3323.",
   path: "/contact",
 });
 
@@ -47,27 +47,19 @@ export default function ContactPage() {
                 <p className="mt-1 text-sm text-text-secondary">Mon–Fri, US Central Time</p>
               </a>
 
-              <a
-                href={SITE.mapsHref}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="card-surface block rounded-[16px] border border-border p-5 transition-colors hover:border-accent-border hover:bg-surface-elevated focus-visible:outline-none sm:p-6"
-              >
+              <div className="card-surface block rounded-[16px] border border-border p-5 sm:p-6">
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
-                  Address
+                  Location
                 </h2>
                 <p className="mt-2 text-lg font-semibold text-text sm:text-xl">
                   InSol Technologies Inc.
                 </p>
                 <p className="mt-3 text-text-secondary">
-                  {SITE.address.street}
+                  Austin, Texas
                   <br />
-                  {SITE.address.city}, {SITE.address.state} {SITE.address.zip}
-                  <br />
-                  {SITE.address.country}
+                  Serving clients across the United States
                 </p>
-                <p className="mt-2 text-sm text-accent">Open in Maps</p>
-              </a>
+              </div>
 
               <div className="rounded-[16px] border border-border p-5 sm:p-6">
                 <h2 className="text-sm font-semibold uppercase tracking-wider text-text-muted">
