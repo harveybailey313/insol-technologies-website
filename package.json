@@ -8,7 +8,9 @@
     "start": "next start",
     "lint": "eslint",
     "build:gh-pages": "GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/insol-technologies-website next build",
-    "deploy:gh-pages": "GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/insol-technologies-website next build && touch out/.nojekyll && npx --yes gh-pages -d out -b gh-pages --dotfiles"
+    "deploy:gh-pages": "GITHUB_PAGES=true NEXT_PUBLIC_BASE_PATH=/insol-technologies-website next build && touch out/.nojekyll && npx --yes gh-pages -d out -b gh-pages --dotfiles",
+    "cover": "node scripts/make-cover.mjs",
+    "verify:insights": "node scripts/verify-insights.mjs"
   },
   "dependencies": {
     "@vercel/analytics": "^2.0.1",
