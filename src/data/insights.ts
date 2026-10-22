@@ -47,6 +47,189 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "cloud-migration-strategy",
+    title: "Cloud Migration Strategy: The 7 Rs and How to Choose",
+    description:
+      "A practical cloud migration strategy guide: the 7 Rs from rehost to refactor, how to pick one per workload, migration phases, risks and a readiness checklist.",
+    category: "Cloud",
+    date: "2026-10-22",
+    seoTitle: "Cloud Migration Strategy: The 7 Rs",
+    cover: "/insights/covers/cloud-migration-strategy",
+    coverAlt: "Cover reading Cloud Migration Strategy: The 7 Rs and How to Choose, InSol Technologies",
+    relatedServices: ["cloud-devops", "enterprise-applications", "data-analytics", "quality-engineering"],
+    relatedIndustries: ["technology", "healthcare", "ecommerce"],
+    body: [
+      {
+        heading: "What is a cloud migration strategy?",
+        paragraphs: [
+          "A cloud migration strategy is the plan for moving applications, data and infrastructure from on-premises servers or another hosting provider into the cloud. It answers three questions for every workload: should it move at all, how much should it change on the way, and in what order should it go.",
+          "The most common way to structure those decisions is the set of migration patterns known as the Rs. Gartner first described five of them, and AWS later expanded the list to six and then seven. Microsoft and Google use similar categories under different names. The labels matter less than the habit they enforce: deciding workload by workload instead of applying one approach to everything.",
+          "A good strategy is not a single choice for the whole estate. Most organizations end up with a mix, such as rehosting a few stable systems quickly, replatforming databases onto managed services and refactoring the one or two applications that drive the business.",
+        ],
+      },
+      {
+        heading: "The 7 Rs of cloud migration at a glance",
+        paragraphs: [
+          "Use this table to sort each application into a pattern before you estimate effort or pick tools.",
+        ],
+        table: {
+          caption: "The 7 Rs of cloud migration compared",
+          headers: ["Strategy", "What it means", "Change to the application", "Good fit when"],
+          rows: [
+            ["Retire", "Switch the application off", "None, it is decommissioned", "Nobody relies on it or another system already covers it"],
+            ["Retain", "Keep it where it is for now", "None", "It is about to be replaced, is hard to move or has a compliance reason to stay"],
+            ["Rehost (lift and shift)", "Move servers to cloud virtual machines as they are", "Minimal", "You need to exit a data center fast and the app runs fine today"],
+            ["Relocate", "Move a virtualized platform to its cloud-hosted equivalent", "Minimal, at the hypervisor or container platform level", "You already run VMware or Kubernetes and want the same platform in the cloud"],
+            ["Repurchase (drop and shop)", "Replace the application with a SaaS product", "Replaced, with data migration", "A commercial product now does the job well enough"],
+            ["Replatform (lift and reshape)", "Move with targeted changes, such as a managed database", "Moderate", "You want quick operational wins without rewriting the code"],
+            ["Refactor (re-architect)", "Redesign the application to be cloud native", "Significant", "The app is core to the business and needs to scale, release faster or cost less to run"],
+          ],
+        },
+      },
+      {
+        heading: "Each migration strategy explained",
+        paragraphs: [
+          "The patterns sit on a spectrum from no change to full redesign. More change usually means more effort up front and more benefit later, so the right answer depends on how important the workload is and how long it will live.",
+        ],
+        subsections: [
+          {
+            heading: "Retire and retain",
+            paragraphs: [
+              "An application inventory almost always turns up systems that nobody uses or that duplicate another tool. Retiring them before migration reduces cost and risk for free. Retaining is equally valid: a system due for replacement next year, or one tied to hardware or regulation, can stay put while the rest of the estate moves.",
+            ],
+          },
+          {
+            heading: "Rehost and relocate",
+            paragraphs: [
+              "Rehosting copies servers into cloud virtual machines with little or no change. It is the fastest way to leave a data center, but the application keeps its old limits, and running it unchanged in the cloud can cost more than expected if instances are not right-sized afterwards. Relocating moves a whole virtualization or container platform to its cloud equivalent, which avoids touching individual servers at all.",
+            ],
+          },
+          {
+            heading: "Repurchase",
+            paragraphs: [
+              "Some workloads are better replaced than moved, such as an old on-premises CRM, HR or email system that a SaaS product now covers. The work shifts from infrastructure to data migration, integration, configuration and user training, which is where [enterprise applications](/services/enterprise-applications) projects spend most of their effort.",
+            ],
+          },
+          {
+            heading: "Replatform",
+            paragraphs: [
+              "Replatforming keeps the core code but swaps selected components for managed cloud services. Typical examples are moving a self-managed database to a managed database service, putting the app in containers or replacing a file server with object storage. It is often the best balance between speed and benefit because it removes routine maintenance work without a rewrite.",
+            ],
+          },
+          {
+            heading: "Refactor",
+            paragraphs: [
+              "Refactoring redesigns the application to use cloud-native patterns such as services that scale independently, event-driven processing and serverless functions. It takes the most time and skill, so reserve it for systems where the business case is clear: products that must scale, release frequently or support new capabilities like AI features. Our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale) covers the architecture choices involved.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "How to choose the right strategy for each workload",
+        paragraphs: [
+          "Score every application against a short set of questions and let the answers point to a pattern. Do this with both technical owners and the business owners who depend on the system.",
+        ],
+        bullets: [
+          "Business value: is this application core to revenue or operations, or a supporting tool?",
+          "Remaining life: will it still be needed in three to five years?",
+          "Technical health: is the code maintainable, documented and supported by current versions?",
+          "Dependencies: which databases, integrations and batch jobs does it rely on, and what relies on it?",
+          "Constraints: data residency, compliance, licensing terms and contractual deadlines",
+          "Team skills: can your people operate it in the target environment, or will they need support?",
+        ],
+        subsections: [
+          {
+            heading: "A simple decision rule",
+            paragraphs: [
+              "If nobody needs it, retire it. If it cannot or should not move yet, retain it. If a SaaS product does the job, repurchase. If it matters to the business and has a long life ahead, consider replatforming or refactoring. If speed is the priority and the app works, rehost or relocate now and optimize later.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Cloud migration phases",
+        paragraphs: [
+          "Whatever mix of patterns you choose, the migration itself follows a repeatable sequence.",
+        ],
+        ordered: true,
+        bullets: [
+          "Assess: build an inventory of applications, servers, data and dependencies, and record the business case and success measures.",
+          "Plan: assign a strategy to each workload, group dependent systems into migration waves and set up the target cloud foundation, including accounts, networking, identity and security guardrails.",
+          "Pilot: migrate one low-risk workload end to end to test tooling, runbooks and rollback before the larger waves.",
+          "Migrate in waves: move workloads group by group, testing functionality, performance and data integrity before each cutover.",
+          "Optimize: right-size resources, tune costs, add monitoring and automate operations once workloads are stable in the cloud.",
+        ],
+      },
+      {
+        heading: "Common cloud migration risks and how to reduce them",
+        paragraphs: [
+          "Most migration problems are predictable. Plan for them before the first wave rather than discovering them during cutover.",
+        ],
+        table: {
+          headers: ["Risk", "How it shows up", "How to reduce it"],
+          rows: [
+            ["Hidden dependencies", "An application breaks after cutover because a forgotten integration still points on-premises", "Map dependencies from network traffic and interviews, then migrate tightly linked systems in the same wave"],
+            ["Cost surprises", "The monthly cloud bill is higher than the old hosting cost", "Right-size after migration, use budgets and tagging, and switch off non-production environments out of hours"],
+            ["Data loss or downtime", "Records are missing or the system is unavailable longer than planned", "Rehearse data migration on realistic data, validate counts and checksums, and keep a tested rollback path"],
+            ["Security gaps", "Storage or services are left publicly exposed", "Set up identity, network rules and logging as code in the landing zone before any workload moves"],
+            ["Skills gaps", "The team cannot operate or troubleshoot the new environment", "Train early, document runbooks and pair internal staff with experienced engineers during the first waves"],
+          ],
+        },
+      },
+      {
+        heading: "Cloud migration readiness checklist",
+        paragraphs: [
+          "Before the first production workload moves, you should be able to tick every item on this list.",
+        ],
+        bullets: [
+          "A complete application and data inventory with owners named",
+          "A strategy (one of the 7 Rs) assigned to each workload, with reasons recorded",
+          "A cloud foundation with identity, networking, security controls and logging defined as code",
+          "Migration waves sequenced around dependencies and business calendars",
+          "Test plans covering functionality, performance and data validation",
+          "A rollback plan for every cutover, practiced at least once",
+          "Monitoring, alerting and on-call ownership agreed for migrated systems",
+          "Cost budgets and tagging rules in place from day one",
+        ],
+      },
+      {
+        heading: "Industry considerations",
+        paragraphs: [
+          "Regulated sectors add constraints that shape the strategy. In [healthcare](/industries/healthcare), patient data handling, audit trails and data residency often decide which workloads move and where. In [ecommerce](/industries/ecommerce), the priority is usually avoiding downtime during trading peaks, so cutovers are scheduled around sales calendars and tested under realistic load. For [technology companies](/industries/technology), migration is often a chance to replatform or refactor a product for faster releases.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps with cloud migration",
+        paragraphs: [
+          "Our [cloud and DevOps](/services/cloud-devops) team runs migrations from assessment to optimization: inventory and strategy per workload, landing zone setup as code, wave planning, cutover and post-migration cost tuning. We pair that with [data and analytics](/services/data-analytics) work for database and warehouse moves and [quality engineering](/services/quality-engineering) for testing each wave.",
+          "Once workloads are in the cloud, the habits in our article on [DevOps practices that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk) keep them stable, and our [custom software development process](/insights/custom-software-development-process) explains how we approach refactoring work. If you are planning a move, [talk to our team](/contact?intent=start-project) about where to start.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What are the 7 Rs of cloud migration?",
+        a: "The 7 Rs are retire, retain, rehost, relocate, repurchase, replatform and refactor. They describe the options for each workload, from switching it off or leaving it in place to moving it unchanged, replacing it with SaaS, or redesigning it to be cloud native.",
+      },
+      {
+        q: "What is the difference between rehost, replatform and refactor?",
+        a: "Rehosting moves an application to cloud servers with little or no change. Replatforming makes targeted changes, such as moving to a managed database, without rewriting the code. Refactoring redesigns the application itself to use cloud-native services and patterns.",
+      },
+      {
+        q: "Which cloud migration strategy is best?",
+        a: "No single strategy is best. Most organizations use a mix, choosing per workload based on business value, remaining life, technical health, dependencies and compliance needs. Fast exits favor rehosting, while core long-lived systems often justify replatforming or refactoring.",
+      },
+      {
+        q: "Is lift and shift a good cloud migration strategy?",
+        a: "Lift and shift is a good way to move quickly, for example to leave a data center before a contract ends. Its drawback is that the application keeps its old limits and can cost more to run unless it is right-sized and optimized after the move.",
+      },
+      {
+        q: "How long does a cloud migration take?",
+        a: "It depends on the number of workloads, their dependencies and the strategies chosen. A single rehosted application can move quickly, while a large estate with refactoring is usually migrated in waves over a longer period. A thorough assessment is the only reliable basis for a timeline.",
+      },
+    ],
+  },
+  {
     slug: "custom-software-development-process",
     title: "Custom Software Development Process: 6 Stages From Idea to Production",
     description:
