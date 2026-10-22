@@ -9,6 +9,8 @@ export const dynamic = "force-static";
 export default function sitemap(): MetadataRoute.Sitemap {
   /** Bump when site-wide content/templates change (keeps lastmod stable between builds). */
   const siteUpdated = new Date("2026-09-28");
+  const latestInsight = insights.map((a) => a.updated ?? a.date).sort().pop();
+  const insightsUpdated = latestInsight ? new Date(latestInsight) : siteUpdated;
 
   const staticRoutes: {
     path: string;
@@ -23,7 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about/leadership", priority: 0.6, changeFrequency: "monthly" },
     { path: "/about/approach", priority: 0.7, changeFrequency: "monthly" },
     { path: "/case-studies", priority: 0.6, changeFrequency: "weekly" },
-    { path: "/insights", priority: 0.7, changeFrequency: "weekly" },
+    { path: "/insights", priority: 0.7, changeFrequency: "daily" },
     { path: "/careers", priority: 0.5, changeFrequency: "monthly" },
     { path: "/contact", priority: 0.8, changeFrequency: "monthly" },
     { path: "/privacy-policy", priority: 0.3, changeFrequency: "yearly" },
@@ -33,7 +35,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     ...staticRoutes.map(({ path, priority, changeFrequency }) => ({
       url: absUrl(path || "/"),
-      lastModified: siteUpdated,
+      lastModified: path === "/insights" ? insightsUpdated : siteUpdated,
       changeFrequency,
       priority,
     })),
@@ -51,7 +53,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
     ...insights.map((article) => ({
       url: absUrl(`/insights/${article.slug}`),
-      lastModified: new Date(article.date),
+      lastModified: new Date(article.updated ?? article.date),
       changeFrequency: "monthly" as const,
       priority: 0.65,
     })),

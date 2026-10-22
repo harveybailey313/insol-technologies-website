@@ -63,6 +63,12 @@ export default function InsightsPage() {
               href={`/insights/${article.slug}`}
               className={`card-surface accent-card block p-6 transition-transform hover:-translate-y-0.5 ${accentClass(accentAt(i))}`}
             >
+              {article.cover && (
+                <picture>
+                  <source srcSet={`${article.cover}.webp`} type="image/webp" />
+                  <img src={`${article.cover}.jpg`} alt="" width={1280} height={720} loading="lazy" className="mb-5 h-auto w-full rounded-[10px]" />
+                </picture>
+              )}
               <p className="accent-text text-xs font-semibold uppercase tracking-wide">
                 <CaseSafe text={article.category} />
               </p>

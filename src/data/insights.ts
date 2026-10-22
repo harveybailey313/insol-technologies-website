@@ -1,8 +1,27 @@
-export type InsightSection = {
+/** Paragraphs and bullets may contain inline links written as [text](/path). */
+export type InsightSubsection = {
   heading: string;
   paragraphs: string[];
   bullets?: string[];
 };
+
+export type InsightTable = {
+  caption?: string;
+  headers: string[];
+  rows: string[][];
+};
+
+export type InsightSection = {
+  heading: string;
+  paragraphs: string[];
+  bullets?: string[];
+  /** Render bullets as a numbered list. */
+  ordered?: boolean;
+  table?: InsightTable;
+  subsections?: InsightSubsection[];
+};
+
+export type InsightFAQ = { q: string; a: string };
 
 export type Insight = {
   slug: string;
@@ -17,9 +36,190 @@ export type Insight = {
   /** Industry slugs this article is relevant to. */
   relatedIndustries: string[];
   body: InsightSection[];
+  /** ISO date of the last meaningful update (defaults to date). */
+  updated?: string;
+  /** Cover base path without extension, e.g. "/insights/covers/my-slug" (.jpg + .webp, 1280x720). */
+  cover?: string;
+  coverAlt?: string;
+  /** 3-5 questions; rendered on the page and as FAQPage JSON-LD. */
+  faq?: InsightFAQ[];
 };
 
 export const insights: Insight[] = [
+  {
+    slug: "custom-software-development-process",
+    title: "Custom Software Development Process: 6 Stages From Idea to Production",
+    description:
+      "The custom software development process in 6 stages: discover, strategize, design, build, deploy and scale, with deliverables, approvals and risks per stage.",
+    category: "Software Engineering",
+    date: "2026-10-22",
+    seoTitle: "Custom Software Development Process",
+    cover: "/insights/covers/custom-software-development-process",
+    coverAlt: "Cover reading Custom Software Development Process: 6 Stages From Idea to Production, InSol Technologies",
+    relatedServices: ["product-engineering", "web-mobile-development", "quality-engineering", "cloud-devops", "saas-products"],
+    relatedIndustries: ["technology"],
+    body: [
+      {
+        heading: "What is the custom software development process?",
+        paragraphs: [
+          "The custom software development process is the sequence of stages a team follows to turn a business problem into working, supported software built for one organization. It is the software development lifecycle (SDLC) applied to a single product or system: understand the problem, plan the approach, design the experience and architecture, build in iterations, release safely, and keep improving after launch.",
+          "At InSol Technologies we run every engagement through six stages: Discover, Strategize, Design, Build, Deploy and Scale. The names matter less than the discipline behind them. Each stage ends with a deliverable you can review and a decision you approve, so problems surface while they are still cheap to fix.",
+          "The stages overlap in practice. Design for one module can start while another is being built, and testing runs throughout rather than at the end. What should never be skipped is the checkpoint at the end of each stage.",
+        ],
+      },
+      {
+        heading: "The 6 stages at a glance",
+        paragraphs: [
+          "Use this table as a checklist when you plan a project or compare proposals from development partners.",
+        ],
+        table: {
+          caption: "Custom software development stages, deliverables and approvals",
+          headers: ["Stage", "Key question", "Main deliverable", "What you approve"],
+          rows: [
+            ["1. Discover", "Is this the right problem to solve with custom software?", "Problem statement, users, current workflow, constraints, success measures", "Business outcome and scope boundaries"],
+            ["2. Strategize", "What is the smartest path to that outcome?", "Roadmap, architecture options, build-vs-buy calls, risks, release plan", "First release scope, budget range and sequencing"],
+            ["3. Design", "How will people use it and how will it hold together?", "User flows, clickable prototype, data model, integration and security approach", "Core workflows and technical direction"],
+            ["4. Build", "Are we shipping working software every iteration?", "Working increments, sprint demos, code reviews, automated tests", "Accepted stories and change requests"],
+            ["5. Deploy", "Can the business run this in production?", "Production environment, data migration, rollback plan, runbooks, training", "Go-live checklist and support ownership"],
+            ["6. Scale", "Is the software still delivering value as usage grows?", "Monitoring, maintenance plan, performance work, prioritized backlog", "Roadmap for the next releases"],
+          ],
+        },
+      },
+      {
+        heading: "Stage 1: Discover the real problem",
+        paragraphs: [
+          "Discovery is where most project risk is removed. The goal is for everyone to agree on what is being built, why, for whom, and how success will be measured before code is written. A proposal that arrives without any discovery is a guess with a price attached.",
+          "Good discovery talks to the people who will use the software every day, not only to the person signing the contract. It maps how work happens today, including the workarounds and spreadsheets nobody likes to mention, and it lists the systems the new software must connect to.",
+        ],
+        bullets: [
+          "Interviews with end users, process owners and technical stakeholders",
+          "A map of the current workflow and where it breaks",
+          "A prioritized list of needs, separating must-have from nice-to-have",
+          "Constraints such as deadlines, compliance, budget range and existing systems",
+          "Success measures written in business language",
+        ],
+        subsections: [
+          {
+            heading: "When discovery should end in “don’t build”",
+            paragraphs: [
+              "Sometimes the honest outcome is that an off-the-shelf product, a configuration change or a process fix solves the problem better. A partner who can say that after discovery is protecting your budget, not losing a deal.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Stage 2: Strategize the roadmap and architecture",
+        paragraphs: [
+          "Strategy turns discovery findings into a plan. This is where the team weighs architecture options, decides what to build versus buy or integrate, sequences releases and names the main risks. The output is a roadmap that ties each release to an outcome, not a long feature list.",
+          "The most valuable decision here is usually the scope of the first release. A focused first release that real users can adopt beats a large launch that arrives late. If you are building a product for customers, our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale) covers the tenancy and identity choices that belong in this stage.",
+        ],
+        bullets: [
+          "Architecture options with trade-offs in cost, speed and long-term maintenance",
+          "Build, buy or integrate decisions for each major capability",
+          "A release plan with a clearly bounded first release",
+          "A risk register with owners and mitigation steps",
+        ],
+      },
+      {
+        heading: "Stage 3: Design the experience and the system",
+        paragraphs: [
+          "Design covers two things that must stay aligned: how the software works for the people using it, and how the system is put together underneath. A polished interface on a fragile architecture fails as surely as solid engineering nobody can use.",
+        ],
+        subsections: [
+          {
+            heading: "Experience design",
+            paragraphs: [
+              "User flows, wireframes and a clickable prototype let your team test the main tasks before they are built. Real users clicking through a prototype will find gaps that a requirements document never shows, such as missing roles, edge cases and confusing steps.",
+            ],
+          },
+          {
+            heading: "System design",
+            paragraphs: [
+              "The technical design sets the data model, integrations, APIs, hosting approach, security controls and how environments will be separated. Decisions that are expensive to reverse, such as data ownership and identity, get settled here rather than mid-build.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Stage 4: Build in short, reviewable iterations",
+        paragraphs: [
+          "Development works best in short iterations, typically one to two weeks, that each end with working software you can see and use, not a status report. Problems then show up within days instead of months, and priorities can shift based on what users actually do.",
+          "Quality belongs inside the build, not after it. Code reviews, automated tests and continuous integration run on every change, which is how [quality engineering](/services/quality-engineering) keeps defects from piling up for a final testing phase.",
+        ],
+        bullets: [
+          "A demo at the end of every iteration, with feedback recorded",
+          "Written acceptance criteria for each piece of work",
+          "Automated tests and code review on every change",
+          "A visible backlog so you always know what is next and why",
+          "Code, documentation and infrastructure in repositories you own",
+        ],
+      },
+      {
+        heading: "Stage 5: Deploy with operational readiness",
+        paragraphs: [
+          "Going live is an operational event, not just a technical one. Before launch the team should rehearse data migration, confirm a tested rollback path, set up monitoring and alerts, write runbooks and train the people who will support and use the system.",
+          "Releasing to a small group first, through a pilot or staged rollout, lets you catch real-world issues with limited impact. Our article on [DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk) goes deeper on pipelines and rollback, and our [cloud and DevOps](/services/cloud-devops) team handles this stage for clients.",
+        ],
+        bullets: [
+          "Production environment built from code, not by hand",
+          "Data migration tested on realistic data",
+          "Rollback or forward-fix plan that has been practiced",
+          "Monitoring, alerting and on-call ownership agreed",
+          "User training and support process in place",
+        ],
+      },
+      {
+        heading: "Stage 6: Scale, maintain and improve",
+        paragraphs: [
+          "Software that is not maintained degrades. Dependencies need security updates, usage patterns change and new needs appear. The Scale stage keeps the system healthy through monitoring, maintenance, performance work and a backlog shaped by real usage data.",
+          "Treat each new release as a smaller loop through the same stages: discover what to change, plan it, design it, build it and deploy it. That rhythm is what keeps custom software an asset rather than a liability.",
+        ],
+      },
+      {
+        heading: "Common mistakes that derail custom software projects",
+        paragraphs: [
+          "Most failed projects trace back to a stage that was skipped or rushed. Watch for these warning signs:",
+        ],
+        bullets: [
+          "Starting development without discovery or written success measures",
+          "A first release so large it takes too long to reach real users",
+          "Progress measured in hours spent instead of working features accepted",
+          "Testing saved for the end of the project",
+          "No rollback plan, monitoring or support owner at launch",
+          "Code and infrastructure held in accounts the client does not control",
+        ],
+      },
+      {
+        heading: "How to choose a partner for your project",
+        paragraphs: [
+          "The process a partner describes tells you how your project will feel. Ask to see a sample discovery output, how iterations are demonstrated, how quality is built in, who owns the code and what happens after launch. Our [buyer guide to choosing product engineering partners](/insights/choosing-product-engineering-partners) has a full checklist.",
+          "InSol Technologies delivers [software engineering](/services/product-engineering), [web and mobile development](/services/web-mobile-development) and [SaaS product development](/services/saas-products) through the six stages above. If you are planning a build, [talk to our team](/contact?intent=start-project) about where to start.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What are the stages of the custom software development process?",
+        a: "Most teams follow six stages: discovery, strategy and planning, design, iterative development, deployment, and ongoing maintenance and improvement. Testing runs throughout rather than as a separate final phase.",
+      },
+      {
+        q: "How long does custom software development take?",
+        a: "It depends on scope, integrations and how many decisions are already made. A focused first release usually ships far sooner than a full system, which is why scoping the first release tightly during strategy matters more than any average timeline.",
+      },
+      {
+        q: "Why is the discovery stage so important?",
+        a: "Discovery confirms you are solving the right problem and defines success before money is spent on building. Misunderstandings fixed in discovery cost far less than the same issues found during development or after launch.",
+      },
+      {
+        q: "Is Agile the same as the software development process?",
+        a: "No. Agile is a way of working inside the process, mainly during design and build, using short iterations and regular feedback. The overall process still needs discovery, planning, deployment and maintenance around it.",
+      },
+      {
+        q: "Who should own the code in a custom software project?",
+        a: "The client should own the code, documentation and infrastructure accounts. Agree on this in the contract and make sure repositories and cloud accounts sit under your organization from the start.",
+      },
+    ],
+  },
   {
     slug: "putting-ai-in-production-workflows",
     title: "Putting AI in production workflows — not demos",
@@ -77,6 +277,7 @@ export const insights: Insight[] = [
       "Practical SaaS architecture habits for multi-tenancy, identity, environments, observability, and MVP scoping that will not trap your product later.",
     category: "SaaS",
     date: "2026-09-16",
+    seoTitle: "Building SaaS Foundations That Scale",
     relatedServices: ["saas-products", "product-engineering", "cloud-devops"],
     relatedIndustries: ["technology"],
     body: [
