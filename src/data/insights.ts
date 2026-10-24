@@ -47,6 +47,255 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "test-automation-strategy",
+    title: "Test Automation Strategy: How to Build One Step by Step",
+    description:
+      "How to build a test automation strategy: goals, what to automate, the test pyramid, tools, test data, CI/CD gates, flaky test control, metrics and a checklist.",
+    category: "Quality Engineering",
+    date: "2026-10-24",
+    seoTitle: "Test Automation Strategy: Step-by-Step",
+    cover: "/insights/covers/test-automation-strategy",
+    coverAlt: "Cover reading Test Automation Strategy: How to Build One Step by Step, InSol Technologies",
+    relatedServices: ["quality-engineering", "cloud-devops", "product-engineering", "saas-products"],
+    relatedIndustries: ["technology", "ecommerce", "healthcare", "travel-hospitality"],
+    body: [
+      {
+        heading: "What is a test automation strategy?",
+        paragraphs: [
+          "A test automation strategy is the plan that decides which tests a team automates, at which level of the system, with which tools, when they run and who keeps them healthy. It turns automation from a collection of scripts written by whoever had time into a deliberate part of how software is built and released.",
+          "The strategy is not a long document that nobody reads. In practice it is a short set of agreed decisions: the goals automation should serve, the coverage at each test layer, the environments and data tests depend on, the gates in the delivery pipeline and the metrics that show whether it is working.",
+          "Without a strategy, most teams drift toward the same outcome: a slow, fragile suite of browser tests that fails for reasons unrelated to the code, so people stop trusting it and go back to manual regression before every release.",
+        ],
+      },
+      {
+        heading: "Test strategy vs test plan vs automation strategy",
+        paragraphs: [
+          "These terms overlap, so it helps to separate them before writing anything down.",
+        ],
+        table: {
+          caption: "How the three documents differ",
+          headers: ["", "Test strategy", "Test plan", "Test automation strategy"],
+          rows: [
+            ["Scope", "The overall approach to quality for a product or organization", "Testing for a specific release, project or feature", "How and where automated testing fits into delivery"],
+            ["Time horizon", "Long term, reviewed occasionally", "Short term, tied to a timeline", "Long term, reviewed regularly as the product changes"],
+            ["Typical contents", "Test levels, types, roles, risk approach", "Scope, schedule, resources, entry and exit criteria", "Goals, automation scope, layers, tools, data, pipeline gates, maintenance, metrics"],
+            ["Owner", "QA or engineering leadership", "Test lead for the project", "QA and engineering leads together"],
+          ],
+        },
+      },
+      {
+        heading: "How to build a test automation strategy in 8 steps",
+        paragraphs: [
+          "The steps below follow the order we use on quality engineering engagements. Each one produces a decision the next step depends on.",
+        ],
+        subsections: [
+          {
+            heading: "1. Set goals tied to delivery problems",
+            paragraphs: [
+              "Start with the problem automation should solve. Common goals are shortening the regression cycle before each release, catching defects before they reach staging or production, releasing more often without adding risk, and freeing testers for exploratory work. Write each goal with a way to measure it, such as regression duration or the number of defects found after release. A goal like \"improve quality\" gives no direction.",
+            ],
+          },
+          {
+            heading: "2. Assess where you are today",
+            paragraphs: [
+              "List the existing tests at each level, how long a full regression takes, how often releases happen, which areas break most often and which skills the team already has. This baseline shows where automation will pay back first and gives you something to compare against later.",
+            ],
+          },
+          {
+            heading: "3. Decide what to automate and what to keep manual",
+            paragraphs: [
+              "Not every test is a good automation candidate. Prioritize tests that run often, cover business-critical flows, follow stable steps and take meaningful time to run by hand. The table in the next section gives the criteria in more detail.",
+            ],
+          },
+          {
+            heading: "4. Choose the coverage at each test layer",
+            paragraphs: [
+              "Decide how much of the coverage sits in unit, integration or API, and end-to-end tests. Most teams get the best balance by pushing checks down to the fastest layer that can catch the defect, as explained in the test pyramid section below.",
+            ],
+          },
+          {
+            heading: "5. Select tools and a framework design",
+            paragraphs: [
+              "Pick tools that fit your languages, platforms and team skills rather than the most talked-about option. Agree on a framework design, such as the page object model for UI tests, data-driven tests for flows with many inputs, or behavior-driven scenarios when product owners need to read them. Keep test code in source control and review it like production code.",
+            ],
+          },
+          {
+            heading: "6. Plan test environments and test data",
+            paragraphs: [
+              "Tests are only as reliable as the environments they run in. Aim for environments that resemble production, give each test its own data that it creates and cleans up, and avoid sharing accounts or records between tests. Use synthetic or properly anonymized data rather than copies of real customer data, which matters most in regulated sectors such as healthcare.",
+            ],
+          },
+          {
+            heading: "7. Wire tests into the CI/CD pipeline",
+            paragraphs: [
+              "Automated tests protect releases only when they run automatically and can block a bad change. Decide which suites run on every pull request, which run after merge and which run against production after a deployment. Our article on [Cloud and DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk) covers how these gates fit into a wider release process.",
+            ],
+          },
+          {
+            heading: "8. Assign ownership, maintain and measure",
+            paragraphs: [
+              "Decide who fixes a failing test and how quickly, how flaky tests are handled and how often the suite is reviewed. Track a small set of metrics, review them regularly and update the strategy as the product and team change.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "What to automate first",
+        paragraphs: [
+          "A simple scoring exercise keeps this decision objective. Rate each candidate test on how often it runs, how critical the flow is to the business and how stable its steps are, then start at the top of the list.",
+        ],
+        table: {
+          caption: "Criteria for choosing automation candidates",
+          headers: ["Criterion", "Good candidate to automate", "Better kept manual"],
+          rows: [
+            ["Frequency", "Runs every build, sprint or release", "Runs once or rarely"],
+            ["Business risk", "Sign-in, checkout, payments, booking, core workflows", "Low-impact edge cases"],
+            ["Stability", "Steps and expected results are well defined", "Feature or interface still changing every week"],
+            ["Data variation", "Same flow with many input combinations", "A single, simple scenario"],
+            ["Judgment needed", "Clear pass or fail result", "Usability, visual appeal and exploratory testing"],
+          ],
+        },
+        bullets: [
+          "Smoke tests that confirm each build starts and its main pages or endpoints respond.",
+          "Regression tests for flows that have broken before.",
+          "API and contract tests between services and with third-party integrations.",
+          "Data validation checks on imports, exports and reports.",
+        ],
+      },
+      {
+        heading: "The test pyramid: balancing unit, API and UI tests",
+        paragraphs: [
+          "The test pyramid, introduced by Mike Cohn and later expanded by Martin Fowler, is the most common model for balancing test layers. It recommends many small, fast tests at the bottom and only a few slow, broad tests at the top.",
+        ],
+        subsections: [
+          {
+            heading: "Unit tests",
+            paragraphs: [
+              "Unit tests check individual functions and components in isolation. They run in seconds, point to the exact cause of a failure and should cover most business logic. Developers usually write them alongside the code.",
+            ],
+          },
+          {
+            heading: "Integration and API tests",
+            paragraphs: [
+              "Integration tests check that components work together, for example a service and its database, or two services through an API contract. They are slower than unit tests but much more stable than UI tests, which makes them the best place to cover most business rules end to end without a browser.",
+            ],
+          },
+          {
+            heading: "End-to-end and UI tests",
+            paragraphs: [
+              "End-to-end tests drive the application as a user would, across the full stack. They give the most realistic confidence but are the slowest and most fragile layer, so keep them to a small set of critical user journeys. A suite that is mostly UI tests, sometimes called the ice cream cone, is the pattern to avoid.",
+            ],
+          },
+        ],
+        bullets: [
+          "Treat the pyramid as a guide, not a rule. A product with complex user workflows may need more end-to-end coverage, while a data processing service may need almost none.",
+          "Non-functional checks such as performance, security scanning and accessibility belong in the strategy too, usually on a schedule or before major releases.",
+        ],
+      },
+      {
+        heading: "Running automated tests in CI/CD",
+        paragraphs: [
+          "A common pattern is to match each pipeline stage to the suites that give fast, useful feedback at that point.",
+        ],
+        table: {
+          headers: ["Pipeline stage", "Suites to run", "Purpose"],
+          rows: [
+            ["Every pull request", "Unit tests, fast integration tests, smoke tests on a preview build", "Stop defects before merge with quick feedback"],
+            ["After merge to main", "Full regression, API and contract tests", "Confirm the integrated codebase is releasable"],
+            ["Scheduled or nightly", "Long-running end-to-end, performance and security scans", "Catch slower or broader issues without blocking developers"],
+            ["After production deploy", "Production smoke tests on critical journeys", "Confirm the release works for real users"],
+          ],
+        },
+      },
+      {
+        heading: "Keeping the suite reliable: flaky tests and maintenance",
+        paragraphs: [
+          "A flaky test passes and fails on the same code. A few of them are enough to make a team ignore red builds, so the strategy needs explicit rules for them.",
+        ],
+        bullets: [
+          "Quarantine a flaky test quickly so it stops blocking the pipeline, then fix or delete it within an agreed time.",
+          "Look for shared data, timing assumptions and unstable environments before blaming the code under test.",
+          "Use stable selectors and explicit waits in UI tests instead of fixed sleeps.",
+          "Remove tests that duplicate coverage at a lower layer or no longer match how the product works.",
+          "Make test failures easy to diagnose with logs, screenshots and traces stored with each run.",
+        ],
+      },
+      {
+        heading: "Metrics that show whether the strategy works",
+        paragraphs: [
+          "Choose a handful of metrics linked to the goals from step 1 and review them on a regular schedule.",
+        ],
+        bullets: [
+          "Regression cycle time: how long it takes to know a release candidate is safe.",
+          "Pipeline duration for pull request checks.",
+          "Defect escape rate: defects found after release compared with those caught before.",
+          "Flaky test rate and time to fix a broken test.",
+          "Coverage of critical user journeys, rather than code coverage alone.",
+        ],
+        subsections: [
+          {
+            heading: "Where AI fits in test automation",
+            paragraphs: [
+              "AI-assisted tools can suggest test cases, generate test data and help repair broken selectors. They work best inside a clear strategy with human review, not as a replacement for one. If your product itself includes AI features, those need their own evaluation approach, which we describe in [putting AI into production workflows](/insights/putting-ai-in-production-workflows).",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Test automation strategy checklist",
+        paragraphs: [
+          "Use this list to check that a strategy covers the decisions that matter.",
+        ],
+        ordered: true,
+        bullets: [
+          "Goals are written down with a way to measure each one.",
+          "The current state is documented as a baseline.",
+          "Criteria for what to automate and what stays manual are agreed.",
+          "Target coverage at unit, integration and end-to-end layers is defined.",
+          "Tools and framework design are chosen and test code lives in source control.",
+          "Environments and test data are isolated and free of real customer data.",
+          "Pipeline gates say which suites run when and which failures block a release.",
+          "Owners, flaky test rules and a review schedule are in place.",
+        ],
+      },
+      {
+        heading: "Test automation across industries",
+        paragraphs: [
+          "In [ecommerce](/industries/ecommerce), automation usually starts with search, cart, checkout and payment flows, plus checks across browsers and devices. In [healthcare](/industries/healthcare), tests must use synthetic patient data and cover access control and audit trails. In [travel and hospitality](/industries/travel-hospitality), booking flows depend on many third-party integrations, so contract tests and service mocks matter. For [technology and SaaS companies](/industries/technology), multi-tenant permissions, billing and upgrade paths are common priorities, as covered in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps with test automation",
+        paragraphs: [
+          "Our [quality engineering](/services/quality-engineering) team designs and builds test automation as part of delivery: assessing current coverage, agreeing what to automate, building maintainable frameworks for web, mobile and API testing, and connecting suites to your pipelines with our [Cloud and DevOps](/services/cloud-devops) engineers. Testing is built into every stage of our [custom software development process](/insights/custom-software-development-process), from the first [MVP](/insights/mvp-development-process) onward.",
+          "If release testing is slowing your team down or production defects keep slipping through, [talk to our team](/contact) about a test automation strategy that fits your product.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What should a test automation strategy include?",
+        a: "It should include the goals automation serves, criteria for what to automate, the target coverage at each test layer, tools and framework design, test environment and data rules, CI/CD pipeline gates, ownership and maintenance rules, and the metrics used to review it.",
+      },
+      {
+        q: "Which tests should be automated first?",
+        a: "Start with tests that run often, cover business-critical flows and have stable, well-defined steps, such as smoke tests, regression tests for flows that have broken before, and API tests. Exploratory, usability and one-off tests are usually better kept manual.",
+      },
+      {
+        q: "What is the test automation pyramid?",
+        a: "It is a model that recommends many fast unit tests at the base, fewer integration or API tests in the middle and a small number of end-to-end UI tests at the top. It keeps suites fast and reliable, though the right balance depends on the product.",
+      },
+      {
+        q: "Can test automation replace manual testing?",
+        a: "No. Automation is best for repeatable checks with clear pass or fail results. Manual and exploratory testing are still needed to judge usability, find unexpected behavior and test new features before their design settles.",
+      },
+      {
+        q: "How do you deal with flaky automated tests?",
+        a: "Quarantine them so they stop blocking the pipeline, find the root cause, which is often shared test data, timing or an unstable environment, then fix or remove them within an agreed time. Tracking the flaky test rate keeps the problem visible.",
+      },
+    ],
+  },
+  {
     slug: "mvp-development-process",
     title: "MVP Development: A Step-by-Step Process for Startups",
     description:
