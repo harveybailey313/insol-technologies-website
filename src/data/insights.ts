@@ -47,6 +47,205 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "how-to-implement-ai-in-business",
+    title: "How to Implement AI in Business: A Step-by-Step Guide",
+    description:
+      "How to implement AI in business step by step: pick the right use case, check data readiness, choose build or buy, run a pilot, add governance and scale safely.",
+    category: "AI",
+    date: "2026-10-26",
+    seoTitle: "How to Implement AI in Business",
+    cover: "/insights/covers/how-to-implement-ai-in-business",
+    coverAlt: "Cover reading How to Implement AI in Business: A Step-by-Step Guide, InSol Technologies",
+    relatedServices: ["ai-intelligent-automation", "data-analytics", "enterprise-applications", "cloud-devops"],
+    relatedIndustries: ["healthcare", "ecommerce", "travel-hospitality", "technology"],
+    body: [
+      {
+        heading: "What does implementing AI in a business actually mean?",
+        paragraphs: [
+          "Implementing AI in a business means putting an AI capability, such as a language model, a prediction model or an automated decision step, into a real workflow so that it changes how work gets done. It is not the same as giving staff access to a chatbot or running a one-off experiment. A real implementation has a defined problem, data it can trust, an owner, a way to measure whether it works, and a place inside the systems people already use.",
+          "Most AI projects that disappoint do not fail because the model is weak. They fail because the use case was vague, the data was not ready, nobody owned the result, or the pilot had no path into production. The steps below are designed to deal with those risks in order, before large amounts of time and budget are committed.",
+        ],
+      },
+      {
+        heading: "The AI implementation process at a glance",
+        paragraphs: [
+          "Each step answers one question and produces something the next step depends on. Use the table as a checklist for planning or for reviewing an AI initiative that has stalled.",
+        ],
+        table: {
+          caption: "Steps to implement AI in a business",
+          headers: ["Step", "Key question", "Output"],
+          rows: [
+            ["1. Define the business problem", "What outcome needs to improve, and how will we measure it?", "Problem statement, owner, baseline and success metrics"],
+            ["2. Find and rank use cases", "Where can AI help most with acceptable risk?", "Shortlist of use cases scored on value, feasibility and risk"],
+            ["3. Assess data and systems readiness", "Do we have the data, access and integrations the use case needs?", "Data assessment, integration map, gaps to close"],
+            ["4. Choose the approach", "Should we buy, configure or build?", "Build vs buy decision, architecture outline, cost estimate"],
+            ["5. Run a focused pilot", "Does it work on real data with real users?", "Pilot results against metrics, go or no-go decision"],
+            ["6. Put governance and oversight in place", "Is it safe, compliant and accountable?", "Usage policy, human review points, evaluation and audit trail"],
+            ["7. Deploy, integrate and train people", "Can people use it inside their normal work?", "Production release, integrations, training and support"],
+            ["8. Monitor, improve and scale", "Is it still working, and where should it go next?", "Monitoring dashboards, improvement backlog, scaling roadmap"],
+          ],
+        },
+      },
+      {
+        heading: "Step 1: Define the business problem first",
+        paragraphs: [
+          "Start with a business outcome, not with a technology. \"We want to use AI\" is not a goal. \"Support agents spend too long searching internal documents to answer customer questions\" is a problem that can be measured and improved.",
+        ],
+        bullets: [
+          "Describe the problem in plain business language and name the team that feels it.",
+          "Record how the work is done today and measure a baseline, such as handling time, error rate, backlog size or cost per transaction.",
+          "Agree on what success looks like and how it will be measured after launch.",
+          "Name a business owner who is accountable for the result, not only a technical lead.",
+        ],
+      },
+      {
+        heading: "Step 2: Find and prioritize AI use cases",
+        paragraphs: [
+          "Once the problem areas are clear, list the places where AI could help and rank them. Good first use cases are frequent, repetitive or information-heavy tasks where a mistake can be caught and corrected, rather than high-stakes decisions with no human in the loop.",
+        ],
+        subsections: [
+          {
+            heading: "Common types of business AI use cases",
+            paragraphs: [
+              "Most practical use cases fall into a handful of patterns. Knowing the pattern helps you estimate effort and risk early.",
+            ],
+            bullets: [
+              "Document processing: extracting data from invoices, forms, claims or contracts and routing it to the right system.",
+              "Knowledge assistants: answering staff or customer questions from approved internal content.",
+              "Classification and routing: sorting tickets, emails or leads and sending them to the right queue.",
+              "Forecasting and prediction: estimating demand, churn, no-shows or stock needs from historical data.",
+              "Workflow automation: combining AI steps with rules and integrations so routine work moves without manual handoffs.",
+            ],
+          },
+          {
+            heading: "How to score and rank use cases",
+            paragraphs: [
+              "Score each candidate on business value, technical feasibility, data availability and risk. A simple 1 to 5 scale is enough. Pick one or two use cases with high value and manageable risk for the first round, and keep the rest on a backlog that you revisit after the pilot.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Step 3: Assess data and systems readiness",
+        paragraphs: [
+          "AI is only as good as the data and context it receives. Before committing to a build, check whether the data the use case needs exists, whether it is accurate and complete enough, who owns it, and whether the AI system can legally and technically access it.",
+          "Look at the systems too. Most business value comes from connecting AI to the CRM, ERP, ticketing tool, booking engine or health record system where work already happens. If those integrations are hard, plan for them now. Our [data and analytics](/services/data-analytics) team often starts here, and our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust) covers the foundations in more detail.",
+        ],
+        bullets: [
+          "Data quality: accuracy, completeness, consistency and how current the data is.",
+          "Access: permissions, privacy rules, consent and where data is allowed to be processed.",
+          "Integration: APIs, identity and single sign-on, and how results are written back to systems of record.",
+          "Skills: who will build, operate and support the solution once it is live.",
+        ],
+      },
+      {
+        heading: "Step 4: Choose to buy, configure or build",
+        paragraphs: [
+          "There are three broad ways to bring AI into a workflow, and many organizations use all three for different needs.",
+        ],
+        table: {
+          caption: "Build vs buy options for business AI",
+          headers: ["Approach", "Best for", "Trade-offs"],
+          rows: [
+            ["Buy an AI feature in an existing tool", "Common needs such as writing help, meeting notes or built-in CRM assistants", "Fast to start; limited control over data, behavior and differentiation"],
+            ["Configure a platform or foundation model", "Knowledge assistants and automations on your own content and systems", "Good balance of speed and control; needs integration, prompt design and evaluation"],
+            ["Build a custom solution", "Core workflows, proprietary data or strict compliance needs", "Most control and fit; more time, engineering effort and ongoing ownership"],
+          ],
+        },
+      },
+      {
+        heading: "Step 5: Run a focused pilot",
+        paragraphs: [
+          "A pilot tests the chosen approach on real data with a small group of real users, against the metrics agreed in step 1. Keep the scope narrow and the timeline short, and decide in advance what result would justify moving forward and what result would mean stopping or changing direction.",
+          "The same thinking behind a lean [MVP development process](/insights/mvp-development-process) applies here: build the smallest version that can prove or disprove the idea. Treat a well-reasoned decision to stop as a useful result, not a failure.",
+        ],
+        ordered: true,
+        bullets: [
+          "Pick one team, one workflow and a fixed pilot period.",
+          "Prepare a test set of real examples with known good answers so output quality can be measured.",
+          "Keep a human reviewing outputs during the pilot and record where the AI is right, wrong or unsure.",
+          "Compare results with the baseline and decide: scale, adjust or stop.",
+        ],
+      },
+      {
+        heading: "Step 6: Put governance and human oversight in place",
+        paragraphs: [
+          "Governance is what lets an AI system move from a pilot to something the business can rely on. It does not need to be heavy, but it has to be explicit.",
+        ],
+        bullets: [
+          "An acceptable use policy that says which data and tools staff may use with AI.",
+          "Clear points where a person must review or approve an AI output before it takes effect.",
+          "Ongoing evaluation of accuracy, bias and failure cases, not just a one-time test.",
+          "Security controls for data in prompts, outputs and integrations, plus logging and an audit trail.",
+          "Alignment with the rules that apply to you, such as privacy law, sector regulations and frameworks like the NIST AI Risk Management Framework or the EU AI Act where relevant.",
+        ],
+      },
+      {
+        heading: "Step 7: Deploy, integrate and train people",
+        paragraphs: [
+          "Production deployment means the AI capability runs reliably inside the tools people already use, with proper identity, permissions, error handling and support. A separate portal that nobody opens rarely delivers value; this is the core argument of our article on [putting AI in production workflows](/insights/putting-ai-in-production-workflows).",
+          "Plan the rollout like any other software release, with environments, automated testing and the ability to roll back, as described in our [custom software development process](/insights/custom-software-development-process). Then train people on what the system does well, where it can be wrong and how to flag problems. Adoption depends as much on trust and habits as on the technology.",
+        ],
+      },
+      {
+        heading: "Step 8: Monitor, improve and scale",
+        paragraphs: [
+          "AI systems change behavior over time as data, users and underlying models change. Monitor output quality, usage, cost and user feedback, and keep a backlog of improvements. Re-run your evaluation set whenever prompts, models or data sources change.",
+          "When the first use case is stable and meeting its targets, reuse what you built, such as data pipelines, integrations, evaluation tools and governance, for the next use case on the backlog. Shared foundations make each new use case faster and safer than the last. Running these workloads well also depends on solid [cloud and DevOps](/services/cloud-devops) practices.",
+        ],
+      },
+      {
+        heading: "Common AI implementation mistakes to avoid",
+        paragraphs: [
+          "These are the patterns that most often slow down or derail AI initiatives.",
+        ],
+        bullets: [
+          "Starting with a tool or model instead of a business problem.",
+          "Choosing a first use case that is too broad or too risky to prove value quickly.",
+          "Underestimating data cleanup, access approvals and integration work.",
+          "Running pilots with no success metrics and no plan for production.",
+          "Leaving out the people who do the work today until launch day.",
+          "Treating governance as an afterthought rather than part of the design.",
+        ],
+      },
+      {
+        heading: "AI implementation by industry",
+        paragraphs: [
+          "In [healthcare](/industries/healthcare), AI often starts with administrative work such as document processing, scheduling and patient communication, with strict controls on sensitive data and clinical oversight for anything that affects care. In [ecommerce](/industries/ecommerce), common starting points are product search, catalog content, customer service and demand forecasting. [Travel and hospitality](/industries/travel-hospitality) businesses look at guest messaging, booking support and pricing inputs. For [technology and SaaS companies](/industries/technology), AI is frequently built into the product itself, which raises questions about multi-tenant data separation and cost per user covered in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps businesses implement AI",
+        paragraphs: [
+          "Our [AI and intelligent automation](/services/ai-intelligent-automation) team works through these steps with clients: framing the problem, ranking use cases, checking data readiness, choosing the right approach, running a measured pilot and taking what works into production. Where AI needs to connect with ERP, CRM or other core systems, our [enterprise applications](/services/enterprise-applications) team handles the integration, and our [quality engineering](/services/quality-engineering) team helps test outputs and workflows before release.",
+          "If you are deciding where AI fits in your business, or have a pilot that has not reached production, [talk to our team](/contact) about a scoped first step.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is the first step to implement AI in a business?",
+        a: "The first step is to define a specific business problem with a measurable outcome and a named owner. Starting from the problem, rather than from a tool or model, makes it possible to choose the right use case, judge whether the AI is working and decide whether to scale it.",
+      },
+      {
+        q: "How do I choose the right AI use case?",
+        a: "List candidate use cases and score each one on business value, technical feasibility, data availability and risk. Good first use cases are frequent, well-understood tasks where mistakes can be caught by a person, such as document processing, ticket routing or answering questions from internal content.",
+      },
+      {
+        q: "Should we build or buy AI solutions?",
+        a: "Buy when a common need is already well served by AI features in tools you use. Configure a platform or foundation model when you need AI on your own content and systems. Build custom when the workflow is core to your business, depends on proprietary data or has strict compliance requirements.",
+      },
+      {
+        q: "How long does it take to implement AI in a business?",
+        a: "It depends on the use case, data readiness and integrations. A narrow pilot on clean, accessible data can move quickly, while use cases that need data cleanup, new integrations or regulatory review take longer. A short, focused pilot is the most reliable way to get a realistic estimate.",
+      },
+      {
+        q: "What are the biggest risks when implementing AI?",
+        a: "The main risks are unclear goals, poor or inaccessible data, inaccurate outputs, data privacy and security gaps, low adoption by staff and pilots with no path to production. Clear success metrics, human review points, ongoing evaluation and early involvement of the people who do the work reduce these risks.",
+      },
+    ],
+  },
+  {
     slug: "mobile-app-development-process",
     title: "Mobile App Development Process: 7 Steps to Launch",
     description:
