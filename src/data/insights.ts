@@ -47,6 +47,206 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "data-analytics-strategy",
+    title: "Data Analytics Strategy: How to Build One in 8 Steps",
+    description:
+      "How to build a data analytics strategy in 8 steps: set business goals, assess data maturity, rank use cases, design the platform, add governance and a roadmap.",
+    category: "Data",
+    date: "2026-10-27",
+    seoTitle: "Data Analytics Strategy: 8-Step Guide",
+    cover: "/insights/covers/data-analytics-strategy",
+    coverAlt: "Cover reading Data Analytics Strategy: How to Build One in 8 Steps, InSol Technologies",
+    relatedServices: ["data-analytics", "cloud-devops", "ai-intelligent-automation", "enterprise-applications"],
+    relatedIndustries: ["healthcare", "ecommerce", "travel-hospitality", "technology"],
+    body: [
+      {
+        heading: "What is a data analytics strategy?",
+        paragraphs: [
+          "A data analytics strategy is a plan that connects business goals to the data, people, processes and technology needed to answer the questions that matter. It says which decisions data should support, which metrics the business agrees on, where the data comes from, who owns it, how it is governed and in what order capabilities will be built.",
+          "It is not a tool purchase or a dashboard project. Many companies already have a BI tool, a warehouse or a set of reports, yet still argue in meetings about whose numbers are right. A strategy fixes that by deciding what to measure, how to define it and how to keep it trustworthy before more technology is added.",
+        ],
+      },
+      {
+        heading: "Why a data analytics strategy matters",
+        paragraphs: [
+          "Without a strategy, analytics work tends to grow one request at a time. Each team builds its own extracts and spreadsheets, definitions drift apart and the data team spends its time answering ad hoc questions instead of building reusable assets. A clear strategy changes that pattern.",
+        ],
+        bullets: [
+          "Leaders share one set of metric definitions, so decisions are based on agreed numbers.",
+          "Data and engineering effort goes to the use cases with the most business value.",
+          "Data quality, privacy and access rules are designed in rather than patched later.",
+          "The platform is sized for real needs instead of being over-built or under-built.",
+          "It creates the foundation that later AI and automation work depends on.",
+        ],
+      },
+      {
+        heading: "Core components of a data analytics strategy",
+        paragraphs: [
+          "Most strategies cover the same building blocks. The table below is a quick way to check that nothing important is missing from yours.",
+        ],
+        table: {
+          caption: "Components of a data analytics strategy",
+          headers: ["Component", "What it defines", "Typical questions"],
+          rows: [
+            ["Business goals and decisions", "The outcomes analytics should improve", "Which decisions are slow, risky or based on guesswork today?"],
+            ["Use cases and KPIs", "Prioritized analytics use cases and agreed metric definitions", "What exactly counts as an active customer, a booking or a return?"],
+            ["Data sources and quality", "Where data lives and how reliable it is", "Which systems are the source of truth, and where are the gaps?"],
+            ["Architecture and tools", "How data is collected, stored, modeled and served", "Warehouse, lake or lakehouse? Batch or near real time?"],
+            ["Governance and security", "Ownership, access, privacy and quality rules", "Who can see what, and who fixes a broken number?"],
+            ["People and operating model", "Roles, skills and how the data team is organized", "Central team, embedded analysts or a hybrid?"],
+            ["Roadmap and measurement", "The order of delivery and how success is tracked", "What ships first, and how will we know it is working?"],
+          ],
+        },
+      },
+      {
+        heading: "How to build a data analytics strategy in 8 steps",
+        paragraphs: [
+          "The steps below follow the order most teams find practical. Early steps are about business alignment and an honest view of the current state; later steps turn that into architecture, rules and a delivery plan.",
+        ],
+        subsections: [
+          {
+            heading: "Step 1: Start with business goals and key decisions",
+            paragraphs: [
+              "Begin with the business strategy, not with data. Interview leaders and team heads and ask which decisions they make regularly, what information they use, and where they lack confidence or speed. Translate the answers into a short list of business outcomes, such as reducing stockouts, improving patient scheduling, raising repeat bookings or shortening the monthly close.",
+              "Secure an executive sponsor at this stage. Data work crosses departments, and someone needs the authority to settle priorities and definitions when teams disagree.",
+            ],
+          },
+          {
+            heading: "Step 2: Assess your current data maturity",
+            paragraphs: [
+              "Map the current state honestly: which systems hold the important data, how it is moved today, what reports exist and how much people trust them. Note manual steps, spreadsheet bridges, duplicated definitions and data that nobody owns. This assessment shows the gap between where you are and where the goals from step 1 require you to be.",
+            ],
+            bullets: [
+              "Inventory the main data sources: CRM, ERP, ecommerce platform, booking engine, health record system, product databases and finance tools.",
+              "Rate data quality on accuracy, completeness, consistency and timeliness.",
+              "List current reports and dashboards, who uses them and which ones are trusted.",
+              "Note existing skills, tools and contracts that can be reused.",
+            ],
+          },
+          {
+            heading: "Step 3: Identify and prioritize analytics use cases",
+            paragraphs: [
+              "Turn the business goals into concrete use cases, each with a user, a decision and a measurable outcome. Score each one on business value, feasibility, data availability and dependencies, then choose a small first wave that can deliver visible value quickly and build reusable foundations at the same time.",
+            ],
+          },
+          {
+            heading: "Step 4: Define KPIs and a shared metric layer",
+            paragraphs: [
+              "For each priority use case, agree the KPIs and write down their exact definitions, sources and owners. A documented metric definition, sometimes held in a semantic layer or metrics store, stops different dashboards from calculating the same number in different ways. This step often does more to restore trust in data than any new tool.",
+            ],
+          },
+          {
+            heading: "Step 5: Design the data architecture",
+            paragraphs: [
+              "Choose an architecture that fits the use cases, data volumes, latency needs and team skills, not the most fashionable option. Most modern setups ingest data from source systems with ELT pipelines, store it in a cloud warehouse or lakehouse, model it into clean business tables and serve it to BI tools, applications and machine learning workloads.",
+              "Plan the platform with the same discipline as any production system: environments, version control, automated tests on pipelines, monitoring and cost controls. Our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust) covers these foundations, and if your data still sits on-premises, a [cloud migration strategy](/insights/cloud-migration-strategy) should be planned alongside it.",
+            ],
+          },
+          {
+            heading: "Step 6: Set up data governance and security",
+            paragraphs: [
+              "Governance does not need to be a large program at the start. Focus on what the first wave of use cases needs: named data owners, access rules by role, privacy and retention rules that match your regulations, data quality checks with alerts, and a clear process for raising and fixing data issues. Extend it as more domains are added.",
+            ],
+          },
+          {
+            heading: "Step 7: Build the team and operating model",
+            paragraphs: [
+              "Decide how analytics work will be organized and who does it. Typical roles include data engineers, analytics engineers, analysts, a data product owner and, later, data scientists. Decide which skills to hire, which to develop internally and where a delivery partner fills gaps. Plan for data literacy training so business users can read and question the numbers they receive.",
+            ],
+          },
+          {
+            heading: "Step 8: Create a phased roadmap and measure progress",
+            paragraphs: [
+              "Sequence the work into phases, each delivering at least one working use case plus the platform and governance pieces it needs. Give each item an owner, a budget range, dependencies and a review point. Track both delivery and adoption, then revisit the roadmap regularly, for example every quarter, as business priorities change.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Analytics maturity: where are you starting from?",
+        paragraphs: [
+          "A common way to describe analytics maturity is by the type of question a business can answer reliably. Most organizations work at more than one level at once, but knowing the dominant level helps set realistic goals for the strategy.",
+        ],
+        table: {
+          caption: "Four types of analytics",
+          headers: ["Type", "Question it answers", "Typical examples"],
+          rows: [
+            ["Descriptive", "What happened?", "Sales reports, occupancy dashboards, monthly KPI packs"],
+            ["Diagnostic", "Why did it happen?", "Drill-down analysis, cohort and funnel analysis, root cause reviews"],
+            ["Predictive", "What is likely to happen?", "Demand forecasts, churn risk scores, no-show predictions"],
+            ["Prescriptive", "What should we do about it?", "Recommended reorder quantities, pricing suggestions, next best action"],
+          ],
+        },
+      },
+      {
+        heading: "Choosing an operating model for your data team",
+        paragraphs: [
+          "How the data team is organized affects speed, consistency and cost. There is no single right answer, and many companies move from one model to another as they grow.",
+        ],
+        bullets: [
+          "Centralized: one data team serves the whole business. Good for consistency and early-stage programs, but it can become a bottleneck.",
+          "Decentralized or embedded: analysts sit inside each department. Close to the business, but definitions and tools can drift apart.",
+          "Hybrid or hub-and-spoke: a central team owns the platform, standards and shared metrics, while embedded analysts work on domain questions. Often a practical balance for growing companies.",
+        ],
+      },
+      {
+        heading: "Common data analytics strategy mistakes",
+        paragraphs: [
+          "These patterns appear again and again when analytics programs stall.",
+        ],
+        bullets: [
+          "Buying tools before agreeing on goals, use cases and metric definitions.",
+          "Trying to model every data source before delivering a single useful result.",
+          "Treating data quality as a one-time cleanup instead of an ongoing, monitored process.",
+          "Building dashboards that nobody was asked for and nobody uses.",
+          "Leaving governance and privacy until an audit or incident forces it.",
+          "Writing a strategy document once and never revisiting the roadmap.",
+        ],
+      },
+      {
+        heading: "Data analytics strategy by industry",
+        paragraphs: [
+          "In [healthcare](/industries/healthcare), strategies usually start with operational analytics such as scheduling, capacity and revenue cycle reporting, with strict access control and privacy rules for patient data. [Ecommerce](/industries/ecommerce) businesses often focus on a single view of customers, orders and inventory to support merchandising, marketing and demand planning. In [travel and hospitality](/industries/travel-hospitality), common priorities are booking, occupancy and channel performance data brought together from reservation, property and distribution systems. [Technology and SaaS companies](/industries/technology) typically need product usage, subscription and revenue metrics, often exposed to customers inside the product, which links to the design choices in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+        ],
+      },
+      {
+        heading: "How data strategy supports AI",
+        paragraphs: [
+          "AI projects depend on accessible, well-governed data. A business with clear data ownership, trusted pipelines and documented definitions can move from analytics to prediction and automation much faster than one that has to fix its data first. That is why data readiness is an early step in our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business). Building the analytics foundation well is also building the foundation for [AI and intelligent automation](/services/ai-intelligent-automation).",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps build a data analytics strategy",
+        paragraphs: [
+          "Our [data and analytics](/services/data-analytics) team works through these steps with clients: aligning on goals and decisions, assessing the current data estate, ranking use cases, defining metrics and designing a platform that fits. Our [cloud and DevOps](/services/cloud-devops) engineers build and run the infrastructure, and our [enterprise applications](/services/enterprise-applications) team connects ERP, CRM and other core systems so data flows reliably into the platform.",
+          "If your teams are debating numbers instead of acting on them, or you need a clear plan before investing in new data tools, [talk to our team](/contact) about a scoped first step.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What should a data analytics strategy include?",
+        a: "A data analytics strategy should include the business goals and decisions it supports, prioritized use cases and KPIs, an assessment of data sources and quality, the target architecture and tools, governance and security rules, the team and operating model, and a phased roadmap with owners and ways to measure progress.",
+      },
+      {
+        q: "What is the difference between a data strategy and a data analytics strategy?",
+        a: "A data strategy covers how an organization manages data as a whole, including collection, storage, governance and compliance. A data analytics strategy focuses on how that data is turned into insights and decisions. In practice they overlap heavily, and many companies plan them together.",
+      },
+      {
+        q: "How long does it take to create a data analytics strategy?",
+        a: "It depends on the size of the business, the number of data sources and how much alignment is needed between teams. A focused first version with goals, priority use cases and an initial roadmap can be produced fairly quickly, then refined as the first use cases are delivered.",
+      },
+      {
+        q: "Who should own the data analytics strategy?",
+        a: "An executive sponsor should own the strategy and settle priorities, supported by a data leader who runs delivery. Business teams own the definitions and outcomes for their domains, and the data team owns the platform, standards and data quality processes.",
+      },
+      {
+        q: "Do small and mid-sized businesses need a data analytics strategy?",
+        a: "Yes, but it can be lighter. A smaller business still benefits from agreeing its key metrics, choosing a single source of truth for each, and planning a few high-value use cases in order. This avoids scattered spreadsheets and tool sprawl as the company grows.",
+      },
+    ],
+  },
+  {
     slug: "how-to-implement-ai-in-business",
     title: "How to Implement AI in Business: A Step-by-Step Guide",
     description:
