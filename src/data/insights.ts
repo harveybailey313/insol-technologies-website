@@ -47,6 +47,193 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "legacy-application-modernization",
+    title: "Legacy Application Modernization: A Step-by-Step Guide",
+    description:
+      "A step-by-step guide to legacy application modernization: assess the portfolio, choose an approach per app, modernize in phases, migrate data, retire old code.",
+    category: "Enterprise Applications",
+    date: "2026-10-28",
+    seoTitle: "Legacy Application Modernization Guide",
+    cover: "/insights/covers/legacy-application-modernization",
+    coverAlt: "Cover reading Legacy Application Modernization: A Step-by-Step Guide, InSol Technologies",
+    relatedServices: ["enterprise-applications", "product-engineering", "cloud-devops", "quality-engineering"],
+    relatedIndustries: ["healthcare", "ecommerce", "travel-hospitality", "technology"],
+    body: [
+      {
+        heading: "What is legacy application modernization?",
+        paragraphs: [
+          "Legacy application modernization is the process of updating older business software so it can be changed, secured, scaled and supported at a reasonable cost. Depending on the system, that can mean moving it to new infrastructure, upgrading its runtime and frameworks, restructuring its code, breaking it into smaller services, replacing it with a packaged product or switching it off.",
+          "A legacy application is not simply an old one. Plenty of long-running systems work well and are cheap to keep. An application becomes a modernization candidate when it blocks the business: changes take too long, the platform is leaving vendor support, only a few people understand it, it cannot integrate with newer tools, or the cost and risk of running it keep rising.",
+        ],
+      },
+      {
+        heading: "Signs an application needs modernization",
+        paragraphs: [
+          "Look for evidence rather than age. These are the signals that most often justify a modernization project.",
+        ],
+        bullets: [
+          "The operating system, database, language runtime or framework is out of vendor support or close to it.",
+          "Security patches are hard to apply, or vulnerabilities cannot be fixed without a major upgrade.",
+          "Small business changes take weeks because the code is tightly coupled and lightly tested.",
+          "Knowledge of the system sits with a handful of people, some close to leaving or retiring.",
+          "The application cannot expose clean APIs, so integrations rely on file drops, screen scraping or manual re-keying.",
+          "Hosting, licence and support costs keep rising while the value delivered stays flat.",
+          "It cannot meet current expectations for availability, performance, mobile access or user experience.",
+        ],
+      },
+      {
+        heading: "Legacy modernization approaches compared",
+        paragraphs: [
+          "Modernization is not one method. Most programs use several approaches across a portfolio, choosing the least disruptive option that removes the real constraint for each application. The options overlap with the 7 Rs used in cloud projects, covered in more depth in our [cloud migration strategy guide](/insights/cloud-migration-strategy).",
+        ],
+        table: {
+          caption: "Common legacy application modernization approaches",
+          headers: ["Approach", "What changes", "Best suited when"],
+          rows: [
+            ["Retain", "Nothing for now; patch and monitor", "The application is stable, compliant and not blocking the business"],
+            ["Encapsulate", "Wrap existing functions in APIs without changing the core", "The logic is sound but other systems need modern access to it"],
+            ["Rehost", "Move to new infrastructure with no code changes", "The main problem is the data center or hardware, not the code"],
+            ["Replatform", "Upgrade runtime, database or hosting with minimal code changes", "The platform is ageing but the application design is acceptable"],
+            ["Refactor", "Restructure and test the code without changing behavior", "The code is hard to change but the architecture is broadly fine"],
+            ["Rearchitect", "Change the structure, such as splitting a monolith into modules or services", "Parts of the system need to scale or change at different speeds"],
+            ["Rebuild", "Rewrite the application on a modern stack", "The existing code cannot reasonably be saved and the scope is well understood"],
+            ["Replace", "Adopt a commercial or SaaS product and migrate data", "The capability is not a differentiator and a product covers it well"],
+            ["Retire", "Switch the application off and archive required records", "The capability is unused or already covered by another system"],
+          ],
+        },
+      },
+      {
+        heading: "How to modernize a legacy application in 8 steps",
+        paragraphs: [
+          "The steps below work for a single critical system or a wider portfolio. The early steps reduce uncertainty; the later ones are about delivering change safely while the business keeps running.",
+        ],
+        subsections: [
+          {
+            heading: "Step 1: Define the business case and goals",
+            paragraphs: [
+              "Start with the problem the business needs solved, not with a target technology. Write down the outcomes that matter, such as faster release cycles, removing an unsupported platform, reducing run cost, enabling a new channel or meeting a compliance requirement. These goals decide which approach is appropriate and how success will be judged.",
+              "Agree an executive sponsor and a product owner for the system. Modernization competes with feature work for the same people, and someone needs the authority to protect time for it.",
+            ],
+          },
+          {
+            heading: "Step 2: Assess the application portfolio",
+            paragraphs: [
+              "Inventory the applications in scope and score each on two separate dimensions: business value and technical health. Business value covers the capability supported, the users and revenue that depend on it and the impact of downtime. Technical health covers support status, security exposure, change speed, incident history, test coverage and run cost.",
+              "Plotting the scores shows where to act. High value with poor health is the modernization shortlist. Low value with poor health is a candidate for retirement or replacement. High value with good health should be kept current, and low value with good health can usually be left alone.",
+            ],
+          },
+          {
+            heading: "Step 3: Map dependencies, data and business rules",
+            paragraphs: [
+              "Legacy systems rarely stand alone. Map the integrations, batch jobs, reports, shared databases and manual workarounds that depend on each application. Identify where critical business rules live, including rules buried in stored procedures, scheduled scripts or configuration that nobody has documented.",
+            ],
+            bullets: [
+              "List every inbound and outbound integration and who owns the other side.",
+              "Document data entities, volumes, retention rules and data quality issues.",
+              "Capture business rules with the people who use the system every day, not only from the code.",
+              "Note regulatory constraints such as audit trails, data residency and access controls.",
+            ],
+          },
+          {
+            heading: "Step 4: Choose the modernization approach for each application",
+            paragraphs: [
+              "Using the goals, scores and dependency map, choose an approach from the table above for each application. A simple rule helps: pick the option with the least change that still removes the constraint you identified. Rehosting will not fix slow change cycles caused by tangled code, and a full rebuild is rarely needed just to leave an unsupported operating system.",
+              "When the decision is build versus buy, be honest about whether the capability differentiates the business. Standard finance, HR or ticketing functions are often better replaced with a product, while unique pricing, scheduling or fulfilment logic may justify custom engineering, as described in our guide to the [custom software development process](/insights/custom-software-development-process).",
+            ],
+          },
+          {
+            heading: "Step 5: Design the target architecture",
+            paragraphs: [
+              "Define where the application is heading: hosting model, application structure, integration style, data platform, identity and observability. For many teams this means cloud hosting, a modular design or services where they are justified, API-first integration, managed databases and automated deployment pipelines.",
+              "Avoid adopting microservices by default. A well-structured modular monolith is often easier to run and change than a large number of small services, and it can be split further later if parts of the system genuinely need it.",
+            ],
+          },
+          {
+            heading: "Step 6: Build a phased roadmap and start with a pilot",
+            paragraphs: [
+              "Large one-time cutovers carry the most risk. Break the work into waves, each with clear entry and exit criteria, and begin with a pilot that is meaningful but contained. A good pilot tests the target platform, delivery pipeline, data migration approach and team ways of working before the most critical functions move.",
+              "Plan for the old and new systems to run side by side for a period. That requires integration between them, clear rules on which system is the source of truth for each piece of data and a rollback plan for every release.",
+            ],
+          },
+          {
+            heading: "Step 7: Modernize incrementally, with tests and data migration",
+            paragraphs: [
+              "The strangler fig pattern is a common way to deliver change safely. A routing layer, such as an API gateway or proxy, sits in front of the legacy application. New or rebuilt capabilities are released one at a time behind it and traffic is shifted gradually, so users keep working while the old system shrinks.",
+              "Before changing behavior, add automated tests that capture what the system does today, including edge cases users rely on. These characterization tests make it possible to refactor or replace code with confidence. Our [test automation strategy](/insights/test-automation-strategy) explains how to build that safety net. Treat data migration as its own workstream with mapping, cleansing, trial loads, reconciliation reports and a rehearsed cutover.",
+            ],
+          },
+          {
+            heading: "Step 8: Cut over, decommission and keep improving",
+            paragraphs: [
+              "Once a capability is fully served by the new system and nothing depends on the old one, switch it off. Archive the records you are required to keep, remove unused infrastructure and licences, and update documentation and runbooks. Modernization that never retires the old system leaves the business paying for two.",
+              "Then keep the new system healthy: schedule regular dependency and runtime upgrades, track change lead time and incident rates, and reassess the portfolio periodically so applications do not drift back into legacy status.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Common legacy modernization risks and how to reduce them",
+        paragraphs: [
+          "Most modernization problems are predictable. Planning for them early is cheaper than recovering from them later.",
+        ],
+        table: {
+          caption: "Modernization risks and mitigations",
+          headers: ["Risk", "What it looks like", "How to reduce it"],
+          rows: [
+            ["Big-bang rewrite", "Years of work before any value, while the old system still needs changes", "Deliver in phases with the strangler fig pattern and release usable slices early"],
+            ["Lost business rules", "The new system behaves differently in edge cases users depend on", "Interview users, mine the code and add characterization tests before changing logic"],
+            ["Data migration failures", "Missing, duplicated or mismatched records after cutover", "Profile and cleanse data early, run trial migrations and reconcile counts and totals"],
+            ["Scope creep", "Modernization turns into a redesign of every process", "Separate like-for-like moves from new features and agree priorities with the sponsor"],
+            ["Business disruption", "Downtime or retraining load during busy periods", "Plan cutovers around business calendars, run systems in parallel and keep rollback ready"],
+            ["Knowledge gaps", "Only one or two people understand the legacy code", "Pair them with the modernization team early and document as you go"],
+          ],
+        },
+      },
+      {
+        heading: "Using AI in legacy modernization",
+        paragraphs: [
+          "AI-assisted tools can help teams read and document unfamiliar code, summarize what modules do, suggest test cases and draft code translations between languages or frameworks. Used well, they shorten the discovery and refactoring work that makes legacy projects slow.",
+          "They do not remove the need for engineering judgment. Generated code and documentation still need review, testing against real behavior and security checks. Treat AI as an accelerator inside a disciplined process, in the same way our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business) recommends for any production use.",
+        ],
+      },
+      {
+        heading: "Legacy modernization by industry",
+        paragraphs: [
+          "In [healthcare](/industries/healthcare), modernization often focuses on scheduling, billing and patient-facing systems that need secure integration with health record platforms, with strict access control, audit trails and privacy rules throughout. [Ecommerce](/industries/ecommerce) businesses commonly modernize order management, inventory and storefront back ends so they can handle peak trading and connect new sales channels. In [travel and hospitality](/industries/travel-hospitality), reservation, property and distribution systems are frequent candidates because they must exchange data in real time with many partners. [Technology companies](/industries/technology) often modernize an early product codebase into a cleaner, multi-tenant design, which links to the choices in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps modernize legacy applications",
+        paragraphs: [
+          "Our [enterprise applications](/services/enterprise-applications) team assesses existing systems, maps their integrations and business rules, and recommends an approach for each application. Our [software engineering](/services/product-engineering) teams refactor, rearchitect or rebuild where custom code is the right answer, our [cloud and DevOps](/services/cloud-devops) engineers prepare the target platform and delivery pipelines, and our [quality engineering](/services/quality-engineering) team builds the automated tests that make incremental change safe.",
+          "If an ageing system is slowing down your teams or carrying risk you would rather not hold, [talk to our team](/contact) about a scoped assessment as a first step.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is the difference between legacy modernization and cloud migration?",
+        a: "Cloud migration moves applications and data to cloud infrastructure, sometimes without changing the code at all. Legacy modernization is broader: it updates the application itself, its code, architecture, integrations or the product that delivers the capability. Many programs do both, but an application can be modernized without moving to the cloud, and moved to the cloud without being modernized.",
+      },
+      {
+        q: "Should we rewrite a legacy application from scratch?",
+        a: "Usually not as a first choice. Full rewrites take a long time, delay new value and risk losing business rules that were never documented. Incremental approaches such as refactoring, encapsulating with APIs or replacing capabilities one at a time with the strangler fig pattern are lower risk. A rebuild makes sense when the existing code cannot reasonably be saved and the scope is well understood.",
+      },
+      {
+        q: "How long does legacy application modernization take?",
+        a: "It depends on the size of the application, the number of integrations, the quality of the data and the approach chosen. Rehosting or replatforming a single application can be relatively quick, while rearchitecting a core system is usually delivered in phases over a longer period. A portfolio assessment and pilot give a realistic estimate for the rest of the program.",
+      },
+      {
+        q: "What is the strangler fig pattern?",
+        a: "The strangler fig pattern is a way to modernize a system gradually. A routing layer is placed in front of the legacy application, then individual capabilities are rebuilt or replaced and traffic is moved to them one at a time. The old system keeps running until nothing depends on it, and is then decommissioned.",
+      },
+      {
+        q: "How do you modernize a legacy application without disrupting the business?",
+        a: "Work in small phases, keep the old and new systems running side by side during the transition, add automated tests before changing behavior, rehearse data migrations and plan cutovers around quiet business periods with a tested rollback plan. Clear communication and training for users matter as much as the technical steps.",
+      },
+    ],
+  },
+  {
     slug: "data-analytics-strategy",
     title: "Data Analytics Strategy: How to Build One in 8 Steps",
     description:
