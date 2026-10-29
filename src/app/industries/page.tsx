@@ -9,7 +9,7 @@ import { INDUSTRY_ACCENTS, accentClass } from "@/lib/accents";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Industries We Serve — Healthcare to SaaS",
+  title: "Industries We Serve: Healthcare to SaaS",
   description:
     "Software, AI, and cloud engineering shaped for healthcare, e-commerce, travel and hospitality, and technology companies, not generic playbooks.",
   path: "/industries",

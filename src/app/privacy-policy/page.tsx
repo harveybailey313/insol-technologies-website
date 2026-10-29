@@ -7,7 +7,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Privacy Policy — How We Handle Data",
   description:
-    "Privacy Policy for InSol Technologies Inc. — how we collect, use, and protect information when you use insoltechnologies.com or contact us.",
+    "Privacy Policy for InSol Technologies Inc. — how we collect, use, store, and protect information when you use insoltechnologies.com or contact us.",
   path: "/privacy-policy",
 });
 

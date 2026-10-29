@@ -29,7 +29,7 @@ const founderImageUrl = `${SITE.url}/brand/innam-dustgir-founder.jpg`;
 
 const founderSameAs = [
   "https://www.innamdustgir.com/",
-  "https://www.linkedin.com/in/innam-dustgir-aa18a38a",
+  "https://www.linkedin.com/in/innamdustgir/",
   "https://www.wikidata.org/wiki/Q130943937",
 ] as const;
 

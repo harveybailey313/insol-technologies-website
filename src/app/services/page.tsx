@@ -9,7 +9,7 @@ import { SERVICE_ACCENTS } from "@/lib/accents";
 import { pageMetadata } from "@/lib/seo";
 
 export const metadata = pageMetadata({
-  title: "Software, AI & Cloud Engineering Services",
+  title: "Software, AI & Cloud Engineering",
   description:
     "Explore InSol Technologies services: software engineering, SaaS products, AI automation, web and mobile, cloud and DevOps, data, enterprise apps, and QA.",
   path: "/services",

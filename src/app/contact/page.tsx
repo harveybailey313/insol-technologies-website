@@ -8,7 +8,7 @@ import { pageMetadata } from "@/lib/seo";
 export const metadata = pageMetadata({
   title: "Contact — Start a Project",
   description:
-    "Contact InSol Technologies to start a project or talk with an expert. Based in Austin, Texas — call +1 (480) 918-3323.",
+    "Contact InSol Technologies to start a project or talk with an expert about your software, AI, or cloud needs. Based in Austin, Texas — call +1 (480) 918-3323.",
   path: "/contact",
 });
 

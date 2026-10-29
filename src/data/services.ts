@@ -388,7 +388,7 @@ export const services: Service[] = [
     h1: "Data that supports decisions",
     metaTitle: "Data & Analytics Services",
     metaDescription:
-      "Data & Analytics — data platforms, analytics systems, dashboards, and reporting that turn business data into insights leaders can trust.",
+      "Data & Analytics — data platforms, analytics systems, dashboards, and reporting that turn raw business data into insights leaders can trust.",
     heroSupport:
       "Data & Analytics at InSol: data platforms, analytics systems, dashboards, and reporting — so leaders and operators share one reliable picture they can explain and defend.",
     problemIntro:
@@ -473,7 +473,7 @@ export const services: Service[] = [
     h1: "Enterprise applications that connect the business",
     metaTitle: "Enterprise Application Development",
     metaDescription:
-      "Enterprise Applications — secure, scalable business applications and ERP/CRM integrations designed around complex organizational workflows.",
+      "Enterprise Applications — secure, scalable business applications and ERP and CRM integrations designed around complex organizational workflows.",
     heroSupport:
       "Enterprise Applications at InSol: secure, scalable business applications designed around complex organizational requirements — including implementation, integration, and extension of ERP, CRM, and industry platforms.",
     problemIntro:

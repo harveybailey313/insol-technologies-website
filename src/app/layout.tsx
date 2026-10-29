@@ -101,7 +101,7 @@ const organizationJsonLd = {
     url: `${SITE.url}/founder/`,
     sameAs: [
       "https://www.innamdustgir.com/",
-      "https://www.linkedin.com/in/innam-dustgir-aa18a38a",
+      "https://www.linkedin.com/in/innamdustgir/",
       "https://www.wikidata.org/wiki/Q130943937",
     ],
   },
