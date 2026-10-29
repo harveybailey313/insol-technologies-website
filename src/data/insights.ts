@@ -311,6 +311,7 @@ export const insights: Insight[] = [
         heading: "Legacy modernization approaches compared",
         paragraphs: [
           "Modernization is not one method. Most programs use several approaches across a portfolio, choosing the least disruptive option that removes the real constraint for each application. The options overlap with the 7 Rs used in cloud projects, covered in more depth in our [cloud migration strategy guide](/insights/cloud-migration-strategy).",
+          "Incremental replacement is often lower risk than a single cutover. Martin Fowler's description of the [Strangler Fig pattern](https://martinfowler.com/bliki/StranglerFigApplication.html) explains how new components can gradually take over from a legacy system while it keeps running.",
         ],
         table: {
           caption: "Common legacy application modernization approaches",
@@ -496,6 +497,7 @@ export const insights: Insight[] = [
         heading: "Core components of a data analytics strategy",
         paragraphs: [
           "Most strategies cover the same building blocks. The table below is a quick way to check that nothing important is missing from yours.",
+          "For a fuller reference on the disciplines behind these components, including governance, data quality and metadata, see the DAMA [Data Management Body of Knowledge](https://www.dama.org/cpages/body-of-knowledge). If your data includes personal information, the [NIST Privacy Framework](https://www.nist.gov/privacy-framework) helps structure privacy risk decisions.",
         ],
         table: {
           caption: "Components of a data analytics strategy",
@@ -784,6 +786,7 @@ export const insights: Insight[] = [
         heading: "Step 6: Put governance and human oversight in place",
         paragraphs: [
           "Governance is what lets an AI system move from a pilot to something the business can rely on. It does not need to be heavy, but it has to be explicit.",
+          "The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) is a practical, voluntary reference for this step. It organises AI risk work into four functions: govern, map, measure and manage.",
         ],
         bullets: [
           "An acceptable use policy that says which data and tools staff may use with AI.",
@@ -971,6 +974,7 @@ export const insights: Insight[] = [
         heading: "Stage 6: App store launch",
         paragraphs: [
           "Publishing is a stage of its own. Both stores review apps against their guidelines, and a rejection can delay a launch date that marketing has already announced, so prepare early.",
+          "Read the official [App Store Review Guidelines](https://developer.apple.com/app-store/review/guidelines/) and Google's [Android app quality guidelines](https://developer.android.com/quality) before submission, as both stores reject apps that miss their requirements. The [OWASP Mobile Top 10](https://owasp.org/www-project-mobile-top-10/) is a useful security checklist before launch.",
         ],
         ordered: true,
         bullets: [
@@ -1160,6 +1164,7 @@ export const insights: Insight[] = [
         heading: "The test pyramid: balancing unit, API and UI tests",
         paragraphs: [
           "The test pyramid, introduced by Mike Cohn and later expanded by Martin Fowler, is the most common model for balancing test layers. It recommends many small, fast tests at the bottom and only a few slow, broad tests at the top.",
+          "Martin Fowler's site has a detailed explanation of [the practical test pyramid](https://martinfowler.com/articles/practical-test-pyramid.html), with examples of what belongs at each layer.",
         ],
         subsections: [
           {
@@ -1402,6 +1407,7 @@ export const insights: Insight[] = [
         heading: "Choosing a tech stack for your MVP",
         paragraphs: [
           "The right stack for an MVP is one your team can build with quickly and that will not need to be thrown away if the product works.",
+          "Whatever stack you choose, keeping configuration out of the code and services stateless where possible makes the MVP easier to scale later. The [Twelve-Factor App](https://12factor.net/) methodology is a short, practical checklist for this.",
         ],
         bullets: [
           "Favor mature, widely used frameworks with strong hiring pools over novel tools.",
@@ -1504,6 +1510,7 @@ export const insights: Insight[] = [
         heading: "The 7 Rs of cloud migration at a glance",
         paragraphs: [
           "Use this table to sort each application into a pattern before you estimate effort or pick tools.",
+          "AWS documents these options in its [prescriptive guidance on migration strategies](https://docs.aws.amazon.com/prescriptive-guidance/latest/large-migration-guide/migration-strategies.html). Microsoft's [Cloud Adoption Framework](https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/) and the [Google Cloud Architecture Framework](https://cloud.google.com/architecture/framework) cover similar planning steps for their platforms.",
         ],
         table: {
           caption: "The 7 Rs of cloud migration compared",
@@ -1761,6 +1768,7 @@ export const insights: Insight[] = [
         paragraphs: [
           "Development works best in short iterations, typically one to two weeks, that each end with working software you can see and use, not a status report. Problems then show up within days instead of months, and priorities can shift based on what users actually do.",
           "Quality belongs inside the build, not after it. Code reviews, automated tests and continuous integration run on every change, which is how [quality engineering](/services/quality-engineering) keeps defects from piling up for a final testing phase.",
+          "Security belongs in every iteration, not just the final test phase. NIST's [Secure Software Development Framework (SP 800-218)](https://csrc.nist.gov/pubs/sp/800/218/final) and the [OWASP Top 10](https://owasp.org/www-project-top-ten/) are widely used references for building it in.",
         ],
         bullets: [
           "A demo at the end of every iteration, with feedback recorded",
@@ -1850,14 +1858,27 @@ export const insights: Insight[] = [
       {
         heading: "Why AI demos stall before production workflows",
         paragraphs: [
-          "Most AI pilots fail for operational reasons, not model quality. A prototype that looks impressive in a slide deck often has no path to identity, permissions, systems of record, or on-call ownership. Teams then treat the demo as progress — while the workflow that actually creates value stays manual.",
-          "Production AI starts with a job to be done: a specific workflow, a success metric, and a clear owner. Model selection comes after that framing, not before.",
+          "Putting AI into production workflows is a different job from building a demo. Most AI pilots stall for operational reasons, not model quality. A prototype that looks impressive in a slide deck often has no path to identity, permissions, systems of record, or on-call ownership. Teams then treat the demo as progress, while the workflow that actually creates value stays manual.",
+          "Production AI starts with a job to be done: a specific workflow, a success metric, and a clear owner. Model selection comes after that framing, not before. This guide walks through how to map the workflow, choose the right kind of automation, evaluate quality, integrate with the systems people already use, govern the risk, and decide honestly when to stop.",
+        ],
+      },
+      {
+        heading: "What does “production-ready” AI actually mean?",
+        paragraphs: [
+          "A feature is production-ready when the business can rely on it without the original builders watching it. In practice that means it runs inside an existing workflow, uses real data under real permissions, has an owner who is paged when it fails, and has a measured quality bar that someone signed off.",
+        ],
+        bullets: [
+          "It runs on live data, under the same access rules as the people it helps",
+          "Its output quality is measured against agreed acceptance criteria",
+          "Failures are logged, alerted on and routed to a named owner",
+          "Users can see, correct or override what it did",
+          "There is a rollback or manual fallback that has been tested",
         ],
       },
       {
         heading: "Map the workflow before you pick a model",
         paragraphs: [
-          "Write down the steps humans perform today, where data enters and leaves, and where judgment is required. Identify the handoffs that create delay or error. Only then decide whether GenAI assistance, classification, extraction, agents, or classical automation is the right lever.",
+          "Write down the steps people perform today, where data enters and leaves, and where judgment is required. Identify the handoffs that create delay or error. Only then decide whether generative AI assistance, classification, extraction, agents, or classical rules-based automation is the right lever. Many high-value steps need no model at all; a clean integration or a validation rule does the job more reliably.",
         ],
         bullets: [
           "Define inputs, outputs, and acceptance criteria in business language",
@@ -1867,23 +1888,53 @@ export const insights: Insight[] = [
         ],
       },
       {
+        heading: "Putting AI into production workflows step by step",
+        paragraphs: [
+          "Once the workflow is mapped, move through a short, repeatable sequence. Each step has an exit condition, so the team knows when it has earned the right to move on.",
+        ],
+        bullets: [
+          "Scope one workflow and one metric, such as handling time, error rate or backlog size",
+          "Collect a representative sample of real cases, including the awkward ones",
+          "Build the smallest version that runs end to end on that sample",
+          "Evaluate it against the acceptance criteria with the people who own the work",
+          "Release to a limited group with monitoring and a manual fallback",
+          "Expand only when quality holds and the owner is comfortable",
+        ],
+      },
+      {
         heading: "Build evaluation and oversight into the path",
         paragraphs: [
-          "If you cannot measure output quality, you cannot operate the system. For language features, that means retrieval grounding, known-bad prompts, and review samples. For automation, that means idempotency, rollback, and audit trails. Treat evaluation as part of engineering — not a later QA add-on.",
+          "If you cannot measure output quality, you cannot operate the system. For language features, that means grounding answers in approved sources, a test set of known-hard and known-bad prompts, and regular review samples. For automation, that means idempotency, rollback, and audit trails. Treat evaluation as part of engineering, not a later QA add-on.",
+          "The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) is a useful, vendor-neutral structure for this work. It organises AI risk management into four functions (govern, map, measure and manage) and its companion [AI RMF Playbook](https://airc.nist.gov/airmf-resources/playbook/) suggests concrete actions for each one.",
         ],
       },
       {
         heading: "Integrate where work already happens",
         paragraphs: [
-          "Value shows up when AI lands inside existing tools and processes — ticketing, CRM, document flows, internal apps — not in a parallel portal nobody opens. Integration boundaries (APIs, identity, tenancy, rate limits) should be designed in Discover and Strategize, before build scales.",
+          "Value shows up when AI lands inside existing tools and processes, such as ticketing, CRM, document flows and internal apps, not in a parallel portal nobody opens. Integration boundaries (APIs, identity, tenancy, rate limits) should be designed early, before build scales. Our [AI and intelligent automation](/services/ai-intelligent-automation) work starts from those boundaries for exactly this reason.",
+          "Data is usually the hardest part. If the records the AI reads are inconsistent or permissions are unclear, the output will be too. Our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust) covers the foundations that make AI outputs believable.",
+        ],
+      },
+      {
+        heading: "Govern cost, security and change",
+        paragraphs: [
+          "Production AI has running costs that grow with usage, so track cost per completed task alongside quality. Apply the same security review you would to any system that touches customer data: least-privilege access, secrets management, logging and data retention rules. Version prompts, models and configuration so a change can be traced and reversed.",
+          "People need preparation too. Explain what the system does, where it can be wrong, and how to escalate. Adoption improves when users can see why the AI made a suggestion and can correct it easily.",
         ],
       },
       {
         heading: "Know when to stop",
         paragraphs: [
-          "Sometimes the honest recommendation is that AI is not the right move yet — because data quality, process clarity, or ownership is missing. A deliberate stop after a scoped discovery is cheaper than a year of pilots that never reach production. Production workflows reward teams that can say no as clearly as they can ship.",
+          "Sometimes the honest recommendation is that AI is not the right move yet, because data quality, process clarity, or ownership is missing. A deliberate stop after a scoped discovery is cheaper than a year of pilots that never reach production. Production workflows reward teams that can say no as clearly as they can ship. For a wider view of the journey, see [how to implement AI in business](/insights/how-to-implement-ai-in-business).",
         ],
       },
+    ],
+    updated: "2026-10-29",
+    faq: [
+      { q: "Why do so many AI pilots never reach production?", a: "Usually because the pilot was built around a model rather than a workflow. Missing integration, unclear ownership, untested data and no agreed quality bar stop it from being trusted in daily operations." },
+      { q: "How do you measure AI quality in a production workflow?", a: "Agree acceptance criteria with the workflow owner, build a test set from real cases, and review samples of live output on a schedule. Track business metrics such as handling time or error rate alongside model-level checks." },
+      { q: "Do production AI workflows still need human review?", a: "For high-impact or irreversible actions, yes. Many teams start with human approval on every action and reduce it only where measured quality supports that decision." },
+      { q: "When should a business not use AI?", a: "When the process is unclear, the data is unreliable, or nobody can own the system after launch. Fixing those foundations first is usually the faster route to value." },
     ],
   },
   {
@@ -1900,13 +1951,27 @@ export const insights: Insight[] = [
       {
         heading: "MVP speed without dead-end architecture",
         paragraphs: [
-          "Early SaaS products need to prove value quickly. The trap is shipping shortcuts that become structural risk under load, multi-tenancy, or enterprise buyers. Scope the smallest product that proves the job — and draw hard lines around tenant boundaries, identity, and environments from day one.",
+          "Building SaaS foundations that can scale does not mean building for millions of users on day one. Early SaaS products need to prove value quickly. The trap is shipping shortcuts that become structural risk under load, multi-tenancy, or enterprise buyers. Scope the smallest product that proves the job, and draw hard lines around tenant boundaries, identity, and environments from the start.",
+          "This guide covers the foundation decisions that are cheap early and expensive later: tenancy, identity, billing, environments, operability, security and the path from MVP to growth. If you are still shaping the first release, our [MVP development process](/insights/mvp-development-process) guide is a good companion.",
+        ],
+      },
+      {
+        heading: "What makes a SaaS foundation scalable?",
+        paragraphs: [
+          "Scale is less about raw traffic and more about adding customers, features and engineers without the system getting harder to change. A scalable foundation has clear boundaries between tenants, between services, and between environments, so growth in one area does not create risk in another.",
+        ],
+        bullets: [
+          "New tenants can be onboarded without manual engineering work",
+          "Features can ship without touching unrelated parts of the system",
+          "Performance problems can be traced to a tenant, endpoint or query",
+          "Security and compliance questions can be answered from documentation, not memory",
         ],
       },
       {
         heading: "Tenancy and identity are product decisions",
         paragraphs: [
-          "Shared databases with loose permissions feel fast until a customer asks about isolation, audit, or SSO. Decide how orgs, users, and roles relate. Document tenant data boundaries. Treat billing and plan limits as product surfaces with clear enforcement points — not as afterthoughts in the checkout flow alone.",
+          "Shared databases with loose permissions feel fast until a customer asks about isolation, audit, or SSO. Decide how orgs, users, and roles relate. Document tenant data boundaries. Treat billing and plan limits as product surfaces with clear enforcement points, not as afterthoughts in the checkout flow alone.",
+          "There are several valid tenancy models, from a fully shared database with a tenant key on every row to a separate database or stack per customer. Microsoft's [multitenant architecture guidance](https://learn.microsoft.com/en-us/azure/architecture/guide/multitenant/overview) and the [AWS SaaS architecture fundamentals](https://docs.aws.amazon.com/whitepapers/latest/saas-architecture-fundamentals/saas-architecture-fundamentals.html) whitepaper both compare these models and their tradeoffs clearly.",
         ],
         bullets: [
           "Org → user → role model that matches how buyers purchase",
@@ -1916,17 +1981,61 @@ export const insights: Insight[] = [
         ],
       },
       {
+        heading: "Building SaaS foundations that support billing and plans",
+        paragraphs: [
+          "Pricing changes more often than founders expect. Keep plan entitlements (seats, limits, features) in data, not scattered through code, and enforce them in one place. That makes it possible to test new packaging, run trials and handle enterprise exceptions without a release for each change.",
+        ],
+      },
+      {
         heading: "Operability is part of the product",
         paragraphs: [
-          "Customers experience reliability before they experience new features. Logging, metrics, traces, alerting, and runbooks belong in the delivery path — not in a post-launch “ops project.” Admin and support surfaces should let your team help tenants without production heroics.",
+          "Customers experience reliability before they experience new features. Logging, metrics, traces, alerting, and runbooks belong in the delivery path, not in a post-launch “ops project.” Admin and support surfaces should let your team help tenants without production heroics. Tag telemetry with the tenant so you can see which customer is affected when something slows down.",
+          "Configuration should live in the environment, not in the code, so the same build can run in staging and production. The [Twelve-Factor App](https://12factor.net/) methodology remains a practical checklist for this kind of portability.",
+        ],
+      },
+      {
+        heading: "Security and compliance from the first release",
+        paragraphs: [
+          "Enterprise buyers will send security questionnaires long before you have a security team. Encrypt data in transit and at rest, keep secrets out of repositories, log access to sensitive data, and use least-privilege roles for staff and services. Writing these decisions down early turns a stressful questionnaire into a copy-and-paste exercise.",
+        ],
+      },
+      {
+        heading: "Data model and API decisions that last",
+        paragraphs: [
+          "The data model is the hardest thing to change once customers depend on it. Give every record a stable identifier, keep tenant ownership explicit, and avoid encoding business rules in column names or free-text fields. Add audit fields (who changed what, and when) early, because enterprise customers and support teams will ask for that history.",
+          "Treat your public API and webhooks as contracts. Version them, document them, and avoid breaking changes without a deprecation period. Integrations built by customers and partners are part of what makes a SaaS product hard to replace, so they deserve the same care as the user interface.",
+        ],
+      },
+      {
+        heading: "Common SaaS foundation mistakes",
+        paragraphs: [
+          "Most expensive rewrites trace back to a few early shortcuts. Watch for these in design reviews.",
+        ],
+        bullets: [
+          "Tenant checks scattered through the code instead of enforced in one layer",
+          "Plan limits hard-coded in many places",
+          "No staging environment that matches production",
+          "Manual onboarding steps that only one engineer knows",
+          "Background jobs with no retries, monitoring or idempotency",
         ],
       },
       {
         heading: "Plan the path from MVP to growth",
         paragraphs: [
-          "Write down what you are deliberately deferring and what would force a re-architecture. When growth pressure arrives, you want a sequenced modernization path — not a panic rewrite. Partnership past launch matters: Deploy and Scale are product work, not optional extras.",
+          "Write down what you are deliberately deferring and what would force a re-architecture. When growth pressure arrives, you want a sequenced modernization path, not a panic rewrite. Partnership past launch matters: deployment and scaling are product work, not optional extras. Our [SaaS product development](/services/saas-products) and [cloud and DevOps](/services/cloud-devops) teams plan both from the first sprint.",
+        ],
+        bullets: [
+          "Record deferred decisions and the trigger that would revisit each one",
+          "Load-test the paths that matter most to paying customers",
+          "Review tenancy, data model and cost per tenant every few releases",
         ],
       },
+    ],
+    updated: "2026-10-29",
+    faq: [
+      { q: "Should an early SaaS product use a shared or separate database per tenant?", a: "Most early products start with a shared database and a tenant identifier on every record, because it is cheaper to run. What matters is enforcing isolation consistently and keeping the option to move large or regulated customers to dedicated resources later." },
+      { q: "When should a SaaS product add SSO?", a: "As soon as you sell to companies with an IT team. Designing identity around organizations and roles from the start makes adding SAML or OIDC single sign-on much easier." },
+      { q: "Do I need microservices to scale a SaaS product?", a: "No. A well-structured modular application with clear boundaries scales a long way. Split into services when team size or workload genuinely requires it." },
     ],
   },
   {
@@ -1943,13 +2052,32 @@ export const insights: Insight[] = [
       {
         heading: "Cloud DevOps habits that make releases boring",
         paragraphs: [
-          "Release risk drops when deployment is frequent, reviewable, and reversible. That requires CI with meaningful quality gates, environments you can recreate, and clear ownership of what runs where. Heroic weekend deploys are a symptom — not a process.",
+          "Cloud DevOps habits that reduce release risk all aim at one thing: making deployment frequent, reviewable, and reversible. That requires CI with meaningful quality gates, environments you can recreate, and clear ownership of what runs where. Heroic weekend deploys are a symptom, not a process.",
+          "This guide sets out the habits that matter most: small changes, automated quality gates, infrastructure as code, safe rollout patterns, observability, and incident learning, along with the metrics that show whether they are working.",
+        ],
+      },
+      {
+        heading: "How do you measure release risk?",
+        paragraphs: [
+          "You cannot improve what you do not measure. The research programme behind [DORA](https://dora.dev/guides/dora-metrics-four-keys/) tracks software delivery performance using a small set of metrics, including deployment frequency, lead time for changes, change failure rate and time to restore service. Together they show both speed and stability, and its research has consistently found that the two improve together rather than trading off.",
+        ],
+        bullets: [
+          "Deployment frequency: how often you release to production",
+          "Lead time for changes: how long a commit takes to reach production",
+          "Change failure rate: how often a release causes a problem",
+          "Time to restore: how quickly you recover when it does",
+        ],
+      },
+      {
+        heading: "Small, frequent changes over big releases",
+        paragraphs: [
+          "Large releases bundle many changes, so when something breaks it is hard to know which one caused it. Small batches are easier to review, test and roll back. Trunk-based development with short-lived branches and feature flags lets teams merge often while keeping unfinished work hidden from users. Martin Fowler's guide to [continuous integration](https://martinfowler.com/articles/continuousIntegration.html) explains the practice in depth.",
         ],
       },
       {
         heading: "Infrastructure as code and drift control",
         paragraphs: [
-          "If staging cannot be reproduced from code, production surprises are inevitable. Prefer infrastructure as code, documented promotion paths, and access patterns that match your risk profile. Snowflake environments that only one engineer understands are a single point of failure.",
+          "If staging cannot be reproduced from code, production surprises are inevitable. Prefer infrastructure as code, documented promotion paths, and access patterns that match your risk profile. Snowflake environments that only one engineer understands are a single point of failure. Run a regular drift check so manual console changes are caught and either codified or reverted.",
         ],
         bullets: [
           "Pipelines with tests and gates before promotion",
@@ -1959,17 +2087,61 @@ export const insights: Insight[] = [
         ],
       },
       {
+        heading: "Cloud DevOps habits for safer rollouts",
+        paragraphs: [
+          "How a change reaches users matters as much as the change itself. Blue-green deployments switch traffic between two identical environments, canary releases send a small share of traffic to the new version first, and feature flags separate deploying code from turning it on. Each one limits the blast radius of a bad release and makes rollback a routine action.",
+          "Database changes need the same care. Use backward-compatible migrations (add first, remove later) so the old and new versions of the application can run side by side during a rollout.",
+        ],
+      },
+      {
         heading: "Observability before the incident",
         paragraphs: [
-          "Metrics, logs, and traces should answer “what do users experience?” before tickets pile up. Alert on symptoms that matter; avoid noise that trains teams to ignore pages. Pair instrumentation with runbooks so response is procedural, not improvisational.",
+          "Metrics, logs, and traces should answer “what do users experience?” before tickets pile up. Alert on symptoms that matter; avoid noise that trains teams to ignore pages. Pair instrumentation with runbooks so response is procedural, not improvisational. Google's chapter on [monitoring distributed systems](https://sre.google/sre-book/monitoring-distributed-systems/) is a clear guide to choosing what to alert on.",
+        ],
+      },
+      {
+        heading: "Learn from incidents without blame",
+        paragraphs: [
+          "Every incident is information about the system. Write short post-incident reviews that focus on contributing factors and fixes, not on who made the mistake. Track the follow-up actions like any other work, and feed them back into tests, alerts and runbooks.",
+        ],
+      },
+      {
+        heading: "Put security into the pipeline",
+        paragraphs: [
+          "Release risk includes security risk. Scan dependencies and container images in CI, keep secrets in a managed vault rather than in repositories or pipeline variables, and require review for infrastructure changes just as you do for application code. Shifting these checks into the pipeline means problems are caught when they are cheapest to fix, rather than after a release.",
+        ],
+        bullets: [
+          "Dependency and image scanning on every build",
+          "Secrets stored in a managed secrets service",
+          "Signed, versioned build artifacts promoted between environments",
+          "Separate credentials and permissions for each environment",
+        ],
+      },
+      {
+        heading: "A simple release-readiness checklist",
+        paragraphs: [
+          "Before a change goes out, the team should be able to answer yes to a few questions. This is not bureaucracy; it is the habit that turns releases into routine.",
+        ],
+        bullets: [
+          "Has the change passed the automated test and quality gates?",
+          "Is it behind a flag or released to a small group first?",
+          "Do we know which dashboard and alert will show if it fails?",
+          "Has the rollback or forward-fix path been tested?",
+          "Does the on-call engineer know it is going out?",
         ],
       },
       {
         heading: "Right-size the platform",
         paragraphs: [
-          "Kubernetes, multi-cloud, and elaborate platform layers help when workload and team skills justify them. They hurt when they add complexity without ownership. Choose cloud and DevOps patterns based on constraints — latency, compliance, cost, and who will operate the system after go-live.",
+          "Kubernetes, multi-cloud, and elaborate platform layers help when workload and team skills justify them. They hurt when they add complexity without ownership. Choose cloud and DevOps patterns based on constraints such as latency, compliance, cost, and who will operate the system after go-live. Our [cloud and DevOps](/services/cloud-devops) and [quality engineering](/services/quality-engineering) teams help set these habits up, and our [test automation strategy](/insights/test-automation-strategy) guide covers the testing side in more detail.",
         ],
       },
+    ],
+    updated: "2026-10-29",
+    faq: [
+      { q: "What is the fastest way to reduce release risk?", a: "Ship smaller changes more often, behind automated tests and a tested rollback. Small batches make problems easier to find and cheaper to fix." },
+      { q: "Is infrastructure as code worth it for a small team?", a: "Usually yes. Even a small team benefits from being able to recreate an environment from versioned code, review infrastructure changes, and avoid relying on one person’s memory." },
+      { q: "What should we alert on?", a: "Alert on symptoms users feel, such as error rates, latency and failed transactions, rather than every internal metric. Each alert should be actionable and linked to a runbook." },
     ],
   },
   {
@@ -1985,7 +2157,20 @@ export const insights: Insight[] = [
       {
         heading: "Trust is the product",
         paragraphs: [
-          "A warehouse full of tables that nobody believes is not a data platform — it is expensive storage. Leaders need metrics they can explain in a meeting. Operators need pipelines that do not break every Monday. Start with the decisions that matter, then design the smallest architecture that answers them reliably.",
+          "Data platforms that leaders can trust are built around decisions, not tools. A warehouse full of tables that nobody believes is not a data platform; it is expensive storage. Leaders need metrics they can explain in a meeting. Operators need pipelines that do not break every Monday. Start with the decisions that matter, then design the smallest architecture that answers them reliably.",
+          "This guide covers how to define metrics with stakeholders, manage data quality and lineage, assign ownership, govern access, and prepare the foundations that later AI work depends on.",
+        ],
+      },
+      {
+        heading: "Why do leaders stop trusting data platforms?",
+        paragraphs: [
+          "Trust usually breaks in small, visible ways: two dashboards show different revenue, a report is late after a pipeline fails silently, or a number changes after a meeting without explanation. Each incident teaches people to keep their own spreadsheet, and the platform loses its purpose.",
+        ],
+        bullets: [
+          "Conflicting definitions of the same metric",
+          "Silent pipeline failures and stale data",
+          "No visible owner to ask when a number looks wrong",
+          "Changes to source systems that nobody announced",
         ],
       },
       {
@@ -2001,17 +2186,55 @@ export const insights: Insight[] = [
         ],
       },
       {
+        heading: "Data quality and lineage for trusted data platforms",
+        paragraphs: [
+          "Test data the way you test code. Check row counts, freshness, uniqueness and accepted values at each stage, and stop bad data before it reaches a dashboard. Lineage, the record of where a number came from and how it was transformed, lets an analyst answer “why did this change?” in minutes instead of days. Open standards such as [OpenLineage](https://openlineage.io/) make it easier to collect lineage across different tools.",
+          "The DAMA [Data Management Body of Knowledge](https://www.dama.org/cpages/body-of-knowledge) is a widely used reference for the disciplines involved, including data quality, metadata, governance and architecture.",
+        ],
+      },
+      {
         heading: "Pipelines and ownership over tool catalogs",
         paragraphs: [
-          "ETL/ELT tooling changes; ownership does not. Assign who fixes broken feeds, who approves schema changes, and how consumers are notified. Prefer durable contracts between producers and consumers over ad-hoc extracts and spreadsheet bridges.",
+          "ETL and ELT tooling changes; ownership does not. Assign who fixes broken feeds, who approves schema changes, and how consumers are notified. Prefer durable contracts between producers and consumers over ad-hoc extracts and spreadsheet bridges. A simple data contract, agreeing the fields, types and freshness a source will provide, prevents many surprise breakages.",
+        ],
+      },
+      {
+        heading: "Access, privacy and governance",
+        paragraphs: [
+          "Trust also means people only see what they should. Classify sensitive data, apply role-based access, and log who queried what. The [NIST Privacy Framework](https://www.nist.gov/privacy-framework) offers a practical structure for managing privacy risk alongside the platform itself. Good governance should feel like guardrails, not a queue of access requests.",
+        ],
+      },
+      {
+        heading: "Make reliability visible",
+        paragraphs: [
+          "People trust what they can see. Show data freshness and the last successful load on key dashboards, publish a simple status page for critical pipelines, and announce known issues before leaders find them. Treat important datasets like products, with an owner, a description, expected update times and a way to report problems.",
+          "Agree service levels for the datasets that drive decisions, for example that the daily sales table is complete by a set time each morning. When a level is missed, the owner investigates and shares the cause, just as an engineering team would after an outage.",
+        ],
+        bullets: [
+          "Freshness and completeness shown next to key metrics",
+          "Named owner and support channel for each critical dataset",
+          "Agreed update times for the data behind board-level reports",
+          "Short write-ups when a metric was wrong, and what changed",
+        ],
+      },
+      {
+        heading: "Start small and expand",
+        paragraphs: [
+          "Do not try to model the whole business at once. Pick one decision area, such as weekly revenue or operational throughput, deliver a trusted set of metrics for it, and use that success to win support for the next area. Each round adds definitions, tests and owners that the rest of the platform can reuse.",
         ],
       },
       {
         heading: "Foundations for later AI",
         paragraphs: [
-          "Practical AI depends on context quality, permissions, and clean operational data. If leadership cannot trust today’s reports, embedding AI on top of the same sources will amplify the problem. Fix trust and access first; model bets second.",
+          "Practical AI depends on context quality, permissions, and clean operational data. If leadership cannot trust today’s reports, embedding AI on top of the same sources will amplify the problem. Fix trust and access first; model bets second. Our [data analytics strategy](/insights/data-analytics-strategy) guide and [data and analytics](/services/data-analytics) service cover how to sequence that work, and [putting AI in production workflows](/insights/putting-ai-in-production-workflows) covers what comes next.",
         ],
       },
+    ],
+    updated: "2026-10-29",
+    faq: [
+      { q: "What is a metric dictionary?", a: "A shared document or catalog that defines each business metric, how it is calculated, its grain and its owner. It is the simplest way to stop conflicting numbers." },
+      { q: "Do we need a new data warehouse to build trust?", a: "Not always. Many trust problems come from definitions, ownership and missing quality checks. Fixing those often delivers more than a platform migration." },
+      { q: "What is data lineage and why does it matter?", a: "Lineage records where data came from and how it was transformed. It lets teams explain a number, assess the impact of a change, and find the root cause of an error quickly." },
     ],
   },
   {
@@ -2028,7 +2251,8 @@ export const insights: Insight[] = [
       {
         heading: "What you are really buying in a product engineering partner",
         paragraphs: [
-          "A product engineering partner should leave you with operable software, clear architecture, and a team that understands the system — not a black-box delivery and a slide deck. Buy problem framing and delivery discipline as much as coding capacity.",
+          "Choosing product engineering partners is less about hourly rates and more about what you are left with when the engagement ends. A product engineering partner should leave you with operable software, clear architecture, and a team that understands the system, not a black-box delivery and a slide deck. Buy problem framing and delivery discipline as much as coding capacity.",
+          "This buyer guide covers how to evaluate discovery, delivery, quality, security and ownership, which engagement model fits your situation, the questions to ask, and the red flags to watch for.",
         ],
       },
       {
@@ -2038,24 +2262,75 @@ export const insights: Insight[] = [
         ],
         bullets: [
           "Will they map the business problem before recommending technology?",
-          "Do they show how work is reviewed and released — not only what will be built?",
+          "Do they show how work is reviewed and released, not only what will be built?",
           "Are IP, code ownership, and handover terms explicit?",
-          "Is there a path through Deploy and Scale, or only through “launch”?",
+          "Is there a path through deployment and scaling, or only through “launch”?",
+        ],
+      },
+      {
+        heading: "Choosing product engineering partners by engagement model",
+        paragraphs: [
+          "The right model depends on how much product leadership you already have in-house.",
+        ],
+        bullets: [
+          "Fixed scope: suits a well-defined project with stable requirements; needs a strong change process",
+          "Dedicated team: suits ongoing product work where priorities shift; you steer the backlog",
+          "Team augmentation: suits companies with strong engineering leadership that need extra capacity",
+          "Discovery first: a short paid phase to define scope and risk before committing to a build",
         ],
       },
       {
         heading: "Delivery visibility and quality",
         paragraphs: [
-          "Ask how iterations are demoed, how quality gates work in CI, and who owns production incidents during the engagement. Prefer partners who integrate with your identity, cloud, and product rituals over those who insist on an opaque offshore factory model with no shared backlog.",
+          "Ask how iterations are demoed, how quality gates work in CI, and who owns production incidents during the engagement. Prefer partners who integrate with your identity, cloud, and product rituals over those who insist on an opaque model with no shared backlog. Agile delivery should mean working software at regular intervals; the original [principles behind the Agile Manifesto](https://agilemanifesto.org/principles.html) are still a good yardstick.",
+        ],
+      },
+      {
+        heading: "Security and ownership of the code",
+        paragraphs: [
+          "Your code, repositories, cloud accounts and documentation should belong to your organization from day one. Ask how the partner handles secrets, access reviews and secure coding. Frameworks such as NIST's [Secure Software Development Framework](https://csrc.nist.gov/pubs/sp/800/218/final) and the [OWASP Top 10](https://owasp.org/www-project-top-ten/) give you a shared language for that conversation.",
+        ],
+      },
+      {
+        heading: "What questions should you ask a product engineering partner?",
+        paragraphs: [
+          "Use these questions in early calls. Good partners answer them specifically, with examples of how they work, not general promises.",
+        ],
+        bullets: [
+          "How do you run discovery, and what do we receive at the end of it?",
+          "Who will actually work on our product, and how stable is that team?",
+          "How do you estimate, and what happens when scope changes?",
+          "What does a typical week of communication and demos look like?",
+          "How do you test, release and monitor what you build?",
+          "What does handover look like if we take the work in-house?",
+        ],
+      },
+      {
+        heading: "How to run a fair evaluation",
+        paragraphs: [
+          "Compare partners on the same terms. Share the same brief, ask each one to explain how they would approach the first few weeks, and meet the people who would actually do the work. A short paid discovery or a small pilot task is often the best test, because you see how the partner communicates, handles ambiguity and delivers before committing to a larger contract.",
+          "Score each option on discovery quality, delivery visibility, technical depth, security practice, cultural fit and total cost over the life of the product, not only the first invoice.",
+        ],
+      },
+      {
+        heading: "Red flags to watch for",
+        paragraphs: [
+          "Some warning signs appear early: a fixed price before anyone has seen your systems, reluctance to share code access during the project, no named people on the proposal, or a process that ends at launch. Any one of these is worth a direct question before you sign.",
         ],
       },
       {
         heading: "References without hype",
         paragraphs: [
-          "Public case studies and logos are useful when they are real and cleared. Absence of published cases is not automatically a red flag — many engagements stay under NDA. What matters is whether the partner can discuss relevant work under appropriate confidentiality, and whether their process matches how you need to operate after they leave.",
-          "Use this guide as a conversation checklist. The best fit is the partner who can explain tradeoffs clearly — and still be accountable when systems are live.",
+          "Public case studies and logos are useful when they are real and cleared. Absence of published cases is not automatically a red flag, because many engagements stay under NDA. What matters is whether the partner can discuss relevant work under appropriate confidentiality, and whether their process matches how you need to operate after they leave.",
+          "Use this guide as a conversation checklist. The best fit is the partner who can explain tradeoffs clearly and still be accountable when systems are live. To see how we approach this, read about our [product engineering](/services/product-engineering) service or our [custom software development process](/insights/custom-software-development-process).",
         ],
       },
+    ],
+    updated: "2026-10-29",
+    faq: [
+      { q: "What is the difference between a product engineering partner and a development agency?", a: "A development agency often builds to a specification. A product engineering partner also helps shape the problem, architecture and roadmap, and stays involved in running and improving the product." },
+      { q: "Should we start with a fixed-price project?", a: "Only when the scope is well understood. For new products, a short discovery phase followed by an agreed delivery plan usually gives a more reliable estimate." },
+      { q: "Who should own the code?", a: "You should. Agree in the contract that code, documentation and cloud accounts belong to your organization, and keep them in accounts you control from the start." },
     ],
   },
 ];
