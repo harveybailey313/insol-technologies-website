@@ -1,0 +1,30 @@
+# InSol Technologies
+
+> InSol Technologies builds software products, SaaS platforms, practical AI, and cloud systems, from strategy through production, for modern enterprises. Founded by Innam Dustgir (Founder & CEO). Based in Austin, Texas, USA.
+
+## Services
+- [AI & intelligent automation](https://www.insoltechnologies.com/services/ai-intelligent-automation/)
+- [Product engineering](https://www.insoltechnologies.com/services/product-engineering/)
+- [Web & mobile development](https://www.insoltechnologies.com/services/web-mobile-development/)
+- [Cloud & DevOps](https://www.insoltechnologies.com/services/cloud-devops/)
+- [Data & analytics](https://www.insoltechnologies.com/services/data-analytics/)
+- [Enterprise applications](https://www.insoltechnologies.com/services/enterprise-applications/)
+- [Quality engineering](https://www.insoltechnologies.com/services/quality-engineering/)
+- [SaaS products](https://www.insoltechnologies.com/services/saas-products/)
+
+## Industries
+- [Healthcare](https://www.insoltechnologies.com/industries/healthcare/), [E-commerce](https://www.insoltechnologies.com/industries/ecommerce/), [Travel & hospitality](https://www.insoltechnologies.com/industries/travel-hospitality/), [Technology](https://www.insoltechnologies.com/industries/technology/)
+
+## Company
+- [About](https://www.insoltechnologies.com/about/)
+- [Founder: Innam Dustgir](https://www.insoltechnologies.com/founder/)
+- [Approach](https://www.insoltechnologies.com/about/approach/): Discover, Strategize, Design, Build, Deploy, Scale
+- [Case studies](https://www.insoltechnologies.com/case-studies/)
+- [Insights](https://www.insoltechnologies.com/insights/)
+- [Contact](https://www.insoltechnologies.com/contact/)
+
+## Founder
+- Innam Dustgir: https://www.innamdustgir.com/ , https://www.linkedin.com/in/innamdustgir/
+
+## Sitemap
+- https://www.insoltechnologies.com/sitemap.xml
