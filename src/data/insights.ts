@@ -1622,7 +1622,7 @@ export const insights: Insight[] = [
     relatedIndustries: ["healthcare", "travel-hospitality"],
     body: [
       {
-        heading: "Why demos stall",
+        heading: "Why AI demos stall before production workflows",
         paragraphs: [
           "Most AI pilots fail for operational reasons, not model quality. A prototype that looks impressive in a slide deck often has no path to identity, permissions, systems of record, or on-call ownership. Teams then treat the demo as progress — while the workflow that actually creates value stays manual.",
           "Production AI starts with a job to be done: a specific workflow, a success metric, and a clear owner. Model selection comes after that framing, not before.",
@@ -1715,7 +1715,7 @@ export const insights: Insight[] = [
     relatedIndustries: ["technology", "ecommerce"],
     body: [
       {
-        heading: "Make releases boring",
+        heading: "Cloud DevOps habits that make releases boring",
         paragraphs: [
           "Release risk drops when deployment is frequent, reviewable, and reversible. That requires CI with meaningful quality gates, environments you can recreate, and clear ownership of what runs where. Heroic weekend deploys are a symptom — not a process.",
         ],
@@ -1800,7 +1800,7 @@ export const insights: Insight[] = [
     relatedIndustries: ["technology"],
     body: [
       {
-        heading: "What you are really buying",
+        heading: "What you are really buying in a product engineering partner",
         paragraphs: [
           "A product engineering partner should leave you with operable software, clear architecture, and a team that understands the system — not a black-box delivery and a slide deck. Buy problem framing and delivery discipline as much as coding capacity.",
         ],

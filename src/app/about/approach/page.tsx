@@ -77,7 +77,7 @@ export default function ApproachPage() {
       </Section>
 
       <Section>
-        <SectionHeader title="Six steps. One partnership." />
+        <SectionHeader title="Our approach: six steps, one partnership." />
         <ProcessStepper closing="Discover → Strategize → Design → Build → Deploy → Scale — continuous ownership, not a relay race of vendors." />
       </Section>
 

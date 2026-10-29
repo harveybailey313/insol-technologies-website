@@ -32,7 +32,7 @@ export default function ContactPage() {
       <Section band="secondary">
         <div className="grid gap-10 lg:grid-cols-2">
           <div>
-            <SectionHeader title="Reach us" className="mb-6" />
+            <SectionHeader title="Contact us" className="mb-6" />
             <div className="space-y-4">
               <a
                 href={SITE.phoneHref}

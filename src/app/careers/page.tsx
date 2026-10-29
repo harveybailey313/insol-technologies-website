@@ -33,7 +33,7 @@ export default function CareersPage() {
 
       <Section band="secondary">
         <div className="card-surface max-w-2xl p-8 hover:transform-none hover:shadow-none">
-          <h2 className="text-h3">No open roles listed yet</h2>
+          <h2 className="text-h3">Careers: no open roles listed yet</h2>
           <p className="mt-3 text-text-secondary">
             Open positions will be posted here. If you would like to be considered
             for future roles, introduce yourself and tell us what you build.
