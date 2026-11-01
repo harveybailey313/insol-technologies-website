@@ -50,7 +50,7 @@ export const insights: Insight[] = [
     slug: "ai-chatbot-development",
     title: "AI Chatbot Development: A Step-by-Step Guide",
     description:
-      "AI chatbot development step by step: set goals, choose the chatbot type, prepare knowledge, pick a model, design the conversation, build, secure, test and launch.",
+      "AI chatbot development step by step: set goals, pick the chatbot type, prepare knowledge, choose a model, design the conversation, then build, test and launch.",
     category: "AI",
     date: "2026-11-01",
     seoTitle: "AI Chatbot Development Guide",
