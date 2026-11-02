@@ -1,4 +1,4 @@
-/** Paragraphs and bullets may contain inline links written as [text](/path). */
+/** Paragraphs and bullets may contain inline links written as [text](/path/). */
 export type InsightSubsection = {
   heading: string;
   paragraphs: string[];
@@ -69,7 +69,7 @@ export const insights: Insight[] = [
       {
         heading: "How SaaS development differs from custom software",
         paragraphs: [
-          "If you have built internal or client software before, many practices carry over. The [custom software development process](/insights/custom-software-development-process) still applies, but several areas need more weight in a SaaS product.",
+          "If you have built internal or client software before, many practices carry over. The [custom software development process](/insights/custom-software-development-process/) still applies, but several areas need more weight in a SaaS product.",
         ],
         table: {
           caption: "Custom software compared with a SaaS product",
@@ -99,7 +99,7 @@ export const insights: Insight[] = [
           {
             heading: "2. Define the MVP and pricing hypothesis",
             paragraphs: [
-              "Scope a minimum viable product (MVP) that solves the core problem well for one clear group of customers. Our guide to the [MVP development process](/insights/mvp-development-process) covers how to cut scope without cutting quality. Decide early how you expect to charge, for example per user, per usage or by feature tier, because the pricing model shapes what the product must measure and enforce.",
+              "Scope a minimum viable product (MVP) that solves the core problem well for one clear group of customers. Our guide to the [MVP development process](/insights/mvp-development-process/) covers how to cut scope without cutting quality. Decide early how you expect to charge, for example per user, per usage or by feature tier, because the pricing model shapes what the product must measure and enforce.",
             ],
           },
           {
@@ -117,13 +117,13 @@ export const insights: Insight[] = [
           {
             heading: "5. Build the core product and the SaaS foundations",
             paragraphs: [
-              "Build the core features alongside the foundations every SaaS product needs: authentication and single sign-on, roles and permissions, tenant administration, subscriptions and billing, notifications, audit logs and an admin console for your own team. Our article on [building SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale) goes deeper on which of these to get right early.",
+              "Build the core features alongside the foundations every SaaS product needs: authentication and single sign-on, roles and permissions, tenant administration, subscriptions and billing, notifications, audit logs and an admin console for your own team. Our article on [building SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/) goes deeper on which of these to get right early.",
             ],
           },
           {
             heading: "6. Automate testing, releases and infrastructure",
             paragraphs: [
-              "Every release reaches every customer, so set up continuous integration and delivery, infrastructure as code and automated tests before the codebase grows. A practical [test automation strategy](/insights/test-automation-strategy) protects sign-up, billing, permissions and tenant isolation on every change. Feature flags let you release gradually and switch off a problem without a full rollback. The research from [DORA](https://dora.dev/) is a good reference for measuring delivery performance.",
+              "Every release reaches every customer, so set up continuous integration and delivery, infrastructure as code and automated tests before the codebase grows. A practical [test automation strategy](/insights/test-automation-strategy/) protects sign-up, billing, permissions and tenant isolation on every change. Feature flags let you release gradually and switch off a problem without a full rollback. The research from [DORA](https://dora.dev/) is a good reference for measuring delivery performance.",
             ],
           },
           {
@@ -172,7 +172,7 @@ export const insights: Insight[] = [
           "Single sign-on, multi-factor authentication and role-based access for customers and for your own staff.",
           "Encryption in transit and at rest, managed secrets and audit logs of sensitive actions.",
           "Privacy obligations that fit your markets, such as the EU's [data protection rules](https://commission.europa.eu/law/law-topic/data-protection_en), plus clear data retention and deletion.",
-          "A plan for the assurance B2B buyers often request, such as a [SOC 2](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2) report, and sector rules like HIPAA if you serve healthcare (see our [HIPAA compliant app development](/insights/hipaa-compliant-app-development) guide).",
+          "A plan for the assurance B2B buyers often request, such as a [SOC 2](https://www.aicpa-cima.com/topic/audit-assurance/audit-and-assurance-greater-than-soc-2) report, and sector rules like HIPAA if you serve healthcare (see our [HIPAA compliant app development](/insights/hipaa-compliant-app-development/) guide).",
         ],
       },
       {
@@ -193,8 +193,8 @@ export const insights: Insight[] = [
       {
         heading: "How InSol Technologies builds SaaS products",
         paragraphs: [
-          "InSol Technologies helps founders and companies plan, build and grow SaaS products. Our [SaaS product development](/services/saas-products) team shapes the MVP, tenancy model and roadmap, our [software engineering](/services/product-engineering) team builds the core product and its integrations, and our [web and mobile development](/services/web-mobile-development) team designs the apps customers use every day. Our [cloud and DevOps](/services/cloud-devops) engineers set up infrastructure, release pipelines and monitoring, our [quality engineering](/services/quality-engineering) team automates testing of billing, permissions and tenant isolation, and our [data and analytics](/services/data-analytics) team turns product usage into reporting you can act on.",
-          "If you are weighing whether to build in-house or with a partner, our guide to [choosing product engineering partners](/insights/choosing-product-engineering-partners) can help. To plan a new SaaS product or improve an existing one, [talk to our team](/contact).",
+          "InSol Technologies helps founders and companies plan, build and grow SaaS products. Our [SaaS product development](/services/saas-products/) team shapes the MVP, tenancy model and roadmap, our [software engineering](/services/product-engineering/) team builds the core product and its integrations, and our [web and mobile development](/services/web-mobile-development/) team designs the apps customers use every day. Our [cloud and DevOps](/services/cloud-devops/) engineers set up infrastructure, release pipelines and monitoring, our [quality engineering](/services/quality-engineering/) team automates testing of billing, permissions and tenant isolation, and our [data and analytics](/services/data-analytics/) team turns product usage into reporting you can act on.",
+          "If you are weighing whether to build in-house or with a partner, our guide to [choosing product engineering partners](/insights/choosing-product-engineering-partners/) can help. To plan a new SaaS product or improve an existing one, [talk to our team](/contact/).",
         ],
       },
     ],
@@ -263,7 +263,7 @@ export const insights: Insight[] = [
           {
             heading: "1. Define the goal and the use cases",
             paragraphs: [
-              "Write down the problem the chatbot solves and how you will measure it, such as fewer repeat support tickets, faster answers for staff or more completed bookings. List the questions and tasks it must handle at launch, the ones it must refuse, and when it should pass the conversation to a person. Keep the first release narrow, the way you would scope an [MVP](/insights/mvp-development-process). Our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business) covers how to choose use cases worth funding.",
+              "Write down the problem the chatbot solves and how you will measure it, such as fewer repeat support tickets, faster answers for staff or more completed bookings. List the questions and tasks it must handle at launch, the ones it must refuse, and when it should pass the conversation to a person. Keep the first release narrow, the way you would scope an [MVP](/insights/mvp-development-process/). Our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business/) covers how to choose use cases worth funding.",
             ],
           },
           {
@@ -275,7 +275,7 @@ export const insights: Insight[] = [
           {
             heading: "3. Prepare the knowledge and data",
             paragraphs: [
-              "A chatbot can only be as accurate as the content behind it. Gather the help articles, policies, product data and past support conversations it should rely on, remove outdated or conflicting material, and name an owner who keeps each source current. Decide which content each type of user may see, and remove personal data that the bot does not need. Strong [data foundations](/insights/data-analytics-strategy) make this step much easier.",
+              "A chatbot can only be as accurate as the content behind it. Gather the help articles, policies, product data and past support conversations it should rely on, remove outdated or conflicting material, and name an owner who keeps each source current. Decide which content each type of user may see, and remove personal data that the bot does not need. Strong [data foundations](/insights/data-analytics-strategy/) make this step much easier.",
             ],
           },
           {
@@ -293,7 +293,7 @@ export const insights: Insight[] = [
           {
             heading: "6. Build the integrations and backend",
             paragraphs: [
-              "Connect the chatbot to the systems it needs, such as your CRM, help desk, order management, booking engine or knowledge base, through secure APIs. Give each tool the smallest permissions that work, require confirmation for actions that change data or spend money, and log every action. Store conversations with clear retention rules and run the service on scalable, monitored [cloud infrastructure](/services/cloud-devops).",
+              "Connect the chatbot to the systems it needs, such as your CRM, help desk, order management, booking engine or knowledge base, through secure APIs. Give each tool the smallest permissions that work, require confirmation for actions that change data or spend money, and log every action. Store conversations with clear retention rules and run the service on scalable, monitored [cloud infrastructure](/services/cloud-devops/).",
             ],
           },
           {
@@ -305,13 +305,13 @@ export const insights: Insight[] = [
           {
             heading: "8. Test and evaluate",
             paragraphs: [
-              "Build a test set of real questions with expected answers, including hard, ambiguous, off-topic and hostile ones. Score answers for accuracy, use of the right sources, refusals, tone and hand-off behavior, and rerun the set whenever you change the model, instructions or content. Test integrations and permissions the way you would any other software; our [test automation strategy](/insights/test-automation-strategy) guide explains how to keep these checks running on every release.",
+              "Build a test set of real questions with expected answers, including hard, ambiguous, off-topic and hostile ones. Score answers for accuracy, use of the right sources, refusals, tone and hand-off behavior, and rerun the set whenever you change the model, instructions or content. Test integrations and permissions the way you would any other software; our [test automation strategy](/insights/test-automation-strategy/) guide explains how to keep these checks running on every release.",
             ],
           },
           {
             heading: "9. Launch, monitor and improve",
             paragraphs: [
-              "Start with a limited group of users or a single channel, then widen access once results hold up. Monitor resolution and hand-off rates, unanswered questions, user ratings, errors, latency and cost per conversation. Review real conversations regularly, fix gaps in the content, and treat the chatbot as a product with an owner and a release plan, as described in our guide to [putting AI in production workflows](/insights/putting-ai-in-production-workflows).",
+              "Start with a limited group of users or a single channel, then widen access once results hold up. Monitor resolution and hand-off rates, unanswered questions, user ratings, errors, latency and cost per conversation. Review real conversations regularly, fix gaps in the content, and treat the chatbot as a product with an owner and a release plan, as described in our guide to [putting AI in production workflows](/insights/putting-ai-in-production-workflows/).",
             ],
           },
         ],
@@ -348,7 +348,7 @@ export const insights: Insight[] = [
           {
             heading: "Data protection and access control",
             paragraphs: [
-              "Collect only the data the chatbot needs, apply the same access rules to retrieved documents that apply to the people asking, and check your model provider's terms on data retention and training. If you serve people in the European Union, the [General Data Protection Regulation (GDPR)](https://commission.europa.eu/law/law-topic/data-protection_en) applies. Healthcare chatbots that handle protected health information need extra controls; see our guide to [HIPAA compliant app development](/insights/hipaa-compliant-app-development).",
+              "Collect only the data the chatbot needs, apply the same access rules to retrieved documents that apply to the people asking, and check your model provider's terms on data retention and training. If you serve people in the European Union, the [General Data Protection Regulation (GDPR)](https://commission.europa.eu/law/law-topic/data-protection_en) applies. Healthcare chatbots that handle protected health information need extra controls; see our guide to [HIPAA compliant app development](/insights/hipaa-compliant-app-development/).",
             ],
           },
           {
@@ -377,8 +377,8 @@ export const insights: Insight[] = [
       {
         heading: "How InSol Technologies builds AI chatbots",
         paragraphs: [
-          "InSol Technologies helps businesses plan, build and run AI chatbots that answer from approved knowledge and connect safely to real systems. Our [AI and intelligent automation](/services/ai-intelligent-automation) team designs the retrieval, model and guardrail layers, our [software engineering](/services/product-engineering) team builds the integrations and backend, and our [web and mobile development](/services/web-mobile-development) team builds the chat experience across channels. Our [data and analytics](/services/data-analytics) team prepares the content and measurement, and our [quality engineering](/services/quality-engineering) team automates the evaluations that protect every release.",
-          "We work across [technology](/industries/technology), [ecommerce](/industries/ecommerce), [healthcare](/industries/healthcare) and [travel and hospitality](/industries/travel-hospitality). To plan a new chatbot or improve one you already run, [talk to our team](/contact).",
+          "InSol Technologies helps businesses plan, build and run AI chatbots that answer from approved knowledge and connect safely to real systems. Our [AI and intelligent automation](/services/ai-intelligent-automation/) team designs the retrieval, model and guardrail layers, our [software engineering](/services/product-engineering/) team builds the integrations and backend, and our [web and mobile development](/services/web-mobile-development/) team builds the chat experience across channels. Our [data and analytics](/services/data-analytics/) team prepares the content and measurement, and our [quality engineering](/services/quality-engineering/) team automates the evaluations that protect every release.",
+          "We work across [technology](/industries/technology/), [ecommerce](/industries/ecommerce/), [healthcare](/industries/healthcare/) and [travel and hospitality](/industries/travel-hospitality/). To plan a new chatbot or improve one you already run, [talk to our team](/contact/).",
         ],
       },
     ],
@@ -451,7 +451,7 @@ export const insights: Insight[] = [
           {
             heading: "1. Define the audience, journeys and business model",
             paragraphs: [
-              "Write down who the app is for, which part of the trip it serves and how it makes money, such as commission, markup, direct bookings, subscriptions or advertising. Map the main journeys from inspiration to post-trip, then choose the few that matter most for launch. Scope the first release the way you would an [MVP](/insights/mvp-development-process) and keep a separate list for later.",
+              "Write down who the app is for, which part of the trip it serves and how it makes money, such as commission, markup, direct bookings, subscriptions or advertising. Map the main journeys from inspiration to post-trip, then choose the few that matter most for launch. Scope the first release the way you would an [MVP](/insights/mvp-development-process/) and keep a separate list for later.",
             ],
           },
           {
@@ -469,7 +469,7 @@ export const insights: Insight[] = [
           {
             heading: "4. Choose native, cross-platform or web",
             paragraphs: [
-              "Native iOS and Android apps give the best access to device features such as location, offline storage, wallet passes and push notifications. Cross-platform frameworks let one team ship to both stores from a shared codebase. A responsive web app or progressive web app can be enough for booking flows that people mostly use once. Many travel businesses combine a fast web booking experience with a mobile app for travelers who return often. Our [mobile app development process](/insights/mobile-app-development-process) guide explains this choice in more detail.",
+              "Native iOS and Android apps give the best access to device features such as location, offline storage, wallet passes and push notifications. Cross-platform frameworks let one team ship to both stores from a shared codebase. A responsive web app or progressive web app can be enough for booking flows that people mostly use once. Many travel businesses combine a fast web booking experience with a mobile app for travelers who return often. Our [mobile app development process](/insights/mobile-app-development-process/) guide explains this choice in more detail.",
             ],
           },
           {
@@ -481,7 +481,7 @@ export const insights: Insight[] = [
           {
             heading: "6. Build the backend and booking engine",
             paragraphs: [
-              "The backend handles search across suppliers, caching, pricing and markup rules, booking creation, payment capture, confirmations, changes, cancellations and refunds. Design it so a supplier timeout or a price change does not leave a traveler charged without a booking. Clear booking states, idempotent payment calls, retries and reconciliation jobs matter more here than in most apps. Plan for traffic peaks around holidays and promotions with scalable [cloud infrastructure](/services/cloud-devops).",
+              "The backend handles search across suppliers, caching, pricing and markup rules, booking creation, payment capture, confirmations, changes, cancellations and refunds. Design it so a supplier timeout or a price change does not leave a traveler charged without a booking. Clear booking states, idempotent payment calls, retries and reconciliation jobs matter more here than in most apps. Plan for traffic peaks around holidays and promotions with scalable [cloud infrastructure](/services/cloud-devops/).",
             ],
           },
           {
@@ -493,7 +493,7 @@ export const insights: Insight[] = [
           {
             heading: "8. Test real booking scenarios",
             paragraphs: [
-              "Test complete journeys against supplier sandbox environments, including sold-out inventory, price changes during checkout, failed and partial payments, cancellations, schedule changes and time zones. Test on the devices, operating system versions and network conditions your travelers use. Automate regression tests for search, pricing and checkout so every release stays safe; our [test automation strategy](/insights/test-automation-strategy) guide shows how to decide what to automate.",
+              "Test complete journeys against supplier sandbox environments, including sold-out inventory, price changes during checkout, failed and partial payments, cancellations, schedule changes and time zones. Test on the devices, operating system versions and network conditions your travelers use. Automate regression tests for search, pricing and checkout so every release stays safe; our [test automation strategy](/insights/test-automation-strategy/) guide shows how to decide what to automate.",
             ],
           },
           {
@@ -579,8 +579,8 @@ export const insights: Insight[] = [
       {
         heading: "How InSol Technologies builds travel apps",
         paragraphs: [
-          "InSol Technologies helps [travel and hospitality](/industries/travel-hospitality) businesses plan, build and improve booking and traveler apps. Our [web and mobile development](/services/web-mobile-development) team designs and builds iOS, Android and web experiences, our [software engineering](/services/product-engineering) team builds booking engines and supplier integrations, and our [enterprise applications](/services/enterprise-applications) team connects them to property management, CRM and finance systems. We add [AI and intelligent automation](/services/ai-intelligent-automation) where it solves a clear problem, and our [quality engineering](/services/quality-engineering) team automates the booking and payment tests that protect every release.",
-          "If you are replacing an older booking platform, our guide to [legacy application modernization](/insights/legacy-application-modernization) explains how to move in stages with less risk. To plan a new travel app or improve an existing one, [talk to our team](/contact).",
+          "InSol Technologies helps [travel and hospitality](/industries/travel-hospitality/) businesses plan, build and improve booking and traveler apps. Our [web and mobile development](/services/web-mobile-development/) team designs and builds iOS, Android and web experiences, our [software engineering](/services/product-engineering/) team builds booking engines and supplier integrations, and our [enterprise applications](/services/enterprise-applications/) team connects them to property management, CRM and finance systems. We add [AI and intelligent automation](/services/ai-intelligent-automation/) where it solves a clear problem, and our [quality engineering](/services/quality-engineering/) team automates the booking and payment tests that protect every release.",
+          "If you are replacing an older booking platform, our guide to [legacy application modernization](/insights/legacy-application-modernization/) explains how to move in stages with less risk. To plan a new travel app or improve an existing one, [talk to our team](/contact/).",
         ],
       },
     ],
@@ -652,7 +652,7 @@ export const insights: Insight[] = [
           {
             heading: "1. Define goals, customers and scope",
             paragraphs: [
-              "Write down what the store must achieve, who buys from it and how they buy. A business-to-business (B2B) store with account pricing, purchase orders and reorders needs very different features from a consumer store built around impulse purchases. Agree on the must-have features for launch and keep a separate list for later releases, the same way you would scope an [MVP](/insights/mvp-development-process).",
+              "Write down what the store must achieve, who buys from it and how they buy. A business-to-business (B2B) store with account pricing, purchase orders and reorders needs very different features from a consumer store built around impulse purchases. Agree on the must-have features for launch and keep a separate list for later releases, the same way you would scope an [MVP](/insights/mvp-development-process/).",
             ],
           },
           {
@@ -700,7 +700,7 @@ export const insights: Insight[] = [
           {
             heading: "9. Test the whole store",
             paragraphs: [
-              "Test real purchase journeys end to end on the browsers and devices your customers use, including discounts, out-of-stock items, address edge cases, emails and integrations with live sandbox accounts. Automate regression tests for checkout and pricing so every later release stays safe; our [test automation strategy](/insights/test-automation-strategy) guide explains how to decide what to automate.",
+              "Test real purchase journeys end to end on the browsers and devices your customers use, including discounts, out-of-stock items, address edge cases, emails and integrations with live sandbox accounts. Automate regression tests for checkout and pricing so every later release stays safe; our [test automation strategy](/insights/test-automation-strategy/) guide explains how to decide what to automate.",
             ],
           },
           {
@@ -792,8 +792,8 @@ export const insights: Insight[] = [
       {
         heading: "How InSol Technologies builds ecommerce websites",
         paragraphs: [
-          "InSol Technologies helps [ecommerce](/industries/ecommerce) businesses plan, build and improve online stores. Our [web and mobile development](/services/web-mobile-development) team designs and builds storefronts and checkout journeys, our [software engineering](/services/product-engineering) team handles custom features and integrations with order, inventory and ERP systems, and our [cloud and DevOps](/services/cloud-devops) engineers set up hosting, monitoring and release pipelines that keep the store fast and stable. Our [quality engineering](/services/quality-engineering) team automates checkout and pricing tests, and our [data and analytics](/services/data-analytics) team connects store data to reporting you can act on.",
-          "If you are replacing an older platform, our guide to [legacy application modernization](/insights/legacy-application-modernization) explains how to move in stages with less risk. To plan a new store or improve an existing one, [talk to our team](/contact).",
+          "InSol Technologies helps [ecommerce](/industries/ecommerce/) businesses plan, build and improve online stores. Our [web and mobile development](/services/web-mobile-development/) team designs and builds storefronts and checkout journeys, our [software engineering](/services/product-engineering/) team handles custom features and integrations with order, inventory and ERP systems, and our [cloud and DevOps](/services/cloud-devops/) engineers set up hosting, monitoring and release pipelines that keep the store fast and stable. Our [quality engineering](/services/quality-engineering/) team automates checkout and pricing tests, and our [data and analytics](/services/data-analytics/) team connects store data to reporting you can act on.",
+          "If you are replacing an older platform, our guide to [legacy application modernization](/insights/legacy-application-modernization/) explains how to move in stages with less risk. To plan a new store or improve an existing one, [talk to our team](/contact/).",
         ],
       },
     ],
@@ -899,7 +899,7 @@ export const insights: Insight[] = [
           {
             heading: "5. Design the architecture around the safeguards",
             paragraphs: [
-              "Build the technical safeguards into the design rather than bolting them on. Separate PHI from non-PHI data where possible, isolate production from development and test environments, define roles before writing permission checks and plan how audit events will be captured and protected. Our guide to the [mobile app development process](/insights/mobile-app-development-process) covers the wider discovery, design and build stages that these choices sit within.",
+              "Build the technical safeguards into the design rather than bolting them on. Separate PHI from non-PHI data where possible, isolate production from development and test environments, define roles before writing permission checks and plan how audit events will be captured and protected. Our guide to the [mobile app development process](/insights/mobile-app-development-process/) covers the wider discovery, design and build stages that these choices sit within.",
             ],
           },
           {
@@ -911,7 +911,7 @@ export const insights: Insight[] = [
           {
             heading: "7. Test security and privacy, not just features",
             paragraphs: [
-              "Add automated tests for access rules, session timeouts and audit logging alongside functional tests, then run vulnerability scans and an independent penetration test before launch and after major changes. Our [test automation strategy](/insights/test-automation-strategy) guide explains how to keep those checks running on every release.",
+              "Add automated tests for access rules, session timeouts and audit logging alongside functional tests, then run vulnerability scans and an independent penetration test before launch and after major changes. Our [test automation strategy](/insights/test-automation-strategy/) guide explains how to keep those checks running on every release.",
             ],
           },
           {
@@ -978,7 +978,7 @@ export const insights: Insight[] = [
         heading: "Using de-identified data for testing and analytics",
         paragraphs: [
           "Information that has been de-identified under the HIPAA Privacy Rule is no longer PHI, which makes it useful for analytics, product research and realistic test data. HHS [de-identification guidance](https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html) describes two methods: Safe Harbor, which removes 18 listed types of identifiers and requires no actual knowledge that the rest could identify someone, and Expert Determination, where a qualified expert documents that the risk of re-identification is very small. Removing names alone is not enough, and identifiers hidden in free-text fields count too.",
-          "If you plan to build reporting or machine learning on health data, design the de-identification pipeline as part of your [data analytics strategy](/insights/data-analytics-strategy) rather than as a one-off export.",
+          "If you plan to build reporting or machine learning on health data, design the de-identification pipeline as part of your [data analytics strategy](/insights/data-analytics-strategy/) rather than as a one-off export.",
         ],
       },
       {
@@ -1018,8 +1018,8 @@ export const insights: Insight[] = [
       {
         heading: "How InSol Technologies builds HIPAA-ready applications",
         paragraphs: [
-          "InSol Technologies works with [healthcare](/industries/healthcare) organizations and health technology companies on patient portals, clinical workflow tools and connected SaaS platforms. Our [web and mobile development](/services/web-mobile-development) and [software engineering](/services/product-engineering) teams design PHI handling and safeguards into the architecture from discovery, our [cloud and DevOps](/services/cloud-devops) engineers build environments on BAA-covered services with infrastructure as code, and our [quality engineering](/services/quality-engineering) team adds security and access tests to every release. For health tech products sold to multiple providers, our [SaaS product development](/services/saas-products) team designs tenant isolation and audit trails that customers' security reviews expect.",
-          "We work alongside your compliance and legal advisers rather than replacing them. If you are planning a health app or need to bring an existing one up to HIPAA requirements, [talk to our team](/contact).",
+          "InSol Technologies works with [healthcare](/industries/healthcare/) organizations and health technology companies on patient portals, clinical workflow tools and connected SaaS platforms. Our [web and mobile development](/services/web-mobile-development/) and [software engineering](/services/product-engineering/) teams design PHI handling and safeguards into the architecture from discovery, our [cloud and DevOps](/services/cloud-devops/) engineers build environments on BAA-covered services with infrastructure as code, and our [quality engineering](/services/quality-engineering/) team adds security and access tests to every release. For health tech products sold to multiple providers, our [SaaS product development](/services/saas-products/) team designs tenant isolation and audit trails that customers' security reviews expect.",
+          "We work alongside your compliance and legal advisers rather than replacing them. If you are planning a health app or need to bring an existing one up to HIPAA requirements, [talk to our team](/contact/).",
         ],
       },
     ],
@@ -1084,7 +1084,7 @@ export const insights: Insight[] = [
       {
         heading: "Legacy modernization approaches compared",
         paragraphs: [
-          "Modernization is not one method. Most programs use several approaches across a portfolio, choosing the least disruptive option that removes the real constraint for each application. The options overlap with the 7 Rs used in cloud projects, covered in more depth in our [cloud migration strategy guide](/insights/cloud-migration-strategy).",
+          "Modernization is not one method. Most programs use several approaches across a portfolio, choosing the least disruptive option that removes the real constraint for each application. The options overlap with the 7 Rs used in cloud projects, covered in more depth in our [cloud migration strategy guide](/insights/cloud-migration-strategy/).",
           "Incremental replacement is often lower risk than a single cutover. Martin Fowler's description of the [Strangler Fig pattern](https://martinfowler.com/bliki/StranglerFigApplication.html) explains how new components can gradually take over from a legacy system while it keeps running.",
         ],
         table: {
@@ -1139,7 +1139,7 @@ export const insights: Insight[] = [
             heading: "Step 4: Choose the modernization approach for each application",
             paragraphs: [
               "Using the goals, scores and dependency map, choose an approach from the table above for each application. A simple rule helps: pick the option with the least change that still removes the constraint you identified. Rehosting will not fix slow change cycles caused by tangled code, and a full rebuild is rarely needed just to leave an unsupported operating system.",
-              "When the decision is build versus buy, be honest about whether the capability differentiates the business. Standard finance, HR or ticketing functions are often better replaced with a product, while unique pricing, scheduling or fulfilment logic may justify custom engineering, as described in our guide to the [custom software development process](/insights/custom-software-development-process).",
+              "When the decision is build versus buy, be honest about whether the capability differentiates the business. Standard finance, HR or ticketing functions are often better replaced with a product, while unique pricing, scheduling or fulfilment logic may justify custom engineering, as described in our guide to the [custom software development process](/insights/custom-software-development-process/).",
             ],
           },
           {
@@ -1160,7 +1160,7 @@ export const insights: Insight[] = [
             heading: "Step 7: Modernize incrementally, with tests and data migration",
             paragraphs: [
               "The strangler fig pattern is a common way to deliver change safely. A routing layer, such as an API gateway or proxy, sits in front of the legacy application. New or rebuilt capabilities are released one at a time behind it and traffic is shifted gradually, so users keep working while the old system shrinks.",
-              "Before changing behavior, add automated tests that capture what the system does today, including edge cases users rely on. These characterization tests make it possible to refactor or replace code with confidence. Our [test automation strategy](/insights/test-automation-strategy) explains how to build that safety net. Treat data migration as its own workstream with mapping, cleansing, trial loads, reconciliation reports and a rehearsed cutover.",
+              "Before changing behavior, add automated tests that capture what the system does today, including edge cases users rely on. These characterization tests make it possible to refactor or replace code with confidence. Our [test automation strategy](/insights/test-automation-strategy/) explains how to build that safety net. Treat data migration as its own workstream with mapping, cleansing, trial loads, reconciliation reports and a rehearsed cutover.",
             ],
           },
           {
@@ -1194,20 +1194,20 @@ export const insights: Insight[] = [
         heading: "Using AI in legacy modernization",
         paragraphs: [
           "AI-assisted tools can help teams read and document unfamiliar code, summarize what modules do, suggest test cases and draft code translations between languages or frameworks. Used well, they shorten the discovery and refactoring work that makes legacy projects slow.",
-          "They do not remove the need for engineering judgment. Generated code and documentation still need review, testing against real behavior and security checks. Treat AI as an accelerator inside a disciplined process, in the same way our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business) recommends for any production use.",
+          "They do not remove the need for engineering judgment. Generated code and documentation still need review, testing against real behavior and security checks. Treat AI as an accelerator inside a disciplined process, in the same way our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business/) recommends for any production use.",
         ],
       },
       {
         heading: "Legacy modernization by industry",
         paragraphs: [
-          "In [healthcare](/industries/healthcare), modernization often focuses on scheduling, billing and patient-facing systems that need secure integration with health record platforms, with strict access control, audit trails and privacy rules throughout. [Ecommerce](/industries/ecommerce) businesses commonly modernize order management, inventory and storefront back ends so they can handle peak trading and connect new sales channels. In [travel and hospitality](/industries/travel-hospitality), reservation, property and distribution systems are frequent candidates because they must exchange data in real time with many partners. [Technology companies](/industries/technology) often modernize an early product codebase into a cleaner, multi-tenant design, which links to the choices in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+          "In [healthcare](/industries/healthcare/), modernization often focuses on scheduling, billing and patient-facing systems that need secure integration with health record platforms, with strict access control, audit trails and privacy rules throughout. [Ecommerce](/industries/ecommerce/) businesses commonly modernize order management, inventory and storefront back ends so they can handle peak trading and connect new sales channels. In [travel and hospitality](/industries/travel-hospitality/), reservation, property and distribution systems are frequent candidates because they must exchange data in real time with many partners. [Technology companies](/industries/technology/) often modernize an early product codebase into a cleaner, multi-tenant design, which links to the choices in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/).",
         ],
       },
       {
         heading: "How InSol Technologies helps modernize legacy applications",
         paragraphs: [
-          "Our [enterprise applications](/services/enterprise-applications) team assesses existing systems, maps their integrations and business rules, and recommends an approach for each application. Our [software engineering](/services/product-engineering) teams refactor, rearchitect or rebuild where custom code is the right answer, our [cloud and DevOps](/services/cloud-devops) engineers prepare the target platform and delivery pipelines, and our [quality engineering](/services/quality-engineering) team builds the automated tests that make incremental change safe.",
-          "If an ageing system is slowing down your teams or carrying risk you would rather not hold, [talk to our team](/contact) about a scoped assessment as a first step.",
+          "Our [enterprise applications](/services/enterprise-applications/) team assesses existing systems, maps their integrations and business rules, and recommends an approach for each application. Our [software engineering](/services/product-engineering/) teams refactor, rearchitect or rebuild where custom code is the right answer, our [cloud and DevOps](/services/cloud-devops/) engineers prepare the target platform and delivery pipelines, and our [quality engineering](/services/quality-engineering/) team builds the automated tests that make incremental change safe.",
+          "If an ageing system is slowing down your teams or carrying risk you would rather not hold, [talk to our team](/contact/) about a scoped assessment as a first step.",
         ],
       },
     ],
@@ -1328,7 +1328,7 @@ export const insights: Insight[] = [
             heading: "Step 5: Design the data architecture",
             paragraphs: [
               "Choose an architecture that fits the use cases, data volumes, latency needs and team skills, not the most fashionable option. Most modern setups ingest data from source systems with ELT pipelines, store it in a cloud warehouse or lakehouse, model it into clean business tables and serve it to BI tools, applications and machine learning workloads.",
-              "Plan the platform with the same discipline as any production system: environments, version control, automated tests on pipelines, monitoring and cost controls. Our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust) covers these foundations, and if your data still sits on-premises, a [cloud migration strategy](/insights/cloud-migration-strategy) should be planned alongside it.",
+              "Plan the platform with the same discipline as any production system: environments, version control, automated tests on pipelines, monitoring and cost controls. Our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust/) covers these foundations, and if your data still sits on-premises, a [cloud migration strategy](/insights/cloud-migration-strategy/) should be planned alongside it.",
             ],
           },
           {
@@ -1395,20 +1395,20 @@ export const insights: Insight[] = [
       {
         heading: "Data analytics strategy by industry",
         paragraphs: [
-          "In [healthcare](/industries/healthcare), strategies usually start with operational analytics such as scheduling, capacity and revenue cycle reporting, with strict access control and privacy rules for patient data. [Ecommerce](/industries/ecommerce) businesses often focus on a single view of customers, orders and inventory to support merchandising, marketing and demand planning. In [travel and hospitality](/industries/travel-hospitality), common priorities are booking, occupancy and channel performance data brought together from reservation, property and distribution systems. [Technology and SaaS companies](/industries/technology) typically need product usage, subscription and revenue metrics, often exposed to customers inside the product, which links to the design choices in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+          "In [healthcare](/industries/healthcare/), strategies usually start with operational analytics such as scheduling, capacity and revenue cycle reporting, with strict access control and privacy rules for patient data. [Ecommerce](/industries/ecommerce/) businesses often focus on a single view of customers, orders and inventory to support merchandising, marketing and demand planning. In [travel and hospitality](/industries/travel-hospitality/), common priorities are booking, occupancy and channel performance data brought together from reservation, property and distribution systems. [Technology and SaaS companies](/industries/technology/) typically need product usage, subscription and revenue metrics, often exposed to customers inside the product, which links to the design choices in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/).",
         ],
       },
       {
         heading: "How data strategy supports AI",
         paragraphs: [
-          "AI projects depend on accessible, well-governed data. A business with clear data ownership, trusted pipelines and documented definitions can move from analytics to prediction and automation much faster than one that has to fix its data first. That is why data readiness is an early step in our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business). Building the analytics foundation well is also building the foundation for [AI and intelligent automation](/services/ai-intelligent-automation).",
+          "AI projects depend on accessible, well-governed data. A business with clear data ownership, trusted pipelines and documented definitions can move from analytics to prediction and automation much faster than one that has to fix its data first. That is why data readiness is an early step in our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business/). Building the analytics foundation well is also building the foundation for [AI and intelligent automation](/services/ai-intelligent-automation/).",
         ],
       },
       {
         heading: "How InSol Technologies helps build a data analytics strategy",
         paragraphs: [
-          "Our [data and analytics](/services/data-analytics) team works through these steps with clients: aligning on goals and decisions, assessing the current data estate, ranking use cases, defining metrics and designing a platform that fits. Our [cloud and DevOps](/services/cloud-devops) engineers build and run the infrastructure, and our [enterprise applications](/services/enterprise-applications) team connects ERP, CRM and other core systems so data flows reliably into the platform.",
-          "If your teams are debating numbers instead of acting on them, or you need a clear plan before investing in new data tools, [talk to our team](/contact) about a scoped first step.",
+          "Our [data and analytics](/services/data-analytics/) team works through these steps with clients: aligning on goals and decisions, assessing the current data estate, ranking use cases, defining metrics and designing a platform that fits. Our [cloud and DevOps](/services/cloud-devops/) engineers build and run the infrastructure, and our [enterprise applications](/services/enterprise-applications/) team connects ERP, CRM and other core systems so data flows reliably into the platform.",
+          "If your teams are debating numbers instead of acting on them, or you need a clear plan before investing in new data tools, [talk to our team](/contact/) about a scoped first step.",
         ],
       },
     ],
@@ -1451,7 +1451,7 @@ export const insights: Insight[] = [
       {
         heading: "What does implementing AI in a business actually mean?",
         paragraphs: [
-          "Implementing AI in a business means putting an AI capability, such as a language model, a prediction model or an automated decision step, into a real workflow so that it changes how work gets done. It is not the same as giving staff access to a chatbot or running a one-off experiment. A real implementation has a defined problem, data it can trust, an owner, a way to measure whether it works, and a place inside the systems people already use.",
+          "How to implement AI in business starts with a clear definition: implementing AI in a business means putting an AI capability, such as a language model, a prediction model or an automated decision step, into a real workflow so that it changes how work gets done. It is not the same as giving staff access to a chatbot or running a one-off experiment. A real implementation has a defined problem, data it can trust, an owner, a way to measure whether it works, and a place inside the systems people already use.",
           "Most AI projects that disappoint do not fail because the model is weak. They fail because the use case was vague, the data was not ready, nobody owned the result, or the pilot had no path into production. The steps below are designed to deal with those risks in order, before large amounts of time and budget are committed.",
         ],
       },
@@ -1518,7 +1518,7 @@ export const insights: Insight[] = [
         heading: "Step 3: Assess data and systems readiness",
         paragraphs: [
           "AI is only as good as the data and context it receives. Before committing to a build, check whether the data the use case needs exists, whether it is accurate and complete enough, who owns it, and whether the AI system can legally and technically access it.",
-          "Look at the systems too. Most business value comes from connecting AI to the CRM, ERP, ticketing tool, booking engine or health record system where work already happens. If those integrations are hard, plan for them now. Our [data and analytics](/services/data-analytics) team often starts here, and our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust) covers the foundations in more detail.",
+          "Look at the systems too. Most business value comes from connecting AI to the CRM, ERP, ticketing tool, booking engine or health record system where work already happens. If those integrations are hard, plan for them now. Our [data and analytics](/services/data-analytics/) team often starts here, and our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust/) covers the foundations in more detail.",
         ],
         bullets: [
           "Data quality: accuracy, completeness, consistency and how current the data is.",
@@ -1546,7 +1546,7 @@ export const insights: Insight[] = [
         heading: "Step 5: Run a focused pilot",
         paragraphs: [
           "A pilot tests the chosen approach on real data with a small group of real users, against the metrics agreed in step 1. Keep the scope narrow and the timeline short, and decide in advance what result would justify moving forward and what result would mean stopping or changing direction.",
-          "The same thinking behind a lean [MVP development process](/insights/mvp-development-process) applies here: build the smallest version that can prove or disprove the idea. Treat a well-reasoned decision to stop as a useful result, not a failure.",
+          "The same thinking behind a lean [MVP development process](/insights/mvp-development-process/) applies here: build the smallest version that can prove or disprove the idea. Treat a well-reasoned decision to stop as a useful result, not a failure.",
         ],
         ordered: true,
         bullets: [
@@ -1573,15 +1573,22 @@ export const insights: Insight[] = [
       {
         heading: "Step 7: Deploy, integrate and train people",
         paragraphs: [
-          "Production deployment means the AI capability runs reliably inside the tools people already use, with proper identity, permissions, error handling and support. A separate portal that nobody opens rarely delivers value; this is the core argument of our article on [putting AI in production workflows](/insights/putting-ai-in-production-workflows).",
-          "Plan the rollout like any other software release, with environments, automated testing and the ability to roll back, as described in our [custom software development process](/insights/custom-software-development-process). Then train people on what the system does well, where it can be wrong and how to flag problems. Adoption depends as much on trust and habits as on the technology.",
+          "Production deployment means the AI capability runs reliably inside the tools people already use, with proper identity, permissions, error handling and support. A separate portal that nobody opens rarely delivers value; this is the core argument of our article on [putting AI in production workflows](/insights/putting-ai-in-production-workflows/).",
+          "Plan the rollout like any other software release, with environments, automated testing and the ability to roll back, as described in our [custom software development process](/insights/custom-software-development-process/). Then train people on what the system does well, where it can be wrong and how to flag problems. Adoption depends as much on trust and habits as on the technology.",
         ],
       },
       {
         heading: "Step 8: Monitor, improve and scale",
         paragraphs: [
           "AI systems change behavior over time as data, users and underlying models change. Monitor output quality, usage, cost and user feedback, and keep a backlog of improvements. Re-run your evaluation set whenever prompts, models or data sources change.",
-          "When the first use case is stable and meeting its targets, reuse what you built, such as data pipelines, integrations, evaluation tools and governance, for the next use case on the backlog. Shared foundations make each new use case faster and safer than the last. Running these workloads well also depends on solid [cloud and DevOps](/services/cloud-devops) practices.",
+          "When the first use case is stable and meeting its targets, reuse what you built, such as data pipelines, integrations, evaluation tools and governance, for the next use case on the backlog. Shared foundations make each new use case faster and safer than the last. Running these workloads well also depends on solid [cloud and DevOps](/services/cloud-devops/) practices.",
+        ],
+      },
+      {
+        heading: "How to implement AI in a small business",
+        paragraphs: [
+          "Implementing AI in a small business follows the same steps, but with fewer people and a tighter budget the order matters more. Start with one frequent, low-risk task, such as drafting replies to common customer emails, summarizing documents or routing inquiries, and measure the time it takes today before changing anything.",
+          "Small businesses usually get the fastest results by using AI features already built into tools they pay for, then configuring a platform on their own content, and only building custom software once a use case has proven its value. Keep a person reviewing outputs, set simple rules on what data staff may paste into AI tools, and use the [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) as a lightweight checklist rather than a project in itself. When a use case needs integration with your systems, our [AI and intelligent automation](/services/ai-intelligent-automation/) team can help, and a clear [data analytics strategy](/insights/data-analytics-strategy/) makes the data side easier.",
         ],
       },
       {
@@ -1601,14 +1608,14 @@ export const insights: Insight[] = [
       {
         heading: "AI implementation by industry",
         paragraphs: [
-          "In [healthcare](/industries/healthcare), AI often starts with administrative work such as document processing, scheduling and patient communication, with strict controls on sensitive data and clinical oversight for anything that affects care. In [ecommerce](/industries/ecommerce), common starting points are product search, catalog content, customer service and demand forecasting. [Travel and hospitality](/industries/travel-hospitality) businesses look at guest messaging, booking support and pricing inputs. For [technology and SaaS companies](/industries/technology), AI is frequently built into the product itself, which raises questions about multi-tenant data separation and cost per user covered in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+          "In [healthcare](/industries/healthcare/), AI often starts with administrative work such as document processing, scheduling and patient communication, with strict controls on sensitive data and clinical oversight for anything that affects care. In [ecommerce](/industries/ecommerce/), common starting points are product search, catalog content, customer service and demand forecasting. [Travel and hospitality](/industries/travel-hospitality/) businesses look at guest messaging, booking support and pricing inputs. For [technology and SaaS companies](/industries/technology/), AI is frequently built into the product itself, which raises questions about multi-tenant data separation and cost per user covered in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/).",
         ],
       },
       {
         heading: "How InSol Technologies helps businesses implement AI",
         paragraphs: [
-          "Our [AI and intelligent automation](/services/ai-intelligent-automation) team works through these steps with clients: framing the problem, ranking use cases, checking data readiness, choosing the right approach, running a measured pilot and taking what works into production. Where AI needs to connect with ERP, CRM or other core systems, our [enterprise applications](/services/enterprise-applications) team handles the integration, and our [quality engineering](/services/quality-engineering) team helps test outputs and workflows before release.",
-          "If you are deciding where AI fits in your business, or have a pilot that has not reached production, [talk to our team](/contact) about a scoped first step.",
+          "Our [AI and intelligent automation](/services/ai-intelligent-automation/) team works through these steps with clients: framing the problem, ranking use cases, checking data readiness, choosing the right approach, running a measured pilot and taking what works into production. Where AI needs to connect with ERP, CRM or other core systems, our [enterprise applications](/services/enterprise-applications/) team handles the integration, and our [quality engineering](/services/quality-engineering/) team helps test outputs and workflows before release.",
+          "If you are deciding where AI fits in your business, or have a pilot that has not reached production, [talk to our team](/contact/) about a scoped first step.",
         ],
       },
     ],
@@ -1628,6 +1635,14 @@ export const insights: Insight[] = [
       {
         q: "How long does it take to implement AI in a business?",
         a: "It depends on the use case, data readiness and integrations. A narrow pilot on clean, accessible data can move quickly, while use cases that need data cleanup, new integrations or regulatory review take longer. A short, focused pilot is the most reliable way to get a realistic estimate.",
+      },
+      {
+        q: "How do you implement AI in a small business?",
+        a: "Pick one frequent, low-risk task, measure how long it takes today, and try AI features in tools you already use before buying or building anything new. Keep a person reviewing outputs, set clear rules for what data can be shared with AI tools, and expand only after the first use case shows a measurable improvement.",
+      },
+      {
+        q: "What are the steps for implementing AI in business?",
+        a: "Define the business problem, find and rank use cases, assess data and systems readiness, choose to buy, configure or build, run a focused pilot, put governance and human oversight in place, deploy and train people, then monitor, improve and scale. Moving AI from pilot to daily use is covered in our guide to [putting AI in production workflows](/insights/putting-ai-in-production-workflows/).",
       },
       {
         q: "What are the biggest risks when implementing AI?",
@@ -1690,7 +1705,7 @@ export const insights: Insight[] = [
       {
         heading: "Stage 2: Scope and technical approach",
         paragraphs: [
-          "With the goals clear, decide what the first release includes and how it will be built. Keeping the first version small gets the app in front of real users sooner, which is the same reasoning behind our [MVP development process](/insights/mvp-development-process).",
+          "With the goals clear, decide what the first release includes and how it will be built. Keeping the first version small gets the app in front of real users sooner, which is the same reasoning behind our [MVP development process](/insights/mvp-development-process/).",
         ],
         subsections: [
           {
@@ -1707,7 +1722,7 @@ export const insights: Insight[] = [
           {
             heading: "Backend and architecture",
             paragraphs: [
-              "Most apps need a backend for accounts, data, notifications and integrations. Decide early how authentication, APIs, data storage, offline sync and push notifications will work, and where the backend will run. Our [Cloud and DevOps](/services/cloud-devops) team usually sets up environments and automated build pipelines at this stage so every change can be tested and shipped the same way.",
+              "Most apps need a backend for accounts, data, notifications and integrations. Decide early how authentication, APIs, data storage, offline sync and push notifications will work, and where the backend will run. Our [Cloud and DevOps](/services/cloud-devops/) team usually sets up environments and automated build pipelines at this stage so every change can be tested and shipped the same way.",
             ],
           },
         ],
@@ -1784,14 +1799,14 @@ export const insights: Insight[] = [
       {
         heading: "Mobile apps across industries",
         paragraphs: [
-          "In [healthcare](/industries/healthcare), apps such as patient portals or remote monitoring tools must protect sensitive data, control access carefully and often integrate with clinical systems. In [ecommerce](/industries/ecommerce), fast product search, a smooth checkout and push notifications tied to orders matter most. [Travel and hospitality](/industries/travel-hospitality) apps depend on booking, payment and loyalty integrations and must handle poor connectivity on the road. For [technology and SaaS companies](/industries/technology), the mobile app usually extends an existing platform, so shared APIs and consistent permissions are key, as covered in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+          "In [healthcare](/industries/healthcare/), apps such as patient portals or remote monitoring tools must protect sensitive data, control access carefully and often integrate with clinical systems. In [ecommerce](/industries/ecommerce/), fast product search, a smooth checkout and push notifications tied to orders matter most. [Travel and hospitality](/industries/travel-hospitality/) apps depend on booking, payment and loyalty integrations and must handle poor connectivity on the road. For [technology and SaaS companies](/industries/technology/), the mobile app usually extends an existing platform, so shared APIs and consistent permissions are key, as covered in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/).",
         ],
       },
       {
         heading: "How InSol Technologies builds mobile apps",
         paragraphs: [
-          "Our [web and mobile development](/services/web-mobile-development) team follows this process end to end: discovery, platform and architecture choices, design, iterative development, testing with our [quality engineering](/services/quality-engineering) team, store launch and ongoing support. It is the mobile version of our broader [custom software development process](/insights/custom-software-development-process), and testing follows the approach in our [test automation strategy](/insights/test-automation-strategy) guide.",
-          "If you are planning a new app or need to rescue one that has stalled, [talk to our team](/contact) about scope, platform options and a realistic plan.",
+          "Our [web and mobile development](/services/web-mobile-development/) team follows this process end to end: discovery, platform and architecture choices, design, iterative development, testing with our [quality engineering](/services/quality-engineering/) team, store launch and ongoing support. It is the mobile version of our broader [custom software development process](/insights/custom-software-development-process/), and testing follows the approach in our [test automation strategy](/insights/test-automation-strategy/) guide.",
+          "If you are planning a new app or need to rescue one that has stalled, [talk to our team](/contact/) about scope, platform options and a realistic plan.",
         ],
       },
     ],
@@ -1834,7 +1849,7 @@ export const insights: Insight[] = [
       {
         heading: "What is a test automation strategy?",
         paragraphs: [
-          "A test automation strategy is the plan that decides which tests a team automates, at which level of the system, with which tools, when they run and who keeps them healthy. It turns automation from a collection of scripts written by whoever had time into a deliberate part of how software is built and released.",
+          "A test automation strategy is the plan that helps teams evaluate test solutions and decide which tests a team automates, at which level of the system, with which tools, when they run and who keeps them healthy. It turns automation from a collection of scripts written by whoever had time into a deliberate part of how software is built and released.",
           "The strategy is not a long document that nobody reads. In practice it is a short set of agreed decisions: the goals automation should serve, the coverage at each test layer, the environments and data tests depend on, the gates in the delivery pipeline and the metrics that show whether it is working.",
           "Without a strategy, most teams drift toward the same outcome: a slow, fragile suite of browser tests that fails for reasons unrelated to the code, so people stop trusting it and go back to manual regression before every release.",
         ],
@@ -1900,7 +1915,7 @@ export const insights: Insight[] = [
           {
             heading: "7. Wire tests into the CI/CD pipeline",
             paragraphs: [
-              "Automated tests protect releases only when they run automatically and can block a bad change. Decide which suites run on every pull request, which run after merge and which run against production after a deployment. Our article on [Cloud and DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk) covers how these gates fit into a wider release process.",
+              "Automated tests protect releases only when they run automatically and can block a bad change. Decide which suites run on every pull request, which run after merge and which run against production after a deployment. Our article on [Cloud and DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk/) covers how these gates fit into a wider release process.",
             ],
           },
           {
@@ -2009,9 +2024,23 @@ export const insights: Insight[] = [
           {
             heading: "Where AI fits in test automation",
             paragraphs: [
-              "AI-assisted tools can suggest test cases, generate test data and help repair broken selectors. They work best inside a clear strategy with human review, not as a replacement for one. If your product itself includes AI features, those need their own evaluation approach, which we describe in [putting AI into production workflows](/insights/putting-ai-in-production-workflows).",
+              "AI-assisted tools can suggest test cases, generate test data and help repair broken selectors. They work best inside a clear strategy with human review, not as a replacement for one. If your product itself includes AI features, those need their own evaluation approach, which we describe in [putting AI into production workflows](/insights/putting-ai-in-production-workflows/).",
             ],
           },
+        ],
+      },
+      {
+        heading: "How to evaluate test solutions for your test automation strategy",
+        paragraphs: [
+          "Tools should be chosen after the strategy sets the goals, not before. When you evaluate test solutions, score each candidate against the same criteria and run a short proof of concept on one real, business-critical flow rather than on vendor demo apps.",
+        ],
+        bullets: [
+          "Fit with your stack: languages, frameworks, browsers, mobile platforms and APIs your product actually uses.",
+          "Coverage of the layers you need: unit, API, UI and, where relevant, performance and accessibility checks.",
+          "CI/CD integration: headless runs, parallel execution, clear reports and exit codes the pipeline can gate on.",
+          "Maintainability: readable tests, stable locators, reusable components and how the tool handles waits and flaky behavior.",
+          "Team skills and ownership: whether developers and QA engineers can both write and fix tests.",
+          "Total cost: licences, infrastructure, device or browser grids, and the time spent maintaining the suite.",
         ],
       },
       {
@@ -2034,14 +2063,14 @@ export const insights: Insight[] = [
       {
         heading: "Test automation across industries",
         paragraphs: [
-          "In [ecommerce](/industries/ecommerce), automation usually starts with search, cart, checkout and payment flows, plus checks across browsers and devices. In [healthcare](/industries/healthcare), tests must use synthetic patient data and cover access control and audit trails. In [travel and hospitality](/industries/travel-hospitality), booking flows depend on many third-party integrations, so contract tests and service mocks matter. For [technology and SaaS companies](/industries/technology), multi-tenant permissions, billing and upgrade paths are common priorities, as covered in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale).",
+          "In [ecommerce](/industries/ecommerce/), automation usually starts with search, cart, checkout and payment flows, plus checks across browsers and devices. In [healthcare](/industries/healthcare/), tests must use synthetic patient data and cover access control and audit trails. In [travel and hospitality](/industries/travel-hospitality/), booking flows depend on many third-party integrations, so contract tests and service mocks matter. For [technology and SaaS companies](/industries/technology/), multi-tenant permissions, billing and upgrade paths are common priorities, as covered in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/).",
         ],
       },
       {
         heading: "How InSol Technologies helps with test automation",
         paragraphs: [
-          "Our [quality engineering](/services/quality-engineering) team designs and builds test automation as part of delivery: assessing current coverage, agreeing what to automate, building maintainable frameworks for web, mobile and API testing, and connecting suites to your pipelines with our [Cloud and DevOps](/services/cloud-devops) engineers. Testing is built into every stage of our [custom software development process](/insights/custom-software-development-process), from the first [MVP](/insights/mvp-development-process) onward.",
-          "If release testing is slowing your team down or production defects keep slipping through, [talk to our team](/contact) about a test automation strategy that fits your product.",
+          "Our [quality engineering](/services/quality-engineering/) team designs and builds test automation as part of delivery: assessing current coverage, agreeing what to automate, building maintainable frameworks for web, mobile and API testing, and connecting suites to your pipelines with our [Cloud and DevOps](/services/cloud-devops/) engineers. Testing is built into every stage of our [custom software development process](/insights/custom-software-development-process/), from the first [MVP](/insights/mvp-development-process/) onward.",
+          "If release testing is slowing your team down or production defects keep slipping through, [talk to our team](/contact/) about a test automation strategy that fits your product.",
         ],
       },
     ],
@@ -2057,6 +2086,10 @@ export const insights: Insight[] = [
       {
         q: "What is the test automation pyramid?",
         a: "It is a model that recommends many fast unit tests at the base, fewer integration or API tests in the middle and a small number of end-to-end UI tests at the top. It keeps suites fast and reliable, though the right balance depends on the product.",
+      },
+      {
+        q: "How do you evaluate test solutions for a test automation strategy?",
+        a: "Define goals and coverage first, then score each tool on fit with your stack, the test layers it covers, CI/CD integration, maintainability, team skills and total cost. Run a short proof of concept on a real business-critical flow before deciding. Our [quality engineering](/services/quality-engineering/) team runs this kind of evaluation.",
       },
       {
         q: "Can test automation replace manual testing?",
@@ -2075,7 +2108,7 @@ export const insights: Insight[] = [
       "A practical MVP development guide: what a minimum viable product is, MVP vs prototype vs PoC, a 7-step process, feature scoping, tech choices and mistakes.",
     category: "Product",
     date: "2026-10-23",
-    seoTitle: "MVP Development Process: Step-by-Step",
+    seoTitle: "MVP Development Process: 7 Steps",
     cover: "/insights/covers/mvp-development-process",
     coverAlt: "Cover reading MVP Development: A Step-by-Step Process for Startups, InSol Technologies",
     relatedServices: ["saas-products", "product-engineering", "web-mobile-development", "quality-engineering"],
@@ -2084,7 +2117,7 @@ export const insights: Insight[] = [
       {
         heading: "What is MVP development?",
         paragraphs: [
-          "MVP development is the process of building a minimum viable product: the smallest version of a product that solves one real problem for a specific group of users well enough that they will use it, and that lets you learn whether the idea is worth more investment. The term was popularized by Eric Ries in The Lean Startup, where the MVP is framed as the fastest way through a build, measure, learn loop.",
+          "The MVP development process is how a team builds a minimum viable product: the smallest version of a product that solves one real problem for a specific group of users well enough that they will use it, and that lets you learn whether the idea is worth more investment. The term was popularized by Eric Ries in The Lean Startup, where the MVP is framed as the fastest way through a build, measure, learn loop.",
           "The word that teams most often get wrong is viable. An MVP is not a buggy demo or half of every feature. It is a narrow product that does a few things properly, so the feedback you collect reflects the value of the idea rather than the quality of the build.",
           "For startups, an MVP reduces the risk of spending a year building something nobody wants. For established companies, the same approach tests a new product line, internal tool or customer-facing feature before committing a full roadmap to it.",
         ],
@@ -2145,7 +2178,7 @@ export const insights: Insight[] = [
           {
             heading: "6. Build, test and launch",
             paragraphs: [
-              "Develop in short iterations with a working build at the end of each one. Test the core journey thoroughly, set up basic analytics and error monitoring, and release to a defined group of early users rather than everyone at once. Our [custom software development process](/insights/custom-software-development-process) explains how we run these build stages.",
+              "Develop in short iterations with a working build at the end of each one. Test the core journey thoroughly, set up basic analytics and error monitoring, and release to a defined group of early users rather than everyone at once. Our [custom software development process](/insights/custom-software-development-process/) explains how we run these build stages.",
             ],
           },
           {
@@ -2186,9 +2219,9 @@ export const insights: Insight[] = [
         bullets: [
           "Favor mature, widely used frameworks with strong hiring pools over novel tools.",
           "Use managed cloud services for hosting, databases, authentication and storage so the team spends time on product, not infrastructure.",
-          "Choose web, mobile or both based on where your users are; a responsive web app is often the fastest first step, as covered by our [web and mobile development](/services/web-mobile-development) team.",
-          "If you plan a multi-tenant SaaS, decide early how tenants, billing and permissions will work; our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale) covers these choices.",
-          "Add AI features only where they serve the core journey, and plan for evaluation and monitoring from the start, as described in [putting AI into production workflows](/insights/putting-ai-in-production-workflows).",
+          "Choose web, mobile or both based on where your users are; a responsive web app is often the fastest first step, as covered by our [web and mobile development](/services/web-mobile-development/) team.",
+          "If you plan a multi-tenant SaaS, decide early how tenants, billing and permissions will work; our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/) covers these choices.",
+          "Add AI features only where they serve the core journey, and plan for evaluation and monitoring from the start, as described in [putting AI into production workflows](/insights/putting-ai-in-production-workflows/).",
         ],
       },
       {
@@ -2225,14 +2258,14 @@ export const insights: Insight[] = [
       {
         heading: "MVP development across industries",
         paragraphs: [
-          "In [healthcare](/industries/healthcare), an MVP still has to handle patient data safely, so privacy, access control and audit logging belong in the first release. In [ecommerce](/industries/ecommerce), MVPs often test a new buying experience or subscription model with a subset of customers. In [travel and hospitality](/industries/travel-hospitality), a common MVP is a booking or guest service flow connected to an existing system. For [technology companies](/industries/technology), the MVP is often the first version of a SaaS product sold to a small group of design partners.",
+          "In [healthcare](/industries/healthcare/), an MVP still has to handle patient data safely, so privacy, access control and audit logging belong in the first release. In [ecommerce](/industries/ecommerce/), MVPs often test a new buying experience or subscription model with a subset of customers. In [travel and hospitality](/industries/travel-hospitality/), a common MVP is a booking or guest service flow connected to an existing system. For [technology companies](/industries/technology/), the MVP is often the first version of a SaaS product sold to a small group of design partners.",
         ],
       },
       {
         heading: "How InSol Technologies builds MVPs",
         paragraphs: [
-          "Our [SaaS product development](/services/saas-products) and [product engineering](/services/product-engineering) teams take MVPs from problem definition to launch: discovery and scoping, UX prototypes, a production-ready build on a stack that can grow, and [quality engineering](/services/quality-engineering) so early users get a reliable product. After launch, we help you read the data and plan the next iterations.",
-          "If you are comparing partners, our guide to [choosing a product engineering partner](/insights/choosing-product-engineering-partners) lists the questions worth asking. When you are ready to scope your MVP, [talk to our team](/contact?intent=start-project).",
+          "Our [SaaS product development](/services/saas-products/) and [product engineering](/services/product-engineering/) teams take MVPs from problem definition to launch: discovery and scoping, UX prototypes, a production-ready build on a stack that can grow, and [quality engineering](/services/quality-engineering/) so early users get a reliable product. After launch, we help you read the data and plan the next iterations.",
+          "If you are comparing partners, our guide to [choosing a product engineering partner](/insights/choosing-product-engineering-partners/) lists the questions worth asking. When you are ready to scope your MVP, [talk to our team](/contact?intent=start-project).",
         ],
       },
     ],
@@ -2254,6 +2287,14 @@ export const insights: Insight[] = [
         a: "Only the features needed for the core user journey to deliver value, plus basics users expect such as secure sign-in and a way to get help. Methods like MoSCoW and user story mapping help teams decide what to leave for later releases.",
       },
       {
+        q: "What are the steps in the MVP development process?",
+        a: "A typical MVP development process has seven steps: define the problem and target user, validate demand, map the core user journey, prioritize features, design and prototype, build, test and launch, then measure and iterate. Each step produces a decision the next one depends on. Quality checks belong inside the build step; see our [test automation strategy](/insights/test-automation-strategy/) guide.",
+      },
+      {
+        q: "Can a small business or non-technical founder follow the MVP development process?",
+        a: "Yes. The early steps, defining the problem, validating demand and mapping the core journey, need no code, and some MVPs start as landing pages, concierge services or no-code tools. When it is time to build, a [product engineering](/services/product-engineering/) partner can take the validated scope into a working product.",
+      },
+      {
         q: "What happens after an MVP launches?",
         a: "The team measures the success signals agreed before launch, such as activation, retention or willingness to pay, and combines them with user feedback. That evidence decides whether to improve the product, change direction or stop.",
       },
@@ -2263,10 +2304,10 @@ export const insights: Insight[] = [
     slug: "cloud-migration-strategy",
     title: "Cloud Migration Strategy: The 7 Rs and How to Choose",
     description:
-      "A practical cloud migration strategy guide: the 7 Rs from rehost to refactor, how to pick one per workload, migration phases, risks and a readiness checklist.",
+      "Cloud migration strategy explained: the 7 Rs from rehost to refactor, how to choose one per workload, the migration phases, risks and a readiness checklist.",
     category: "Cloud",
     date: "2026-10-22",
-    seoTitle: "Cloud Migration Strategy: The 7 Rs",
+    seoTitle: "Cloud Migration Strategy: 7 Rs Guide",
     cover: "/insights/covers/cloud-migration-strategy",
     coverAlt: "Cover reading Cloud Migration Strategy: The 7 Rs and How to Choose, InSol Technologies",
     relatedServices: ["cloud-devops", "enterprise-applications", "data-analytics", "quality-engineering"],
@@ -2321,7 +2362,7 @@ export const insights: Insight[] = [
           {
             heading: "Repurchase",
             paragraphs: [
-              "Some workloads are better replaced than moved, such as an old on-premises CRM, HR or email system that a SaaS product now covers. The work shifts from infrastructure to data migration, integration, configuration and user training, which is where [enterprise applications](/services/enterprise-applications) projects spend most of their effort.",
+              "Some workloads are better replaced than moved, such as an old on-premises CRM, HR or email system that a SaaS product now covers. The work shifts from infrastructure to data migration, integration, configuration and user training, which is where [enterprise applications](/services/enterprise-applications/) projects spend most of their effort.",
             ],
           },
           {
@@ -2333,7 +2374,7 @@ export const insights: Insight[] = [
           {
             heading: "Refactor",
             paragraphs: [
-              "Refactoring redesigns the application to use cloud-native patterns such as services that scale independently, event-driven processing and serverless functions. It takes the most time and skill, so reserve it for systems where the business case is clear: products that must scale, release frequently or support new capabilities like AI features. Our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale) covers the architecture choices involved.",
+              "Refactoring redesigns the application to use cloud-native patterns such as services that scale independently, event-driven processing and serverless functions. It takes the most time and skill, so reserve it for systems where the business case is clear: products that must scale, release frequently or support new capabilities like AI features. Our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/) covers the architecture choices involved.",
             ],
           },
         ],
@@ -2409,14 +2450,14 @@ export const insights: Insight[] = [
       {
         heading: "Industry considerations",
         paragraphs: [
-          "Regulated sectors add constraints that shape the strategy. In [healthcare](/industries/healthcare), patient data handling, audit trails and data residency often decide which workloads move and where. In [ecommerce](/industries/ecommerce), the priority is usually avoiding downtime during trading peaks, so cutovers are scheduled around sales calendars and tested under realistic load. For [technology companies](/industries/technology), migration is often a chance to replatform or refactor a product for faster releases.",
+          "Regulated sectors add constraints that shape the strategy. In [healthcare](/industries/healthcare/), patient data handling, audit trails and data residency often decide which workloads move and where. In [ecommerce](/industries/ecommerce/), the priority is usually avoiding downtime during trading peaks, so cutovers are scheduled around sales calendars and tested under realistic load. For [technology companies](/industries/technology/), migration is often a chance to replatform or refactor a product for faster releases.",
         ],
       },
       {
         heading: "How InSol Technologies helps with cloud migration",
         paragraphs: [
-          "Our [cloud and DevOps](/services/cloud-devops) team runs migrations from assessment to optimization: inventory and strategy per workload, landing zone setup as code, wave planning, cutover and post-migration cost tuning. We pair that with [data and analytics](/services/data-analytics) work for database and warehouse moves and [quality engineering](/services/quality-engineering) for testing each wave.",
-          "Once workloads are in the cloud, the habits in our article on [DevOps practices that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk) keep them stable, and our [custom software development process](/insights/custom-software-development-process) explains how we approach refactoring work. If you are planning a move, [talk to our team](/contact?intent=start-project) about where to start.",
+          "Our [cloud and DevOps](/services/cloud-devops/) team runs migrations from assessment to optimization: inventory and strategy per workload, landing zone setup as code, wave planning, cutover and post-migration cost tuning. We pair that with [data and analytics](/services/data-analytics/) work for database and warehouse moves and [quality engineering](/services/quality-engineering/) for testing each wave.",
+          "Once workloads are in the cloud, the habits in our article on [DevOps practices that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk/) keep them stable, and our [custom software development process](/insights/custom-software-development-process/) explains how we approach refactoring work. If you are planning a move, [talk to our team](/contact?intent=start-project) about where to start.",
         ],
       },
     ],
@@ -2508,7 +2549,7 @@ export const insights: Insight[] = [
         heading: "Stage 2: Strategize the roadmap and architecture",
         paragraphs: [
           "Strategy turns discovery findings into a plan. This is where the team weighs architecture options, decides what to build versus buy or integrate, sequences releases and names the main risks. The output is a roadmap that ties each release to an outcome, not a long feature list.",
-          "The most valuable decision here is usually the scope of the first release. A focused first release that real users can adopt beats a large launch that arrives late. If you are building a product for customers, our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale) covers the tenancy and identity choices that belong in this stage.",
+          "The most valuable decision here is usually the scope of the first release. A focused first release that real users can adopt beats a large launch that arrives late. If you are building a product for customers, our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/) covers the tenancy and identity choices that belong in this stage.",
         ],
         bullets: [
           "Architecture options with trade-offs in cost, speed and long-term maintenance",
@@ -2541,7 +2582,7 @@ export const insights: Insight[] = [
         heading: "Stage 4: Build in short, reviewable iterations",
         paragraphs: [
           "Development works best in short iterations, typically one to two weeks, that each end with working software you can see and use, not a status report. Problems then show up within days instead of months, and priorities can shift based on what users actually do.",
-          "Quality belongs inside the build, not after it. Code reviews, automated tests and continuous integration run on every change, which is how [quality engineering](/services/quality-engineering) keeps defects from piling up for a final testing phase.",
+          "Quality belongs inside the build, not after it. Code reviews, automated tests and continuous integration run on every change, which is how [quality engineering](/services/quality-engineering/) keeps defects from piling up for a final testing phase.",
           "Security belongs in every iteration, not just the final test phase. NIST's [Secure Software Development Framework (SP 800-218)](https://csrc.nist.gov/pubs/sp/800/218/final) and the [OWASP Top 10](https://owasp.org/www-project-top-ten/) are widely used references for building it in.",
         ],
         bullets: [
@@ -2556,7 +2597,7 @@ export const insights: Insight[] = [
         heading: "Stage 5: Deploy with operational readiness",
         paragraphs: [
           "Going live is an operational event, not just a technical one. Before launch the team should rehearse data migration, confirm a tested rollback path, set up monitoring and alerts, write runbooks and train the people who will support and use the system.",
-          "Releasing to a small group first, through a pilot or staged rollout, lets you catch real-world issues with limited impact. Our article on [DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk) goes deeper on pipelines and rollback, and our [cloud and DevOps](/services/cloud-devops) team handles this stage for clients.",
+          "Releasing to a small group first, through a pilot or staged rollout, lets you catch real-world issues with limited impact. Our article on [DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk/) goes deeper on pipelines and rollback, and our [cloud and DevOps](/services/cloud-devops/) team handles this stage for clients.",
         ],
         bullets: [
           "Production environment built from code, not by hand",
@@ -2590,8 +2631,8 @@ export const insights: Insight[] = [
       {
         heading: "How to choose a partner for your project",
         paragraphs: [
-          "The process a partner describes tells you how your project will feel. Ask to see a sample discovery output, how iterations are demonstrated, how quality is built in, who owns the code and what happens after launch. Our [buyer guide to choosing product engineering partners](/insights/choosing-product-engineering-partners) has a full checklist.",
-          "InSol Technologies delivers [software engineering](/services/product-engineering), [web and mobile development](/services/web-mobile-development) and [SaaS product development](/services/saas-products) through the six stages above. If you are planning a build, [talk to our team](/contact?intent=start-project) about where to start.",
+          "The process a partner describes tells you how your project will feel. Ask to see a sample discovery output, how iterations are demonstrated, how quality is built in, who owns the code and what happens after launch. Our [buyer guide to choosing product engineering partners](/insights/choosing-product-engineering-partners/) has a full checklist.",
+          "InSol Technologies delivers [software engineering](/services/product-engineering/), [web and mobile development](/services/web-mobile-development/) and [SaaS product development](/services/saas-products/) through the six stages above. If you are planning a build, [talk to our team](/contact?intent=start-project) about where to start.",
         ],
       },
     ],
@@ -2687,8 +2728,8 @@ export const insights: Insight[] = [
       {
         heading: "Integrate where work already happens",
         paragraphs: [
-          "Value shows up when AI lands inside existing tools and processes, such as ticketing, CRM, document flows and internal apps, not in a parallel portal nobody opens. Integration boundaries (APIs, identity, tenancy, rate limits) should be designed early, before build scales. Our [AI and intelligent automation](/services/ai-intelligent-automation) work starts from those boundaries for exactly this reason.",
-          "Data is usually the hardest part. If the records the AI reads are inconsistent or permissions are unclear, the output will be too. Our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust) covers the foundations that make AI outputs believable.",
+          "Value shows up when AI lands inside existing tools and processes, such as ticketing, CRM, document flows and internal apps, not in a parallel portal nobody opens. Integration boundaries (APIs, identity, tenancy, rate limits) should be designed early, before build scales. Our [AI and intelligent automation](/services/ai-intelligent-automation/) work starts from those boundaries for exactly this reason.",
+          "Data is usually the hardest part. If the records the AI reads are inconsistent or permissions are unclear, the output will be too. Our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust/) covers the foundations that make AI outputs believable.",
         ],
       },
       {
@@ -2701,7 +2742,7 @@ export const insights: Insight[] = [
       {
         heading: "Know when to stop",
         paragraphs: [
-          "Sometimes the honest recommendation is that AI is not the right move yet, because data quality, process clarity, or ownership is missing. A deliberate stop after a scoped discovery is cheaper than a year of pilots that never reach production. Production workflows reward teams that can say no as clearly as they can ship. For a wider view of the journey, see [how to implement AI in business](/insights/how-to-implement-ai-in-business).",
+          "Sometimes the honest recommendation is that AI is not the right move yet, because data quality, process clarity, or ownership is missing. A deliberate stop after a scoped discovery is cheaper than a year of pilots that never reach production. Production workflows reward teams that can say no as clearly as they can ship. For a wider view of the journey, see [how to implement AI in business](/insights/how-to-implement-ai-in-business/).",
         ],
       },
     ],
@@ -2730,7 +2771,7 @@ export const insights: Insight[] = [
         heading: "MVP speed without dead-end architecture",
         paragraphs: [
           "Building SaaS foundations that can scale does not mean building for millions of users on day one. Early SaaS products need to prove value quickly. The trap is shipping shortcuts that become structural risk under load, multi-tenancy, or enterprise buyers. Scope the smallest product that proves the job, and draw hard lines around tenant boundaries, identity, and environments from the start.",
-          "This guide covers the foundation decisions that are cheap early and expensive later: tenancy, identity, billing, environments, operability, security and the path from MVP to growth. If you are still shaping the first release, our [MVP development process](/insights/mvp-development-process) guide is a good companion.",
+          "This guide covers the foundation decisions that are cheap early and expensive later: tenancy, identity, billing, environments, operability, security and the path from MVP to growth. If you are still shaping the first release, our [MVP development process](/insights/mvp-development-process/) guide is a good companion.",
         ],
       },
       {
@@ -2800,7 +2841,7 @@ export const insights: Insight[] = [
       {
         heading: "Plan the path from MVP to growth",
         paragraphs: [
-          "Write down what you are deliberately deferring and what would force a re-architecture. When growth pressure arrives, you want a sequenced modernization path, not a panic rewrite. Partnership past launch matters: deployment and scaling are product work, not optional extras. Our [SaaS product development](/services/saas-products) and [cloud and DevOps](/services/cloud-devops) teams plan both from the first sprint.",
+          "Write down what you are deliberately deferring and what would force a re-architecture. When growth pressure arrives, you want a sequenced modernization path, not a panic rewrite. Partnership past launch matters: deployment and scaling are product work, not optional extras. Our [SaaS product development](/services/saas-products/) and [cloud and DevOps](/services/cloud-devops/) teams plan both from the first sprint.",
         ],
         bullets: [
           "Record deferred decisions and the trigger that would revisit each one",
@@ -2913,7 +2954,7 @@ export const insights: Insight[] = [
       {
         heading: "Right-size the platform",
         paragraphs: [
-          "Kubernetes, multi-cloud, and elaborate platform layers help when workload and team skills justify them. They hurt when they add complexity without ownership. Choose cloud and DevOps patterns based on constraints such as latency, compliance, cost, and who will operate the system after go-live. Our [cloud and DevOps](/services/cloud-devops) and [quality engineering](/services/quality-engineering) teams help set these habits up, and our [test automation strategy](/insights/test-automation-strategy) guide covers the testing side in more detail.",
+          "Kubernetes, multi-cloud, and elaborate platform layers help when workload and team skills justify them. They hurt when they add complexity without ownership. Choose cloud and DevOps patterns based on constraints such as latency, compliance, cost, and who will operate the system after go-live. Our [cloud and DevOps](/services/cloud-devops/) and [quality engineering](/services/quality-engineering/) teams help set these habits up, and our [test automation strategy](/insights/test-automation-strategy/) guide covers the testing side in more detail.",
         ],
       },
     ],
@@ -3014,7 +3055,7 @@ export const insights: Insight[] = [
       {
         heading: "Foundations for later AI",
         paragraphs: [
-          "Practical AI depends on context quality, permissions, and clean operational data. If leadership cannot trust today’s reports, embedding AI on top of the same sources will amplify the problem. Fix trust and access first; model bets second. Our [data analytics strategy](/insights/data-analytics-strategy) guide and [data and analytics](/services/data-analytics) service cover how to sequence that work, and [putting AI in production workflows](/insights/putting-ai-in-production-workflows) covers what comes next.",
+          "Practical AI depends on context quality, permissions, and clean operational data. If leadership cannot trust today’s reports, embedding AI on top of the same sources will amplify the problem. Fix trust and access first; model bets second. Our [data analytics strategy](/insights/data-analytics-strategy/) guide and [data and analytics](/services/data-analytics/) service cover how to sequence that work, and [putting AI in production workflows](/insights/putting-ai-in-production-workflows/) covers what comes next.",
         ],
       },
     ],
@@ -3029,10 +3070,10 @@ export const insights: Insight[] = [
     slug: "choosing-product-engineering-partners",
     title: "Choosing product engineering partners — a buyer guide",
     description:
-      "A practical checklist for evaluating product engineering partners: discovery discipline, delivery visibility, IP ownership, operability, and red flags.",
+      "Choosing a product engineering partner? Use this buyer checklist covering discovery, delivery visibility, IP ownership, security, operability and red flags.",
     category: "Software Engineering",
     date: "2026-09-16",
-    seoTitle: "Choosing a Product Engineering Partner",
+    seoTitle: "Product Engineering Partner Checklist",
     relatedServices: ["product-engineering", "web-mobile-development", "saas-products"],
     relatedIndustries: ["technology"],
     cover: "/insights/covers/choosing-product-engineering-partners",
@@ -3118,7 +3159,7 @@ export const insights: Insight[] = [
         heading: "References without hype",
         paragraphs: [
           "Public case studies and logos are useful when they are real and cleared. Absence of published cases is not automatically a red flag, because many engagements stay under NDA. What matters is whether the partner can discuss relevant work under appropriate confidentiality, and whether their process matches how you need to operate after they leave.",
-          "Use this guide as a conversation checklist. The best fit is the partner who can explain tradeoffs clearly and still be accountable when systems are live. To see how we approach this, read about our [product engineering](/services/product-engineering) service or our [custom software development process](/insights/custom-software-development-process).",
+          "Use this guide as a conversation checklist. The best fit is the partner who can explain tradeoffs clearly and still be accountable when systems are live. To see how we approach this, read about our [product engineering](/services/product-engineering/) service or our [custom software development process](/insights/custom-software-development-process/).",
         ],
       },
     ],

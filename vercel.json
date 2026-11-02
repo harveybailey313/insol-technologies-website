@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/:path((?:.*/)?[^./]+)",
+      "has": [
+        {
+          "type": "host",
+          "value": "insoltechnologies.com"
+        }
+      ],
+      "destination": "https://www.insoltechnologies.com/:path/",
+      "statusCode": 301
+    },
+    {
       "source": "/:path*",
       "has": [
         {
@@ -9,28 +20,17 @@
         }
       ],
       "destination": "https://www.insoltechnologies.com/:path*",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/",
-      "has": [
-        {
-          "type": "host",
-          "value": "insoltechnologies.com"
-        }
-      ],
-      "destination": "https://www.insoltechnologies.com/",
-      "permanent": true
-    },
-    {
-      "source": "/industries/financial-services",
+      "source": "/industries/financial-services{/}?",
       "destination": "/industries/",
-      "permanent": true
+      "statusCode": 301
     },
     {
-      "source": "/industries/financial-services/",
-      "destination": "/industries/",
-      "permanent": true
+      "source": "/:path((?:.*/)?[^./]+)",
+      "destination": "/:path/",
+      "statusCode": 301
     }
   ],
   "headers": [
@@ -51,5 +51,6 @@
         }
       ]
     }
-  ]
+  ],
+  "trailingSlash": true
 }
