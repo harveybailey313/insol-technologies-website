@@ -2628,6 +2628,8 @@ export const insights: Insight[] = [
     seoTitle: "AI in Production Workflows, Not Demos",
     relatedServices: ["ai-intelligent-automation", "data-analytics"],
     relatedIndustries: ["healthcare", "travel-hospitality"],
+    cover: "/insights/covers/putting-ai-in-production-workflows",
+    coverAlt: "Cover reading Putting AI in Production Workflows, InSol Technologies",
     body: [
       {
         heading: "Why AI demos stall before production workflows",
@@ -2721,6 +2723,8 @@ export const insights: Insight[] = [
     seoTitle: "Building SaaS Foundations That Scale",
     relatedServices: ["saas-products", "product-engineering", "cloud-devops"],
     relatedIndustries: ["technology"],
+    cover: "/insights/covers/building-saas-foundations-that-can-scale",
+    coverAlt: "Cover reading Building SaaS Foundations That Can Scale, InSol Technologies",
     body: [
       {
         heading: "MVP speed without dead-end architecture",
@@ -2822,6 +2826,8 @@ export const insights: Insight[] = [
     seoTitle: "DevOps Habits That Reduce Release Risk",
     relatedServices: ["cloud-devops", "quality-engineering"],
     relatedIndustries: ["technology", "ecommerce"],
+    cover: "/insights/covers/cloud-devops-habits-that-reduce-release-risk",
+    coverAlt: "Cover reading Cloud & DevOps Habits That Reduce Release Risk, InSol Technologies",
     body: [
       {
         heading: "Cloud DevOps habits that make releases boring",
@@ -2927,6 +2933,8 @@ export const insights: Insight[] = [
     date: "2026-09-16",
     relatedServices: ["data-analytics", "enterprise-applications", "ai-intelligent-automation"],
     relatedIndustries: ["healthcare", "ecommerce"],
+    cover: "/insights/covers/data-platforms-leaders-can-trust",
+    coverAlt: "Cover reading Data Platforms Leaders Can Trust, InSol Technologies",
     body: [
       {
         heading: "Trust is the product",
@@ -2998,6 +3006,12 @@ export const insights: Insight[] = [
         ],
       },
       {
+        heading: "How to tell whether trust is improving",
+        paragraphs: [
+          "Trust is hard to measure directly, but its symptoms are easy to track. Watch how often leaders ask for numbers to be re-checked, how many teams keep their own spreadsheets alongside the official dashboard, how quickly broken pipelines are noticed and fixed, and whether meetings start with the decision or with an argument about the figures. When those signals improve, the data platform is doing its job.",
+        ],
+      },
+      {
         heading: "Foundations for later AI",
         paragraphs: [
           "Practical AI depends on context quality, permissions, and clean operational data. If leadership cannot trust today’s reports, embedding AI on top of the same sources will amplify the problem. Fix trust and access first; model bets second. Our [data analytics strategy](/insights/data-analytics-strategy) guide and [data and analytics](/services/data-analytics) service cover how to sequence that work, and [putting AI in production workflows](/insights/putting-ai-in-production-workflows) covers what comes next.",
@@ -3021,6 +3035,8 @@ export const insights: Insight[] = [
     seoTitle: "Choosing a Product Engineering Partner",
     relatedServices: ["product-engineering", "web-mobile-development", "saas-products"],
     relatedIndustries: ["technology"],
+    cover: "/insights/covers/choosing-product-engineering-partners",
+    coverAlt: "Cover reading Choosing Product Engineering Partners, InSol Technologies",
     body: [
       {
         heading: "What you are really buying in a product engineering partner",
@@ -3084,6 +3100,12 @@ export const insights: Insight[] = [
         paragraphs: [
           "Compare partners on the same terms. Share the same brief, ask each one to explain how they would approach the first few weeks, and meet the people who would actually do the work. A short paid discovery or a small pilot task is often the best test, because you see how the partner communicates, handles ambiguity and delivers before committing to a larger contract.",
           "Score each option on discovery quality, delivery visibility, technical depth, security practice, cultural fit and total cost over the life of the product, not only the first invoice.",
+        ],
+      },
+      {
+        heading: "Plan the handover before you sign",
+        paragraphs: [
+          "Every engagement ends, so agree how it ends at the start. Ask the partner to describe what a handover includes: repository and cloud account access in your name, architecture notes, runbooks for deployment and incidents, a list of open risks, and time for your own engineers to pair with theirs. A partner that is confident in its work will be comfortable writing this into the contract.",
         ],
       },
       {

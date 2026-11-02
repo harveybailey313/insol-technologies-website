@@ -12,6 +12,18 @@ import { industries } from "@/data/industries";
 import { CTAS } from "@/lib/site";
 import { absUrl, ORG_ID } from "@/lib/jsonld";
 import { insights } from "@/data/insights";
+import { References, REFS, HeroMark, type Reference } from "./References";
+
+const SERVICE_REFS: Record<string, Reference[]> = {
+  "ai-intelligent-automation": [REFS.nistAi, REFS.owaspLlm, REFS.owasp],
+  "product-engineering": [REFS.twelve, REFS.fowler, REFS.owasp, REFS.dora],
+  "web-mobile-development": [REFS.wcag, REFS.cwv, REFS.nng, REFS.owasp],
+  "cloud-devops": [REFS.aws, REFS.gcp, REFS.sre, REFS.k8s],
+  "data-analytics": [REFS.nistPrivacy, REFS.gcp, REFS.aws],
+  "enterprise-applications": [REFS.nistCsf, REFS.owasp, REFS.fowler],
+  "quality-engineering": [REFS.istqb, REFS.dora, REFS.wcag],
+  "saas-products": [REFS.twelve, REFS.aws, REFS.owasp, REFS.dora],
+};
 
 export function ServicePageView({ service }: { service: Service }) {
   const related = getRelatedServices(service.relatedSlugs);
@@ -57,6 +69,7 @@ export function ServicePageView({ service }: { service: Service }) {
               { label: service.title },
             ]}
           />
+          <HeroMark alt={service.heroImageAlt ?? `${service.title} services at InSol Technologies`} />
           <p className="eyebrow mb-3">Services</p>
           <h1 className="text-display max-w-4xl">{service.h1}</h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
@@ -249,6 +262,10 @@ export function ServicePageView({ service }: { service: Service }) {
             ))}
           </div>
         </Section>
+      )}
+
+      {SERVICE_REFS[service.slug] && (
+        <References band="secondary" items={SERVICE_REFS[service.slug]} />
       )}
 
       <FinalCTA headline={service.ctaHeadline} support={service.ctaSupport} />

@@ -2,6 +2,15 @@ import Link from "next/link";
 import { Button } from "./Button";
 import { Section, SectionHeader } from "./Section";
 import { FinalCTA } from "./FinalCTA";
+import { References, REFS, type Reference } from "./References";
+import { HeroMark } from "./References";
+
+const INDUSTRY_REFS: Record<string, Reference[]> = {
+  healthcare: [REFS.nistCsf, REFS.nistPrivacy, REFS.wcag],
+  ecommerce: [REFS.pci, REFS.baymard, REFS.cwv],
+  "travel-hospitality": [REFS.ndc, REFS.pci, REFS.wcag],
+  technology: [REFS.twelve, REFS.dora, REFS.owasp],
+};
 import { Breadcrumb } from "./Breadcrumb";
 import type { Industry } from "@/data/industries";
 import { services } from "@/data/services";
@@ -28,6 +37,7 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
               { label: industry.title },
             ]}
           />
+          <HeroMark alt={`${industry.title} software development at InSol Technologies`} />
           <p className="eyebrow mb-3">Industries</p>
           <h1 className="text-display max-w-3xl">{industry.title}</h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
@@ -113,6 +123,9 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
         </Section>
       )}
 
+      {INDUSTRY_REFS[industry.slug] && (
+        <References items={INDUSTRY_REFS[industry.slug]} />
+      )}
       <FinalCTA
         headline={`Ready to apply technology in ${industry.title}?`}
         support="Tell us the pressure you’re facing. We’ll respond with clear next steps — not a generic playbook."

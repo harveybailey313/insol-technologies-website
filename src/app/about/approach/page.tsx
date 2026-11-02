@@ -8,6 +8,7 @@ import { FrameStrip } from "@/components/FrameStrip";
 import { CTAS } from "@/lib/site";
 import { services } from "@/data/services";
 import { pageMetadata } from "@/lib/seo";
+import { References, REFS, HeroMark } from "@/components/References";
 
 export const metadata = pageMetadata({
   title: "Our Approach — Discover to Scale",
@@ -21,6 +22,7 @@ export default function ApproachPage() {
     <>
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol relative">
+          <HeroMark alt="InSol Technologies delivery approach" />
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
@@ -33,6 +35,7 @@ export default function ApproachPage() {
             A clear path from problem to production.
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
+            Our approach is a transparent Discover to Scale path.
             We work in a transparent sequence so stakeholders always know what happens
             next — and why. Strategy, design, engineering, practical AI, deployment,
             and scale are one continuous partnership, not a series of handoffs.
@@ -113,6 +116,7 @@ export default function ApproachPage() {
         </Button>
       </Section>
 
+      <References items={[REFS.agile, REFS.dora, REFS.sre, REFS.nistAi]} />
       <FinalCTA
         headline="Let’s map your path."
         support="Share the problem you’re solving. We’ll tell you where we’d start — Discover, Strategize, or a tighter Build path — and what we need from you."

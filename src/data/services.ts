@@ -21,6 +21,7 @@ export type Service = {
   relatedSlugs: string[];
   industryLines: Record<string, string>;
   howWeWorkNote?: string;
+  heroImageAlt?: string;
   stackFallback: string;
 };
 
@@ -33,12 +34,13 @@ export const services: Service[] = [
     businessOutcome:
       "Faster cycle times and clearer decisions without disrupting how your teams already operate.",
     chips: ["GenAI", "Agents", "NLP", "ML", "Workflows", "API integration"],
-    h1: "AI and automation that fit how you work",
-    metaTitle: "AI & Intelligent Automation",
+    h1: "AI automation and intelligent workflows that fit how you work",
+    metaTitle: "AI Automation & Intelligent Workflows",
     metaDescription:
-      "Practical AI and intelligent automation for real workflows — GenAI, apps, agents, ML, NLP, and AI-powered workflows that fit how your teams operate.",
+      "AI automation services from InSol Technologies: GenAI, AI agents, ML, NLP, and intelligent automation embedded in the workflows your teams already run.",
+    heroImageAlt: "AI automation and intelligent automation services at InSol Technologies",
     heroSupport:
-      "AI & Intelligent Automation at InSol means AI-powered applications, intelligent workflows, automation, and practical machine-learning solutions — embedded in the systems your teams already run, not stranded as demos.",
+      "AI automation at InSol Technologies means AI-powered applications, intelligent workflows, automation, and practical machine-learning solutions — embedded in the systems your teams already run, not stranded as demos.",
     problemIntro:
       "Leaders are under pressure to “do something with AI” while operations still run on fragmented tools, uneven data, and manual handoffs. The risk is not missing a model — it is shipping something that cannot be trusted, operated, or integrated.",
     problems: [
@@ -125,17 +127,19 @@ export const services: Service[] = [
   },
   {
     slug: "product-engineering",
-    title: "Software Engineering",
+    title: "Custom Software Development",
     shortDescription:
       "Custom software platforms and business applications built for scalability, reliability, and long-term growth.",
     businessOutcome: "Software that matches how your business works — and can grow with it.",
     chips: ["Node", ".NET", "Java", "Python", "Microservices", "Event-driven"],
-    h1: "Software products and platforms built to last",
-    metaTitle: "Custom Software Engineering Services",
+    h1: "Custom software development and product engineering built to last",
+    metaTitle: "Custom Software & Product Engineering",
     metaDescription:
-      "Custom software platforms and business applications engineered for scalability, reliability, and long-term growth — from strategy through production.",
+      "Custom software development and product engineering from InSol Technologies: platforms and business applications built for scale, reliability, and growth.",
+    heroImageAlt: "Custom software development and product engineering at InSol Technologies",
+    howWeWorkNote: "How our product engineering process works",
     heroSupport:
-      "Software Engineering at InSol: custom software platforms and business applications built for scalability, reliability, and long-term growth — with clear architecture and reviewable delivery your team can operate and evolve.",
+      "Custom software development and product engineering at InSol: custom software platforms and business applications built for scalability, reliability, and long-term growth — with clear architecture and reviewable delivery your team can operate and evolve.",
     problemIntro:
       "Many organizations outgrow patched systems and one-off builds. The cost shows up as slow change, unclear ownership, and software that no longer matches how the business works.",
     problems: [
@@ -640,10 +644,10 @@ export const services: Service[] = [
       "From product architecture and MVP development to production-ready SaaS platforms and ongoing engineering.",
     businessOutcome: "A product your customers can rely on — and a codebase your team can evolve.",
     chips: ["Multi-tenant", "Subscription", "APIs", "Observability", "Product analytics"],
-    h1: "SaaS products engineered to scale",
-    metaTitle: "SaaS Product Development",
+    h1: "SaaS product development engineered to scale",
+    metaTitle: "SaaS Product Development Services",
     metaDescription:
-      "Design, build, and scale multi-tenant SaaS products — from product architecture and MVP to production-ready platforms and ongoing engineering.",
+      "SaaS product development services from InSol Technologies: design, build, and scale multi-tenant SaaS products, from architecture and MVP to production.",
     heroSupport:
       "SaaS Product Development at InSol: from product architecture and MVP development to production-ready SaaS platforms and ongoing engineering — multi-tenant products customers can rely on and codebases your team can evolve.",
     problemIntro:

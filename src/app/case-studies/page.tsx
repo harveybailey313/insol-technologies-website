@@ -4,6 +4,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { Button } from "@/components/Button";
 import { CTAS } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
+import { References, REFS, HeroMark } from "@/components/References";
 
 export const metadata = pageMetadata({
   title: "Case Studies & Client Outcomes",
@@ -32,6 +33,7 @@ export default function CaseStudiesPage() {
     <>
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol">
+          <HeroMark alt="InSol Technologies case studies" />
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Case Studies" }]}
           />
@@ -109,6 +111,7 @@ export default function CaseStudiesPage() {
         </div>
       </Section>
 
+      <References items={[REFS.agile, REFS.dora]} />
       <FinalCTA />
     </>
   );

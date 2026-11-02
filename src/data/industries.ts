@@ -34,18 +34,18 @@ export const industries: Industry[] = [
   },
   {
     slug: "ecommerce",
-    title: "E-commerce",
+    title: "Ecommerce",
     challenge:
       "Fragmented commerce stacks, uneven customer experience, and operational complexity at peak demand.",
     opportunity:
       "Unified journeys, reliable catalogs/checkout, and data that informs merchandising and ops.",
     capability:
       "Web & mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
-    metaTitle: "E-commerce Software & Technology",
+    metaTitle: "Ecommerce Software Development",
     metaDescription:
-      "E-commerce technology and retail digital platforms — web and mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
+      "Ecommerce technology and retail digital platforms — web and mobile, integrations, cloud scale, analytics, and automation across the order lifecycle.",
     heroSupport:
-      "We help commerce teams unify journeys, harden checkout, and scale operations — with web, mobile, cloud, analytics, and automation across the order lifecycle.",
+      "We help ecommerce teams unify journeys, harden checkout, and scale operations — with web, mobile, cloud, analytics, and automation across the order lifecycle.",
     relatedServiceSlugs: [
       "web-mobile-development",
       "cloud-devops",
@@ -88,7 +88,7 @@ export const industries: Industry[] = [
     metaDescription:
       "Engineering partnership for technology and SaaS companies: product engineering, SaaS products, AI features, DevOps, and quality engineering.",
     heroSupport:
-      "We partner with product and SaaS teams who need build capacity without losing architectural ownership — owning slices of the stack end to end.",
+      "We partner with technology, product, and SaaS teams who need build capacity without losing architectural ownership — owning slices of the stack end to end.",
     relatedServiceSlugs: [
       "saas-products",
       "product-engineering",

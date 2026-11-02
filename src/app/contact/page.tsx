@@ -1,3 +1,5 @@
+import { References, REFS, HeroMark } from "@/components/References";
+import Link from "next/link";
 import { Suspense } from "react";
 import { Section, SectionHeader } from "@/components/Section";
 import { Breadcrumb } from "@/components/Breadcrumb";
@@ -18,11 +20,13 @@ export default function ContactPage() {
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 gradient-glow opacity-40" />
         <div className="container-insol relative">
+          <HeroMark alt="Contact InSol Technologies" />
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Contact" }]}
           />
           <h1 className="text-display max-w-3xl">Let’s talk about what’s next.</h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
+            Contact InSol Technologies about a software, AI, or cloud project.
             Tell us what you’re building, modernizing, or solving. We’ll respond with
             clear next steps — not a generic pitch deck.
           </p>
@@ -81,6 +85,31 @@ export default function ContactPage() {
           </Suspense>
         </div>
       </Section>
+      <Section>
+        <SectionHeader title="What to include when you contact us" />
+        <div className="max-w-3xl space-y-4 text-text-secondary">
+          <p>
+            A short description of the goal is enough to start: what you are building or modernizing, who uses it, the systems it has to connect to, and any deadlines or compliance requirements. If you already have a codebase, tell us the main languages and where it runs.
+          </p>
+          <p>
+            We reply with clear next steps, usually a short discovery conversation. If you are still deciding what you need, our pages on{" "}
+            <Link href="/services/product-engineering" className="text-accent hover:text-accent-hover">custom software development</Link>,{" "}
+            <Link href="/services/saas-products" className="text-accent hover:text-accent-hover">SaaS product development</Link>{" "}
+            and{" "}
+            <Link href="/services/ai-intelligent-automation" className="text-accent hover:text-accent-hover">AI automation</Link>{" "}
+            explain how each engagement works, and{" "}
+            <Link href="/about/approach" className="text-accent hover:text-accent-hover">our approach</Link>{" "}
+            covers the Discover to Scale path.
+          </p>
+          <p>
+            InSol Technologies is based in Austin, Texas, and serves clients across the United States. Phone lines are open Monday to Friday, US Central Time.
+          </p>
+          <p>
+            Every enquiry is read by a person, not routed to a generic sales queue. If the project is not a good fit for our services, we will say so and, where we can, point you to the kind of partner that would suit it better. Anything you share in the form is used only to respond to your enquiry.
+          </p>
+        </div>
+      </Section>
+      <References band="secondary" items={[REFS.agile, REFS.dora]} />
     </>
   );
 }

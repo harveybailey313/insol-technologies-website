@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { FrameStrip } from "@/components/FrameStrip";
 import { CTAS, SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
+import { References, REFS, HeroMark } from "@/components/References";
 
 export const metadata = pageMetadata({
   title: "About Us — Software & AI Engineering",
@@ -74,6 +75,7 @@ export default function AboutPage() {
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 gradient-glow opacity-50" />
         <div className="container-insol relative">
+          <HeroMark alt="About InSol Technologies" />
           <Breadcrumb items={[{ label: "Home", href: "/" }, { label: "About" }]} />
           <p className="eyebrow mb-3">About InSol Technologies</p>
           <h1 className="text-display max-w-4xl">
@@ -97,7 +99,7 @@ export default function AboutPage() {
       </section>
 
       <Section band="secondary">
-        <SectionHeader title="Why InSol Technologies exists." />
+        <SectionHeader title="About InSol Technologies: why we exist." />
         <div className="max-w-3xl space-y-4 text-body-lg text-text-secondary">
           <p>
             Most organizations do not lack tools. They lack coherent systems —
@@ -263,6 +265,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
+      <References items={[REFS.agile, REFS.dora, REFS.nistAi]} />
       <FinalCTA />
     </>
   );

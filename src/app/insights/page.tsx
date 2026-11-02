@@ -6,6 +6,7 @@ import { Breadcrumb } from "@/components/Breadcrumb";
 import { insights } from "@/data/insights";
 import { pageMetadata } from "@/lib/seo";
 import { accentAt, accentClass } from "@/lib/accents";
+import { References, REFS, HeroMark } from "@/components/References";
 
 export const metadata = pageMetadata({
   title: "Insights on Software, AI & Cloud",
@@ -33,6 +34,7 @@ export default function InsightsPage() {
     <>
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol">
+          <HeroMark alt="InSol Technologies insights on software, AI and cloud" />
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Insights" }]}
           />
@@ -40,6 +42,7 @@ export default function InsightsPage() {
             Perspectives on building and modernizing.
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
+            InSol Technologies insights:
             Practical writing on AI, engineering, SaaS, cloud, and data —
             grounded in how teams ship, not buzzwords.
           </p>
@@ -47,6 +50,7 @@ export default function InsightsPage() {
       </section>
 
       <Section band="secondary">
+        <h2 className="text-h2 mb-6">Latest insights</h2>
         <p className="eyebrow mb-4">Categories</p>
         <div className="flex flex-wrap gap-2">
           {categories.map((c) => (
@@ -86,6 +90,7 @@ export default function InsightsPage() {
         </div>
       </Section>
 
+      <References intro="Our insights cite primary sources. These are the standards we reference most." items={[REFS.twelve, REFS.nistAi, REFS.owasp, REFS.dora]} />
       <FinalCTA />
     </>
   );

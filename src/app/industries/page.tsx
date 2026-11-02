@@ -7,6 +7,7 @@ import { industries } from "@/data/industries";
 import { CTAS } from "@/lib/site";
 import { INDUSTRY_ACCENTS, accentClass } from "@/lib/accents";
 import { pageMetadata } from "@/lib/seo";
+import { References, REFS, HeroMark } from "@/components/References";
 
 export const metadata = pageMetadata({
   title: "Industries We Serve: Healthcare to SaaS",
@@ -21,6 +22,7 @@ export default function IndustriesHubPage() {
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 hero-mesh opacity-50" />
         <div className="container-insol relative">
+          <HeroMark alt="Industries served by InSol Technologies" />
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Industries" }]}
           />
@@ -28,6 +30,7 @@ export default function IndustriesHubPage() {
             Industry context, not generic playbooks.
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
+            The industries we serve include healthcare, ecommerce, travel and hospitality, and technology and SaaS.
             We frame technology around the pressures your sector actually faces —
             then apply the capabilities that fit.
           </p>
@@ -61,6 +64,19 @@ export default function IndustriesHubPage() {
         </div>
       </Section>
 
+      <Section band="secondary">
+        <SectionHeader title="How industry context shapes the work" />
+        <div className="max-w-3xl space-y-4 text-text-secondary">
+          <p>
+            The same engineering services look different in each industry. Healthcare software has to protect patient data and support audit trails. Ecommerce platforms have to stay fast and correct at checkout during peak demand. Travel products depend on many third-party supplier integrations. Technology and SaaS companies need multi-tenant architecture, billing, and release practices that scale.
+          </p>
+          <p>
+            We start every engagement by understanding those constraints, then choose the services that fit: custom software development, SaaS product development, AI automation, cloud and DevOps, data and analytics, or quality engineering. Each industry page explains the challenges we see and how we apply our capabilities to them.
+          </p>
+        </div>
+      </Section>
+
+      <References items={[REFS.nistCsf, REFS.nistPrivacy, REFS.wcag]} />
       <FinalCTA />
     </>
   );

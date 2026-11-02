@@ -5,6 +5,7 @@ import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
 import { CTAS, SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
+import { References, REFS, HeroMark } from "@/components/References";
 
 export const metadata = pageMetadata({
   title: "Leadership — Founder-Led Delivery",
@@ -18,6 +19,7 @@ export default function LeadershipPage() {
     <>
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="container-insol relative">
+          <HeroMark alt="InSol Technologies leadership" />
           <Breadcrumb
             items={[
               { label: "Home", href: "/" },
@@ -44,7 +46,7 @@ export default function LeadershipPage() {
       </section>
 
       <Section band="secondary">
-        <SectionHeader title="Leadership" />
+        <SectionHeader title="Leadership at InSol Technologies" />
         <div className="card-surface max-w-xl p-8 hover:transform-none hover:shadow-none">
           <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full border border-border bg-surface-elevated text-2xl font-semibold text-accent">
             ID
@@ -81,6 +83,21 @@ export default function LeadershipPage() {
       </Section>
 
       <Section>
+        <SectionHeader title="About the founder" />
+        <div className="max-w-3xl space-y-4 text-text-secondary">
+          <p>
+            Innam Dustgir founded InSol Technologies in 2025 and leads it as Founder &amp; CEO. He has spent 12 years building businesses across technology, AI, healthcare, digital growth, and SaaS, and studied Computer Science at COMSATS.
+          </p>
+          <p>
+            Before InSol, he founded Sirajia Sol in 2017, a digital and IT growth agency. He is also the Founder of DeepWall. That background shapes how InSol works: clear ownership, honest scoping, and delivery that a client’s own team can run after launch.
+          </p>
+          <p>
+            At InSol, leadership stays involved where the risk is highest: framing the problem, reviewing architecture decisions, and making sure each engagement has a named owner from discovery through production.
+          </p>
+        </div>
+      </Section>
+
+      <Section>
         <SectionHeader title="How leadership stays close to the work." />
         <p className="max-w-3xl text-text-secondary">
           Enterprise buyers should know who is accountable. Our model keeps senior
@@ -102,6 +119,7 @@ export default function LeadershipPage() {
         </Button>
       </Section>
 
+      <References items={[REFS.agile, REFS.dora]} />
       <FinalCTA />
       <p className="sr-only">
         {SITE.phone} · {SITE.address.full}

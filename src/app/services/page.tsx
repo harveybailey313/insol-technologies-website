@@ -7,9 +7,10 @@ import { services } from "@/data/services";
 import { CTAS } from "@/lib/site";
 import { SERVICE_ACCENTS } from "@/lib/accents";
 import { pageMetadata } from "@/lib/seo";
+import { References, REFS, HeroMark } from "@/components/References";
 
 export const metadata = pageMetadata({
-  title: "Software, AI & Cloud Engineering",
+  title: "Software, AI & Cloud Services",
   description:
     "Explore InSol Technologies services: software engineering, SaaS products, AI automation, web and mobile, cloud and DevOps, data, enterprise apps, and QA.",
   path: "/services",
@@ -21,6 +22,7 @@ export default function ServicesHubPage() {
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 hero-mesh opacity-50" />
         <div className="container-insol relative">
+          <HeroMark alt="InSol Technologies services: software, AI and cloud engineering" />
           <Breadcrumb
             items={[{ label: "Home", href: "/" }, { label: "Services" }]}
           />
@@ -28,6 +30,7 @@ export default function ServicesHubPage() {
             Technology built around your business.
           </h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
+            Our services cover custom software development, SaaS product development, AI automation, cloud, data, and quality engineering.
             Every engagement starts with the outcome you need — then we design the
             architecture, engineer the product, apply AI where it earns its place,
             and leave you with systems your teams can run and evolve.
@@ -58,6 +61,7 @@ export default function ServicesHubPage() {
         </div>
       </Section>
 
+      <References items={[REFS.twelve, REFS.aws, REFS.nistAi, REFS.dora]} />
       <FinalCTA />
     </>
   );
