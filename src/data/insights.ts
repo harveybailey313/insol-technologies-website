@@ -47,6 +47,165 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "build-ai-agents-for-business",
+    title: "How to Build AI Agents for Business",
+    description:
+      "How to build AI agents for business step by step: pick the right use case, design tools and guardrails, choose a model, test, launch with oversight and measure.",
+    category: "AI",
+    date: "2026-11-03",
+    seoTitle: "How to Build AI Agents for Business",
+    cover: "/insights/covers/build-ai-agents-for-business",
+    coverAlt: "Cover reading How to Build AI Agents for Business, InSol Technologies",
+    relatedServices: ["ai-intelligent-automation", "product-engineering", "enterprise-applications", "data-analytics", "quality-engineering", "cloud-devops"],
+    relatedIndustries: ["technology", "healthcare", "ecommerce", "travel-hospitality"],
+    body: [
+      {
+        heading: "What is an AI agent in a business context?",
+        paragraphs: [
+          "An AI agent is software that uses a large language model (LLM) to decide what to do next, call tools such as APIs, databases or business applications, look at the results and keep going until a task is finished or it needs a person. A chatbot answers questions; an agent takes actions. For example, an agent might read a supplier email, look up the order in your ERP, draft a revised delivery plan and route it to a manager for approval.",
+          "That ability to act is what makes agents useful and what makes them risky. Building AI agents for business is less about clever prompts and more about choosing the right task, giving the agent narrow and well-tested tools, setting clear limits and keeping people in control of decisions that matter. This guide walks through those steps in the order most teams should take them.",
+        ],
+      },
+      {
+        heading: "AI agents compared with chatbots and workflow automation",
+        paragraphs: [
+          "Not every problem needs an agent. Anthropic's engineering guide, [Building effective agents](https://www.anthropic.com/research/building-effective-agents), makes the same point: start with the simplest approach that works and add autonomy only when it clearly helps. If you are still deciding where AI fits at all, our guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business/) covers that first step.",
+        ],
+        table: {
+          caption: "Choosing between rule-based automation, a chatbot and an AI agent",
+          headers: ["Approach", "What it does", "Best fit", "Main limitation"],
+          rows: [
+            ["Rule-based workflow automation", "Follows fixed steps and rules you define", "Predictable, high-volume tasks with structured data", "Breaks when inputs vary or need judgment"],
+            ["AI chatbot or assistant", "Answers questions and drafts content from a knowledge base", "Support, internal help desks and search over documents", "Usually does not take actions in other systems"],
+            ["LLM workflow", "Runs model calls inside steps you control in code", "Tasks with known steps but messy inputs, such as classifying and extracting from documents", "Less flexible when the path changes case by case"],
+            ["AI agent", "Plans its own steps and calls tools until the goal is met", "Multi-step tasks where the path differs each time and results can be checked", "Higher cost, latency and risk; needs strong guardrails and testing"],
+          ],
+        },
+      },
+      {
+        heading: "How to build AI agents for business in 8 steps",
+        paragraphs: [
+          "The steps below assume a business process with real users and real systems, not a demo. Expect to loop back through testing and refinement several times before a wide rollout.",
+        ],
+        subsections: [
+          {
+            heading: "1. Pick one task with a clear outcome",
+            paragraphs: [
+              "Choose a task that takes people meaningful time, varies from case to case and has a result you can check, such as triaging inbound requests, preparing a first-pass quote or reconciling records between two systems. Write down who does the task today, what a good result looks like, how often it happens and what goes wrong. Avoid starting with tasks where one mistake is expensive and hard to reverse.",
+            ],
+          },
+          {
+            heading: "2. Map the process, data and systems involved",
+            paragraphs: [
+              "Document the steps a skilled person follows, the decisions they make and the systems they touch. List every source of data the agent will need and who owns it. Gaps here are the most common reason agents fail: if the knowledge lives only in someone's head or the data is unreliable, fix that first. Our [data analytics strategy](/insights/data-analytics-strategy/) guide covers how to get data into a usable state.",
+            ],
+          },
+          {
+            heading: "3. Choose the agent pattern",
+            paragraphs: [
+              "Decide how much freedom the agent gets. A single agent with a few tools is enough for most first projects. More complex patterns, such as a router that hands cases to specialized agents, or an orchestrator that splits work between workers, add power but also more ways to fail. Start simple and only add agents when a single one clearly cannot cope.",
+            ],
+          },
+          {
+            heading: "4. Design narrow, well-documented tools",
+            paragraphs: [
+              "Tools are the functions the agent can call, such as search an order, create a ticket or send a draft for approval. Give each tool one clear job, a precise description, strict input validation and the least access it needs. Prefer read-only tools at first, and make actions that change data reversible or subject to approval. Open standards such as the [Model Context Protocol (MCP)](https://modelcontextprotocol.io/) can help connect agents to tools and data in a consistent way.",
+            ],
+          },
+          {
+            heading: "5. Select the model and write the instructions",
+            paragraphs: [
+              "Pick a model based on tested results for your task, not on general benchmarks, and weigh accuracy against cost, speed, data residency and the vendor's data-use terms. Write instructions that state the goal, the steps to follow, what the agent must never do and when to stop and ask a person. Keep business rules in code or tools where possible, since rules hidden in a long prompt are hard to test.",
+            ],
+          },
+          {
+            heading: "6. Add guardrails and human oversight",
+            paragraphs: [
+              "Decide which actions the agent may take on its own and which need approval. Set limits on spending, the number of steps and the records it can touch. Check inputs for prompt injection and outputs for sensitive data. The security section below lists the main risks.",
+            ],
+          },
+          {
+            heading: "7. Test with real cases before launch",
+            paragraphs: [
+              "Build an evaluation set from real, anonymized cases, including the awkward ones, and define what a correct result is for each. Run the agent against it after every change to the model, prompt or tools. Review full traces of each run, not just the final answer, so you can see where it chose the wrong tool or misread data. Our [test automation strategy](/insights/test-automation-strategy/) explains how to make these checks part of every release.",
+            ],
+          },
+          {
+            heading: "8. Launch gradually and measure",
+            paragraphs: [
+              "Start in shadow mode, where the agent proposes actions and people decide, then widen its authority as results hold up. Log every step and tool call, and track the measures the business cares about, such as time to resolve, error and rework rates, approval rates and cost per task. Open standards like [OpenTelemetry](https://opentelemetry.io/docs/) help keep this monitoring portable.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Good first use cases for business AI agents",
+        paragraphs: [
+          "The best first projects combine repetitive effort, varied inputs and a result a person can quickly check. Examples by industry:",
+        ],
+        bullets: [
+          "Technology and SaaS: triaging support tickets, gathering account context for the support team and drafting replies for review.",
+          "Ecommerce: handling order status and return requests across the store, payment and shipping systems, and flagging exceptions to staff. Our [ecommerce website development](/insights/ecommerce-website-development/) guide covers the systems involved.",
+          "Healthcare: preparing administrative work such as referral intake or prior authorization packets for staff to review, with privacy controls in place (see our [HIPAA compliant app development](/insights/hipaa-compliant-app-development/) guide).",
+          "Travel and hospitality: managing booking changes and cancellations within policy, and handing complex cases to agents with the full context.",
+          "Back office: matching invoices to purchase orders, chasing missing documents and preparing reports from several systems.",
+        ],
+      },
+      {
+        heading: "Security, risk and governance for AI agents",
+        paragraphs: [
+          "Because agents act in your systems, their mistakes have consequences beyond a wrong answer. Plan for these risks from the first version:",
+        ],
+        bullets: [
+          "Prompt injection, where instructions hidden in emails, documents or web pages try to make the agent misuse its tools. The [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/) describes this and related risks.",
+          "Excessive permissions: give each tool and the agent's account the least access it needs, and never share broad admin credentials with an agent.",
+          "Data leakage: keep personal and confidential data out of prompts and logs unless it is needed and protected, and follow the privacy rules of your markets, such as the EU's [data protection rules](https://commission.europa.eu/law/law-topic/data-protection_en).",
+          "Unchecked actions: require approval for payments, deletions, external messages and other actions that are hard to undo.",
+          "Accountability: assign an owner for each agent, keep audit logs and review results regularly. The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) offers a structure for this, and the EU's [AI regulatory framework](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai) sets obligations for some uses in Europe.",
+        ],
+      },
+      {
+        heading: "What affects the cost of building an AI agent?",
+        paragraphs: [
+          "Treat any price given before the task and systems are clear with caution. The main cost drivers are:",
+        ],
+        bullets: [
+          "How many systems the agent connects to and how good their APIs are.",
+          "The state of the data and documentation the agent relies on.",
+          "The level of autonomy, since more freedom needs more guardrails and testing.",
+          "Security, privacy and compliance requirements in your industry.",
+          "Model usage, which grows with the number of tasks and steps per task.",
+          "Ongoing monitoring, evaluation and improvement after launch.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies builds AI agents",
+        paragraphs: [
+          "InSol Technologies helps companies move AI agents from idea to production safely. Our [AI and intelligent automation](/services/ai-intelligent-automation/) team identifies the right use cases, designs the agent, its tools and its guardrails, and sets up evaluation. Our [software engineering](/services/product-engineering/) and [enterprise applications](/services/enterprise-applications/) teams build the integrations with your CRM, ERP and internal systems, our [data and analytics](/services/data-analytics/) team prepares the data agents depend on, our [quality engineering](/services/quality-engineering/) team tests agent behavior on every change, and our [cloud and DevOps](/services/cloud-devops/) engineers handle hosting, access control and monitoring.",
+          "If you need a conversational assistant rather than an agent that acts, see our guide to [AI chatbot development](/insights/ai-chatbot-development/), and for running AI inside day-to-day operations, read about [putting AI in production workflows](/insights/putting-ai-in-production-workflows/). To plan your first AI agent, [talk to our team](/contact/).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is the difference between an AI agent and a chatbot?",
+        a: "A chatbot mainly answers questions and drafts content. An AI agent uses a language model to plan steps and call tools, such as APIs and business applications, so it can complete tasks like updating records or preparing a quote. That makes agents more useful for multi-step work but also means they need stricter permissions, guardrails and testing.",
+      },
+      {
+        q: "Do I need to code to build an AI agent for my business?",
+        a: "No-code tools can handle simple agents that work inside one platform. Agents that connect to several internal systems, handle sensitive data or take actions that matter usually need engineering work for the integrations, access control, evaluation and monitoring that make them reliable.",
+      },
+      {
+        q: "How long does it take to build an AI agent?",
+        a: "It depends on the task, the number of systems involved, the quality of the data and your security requirements. A narrow agent with a few read-only tools can reach a pilot much sooner than one that acts across many systems. A short discovery phase gives the most reliable estimate for your scope.",
+      },
+      {
+        q: "How do you keep AI agents safe in production?",
+        a: "Give each agent narrow tools with the least access needed, require human approval for actions that are hard to undo, check inputs for prompt injection, keep sensitive data out of prompts and logs, test against real cases after every change and log every step so people can review what the agent did.",
+      },
+    ],
+  },
+  {
     slug: "saas-product-development",
     title: "SaaS Product Development: A Step-by-Step Guide",
     description:
