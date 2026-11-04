@@ -47,6 +47,174 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "cloud-disaster-recovery-plan",
+    title: "Cloud Disaster Recovery Plan: 8-Step Guide",
+    description:
+      "How to create a cloud disaster recovery plan: set RTO and RPO targets, pick a DR strategy, protect backups from ransomware, write runbooks and test failover.",
+    category: "Cloud",
+    date: "2026-11-04",
+    seoTitle: "Cloud Disaster Recovery Plan Guide",
+    cover: "/insights/covers/cloud-disaster-recovery-plan",
+    coverAlt: "Cover reading Cloud Disaster Recovery Plan: 8-Step Guide, InSol Technologies",
+    relatedServices: ["cloud-devops", "data-analytics", "enterprise-applications", "saas-products", "quality-engineering"],
+    relatedIndustries: ["technology", "healthcare", "ecommerce", "travel-hospitality"],
+    body: [
+      {
+        heading: "What is a cloud disaster recovery plan?",
+        paragraphs: [
+          "A cloud disaster recovery plan is a written, tested set of decisions and procedures for restoring your applications and data after a serious disruption, such as a region outage, a ransomware attack, an accidental deletion, a bad deployment or a compromised account. It says which systems come back first, how quickly, from which copies of your data, who does the work and how you will know recovery succeeded.",
+          "Moving to the cloud does not remove the need for a plan. Providers describe resilience as a shared responsibility: AWS's [shared responsibility model for resiliency](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/shared-responsibility-model-for-resiliency.html) makes the provider responsible for the resiliency of the cloud infrastructure and you responsible for the resiliency of what you run on it, including backups, data replication and failover. Microsoft and Google publish similar guidance. If your workloads are still moving, our [cloud migration strategy](/insights/cloud-migration-strategy/) guide explains how to build recovery into the move.",
+        ],
+      },
+      {
+        heading: "RTO and RPO: the two numbers that shape your plan",
+        paragraphs: [
+          "Every disaster recovery decision traces back to two targets, set per system with the business rather than by IT alone:",
+        ],
+        bullets: [
+          "Recovery time objective (RTO): the longest a system can be unavailable before the impact becomes unacceptable. It drives how much standby infrastructure you keep ready.",
+          "Recovery point objective (RPO): the most data, measured in time, that you can afford to lose. It drives how often you back up or replicate data.",
+          "Shorter targets cost more. A system with an RTO of minutes needs running capacity in another location; a system that can be down for a day can often be rebuilt from backups and infrastructure as code.",
+          "Set targets for dependencies too. An application cannot meet a one-hour RTO if the identity provider, DNS or database it relies on takes four hours to restore.",
+        ],
+      },
+      {
+        heading: "Cloud disaster recovery strategies compared",
+        paragraphs: [
+          "AWS's whitepaper on [disaster recovery of workloads on AWS](https://docs.aws.amazon.com/whitepapers/latest/disaster-recovery-workloads-on-aws/disaster-recovery-workloads-on-aws.html) groups the options into four strategies, and Google Cloud's [disaster recovery planning guide](https://cloud.google.com/architecture/dr-scenarios-planning-guide) describes the same range as cold, warm and hot patterns. Most companies use more than one, matched to each system's RTO and RPO.",
+        ],
+        table: {
+          caption: "Common cloud DR strategies, from lowest to highest cost",
+          headers: ["Strategy", "How it works", "Typical fit", "Trade-off"],
+          rows: [
+            ["Backup and restore", "Data is backed up to another region or account; infrastructure is rebuilt from code when needed", "Internal tools, reporting and systems that can be down for hours", "Lowest cost, slowest recovery"],
+            ["Pilot light", "Core data is replicated continuously; application servers stay off or minimal until a disaster", "Important systems that can tolerate some downtime", "Faster than restore, but scaling up still takes time"],
+            ["Warm standby", "A scaled-down but fully working copy runs in the recovery region and is scaled up on failover", "Customer-facing apps with tight RTOs", "Higher running cost; needs regular failover testing"],
+            ["Multi-site active/active", "Two or more regions serve traffic at the same time", "Revenue-critical platforms that must stay up", "Highest cost and complexity, especially for data consistency"],
+          ],
+        },
+      },
+      {
+        heading: "How to create a cloud disaster recovery plan in 8 steps",
+        paragraphs: [
+          "These steps follow the structure of NIST's [contingency planning guide, SP 800-34](https://csrc.nist.gov/pubs/sp/800/34/r1/upd1/final), adapted for cloud workloads. Treat the first version as a draft you will improve after each test.",
+        ],
+        subsections: [
+          {
+            heading: "1. Set scope, ownership and the scenarios you plan for",
+            paragraphs: [
+              "Name an executive sponsor and a plan owner, list the environments in scope and agree on the scenarios the plan must cover. Include more than natural disasters: region or zone outages, ransomware, deleted or corrupted data, a compromised cloud account, a failed release and the loss of a key SaaS vendor.",
+            ],
+          },
+          {
+            heading: "2. Inventory systems and run a business impact analysis",
+            paragraphs: [
+              "List every application, database, storage bucket, integration and third-party service, with its owner and dependencies. For each, ask the business what an outage costs over time in revenue, customer trust, safety and compliance. Group systems into tiers, so you can spend on recovery where it matters most.",
+            ],
+          },
+          {
+            heading: "3. Agree RTO and RPO for each tier",
+            paragraphs: [
+              "Turn the impact analysis into recovery targets per tier and get them signed off. Check that targets are consistent across dependencies, and record the gap between the target and what you can do today. That gap becomes your improvement backlog.",
+            ],
+          },
+          {
+            heading: "4. Choose a recovery strategy and recovery location",
+            paragraphs: [
+              "Map each tier to a strategy from the table above. Decide on the recovery region, and whether you recover into a separate account or subscription, which limits the damage if your main account is compromised. Check that the recovery region offers the services, capacity and data residency you need.",
+            ],
+          },
+          {
+            heading: "5. Protect backups and replicate data",
+            paragraphs: [
+              "Back up databases, files, configuration and secrets on a schedule that meets each RPO, and keep copies in a separate region and account. Make at least one copy immutable or offline, since ransomware often targets backups first; CISA's [#StopRansomware guide](https://www.cisa.gov/stopransomware/ransomware-guide) recommends offline, encrypted backups that are tested regularly. Encrypt backups, restrict who can delete them and alert on unusual deletion activity.",
+            ],
+          },
+          {
+            heading: "6. Define everything as code",
+            paragraphs: [
+              "Keep networks, compute, databases, permissions and DNS in infrastructure as code, with pipelines that can deploy to the recovery region. Manual rebuilds under pressure are slow and error-prone. The same pipelines that reduce release risk day to day, covered in our piece on [DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk/), are what make a fast recovery possible.",
+            ],
+          },
+          {
+            heading: "7. Write runbooks and a communication plan",
+            paragraphs: [
+              "For each scenario, write step-by-step runbooks: who declares a disaster, how failover and failback work, how data is validated and how DNS or traffic is switched. Store them where people can reach them if your main systems and identity provider are down. Add a communication plan with contacts for staff, customers, vendors and regulators.",
+            ],
+          },
+          {
+            heading: "8. Test, measure and keep the plan current",
+            paragraphs: [
+              "Run tabletop exercises, restore tests and, for higher tiers, real failovers on a regular schedule. Measure the recovery time and data loss you actually achieve against RTO and RPO, fix what failed and update the runbooks. Review the plan after major releases, architecture changes, new vendors or staff changes.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Cloud disaster recovery plan checklist",
+        paragraphs: [
+          "Before you call the plan ready, confirm that you can answer yes to each of these:",
+        ],
+        bullets: [
+          "Every system has an owner, a tier, an RTO and an RPO agreed with the business.",
+          "Backups cover data, configuration and secrets, and at least one copy is in another region and account and cannot be changed or deleted.",
+          "Restores have been tested recently and the results recorded.",
+          "Infrastructure for the recovery environment can be deployed from code.",
+          "Runbooks and contact lists are available offline and outside your main cloud account.",
+          "Break-glass access to the recovery account works and is tightly controlled.",
+          "Dependencies such as identity, DNS, payment providers and other SaaS tools are covered.",
+          "The plan has a review date and an owner responsible for keeping it current.",
+        ],
+      },
+      {
+        heading: "Common cloud disaster recovery mistakes",
+        paragraphs: [
+          "The plans that fail in a real incident usually fail for familiar reasons:",
+        ],
+        bullets: [
+          "Relying on zone redundancy alone, which helps with hardware failures but not with region outages, deleted data or ransomware.",
+          "Treating replication as backup: replication copies corruption and deletions to the other site just as quickly as good data.",
+          "Keeping backups in the same account as production, so one compromised credential can remove both.",
+          "Never testing restores, then discovering missing data, expired keys or untested scripts during the incident.",
+          "Forgetting the data layer when setting targets; databases are usually the slowest part to recover. Our [data analytics strategy](/insights/data-analytics-strategy/) guide covers how to keep data assets documented and owned.",
+          "Writing the plan once and letting it go stale as the architecture changes.",
+        ],
+      },
+      {
+        heading: "Disaster recovery for regulated and customer-facing systems",
+        paragraphs: [
+          "Some industries add specific obligations. Healthcare organizations handling protected health information need a contingency plan with data backup and disaster recovery procedures under the HIPAA Security Rule, which our [HIPAA compliant app development](/insights/hipaa-compliant-app-development/) guide explains. SaaS companies are often asked about recovery testing in customer security reviews and audits, and ecommerce and travel platforms lose bookings and orders every minute they are down. In each case, documented targets and recent test results are what customers and auditors ask to see.",
+          "Older systems are often the hardest to recover because they were never designed for automated rebuilds. If that is the blocker, our guide to [legacy application modernization](/insights/legacy-application-modernization/) covers the options.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps with cloud disaster recovery",
+        paragraphs: [
+          "InSol Technologies designs and tests disaster recovery for applications running on AWS, Azure and Google Cloud. Our [cloud and DevOps](/services/cloud-devops/) engineers run the impact analysis with your team, set up backups, cross-region replication and infrastructure as code, and write and rehearse the runbooks. Our [data and analytics](/services/data-analytics/) team plans database recovery, our [enterprise applications](/services/enterprise-applications/) and [SaaS product](/services/saas-products/) teams make sure business systems and integrations come back in the right order, and our [quality engineering](/services/quality-engineering/) team builds restore and failover checks into regular testing.",
+          "To review your current recovery setup or build a plan from scratch, [contact our team](/contact/).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What should a cloud disaster recovery plan include?",
+        a: "It should include the scope and owners, an inventory of systems and dependencies, a business impact analysis, RTO and RPO targets per system, the recovery strategy and location for each tier, backup and replication settings, step-by-step runbooks, a communication plan, and a schedule for testing and review.",
+      },
+      {
+        q: "What is the difference between RTO and RPO?",
+        a: "RTO, the recovery time objective, is how long a system can be down before the impact is unacceptable. RPO, the recovery point objective, is how much data, measured in time, you can afford to lose. RTO shapes how much standby infrastructure you need; RPO shapes how often you back up or replicate data.",
+      },
+      {
+        q: "Is my cloud provider responsible for disaster recovery?",
+        a: "Only partly. Cloud providers are responsible for the resilience of their infrastructure, but you are responsible for your own backups, data replication, configuration and failover. If you delete data, deploy a broken release or have an account compromised, recovery is up to you.",
+      },
+      {
+        q: "How often should you test a disaster recovery plan?",
+        a: "Test on a regular schedule and after major changes to your architecture, vendors or team. Many companies run tabletop exercises and restore tests for all systems and full failover tests for their most critical tier. Record the recovery time and data loss you actually achieve and compare them with your targets.",
+      },
+    ],
+  },
+  {
     slug: "build-ai-agents-for-business",
     title: "How to Build AI Agents for Business",
     description:
