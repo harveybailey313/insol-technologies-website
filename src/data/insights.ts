@@ -47,6 +47,184 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "database-migration-postgresql",
+    title: "Database Migration to PostgreSQL: Step-by-Step Guide",
+    description:
+      "Database migration to PostgreSQL step by step: assess the source, convert schema and code, pick a data move method, test, and cut over with low downtime.",
+    category: "Data",
+    date: "2026-11-07",
+    seoTitle: "Database Migration to PostgreSQL Guide",
+    cover: "/insights/covers/database-migration-postgresql",
+    coverAlt: "Cover reading Database Migration to PostgreSQL: Step-by-Step Guide, InSol Technologies",
+    relatedServices: ["data-analytics", "cloud-devops", "enterprise-applications", "saas-products", "quality-engineering"],
+    relatedIndustries: ["technology", "healthcare", "ecommerce", "travel-hospitality"],
+    body: [
+      {
+        heading: "What a database migration to PostgreSQL involves",
+        paragraphs: [
+          "A database migration to PostgreSQL moves your schema, data and database-side code from another engine, such as Oracle, SQL Server or MySQL, into PostgreSQL, then points your applications at the new database. Teams usually make the move to reduce licensing costs, standardize on an open-source engine, or adopt managed services like Amazon RDS and Aurora PostgreSQL, Azure Database for PostgreSQL or Google Cloud SQL and AlloyDB.",
+          "Copying rows is the easy part. The real work sits in data type differences, stored procedures and triggers, SQL dialect changes inside application code, performance tuning and a cutover plan that keeps downtime inside what the business can accept. This guide covers the database itself. If you are also moving applications to the cloud, our [cloud migration strategy](/insights/cloud-migration-strategy/) guide covers the wider portfolio decisions.",
+        ],
+      },
+      {
+        heading: "Step 1: Assess the source database",
+        paragraphs: [
+          "Start with an inventory, not a tool. You need to know what you are moving and who depends on it before you can estimate effort or pick a method.",
+        ],
+        bullets: [
+          "Schemas, tables, indexes, constraints, sequences or identity columns, views and materialized views.",
+          "Stored procedures, functions, triggers, packages and scheduled jobs, with a rough count of lines of database-side code.",
+          "Data volume, growth rate, largest tables and any binary or large-object columns.",
+          "Every application, report, ETL job and integration that reads or writes the database, with an owner for each.",
+          "Engine-specific features in use, such as Oracle packages and hierarchical queries, SQL Server T-SQL and linked servers, or MySQL-specific SQL modes.",
+          "Downtime tolerance, recovery targets and compliance rules for where data may live.",
+        ],
+        subsections: [
+          {
+            heading: "Use assessment tooling to size the conversion",
+            paragraphs: [
+              "Assessment reports give you a first estimate of how much converts automatically. The [AWS Schema Conversion Tool](https://docs.aws.amazon.com/SchemaConversionTool/latest/userguide/CHAP_Welcome.html) produces a migration assessment for Oracle, SQL Server and other sources. For Oracle, the open-source [Ora2Pg](https://ora2pg.darold.net/) tool can also estimate migration effort. Treat these reports as a starting point; someone who knows the application still needs to review the complex objects.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Step 2: Convert the schema and data types",
+        paragraphs: [
+          "Most tables convert cleanly, but data types are where silent bugs start. Map each source type deliberately and check the [PostgreSQL data types](https://www.postgresql.org/docs/current/datatype.html) documentation rather than assuming names line up.",
+        ],
+        table: {
+          caption: "Common type mappings to review when moving to PostgreSQL",
+          headers: ["Source type", "Typical PostgreSQL target", "What to check"],
+          rows: [
+            ["Oracle NUMBER", "integer, bigint or numeric", "Precision and scale; using numeric everywhere can slow queries"],
+            ["Oracle VARCHAR2 / SQL Server NVARCHAR", "varchar or text", "Length limits and character encoding (use UTF-8)"],
+            ["Oracle DATE", "timestamp", "Oracle DATE stores a time part; PostgreSQL date does not"],
+            ["SQL Server DATETIME / DATETIME2", "timestamp or timestamptz", "Time zone handling and precision"],
+            ["SQL Server BIT / MySQL TINYINT(1)", "boolean", "Application code that compares with 0 and 1"],
+            ["MySQL AUTO_INCREMENT / SQL Server IDENTITY / Oracle sequences", "identity columns or sequences", "Reset sequence values after loading data"],
+            ["BLOB / VARBINARY / IMAGE", "bytea", "Size of large objects and how the app streams them"],
+          ],
+        },
+        subsections: [
+          {
+            heading: "Watch for behavior differences, not just types",
+            paragraphs: [
+              "PostgreSQL treats empty strings and NULL as different values, while Oracle treats an empty string as NULL. Unquoted identifiers fold to lowercase in PostgreSQL. Default collation and case sensitivity in comparisons can differ from SQL Server and MySQL. Each of these can change query results without throwing an error, so write tests for them.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Step 3: Rewrite database code and application SQL",
+        paragraphs: [
+          "Stored procedures, packages and triggers usually need the most manual effort. PL/SQL and T-SQL logic is rewritten in PL/pgSQL, or moved into the application layer when that makes it easier to test and maintain. Conversion tools handle simple procedures well; complex ones with dynamic SQL, cursors or engine-specific packages need an engineer.",
+          "Application code needs the same attention. Search for vendor-specific SQL such as TOP, ROWNUM, NVL, ISNULL, string concatenation operators, date functions and query hints. ORMs reduce the work but do not remove it, because raw queries and reports tend to hide in corners. This is often the right moment to retire unused objects instead of converting them, which our [legacy application modernization](/insights/legacy-application-modernization/) guide discusses in more depth.",
+        ],
+      },
+      {
+        heading: "Step 4: Choose how to move the data",
+        paragraphs: [
+          "The right method depends on data volume, source engine and how much downtime you can take. The main options are:",
+        ],
+        subsections: [
+          {
+            heading: "Dump and restore (offline)",
+            paragraphs: [
+              "Export, transform and load the data while the application is stopped. For PostgreSQL-to-PostgreSQL moves, [pg_dump](https://www.postgresql.org/docs/current/app-pgdump.html) and [pg_restore](https://www.postgresql.org/docs/current/app-pgrestore.html) are the standard tools. For MySQL or SQL Server sources, [pgloader](https://pgloader.readthedocs.io/en/latest/) can load data and much of the schema in one pass. This is the simplest option and works well when a maintenance window covers the load time.",
+            ],
+          },
+          {
+            heading: "Full load plus change data capture (near-zero downtime)",
+            paragraphs: [
+              "Copy the existing data while the source stays live, then stream ongoing changes until you are ready to switch. [AWS Database Migration Service](https://docs.aws.amazon.com/dms/latest/userguide/Welcome.html), [Google Cloud Database Migration Service](https://cloud.google.com/database-migration/docs) and the [Azure Database for PostgreSQL migration service](https://learn.microsoft.com/en-us/azure/postgresql/migrate/migration-service/overview-migration-service-postgresql) all support this pattern for supported sources. Between PostgreSQL databases, native [logical replication](https://www.postgresql.org/docs/current/logical-replication.html) can do the same job.",
+            ],
+          },
+          {
+            heading: "Phased migration by module",
+            paragraphs: [
+              "Large systems sometimes move one bounded domain at a time, with the application reading and writing to both databases for a period. This lowers the risk of any single cutover but adds sync logic and a longer project, so reserve it for systems where a single switch is too risky.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Step 5: Validate data, performance and behavior",
+        paragraphs: [
+          "Testing is where migrations succeed or fail. Plan at least two full rehearsals in a production-like environment before the real cutover.",
+        ],
+        bullets: [
+          "Data checks: row counts per table, checksums or sampled row comparisons, and totals on key financial or inventory columns.",
+          "Functional checks: run the application's automated test suite and critical user journeys against PostgreSQL.",
+          "Performance checks: replay representative queries, compare execution plans with EXPLAIN, add or adjust indexes, and run [ANALYZE](https://www.postgresql.org/docs/current/sql-analyze.html) after loading so the planner has current statistics.",
+          "Operational checks: backups, restores, monitoring, connection pooling and user permissions all work on the new database.",
+        ],
+        subsections: [
+          {
+            heading: "Automate the comparison",
+            paragraphs: [
+              "Manual spot checks do not scale past a few tables. Script your validation so every rehearsal produces the same report, and keep it for the final cutover. Our [test automation strategy](/insights/test-automation-strategy/) guide covers how to build checks that teams actually maintain.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Step 6: Plan the cutover and rollback",
+        paragraphs: [
+          "Write the cutover as a runbook with named owners and timings, and rehearse it. A typical sequence:",
+        ],
+        ordered: true,
+        bullets: [
+          "Freeze schema changes on the source and confirm replication lag is near zero, or start the maintenance window.",
+          "Stop or pause writes from applications and background jobs.",
+          "Apply the final changes, reset sequences and run the validation scripts.",
+          "Switch connection strings or DNS to PostgreSQL and restart application services.",
+          "Run smoke tests on critical journeys, then reopen traffic and watch error rates and query latency closely.",
+          "Keep the source database read-only and available until you are confident; decide in advance what would trigger a rollback and how long you will keep that option open.",
+        ],
+      },
+      {
+        heading: "Common database migration mistakes to avoid",
+        paragraphs: [
+          "The same problems show up across many migrations:",
+        ],
+        bullets: [
+          "Treating the project as a data copy and underestimating stored procedure and application SQL rewrites.",
+          "Mapping every number to numeric and every date to date without checking precision and time parts.",
+          "Forgetting to reset sequences, so the first new insert fails with a duplicate key.",
+          "Skipping performance testing, then finding slow queries in production because indexes or statistics were missing.",
+          "Missing hidden consumers such as reports, spreadsheets and integrations that still point at the old database.",
+          "Having no rehearsed rollback plan. Our [cloud disaster recovery plan](/insights/cloud-disaster-recovery-plan/) guide covers backup and restore practices that also apply here.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps with PostgreSQL migration",
+        paragraphs: [
+          "InSol Technologies plans and runs database migrations to PostgreSQL for product and enterprise teams in the US and worldwide. Our [data and analytics](/services/data-analytics/) engineers assess the source, convert schemas and database code, and build the validation scripts. Our [cloud and DevOps](/services/cloud-devops/) team sets up managed PostgreSQL, replication and cutover automation on AWS, Azure or Google Cloud. Our [enterprise applications](/services/enterprise-applications/) and [SaaS products](/services/saas-products/) teams update application SQL and integrations, and our [quality engineering](/services/quality-engineering/) team runs functional and performance testing before go-live.",
+          "If you are weighing a move to PostgreSQL or need help with one already underway, [contact our team](/contact/).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "How long does a database migration to PostgreSQL take?",
+        a: "It depends on data volume, the amount of stored procedure and application SQL to rewrite, and how many systems connect to the database. A small database with little server-side code can move quickly, while a large Oracle or SQL Server estate with heavy PL/SQL or T-SQL needs a longer project with several rehearsals. An assessment of the source gives you a realistic estimate.",
+      },
+      {
+        q: "Can you migrate to PostgreSQL without downtime?",
+        a: "You can get close. A full load followed by change data capture, using a managed migration service or logical replication, keeps the source live while data copies. You still need a short window to stop writes, apply final changes and switch connections.",
+      },
+      {
+        q: "What is the hardest part of migrating from Oracle or SQL Server to PostgreSQL?",
+        a: "Usually database-side code. PL/SQL packages and complex T-SQL procedures often need manual rewriting in PL/pgSQL or moving into the application. Behavior differences, such as how empty strings, NULLs, dates and case sensitivity work, are the next most common source of issues.",
+      },
+      {
+        q: "Which tools help with a PostgreSQL migration?",
+        a: "Common choices include AWS Schema Conversion Tool and AWS Database Migration Service, Google Cloud Database Migration Service, the Azure Database for PostgreSQL migration service, Ora2Pg for Oracle, pgloader for MySQL and SQL Server, and pg_dump, pg_restore and logical replication for PostgreSQL-to-PostgreSQL moves.",
+      },
+    ],
+  },
+  {
     slug: "serverless-architecture-startups",
     title: "Serverless Architecture for Startups: When It Fits",
     description:
