@@ -47,6 +47,189 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "software-requirements-specification",
+    title: "Software Requirements Specification: How to Write an SRS",
+    description:
+      "How to write a software requirements specification (SRS): what to include, a section-by-section outline, examples of good requirements and how to review it.",
+    category: "Software Engineering",
+    date: "2026-11-08",
+    seoTitle: "Software Requirements Specification",
+    cover: "/insights/covers/software-requirements-specification",
+    coverAlt: "Cover reading Software Requirements Specification: How to Write an SRS, InSol Technologies",
+    relatedServices: ["product-engineering", "web-mobile-development", "saas-products", "enterprise-applications", "quality-engineering"],
+    relatedIndustries: ["technology", "healthcare", "ecommerce", "travel-hospitality"],
+    body: [
+      {
+        heading: "What a software requirements specification is",
+        paragraphs: [
+          "A software requirements specification (SRS) is the document that describes what a software system must do and the conditions it must meet. It records the purpose of the product, who uses it, the functional requirements, the quality attributes such as performance and security, the external interfaces and the constraints the team has to respect. It describes what the software does, not how the code is written.",
+          "A good SRS gives business stakeholders, designers, engineers and testers one shared reference. It is the basis for estimates, contracts with a development partner, test cases and acceptance. The long-standing reference for SRS content was [IEEE 830-1998](https://standards.ieee.org/ieee/830/1222/), which is now superseded by [ISO/IEC/IEEE 29148](https://www.iso.org/standard/72089.html), the current international standard for requirements engineering. You do not need to follow either word for word, but both are useful checklists for what a complete specification covers.",
+        ],
+      },
+      {
+        heading: "When you need an SRS (and how detailed it should be)",
+        paragraphs: [
+          "Almost every software project benefits from written requirements. The level of detail is what changes. A fixed-scope build with an outside vendor, a regulated product or an integration-heavy enterprise system needs a detailed, signed-off SRS. An early-stage product that will change every sprint is often better served by a lighter document that covers scope, users, quality attributes and constraints, with detailed behavior kept in a backlog of user stories.",
+        ],
+        bullets: [
+          "Write a detailed SRS when the scope is fixed by contract, when compliance rules apply (for example healthcare or payments), or when several teams or vendors build parts of one system.",
+          "Write a lighter SRS when you are building an MVP, when the team works in short iterations, or when product discovery is still under way. Our [MVP development process](/insights/mvp-development-process/) guide explains how to keep early scope small.",
+          "In both cases, keep non-functional requirements, interfaces and constraints in writing. They are the parts most often missed in a backlog.",
+        ],
+      },
+      {
+        heading: "What to include in an SRS: a section-by-section outline",
+        paragraphs: [
+          "The outline below follows the structure most teams use, adapted from the sections described in IEEE 830 and ISO/IEC/IEEE 29148. Rename or merge sections to fit your project, but make sure each topic is covered somewhere.",
+        ],
+        table: {
+          caption: "A practical SRS outline",
+          headers: ["Section", "What it covers", "Typical owner"],
+          rows: [
+            ["1. Introduction", "Purpose, scope, intended readers, definitions and acronyms, references", "Product owner"],
+            ["2. Overall description", "Product context, business goals, user classes, operating environment, assumptions and dependencies", "Product owner with business stakeholders"],
+            ["3. Functional requirements", "Features and system behavior, grouped by feature or user goal, each with a unique ID", "Business analyst or product manager"],
+            ["4. External interface requirements", "User interface, APIs, third-party integrations, hardware and communication interfaces", "Solution architect"],
+            ["5. Non-functional requirements", "Performance, availability, security, privacy, accessibility, scalability, maintainability", "Architect with security and QA leads"],
+            ["6. Data requirements", "Key entities, data retention, migration needs, reporting", "Data or backend lead"],
+            ["7. Constraints", "Regulations, required platforms or technologies, budget and deadline limits", "Product owner"],
+            ["8. Acceptance criteria and appendices", "How each requirement is verified, glossary, diagrams, open questions", "QA lead"],
+          ],
+        },
+      },
+      {
+        heading: "How to write a software requirements specification in 7 steps",
+        paragraphs: [
+          "The steps below take you from a rough idea to a reviewed, version-controlled SRS. They work whether the team builds in-house or with a partner.",
+        ],
+        subsections: [
+          {
+            heading: "Step 1: Define the purpose, scope and success measures",
+            paragraphs: [
+              "Write two or three sentences on the business problem the software solves and who it is for. List what is in scope and, just as important, what is out of scope for this release. Agree on how success will be judged, such as a process that must take fewer manual steps or a launch date tied to a business event, without inventing targets you cannot yet measure.",
+            ],
+          },
+          {
+            heading: "Step 2: Identify users and stakeholders",
+            paragraphs: [
+              "List each user class (for example customers, internal admins, support agents and partners) and what each needs to achieve. Identify the stakeholders who must approve requirements, including security, legal or compliance owners. Missing a user class early usually shows up later as an expensive change request.",
+            ],
+          },
+          {
+            heading: "Step 3: Gather requirements",
+            paragraphs: [
+              "Use interviews, workshops, reviews of the current process and existing systems, competitor products and support tickets. Capture needs in the users' language first. User stories in the form \"As a [role], I want [capability] so that [benefit]\" are a practical way to do this; [Atlassian's guide to user stories](https://www.atlassian.com/agile/project-management/user-stories) is a good primer.",
+            ],
+          },
+          {
+            heading: "Step 4: Write functional requirements",
+            paragraphs: [
+              "Turn each need into clear, testable statements. Give every requirement a unique ID, one behavior per statement, and the conditions that trigger it. Group them by feature so readers can find them.",
+            ],
+          },
+          {
+            heading: "Step 5: Write non-functional requirements",
+            paragraphs: [
+              "Describe how well the system must perform, with numbers your team actually agrees on: response times under a stated load, availability, recovery targets, supported browsers and devices, data protection rules and accessibility level. For accessibility, many teams reference the [W3C Web Content Accessibility Guidelines](https://www.w3.org/WAI/standards-guidelines/wcag/).",
+            ],
+          },
+          {
+            heading: "Step 6: Document interfaces, data and constraints",
+            paragraphs: [
+              "List every system the software talks to, what data moves in each direction and who owns each integration. Note fixed technology choices, hosting rules, regulations and deadlines. These items often drive architecture more than features do.",
+            ],
+          },
+          {
+            heading: "Step 7: Prioritize, review and baseline",
+            paragraphs: [
+              "Rank requirements (for example Must, Should, Could and Won't for this release) so the team knows what to cut if time runs short. Review the document with business, engineering and QA together, resolve open questions, then baseline it as version 1.0 and manage changes through a simple change log.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Examples of good and weak requirements",
+        paragraphs: [
+          "A requirement is useful only if two people read it the same way and a tester can prove it is met. Compare these pairs:",
+        ],
+        table: {
+          caption: "Rewriting vague requirements into testable ones",
+          headers: ["Weak requirement", "Better requirement"],
+          rows: [
+            ["The system should be fast.", "FR-PERF-01: Search results load within 2 seconds for 95% of requests at the expected peak load agreed in section 5."],
+            ["Users can reset their password easily.", "FR-AUTH-04: A registered user can request a password reset link by email; the link expires after 30 minutes and works once."],
+            ["The app must be secure.", "NFR-SEC-02: All traffic uses TLS; passwords are stored with a salted, adaptive hashing algorithm; admin accounts require multi-factor authentication."],
+            ["Reports should be flexible.", "FR-REP-03: An admin can filter the orders report by date range, status and region and export the result to CSV."],
+          ],
+        },
+        subsections: [
+          {
+            heading: "Qualities of a well-written requirement",
+            paragraphs: [
+              "Both IEEE 830 and ISO/IEC/IEEE 29148 describe similar qualities. In practice, check that each requirement is:",
+            ],
+            bullets: [
+              "Necessary: it traces back to a user or business need.",
+              "Unambiguous: it has one interpretation, with terms defined in the glossary.",
+              "Verifiable: a test, inspection or demo can show it is met.",
+              "Feasible: it can be built within known constraints.",
+              "Consistent: it does not conflict with another requirement.",
+              "Traceable: it has a unique ID that links to design items and test cases.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Acceptance criteria and traceability",
+        paragraphs: [
+          "Each functional requirement should come with acceptance criteria that state exactly what must be true for it to pass. Many teams write these in the Given / When / Then format from [Gherkin](https://cucumber.io/docs/gherkin/reference/), which can feed automated tests directly. Our [test automation strategy](/insights/test-automation-strategy/) guide covers how to turn those criteria into a reliable test suite.",
+          "A simple traceability matrix, even a spreadsheet, links each requirement ID to its design notes, tickets and test cases. It shows quickly which requirements are untested and what a proposed change will affect.",
+        ],
+      },
+      {
+        heading: "Common SRS mistakes to avoid",
+        paragraphs: [],
+        bullets: [
+          "Describing solutions instead of needs, such as naming database tables in a requirement that should describe user behavior.",
+          "Leaving out non-functional requirements, then discovering performance or security gaps late in testing.",
+          "Writing vague words like fast, easy, flexible or user-friendly without measurable criteria.",
+          "Treating the SRS as finished once signed. Requirements change; keep a version history and a change process.",
+          "Writing it without engineering and QA in the room, so estimates and tests are disconnected from the document.",
+          "Copying a template and leaving sections that do not apply, which hides the parts that matter.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps with software requirements",
+        paragraphs: [
+          "InSol Technologies runs discovery and requirements work for product and enterprise teams in the US and worldwide. Our [product engineering](/services/product-engineering/) team facilitates workshops, writes the SRS and user stories, and turns them into an architecture and delivery plan. Our [web and mobile development](/services/web-mobile-development/), [SaaS products](/services/saas-products/) and [enterprise applications](/services/enterprise-applications/) teams build against the agreed specification, and our [quality engineering](/services/quality-engineering/) team writes the acceptance tests that prove each requirement is met.",
+          "To see how requirements fit into the full delivery cycle, read our [custom software development process](/insights/custom-software-development-process/) guide, and if you are comparing vendors, our [product engineering partner checklist](/insights/choosing-product-engineering-partners/) can help. When you are ready to turn an idea into a clear specification, [contact our team](/contact/).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is the difference between an SRS and a BRD?",
+        a: "A business requirements document (BRD) explains the business problem, goals and high-level needs. A software requirements specification goes further and describes exactly what the software must do, its quality attributes, interfaces and constraints, in enough detail for engineers to build and testers to verify it.",
+      },
+      {
+        q: "Who writes the software requirements specification?",
+        a: "Usually a business analyst or product manager leads it, with input from stakeholders, a solution architect, engineers and QA. When you work with a development partner, the partner often writes it with you during a discovery phase, and both sides review and approve it.",
+      },
+      {
+        q: "Is an SRS still needed in agile development?",
+        a: "Agile teams rarely write a large up-front specification, but they still need written scope, non-functional requirements, interfaces and constraints. Many keep a lightweight SRS for those items and manage detailed behavior as user stories with acceptance criteria in the backlog.",
+      },
+      {
+        q: "How long should a software requirements specification be?",
+        a: "There is no fixed length. It should be long enough that every requirement is clear and testable and short enough that people actually read it. A small MVP may need a few pages, while a regulated or integration-heavy system needs much more detail.",
+      },
+      {
+        q: "Which standard covers software requirements specifications?",
+        a: "ISO/IEC/IEEE 29148 is the current international standard for requirements engineering and describes the content of requirements documents. It superseded IEEE 830-1998, which many SRS templates are still based on.",
+      },
+    ],
+  },
+  {
     slug: "database-migration-postgresql",
     title: "Database Migration to PostgreSQL: Step-by-Step Guide",
     description:
