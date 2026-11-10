@@ -47,6 +47,179 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "mvp-feature-prioritization-moscow",
+    title: "MVP Feature Prioritization: How to Scope an MVP With MoSCoW",
+    description:
+      "How to prioritize MVP features with the MoSCoW method: a step-by-step process, a worked example, ways to break ties, common mistakes and when to revisit scope.",
+    category: "Product",
+    date: "2026-11-10",
+    seoTitle: "MVP Feature Prioritization With MoSCoW",
+    cover: "/insights/covers/mvp-feature-prioritization-moscow",
+    coverAlt: "Cover reading MVP Feature Prioritization: How to Scope an MVP With MoSCoW, InSol Technologies",
+    relatedServices: ["product-engineering", "saas-products", "web-mobile-development", "quality-engineering"],
+    relatedIndustries: ["technology", "healthcare", "ecommerce", "travel-hospitality"],
+    body: [
+      {
+        heading: "Why MVP feature prioritization decides the outcome",
+        paragraphs: [
+          "A minimum viable product exists to test your riskiest assumption with real users as quickly as possible. Every feature you add before launch costs time, money and focus, and it delays the moment you learn whether people actually want the product. Feature prioritization is the step where that trade-off gets made, feature by feature.",
+          "Most teams do not struggle to come up with ideas. They struggle to say no to good ideas. MoSCoW is one of the simplest ways to make those decisions explicit, so founders, designers and engineers agree on one scope instead of carrying three different versions of the product in their heads. If you want the full build sequence around this step, see our [MVP development process](/insights/mvp-development-process/) guide.",
+        ],
+      },
+      {
+        heading: "What the MoSCoW method is",
+        paragraphs: [
+          "MoSCoW is a prioritization technique that comes from DSDM, an agile project framework. It sorts each requirement into one of four categories. The lower-case letters are only there to make the acronym pronounceable.",
+        ],
+        table: {
+          caption: "The four MoSCoW categories applied to an MVP",
+          headers: ["Category", "Meaning for an MVP", "Test to apply"],
+          rows: [
+            ["Must have", "The product cannot deliver its core value or test its key assumption without it", "If we launch without it, does the core user journey break?"],
+            ["Should have", "Important, but the MVP still works without it, even if through a manual workaround", "Is there any way around it, even a painful one?"],
+            ["Could have", "Useful or pleasant, but users would not miss it in the first release", "Would early users notice it is missing?"],
+            ["Won't have (this time)", "Agreed to be out of scope for this release, not rejected forever", "Have we written it down so it stops coming back?"],
+          ],
+        },
+      },
+      {
+        heading: "How to prioritize MVP features with MoSCoW, step by step",
+        paragraphs: [
+          "The steps below work for a founder with a spreadsheet as well as for a product team running a workshop. The output is a single, agreed feature list with a category against every item.",
+        ],
+        subsections: [
+          {
+            heading: "1. Write down the goal and the key assumption",
+            paragraphs: [
+              "Start with one sentence: who the MVP is for, what problem it solves and what you need to learn. For example: \"Independent clinics will book patient follow-ups through an online scheduler instead of by phone.\" Add the success signal you will measure, such as completed bookings or returning users, and the constraints you are working within, such as budget, launch date and team size.",
+            ],
+          },
+          {
+            heading: "2. Map the core user journey",
+            paragraphs: [
+              "List the few steps a user must complete to get the value you promised, from first visit to the moment the problem is solved. This journey is the yardstick for every Must have. Anything that does not support it is a candidate for a lower category.",
+            ],
+          },
+          {
+            heading: "3. List every feature idea as a user story",
+            paragraphs: [
+              "Collect ideas from founders, sales conversations, user interviews and competitors without judging them yet. Writing each one as a user story, \"As a [user], I want [capability] so that [outcome]\", makes it easier to see which journey step it serves. If you are documenting scope more formally, a [software requirements specification](/insights/software-requirements-specification/) is the natural home for this list.",
+            ],
+          },
+          {
+            heading: "4. Sort each feature into a MoSCoW category",
+            paragraphs: [
+              "Go through the list one item at a time and give every feature exactly one category. Use the consequence test rather than importance: a feature is a Must have only if the MVP fails without it, not because someone feels strongly about it.",
+            ],
+          },
+          {
+            heading: "5. Check for hidden Must haves",
+            paragraphs: [
+              "Some requirements never appear on a feature wish list but are still essential. Review the list for the basics users expect and the work that keeps the product running.",
+            ],
+            bullets: [
+              "Secure sign-in, password reset and basic account settings",
+              "Security and privacy requirements, plus any regulatory obligations such as HIPAA for health data",
+              "Admin tools your own team needs to support users and fix data",
+              "Error handling, logging and basic product analytics to measure the success signal",
+              "Payment, email or third-party integrations the core journey depends on",
+            ],
+          },
+          {
+            heading: "6. Fit the Must haves to your capacity",
+            paragraphs: [
+              "Estimate the Must haves and compare the total with the time and budget you have. DSDM guidance, summarized in this [overview of MoSCoW prioritisation](https://msdbok.github.io/content/plan/release/prioritisation.html), recommends keeping Must haves to no more than about 60% of the effort so the Should and Could haves act as contingency. If the Must haves do not fit, cut or simplify them rather than cutting quality or testing.",
+            ],
+          },
+          {
+            heading: "7. Agree the Won't haves and publish the scope",
+            paragraphs: [
+              "Read the final list back to everyone involved and get explicit agreement, especially on the Won't haves. Keep it in one shared place, such as the backlog or a one-page scope document, with a short reason next to each Must have. That record is what stops scope creep halfway through the build.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "A worked example: scoping a booking MVP",
+        paragraphs: [
+          "Here is how the method might sort features for a hypothetical appointment booking app for small service businesses. It is an illustration, not a client project.",
+        ],
+        table: {
+          caption: "Example MoSCoW sort for a booking app MVP",
+          headers: ["Feature", "Category", "Reason"],
+          rows: [
+            ["Customer can view open slots and book one", "Must have", "This is the core user journey"],
+            ["Business can set available hours", "Must have", "No bookable slots exist without it"],
+            ["Email confirmation of the booking", "Must have", "Users need proof the booking worked"],
+            ["Automated reminder before the appointment", "Should have", "Valuable, but can be sent manually at first"],
+            ["Customer can reschedule online", "Should have", "Workaround: contact the business directly"],
+            ["Calendar sync with Google or Outlook", "Could have", "Convenient, but not needed to test demand"],
+            ["Branded booking page themes", "Could have", "Nice polish for later releases"],
+            ["Native iOS and Android apps", "Won't have (this time)", "A responsive web app can test the idea first"],
+            ["Online payments and deposits", "Won't have (this time)", "Adds integration and compliance work before demand is proven"],
+          ],
+        },
+      },
+      {
+        heading: "How to break ties and challenge the Must haves",
+        paragraphs: [
+          "MoSCoW is quick, but it can leave too many items in the same bucket. These techniques help when the team cannot agree.",
+        ],
+        bullets: [
+          "Remove-one test: imagine launching without the feature. If users can still complete the core journey, it is not a Must have.",
+          "RICE scoring: rate features by reach, impact, confidence and effort, a method described by [Intercom's product team](https://www.intercom.com/blog/rice-simple-prioritization-for-product-managers/), to order items inside a category.",
+          "Kano model: check that the Must haves cover the basics users expect, and that at least one feature does the core job noticeably better than existing alternatives.",
+          "Value vs effort grid: plot features on two axes and favor high-value, low-effort work for the first release.",
+          "Evidence check: ask which interview, test or data point supports each Must have. Features backed only by opinion move down a category.",
+        ],
+      },
+      {
+        heading: "Common MoSCoW mistakes in MVP planning",
+        paragraphs: [],
+        bullets: [
+          "Everything becomes a Must have, which removes the point of prioritizing at all.",
+          "Prioritizing by who shouts loudest instead of by the core user journey and evidence.",
+          "Leaving the Won't have list empty, so cut features keep coming back in every meeting.",
+          "Forgetting non-functional work such as security, performance and testing until late in the build. Our [test automation strategy](/insights/test-automation-strategy/) guide covers how to build quality in from the start.",
+          "Treating the sort as a one-time exercise instead of revisiting it after user feedback.",
+          "Cutting quality to fit scope. A smaller product that works reliably teaches you more than a bigger one that breaks.",
+        ],
+      },
+      {
+        heading: "When to revisit your MVP priorities",
+        paragraphs: [
+          "MoSCoW categories are a decision for one release, not a permanent ranking. Revisit them at natural checkpoints: after prototype testing, at the end of each sprint or milestone, after launch once real usage data arrives, and whenever the budget or deadline changes. Features that were Should haves for the MVP often become the Must haves of the next release, and some Won't haves turn out to be unnecessary once you see how people actually use the product.",
+          "MoSCoW is widely used outside MVPs too. For a broader comparison of prioritization frameworks, [Atlassian's guide](https://www.atlassian.com/agile/product-management/prioritization-framework) and [ProductPlan's MoSCoW glossary](https://www.productplan.com/glossary/moscow-prioritization/) are useful references.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps teams scope MVPs",
+        paragraphs: [
+          "InSol Technologies works with founders and product teams in the US and worldwide to turn product ideas into focused, buildable scope. Our [product engineering](/services/product-engineering/) team runs discovery and prioritization, and our [SaaS products](/services/saas-products/), [web and mobile development](/services/web-mobile-development/) and [quality engineering](/services/quality-engineering/) teams build and test what is agreed.",
+          "If you are deciding who should lead technical decisions before the build, our guide to hiring a [fractional CTO for startups](/insights/fractional-cto-startups/) may help. When you are ready to agree an MVP scope, [contact our team](/contact/).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What does MoSCoW stand for?",
+        a: "MoSCoW stands for Must have, Should have, Could have and Won't have (this time). The lower-case o letters are only added to make the acronym easy to say. The method comes from the DSDM agile framework.",
+      },
+      {
+        q: "How many features should be Must haves in an MVP?",
+        a: "As few as the core user journey needs. DSDM guidance suggests keeping Must haves to no more than about 60% of the planned effort, so the remaining work can act as contingency if estimates turn out to be wrong.",
+      },
+      {
+        q: "Is MoSCoW better than RICE or Kano for prioritizing MVP features?",
+        a: "They answer different questions. MoSCoW sets the scope of a release, RICE ranks items by expected value against effort, and Kano shows how features affect user satisfaction. Many teams use MoSCoW to set scope and RICE or Kano to settle disagreements within a category.",
+      },
+      {
+        q: "Who should be involved in MoSCoW prioritization?",
+        a: "The people who decide on value and the people who understand cost and risk: typically founders or the product owner, a designer, and engineering leads. Product owners make the final value calls, while engineers advise on effort and technical dependencies.",
+      },
+    ],
+  },
+  {
     slug: "fractional-cto-startups",
     title: "Fractional CTO for Startups: When to Hire and What They Do",
     description:
