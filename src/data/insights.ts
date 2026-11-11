@@ -47,6 +47,240 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "ai-readiness-assessment",
+    title: "AI Readiness Assessment Checklist: How to Score Your Business",
+    description:
+      "An AI readiness assessment checklist for business leaders: the six areas to score, 30 questions, a simple 0-3 scale, how to read results and what to fix first.",
+    category: "AI",
+    date: "2026-11-11",
+    seoTitle: "AI Readiness Assessment Checklist",
+    cover: "/insights/covers/ai-readiness-assessment",
+    coverAlt: "Cover reading AI Readiness Assessment Checklist: How to Score Your Business, InSol Technologies",
+    relatedServices: ["ai-intelligent-automation", "data-analytics", "cloud-devops", "enterprise-applications"],
+    relatedIndustries: ["technology", "healthcare", "ecommerce", "travel-hospitality"],
+    body: [
+      {
+        heading: "What an AI readiness assessment is",
+        paragraphs: [
+          "An AI readiness assessment is a structured check of whether your organization can adopt AI and get real value from it before you commit budget to a specific project. It looks past the technology and asks whether strategy, data, systems, people, governance and ways of working are in a state that lets AI succeed.",
+          "The assessment is different from an implementation plan. It does not choose a model or build a pilot. It tells you where you stand today, which gaps would sink an AI initiative, and what to fix first. Once those gaps are understood, our step-by-step guide on [how to implement AI in business](/insights/how-to-implement-ai-in-business/) covers what comes next: choosing use cases, building or buying, piloting and scaling.",
+        ],
+      },
+      {
+        heading: "Why assess AI readiness before you invest",
+        paragraphs: [
+          "AI projects rarely stall because a model is not clever enough. They stall because the data needed is scattered or untrusted, nobody owns the result, the systems that should use the output cannot connect to it, staff do not trust or understand the tool, or legal and security questions surface after launch. A readiness assessment brings those problems forward, when they are cheaper to fix.",
+        ],
+        bullets: [
+          "It turns a vague ambition (\"we should use AI\") into a list of concrete gaps with owners.",
+          "It stops the business from funding pilots that have no realistic path into production.",
+          "It gives leadership a shared baseline, so progress can be measured over time.",
+          "It shows where to start: often with data or governance work rather than with a model.",
+        ],
+      },
+      {
+        heading: "The six areas of AI readiness",
+        paragraphs: [
+          "Most published readiness frameworks group the questions into five to seven areas. The six below cover the ground without overlap. Score each one separately: a strong score in technology does not make up for a missing data foundation or an absent AI policy.",
+        ],
+        table: {
+          caption: "Six areas to cover in an AI readiness assessment",
+          headers: ["Area", "What it checks", "Typical gap"],
+          rows: [
+            ["Strategy and value", "AI goals are tied to business outcomes, with owners, budget and success metrics", "Lots of interest, no prioritized use cases or named sponsor"],
+            ["Data foundation", "The data a use case needs is accessible, trusted, classified and governed", "Data locked in silos, spreadsheets or systems without APIs"],
+            ["Technology and infrastructure", "Platforms, integrations, security and operations can support AI workloads", "No way to deploy, monitor or roll back models and AI features"],
+            ["People and skills", "Staff have AI literacy, the right specialist skills exist in-house or via partners", "Tools rolled out with no training or change plan"],
+            ["Governance and risk", "Policies, risk review, privacy, human oversight and regulatory awareness", "Shadow AI use with no policy or inventory"],
+            ["Process and operating model", "Target workflows are documented and measurable, with a route from pilot to production", "Pilots that work in a demo but have no owner afterwards"],
+          ],
+        },
+      },
+      {
+        heading: "AI readiness assessment checklist: 30 questions",
+        paragraphs: [
+          "Answer each question with evidence, not opinion. If nobody can point to a document, a dataset, a system or a named person, treat the answer as no. Involve the people who will use AI day to day as well as leadership, because their answers on data and process are often the most accurate.",
+        ],
+        subsections: [
+          {
+            heading: "Strategy and value",
+            paragraphs: [],
+            bullets: [
+              "Do we have two or three business goals that AI is expected to support?",
+              "Is there a ranked shortlist of use cases scored on value, feasibility and risk?",
+              "Does each use case have a baseline and a measurable success metric?",
+              "Is a named executive accountable for AI outcomes and budget, not only IT?",
+              "Do we have written criteria for when to build, buy, partner or stop?",
+            ],
+          },
+          {
+            heading: "Data foundation",
+            paragraphs: [],
+            bullets: [
+              "Is the data for our top use cases identified, owned and accessible?",
+              "Do we measure data quality, such as completeness, accuracy and freshness?",
+              "Is data classified, with rules on what may be sent to external AI services?",
+              "Can we trace where data comes from and who approved its use?",
+              "Do pipelines or APIs feed applications automatically, rather than manual exports?",
+            ],
+          },
+          {
+            heading: "Technology and infrastructure",
+            paragraphs: [],
+            bullets: [
+              "Do staff use approved AI tools with single sign-on, logging and data controls?",
+              "Can core systems such as CRM, ERP or ticketing connect to AI services through APIs?",
+              "Can we deploy, version, monitor and roll back AI features in production?",
+              "Do we track AI usage and compute cost per use case?",
+              "Do security reviews cover AI-specific risks such as prompt injection and data leakage?",
+            ],
+          },
+          {
+            heading: "People and skills",
+            paragraphs: [],
+            bullets: [
+              "Is basic AI literacy training available to all staff?",
+              "Do we have data engineering, AI engineering and product skills, in-house or through partners?",
+              "Do teams whose work will change get role-specific training and support?",
+              "Are AI roles, such as product owner and risk owner, defined?",
+              "Is there an internal champion who can connect business and technical teams?",
+            ],
+          },
+          {
+            heading: "Governance and risk",
+            paragraphs: [],
+            bullets: [
+              "Is there a published AI use policy that covers approved and unapproved tools?",
+              "Do we keep an inventory of AI systems in use, including AI inside vendor products?",
+              "Do higher-risk use cases get a documented risk assessment before launch?",
+              "Are human review points defined for decisions that affect customers, patients or staff?",
+              "Do we know which AI and privacy regulations apply in the markets we serve?",
+            ],
+          },
+          {
+            heading: "Process and operating model",
+            paragraphs: [],
+            bullets: [
+              "Are the workflows we want to improve documented and measured today?",
+              "Is there a clear intake route for new AI ideas?",
+              "Is there a defined go or no-go rule for moving a pilot into production?",
+              "Does someone own each AI feature after launch, including support and improvement?",
+              "Is AI work reviewed against its metrics on a regular schedule?",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "How to score your AI readiness",
+        paragraphs: [
+          "Keep scoring simple so the conversation stays on the gaps rather than the math. The scale below is one practical option; any consistent scale works as long as everyone uses it the same way.",
+        ],
+        ordered: true,
+        bullets: [
+          "Score each question from 0 to 3: 0 = not in place, 1 = ad hoc or partial, 2 = in place and repeatable, 3 = in place, measured and improving.",
+          "Add up the five scores in each area to get an area score out of 15.",
+          "Write one line of evidence next to every score of 2 or 3, such as the policy, dataset or system that proves it.",
+          "Do not average the six areas into a single number. Report them side by side so a weak area cannot hide behind a strong one.",
+          "Mark any area scoring 5 or below as a blocker that needs attention before a production AI project.",
+        ],
+      },
+      {
+        heading: "How to read the results",
+        paragraphs: [
+          "Use the pattern of scores, not the total, to decide what to do next. These bands are a guide for discussion, not a benchmark against other companies.",
+        ],
+        table: {
+          caption: "Interpreting area scores (out of 15)",
+          headers: ["Area score", "What it usually means", "Next step"],
+          rows: [
+            ["0-5", "Foundations are missing in this area", "Fix this before funding a production AI project"],
+            ["6-10", "Partly in place, but inconsistent or undocumented", "Close the specific gaps alongside a low-risk pilot"],
+            ["11-15", "Established and repeatable", "Use this strength to support higher-value use cases"],
+          ],
+        },
+      },
+      {
+        heading: "What to fix first after the assessment",
+        paragraphs: [
+          "Most organizations finish an assessment with more gaps than they can close at once. Prioritize in this order, because each layer depends on the one before it.",
+        ],
+        subsections: [
+          {
+            heading: "1. Name an owner and one or two use cases",
+            paragraphs: [
+              "Without a sponsor and a focused goal, every other fix drifts. Pick use cases where the data already exists and the risk is manageable, such as internal document search or support triage, before anything customer-facing.",
+            ],
+          },
+          {
+            heading: "2. Close the data gaps for those use cases only",
+            paragraphs: [
+              "Do not try to fix all company data first. Make the specific data your chosen use cases need accessible, clean and governed. Our guide to a [data analytics strategy](/insights/data-analytics-strategy/) explains how to build that foundation in a way that also serves reporting.",
+            ],
+          },
+          {
+            heading: "3. Put minimum governance in place",
+            paragraphs: [
+              "A short AI use policy, an inventory of tools and a risk review for higher-impact use cases go a long way. The [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) and its [companion playbook](https://airc.nist.gov/airmf-resources/playbook/) are free, practical references, and the [OECD AI Principles](https://oecd.ai/en/ai-principles) set out widely adopted expectations for trustworthy AI. If you serve customers in Europe, check the [EU AI Act regulatory framework](https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai). Some organizations also align with the ISO/IEC 42001 AI management system standard.",
+            ],
+          },
+          {
+            heading: "4. Prepare systems and people for production",
+            paragraphs: [
+              "Make sure the AI feature can be deployed, monitored and rolled back like any other software, and that the people who will use it are trained before launch. Moving AI from demo to daily operations is covered in our article on [AI in production workflows](/insights/putting-ai-in-production-workflows/).",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Common AI readiness assessment mistakes",
+        paragraphs: [],
+        bullets: [
+          "Asking only leadership, so the scores reflect intentions rather than how work is actually done.",
+          "Treating the assessment as a technology audit and skipping governance, skills and process.",
+          "Blending everything into one score that hides a critical weakness.",
+          "Scoring without evidence, which makes every area look healthier than it is.",
+          "Running it once and filing it. Repeat the assessment every six to twelve months, or before any major AI investment.",
+          "Waiting for perfect readiness. The goal is to remove blockers for specific use cases, not to fix everything before starting.",
+        ],
+      },
+      {
+        heading: "AI readiness by industry",
+        paragraphs: [
+          "The six areas apply everywhere, but the weight on each one changes by sector. In healthcare, governance and data privacy usually dominate, and work involving patient data needs the controls described in our [HIPAA compliant app development](/insights/hipaa-compliant-app-development/) guide. In ecommerce and travel, data integration across storefronts, booking engines, CRM and support tools is often the deciding factor. In technology and SaaS companies, the question is usually whether AI features can be shipped and operated safely inside the product. See how we work across [industries](/industries/) for more detail.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps with AI readiness",
+        paragraphs: [
+          "InSol Technologies works with businesses in the US and worldwide to assess readiness and turn the results into a practical roadmap. Our [AI and intelligent automation](/services/ai-intelligent-automation/) team reviews use cases and governance, our [data and analytics](/services/data-analytics/) team assesses and fixes data foundations, our [cloud and DevOps](/services/cloud-devops/) team prepares infrastructure for production AI, and our [enterprise applications](/services/enterprise-applications/) team handles integration with core systems.",
+          "If you are weighing specific AI projects, our guides on [building AI agents for business](/insights/build-ai-agents-for-business/) and [AI chatbot development](/insights/ai-chatbot-development/) show what those builds involve. To run an AI readiness assessment with our team, [contact us](/contact/).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is an AI readiness assessment?",
+        a: "It is a structured review of whether an organization can adopt AI successfully. It scores areas such as strategy, data, technology, people, governance and operating model, identifies the gaps that would block AI projects, and shows what to fix first.",
+      },
+      {
+        q: "How long does an AI readiness assessment take?",
+        a: "It depends on the size of the organization and how many use cases are in scope. A focused assessment of one business unit can be done in a short series of workshops and document reviews, while a company-wide review takes longer because more teams, systems and data sources are involved.",
+      },
+      {
+        q: "Who should take part in an AI readiness assessment?",
+        a: "Include an executive sponsor, the owners of the business processes AI may change, data and IT leads, security and legal or compliance, and some of the people who will use AI tools day to day. Their combined answers give a more accurate picture than leadership alone.",
+      },
+      {
+        q: "Do small businesses need an AI readiness assessment?",
+        a: "Yes, but it can be lighter. A small business can work through the same six areas in a single session, focusing on one or two use cases, the data they need, a simple AI use policy and who will own the result.",
+      },
+      {
+        q: "What comes after an AI readiness assessment?",
+        a: "Close the blocking gaps for your chosen use cases, then move into implementation: confirm the use case, choose to build or buy, run a measured pilot and plan the path to production.",
+      },
+    ],
+  },
+  {
     slug: "mvp-feature-prioritization-moscow",
     title: "MVP Feature Prioritization: How to Scope an MVP With MoSCoW",
     description:
