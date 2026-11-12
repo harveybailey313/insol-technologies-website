@@ -1,9 +1,10 @@
+import Image from "next/image";
 import Link from "next/link";
 import { Button } from "@/components/Button";
 import { Section, SectionHeader } from "@/components/Section";
 import { FinalCTA } from "@/components/FinalCTA";
 import { Breadcrumb } from "@/components/Breadcrumb";
-import { CTAS, SITE } from "@/lib/site";
+import { BASE_PATH, CTAS, SITE } from "@/lib/site";
 import { pageMetadata } from "@/lib/seo";
 import { References, REFS, HeroMark } from "@/components/References";
 
@@ -48,8 +49,14 @@ export default function LeadershipPage() {
       <Section band="secondary">
         <SectionHeader title="Leadership at InSol Technologies" />
         <div className="card-surface max-w-xl p-8 hover:transform-none hover:shadow-none">
-          <div className="mb-5 flex h-20 w-20 items-center justify-center rounded-full border border-border bg-surface-elevated text-2xl font-semibold text-accent">
-            ID
+          <div className="relative mb-5 h-20 w-20 overflow-hidden rounded-full border border-border">
+            <Image
+              src={`${BASE_PATH}/brand/innam-dustgir-founder.webp`}
+              alt="Innam Dustgir, Founder & CEO of InSol Technologies"
+              fill
+              sizes="80px"
+              className="object-cover object-top"
+            />
           </div>
           <h2 className="text-h3">Innam Dustgir</h2>
           <p className="mt-1 text-sm text-accent">Founder &amp; CEO</p>
