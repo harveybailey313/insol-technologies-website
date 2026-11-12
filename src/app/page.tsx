@@ -290,8 +290,8 @@ export default function HomePage() {
               <Image
                 src={`${BASE_PATH}/brand/innam-dustgir-founder.webp`}
                 alt="Innam Dustgir, Founder and CEO of InSol Technologies"
-                width={720}
-                height={960}
+                width={1600}
+                height={2133}
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="aspect-[4/5] h-auto w-full object-cover"
               />
