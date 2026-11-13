@@ -47,6 +47,220 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "rag-application-development",
+    title: "RAG Application Development: A Step-by-Step Guide for Business",
+    description:
+      "RAG application development step by step: how retrieval-augmented generation works, architecture, chunking, retrieval, evaluation, security, costs and pitfalls.",
+    category: "AI",
+    date: "2026-11-13",
+    seoTitle: "RAG Application Development Guide",
+    cover: "/insights/covers/rag-application-development",
+    coverAlt: "Cover reading RAG Application Development: A Step-by-Step Guide for Business, InSol Technologies",
+    relatedServices: ["ai-intelligent-automation", "data-analytics", "product-engineering", "cloud-devops"],
+    relatedIndustries: ["technology", "healthcare", "ecommerce", "travel-hospitality"],
+    body: [
+      {
+        heading: "What is RAG application development?",
+        paragraphs: [
+          "RAG application development is the work of building software that answers questions or completes tasks by first retrieving relevant information from your own content and then asking a large language model (LLM) to respond using that information. RAG stands for retrieval-augmented generation, a pattern described in the 2020 research paper [Retrieval-Augmented Generation for Knowledge-Intensive NLP Tasks](https://arxiv.org/abs/2005.11401).",
+          "The idea is simple: instead of relying only on what a model learned during training, the application looks up current, approved sources at the moment a question is asked. That makes answers easier to check, easier to keep up to date and easier to restrict to what a given user is allowed to see.",
+          "A RAG application is not one feature. It is a small system with a content pipeline, a search layer, a model layer, an application layer and an evaluation loop. This guide walks through each part in the order a team usually builds it. If you are still deciding whether your organization is ready for AI work at all, start with our [AI readiness assessment checklist](/insights/ai-readiness-assessment/).",
+        ],
+      },
+      {
+        heading: "When RAG is the right approach",
+        paragraphs: [
+          "RAG fits problems where the answer already exists somewhere in your documents, databases or systems, and the challenge is finding it and presenting it clearly. It is a poor fit when the task needs new reasoning the content cannot support, or when the source content itself is missing, outdated or contradictory.",
+        ],
+        table: {
+          caption: "Common business uses for RAG applications",
+          headers: ["Use case", "Typical sources", "What makes it work"],
+          rows: [
+            ["Internal knowledge assistant", "Policies, handbooks, wikis, project documents", "Clear ownership of content and permission-aware retrieval"],
+            ["Customer support answers", "Help center articles, product docs, past resolved tickets", "Current content, citations and a handoff to a person when unsure"],
+            ["Sales and proposal support", "Product sheets, approved case material, security questionnaires", "Only approved, current content in the index"],
+            ["Technical and engineering search", "Runbooks, API docs, code documentation, incident notes", "Good handling of exact terms, code and tables"],
+            ["Regulated document review", "Contracts, clinical or compliance documents", "Strict access control, audit logs and human review of outputs"],
+          ],
+        },
+      },
+      {
+        heading: "How a RAG application works",
+        paragraphs: [
+          "Most RAG applications are two pipelines that share a search index. The [Azure Architecture Center RAG design guide](https://learn.microsoft.com/en-us/azure/architecture/ai-ml/guide/rag/rag-solution-design-and-evaluation-guide) describes the same split between preparing content and answering queries.",
+        ],
+        subsections: [
+          {
+            heading: "The ingestion pipeline (runs when content changes)",
+            paragraphs: [
+              "Content is collected from its sources, converted to clean text, split into chunks, enriched with metadata such as title, owner, date and access rules, turned into embeddings (numeric representations of meaning) and stored in a search index. This pipeline must also handle updates and deletions, so the index never serves content that has been removed at the source.",
+            ],
+          },
+          {
+            heading: "The query pipeline (runs on every question)",
+            paragraphs: [
+              "A user question is optionally rewritten for search, matched against the index, filtered by what that user is allowed to see, reranked and passed to the LLM together with instructions. The model writes an answer from the supplied passages and returns it with references to the sources it used.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "RAG application development in 8 steps",
+        paragraphs: [
+          "Each step below produces a decision the next one depends on. Skipping the early ones is the most common reason a demo works but the production system does not.",
+        ],
+        subsections: [
+          {
+            heading: "1. Define the use case, users and success criteria",
+            paragraphs: [
+              "Write down who will ask questions, what kinds of questions they ask, what a good answer looks like and what the application must never do. Collect a set of real questions from the people who will use it, including hard ones and ones the content cannot answer. This set becomes your evaluation baseline in step 7.",
+            ],
+          },
+          {
+            heading: "2. Audit and prepare the source content",
+            paragraphs: [
+              "RAG quality is limited by content quality. List every source, decide which are authoritative, remove duplicates and outdated versions, and assign an owner to each collection. Note which documents contain personal, confidential or regulated data. Our guide to [data analytics strategy](/insights/data-analytics-strategy/) covers the ownership and data quality habits that make this step easier.",
+            ],
+          },
+          {
+            heading: "3. Design chunking and metadata",
+            paragraphs: [
+              "Chunking decides what the search layer can find. Split content along its natural structure, such as headings, sections, clauses or table rows, rather than fixed character counts alone, and keep enough surrounding context for a chunk to make sense by itself. Attach metadata such as source, section title, date, product, region and access group so you can filter and cite results later.",
+            ],
+          },
+          {
+            heading: "4. Choose embeddings and the search approach",
+            paragraphs: [
+              "Vector search finds passages with similar meaning, while keyword search finds exact terms such as product codes, error messages and names. Many teams combine both in a hybrid search and add a reranking step that reorders the top results. Test embedding models and search settings on your own questions rather than relying on general benchmarks.",
+            ],
+          },
+          {
+            heading: "5. Build retrieval with permissions built in",
+            paragraphs: [
+              "Apply access rules at retrieval time, so a user can only ever receive passages they could open in the original system. Filtering after the model has seen restricted text is too late. Decide how many passages to pass to the model, how to remove near-duplicates and what to do when nothing relevant is found.",
+            ],
+          },
+          {
+            heading: "6. Design the prompt, model and answer format",
+            paragraphs: [
+              "Instruct the model to answer only from the supplied passages, to cite them and to say clearly when the passages do not contain the answer. Choose a model by testing answer quality, speed, cost per request, data handling terms and where data is processed. Define the answer format, such as short answer plus sources, a step list or a structured field, to suit the user and any system that consumes the output.",
+            ],
+          },
+          {
+            heading: "7. Evaluate retrieval and answers separately",
+            paragraphs: [
+              "Measure retrieval first: for each test question, did the right passages appear near the top? Then measure the answers: are they supported by the passages, relevant, complete and correctly cited? A good answer is impossible when retrieval returned the wrong content, so separating the two shows where to fix problems. Re-run the same evaluation set after every change to chunking, embeddings, search settings, prompts or models.",
+            ],
+          },
+          {
+            heading: "8. Deploy, monitor and keep content fresh",
+            paragraphs: [
+              "Ship behind clear limits, log questions, retrieved sources and answers, and collect user feedback. Monitor latency, cost, error rates, ingestion failures and answers flagged as wrong. Schedule content refreshes and confirm that deletions at the source reach the index. The release practices in our article on [cloud and DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk/) apply here too.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "How to evaluate a RAG application",
+        paragraphs: [
+          "Evaluation is the part teams most often skip and the part that decides whether the application can be trusted. Use a fixed, labeled set of real questions and review results with the people who own the content.",
+        ],
+        table: {
+          caption: "What to measure at each layer",
+          headers: ["Layer", "Question it answers", "Example checks"],
+          rows: [
+            ["Retrieval", "Did we find the right content?", "Expected passages appear in the top results; exact terms, tables and long documents are handled; restricted content never appears for the wrong user"],
+            ["Answer quality", "Did the model use the content well?", "Answers are supported by the passages, relevant, complete and cite the correct sources; the model says so when the answer is not available"],
+            ["Operations", "Does it keep working as things change?", "Latency, cost per request, error rates, ingestion freshness, deletion handling and user feedback trends"],
+          ],
+        },
+      },
+      {
+        heading: "Security and governance for RAG applications",
+        paragraphs: [
+          "Connecting a language model to company content creates new risks. The [OWASP Top 10 for LLM Applications](https://genai.owasp.org/llm-top-10/) lists threats such as prompt injection and sensitive information disclosure, and the [NIST AI Risk Management Framework](https://www.nist.gov/itl/ai-risk-management-framework) offers a structure for governing AI systems over their lifecycle.",
+        ],
+        bullets: [
+          "Enforce document-level permissions during retrieval, not only in the user interface.",
+          "Treat retrieved text as untrusted input: content inside documents can contain instructions that try to change the model's behavior.",
+          "Keep personal and regulated data out of the index unless there is a clear need and the right controls, which matters most in [healthcare](/industries/healthcare/).",
+          "Log questions, sources and answers for audit, with retention rules that match your policies.",
+          "Limit what the application can do: a RAG assistant that only answers is lower risk than one that can also take actions in other systems.",
+        ],
+      },
+      {
+        heading: "RAG vs fine-tuning vs a plain LLM",
+        paragraphs: [
+          "RAG changes what the model can look up. Fine-tuning changes how the model behaves, for example its tone or output format. A plain LLM call relies only on what the model already knows. For most business question-answering, RAG is the starting point because content can be updated without retraining and answers can point to their sources.",
+        ],
+        table: {
+          headers: ["", "Plain LLM", "RAG", "Fine-tuning"],
+          rows: [
+            ["Uses your current content", "No", "Yes, at question time", "Only what was in the training data"],
+            ["Can cite sources", "No", "Yes", "Not by itself"],
+            ["Updating knowledge", "Not possible", "Re-index changed content", "Retrain the model"],
+            ["Best for", "General writing and reasoning", "Answers grounded in your documents and data", "Consistent style, format or narrow specialized tasks"],
+          ],
+        },
+      },
+      {
+        heading: "What drives the cost of RAG application development?",
+        paragraphs: [
+          "Costs depend far more on scope than on the model alone. The main drivers are listed below; get an estimate based on your own content and usage rather than a generic price.",
+        ],
+        bullets: [
+          "Number, variety and messiness of content sources, including scanned documents and tables.",
+          "Integrations with systems such as document stores, CRMs, ticketing tools and identity providers.",
+          "Permission complexity and compliance requirements.",
+          "Expected question volume, answer length and the models chosen, which drive ongoing usage costs.",
+          "The depth of evaluation, monitoring and content maintenance needed after launch.",
+        ],
+      },
+      {
+        heading: "Common RAG pitfalls to avoid",
+        paragraphs: [
+          "Most RAG problems trace back to a small set of causes that are easier to prevent than to fix later.",
+        ],
+        bullets: [
+          "Indexing everything at once instead of starting with one well-owned collection.",
+          "Judging quality on a handful of easy demo questions instead of a real evaluation set.",
+          "Ignoring updates and deletions, so the assistant keeps quoting removed or outdated content.",
+          "Adding permissions late, after restricted content is already in the index.",
+          "Treating RAG as a one-off build rather than a product with an owner, metrics and a release process.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies builds RAG applications",
+        paragraphs: [
+          "InSol Technologies designs and builds RAG applications as part of our [AI and intelligent automation](/services/ai-intelligent-automation/) work. Our [data and analytics](/services/data-analytics/) team prepares and structures the content, our [software engineering](/services/product-engineering/) team builds the retrieval, integrations and application layer, and our [cloud and DevOps](/services/cloud-devops/) team handles deployment and monitoring. If you plan a customer-facing assistant, our guide to [AI chatbot development](/insights/ai-chatbot-development/) covers the conversation design side, and [how to build AI agents for business](/insights/build-ai-agents-for-business/) covers systems that also take actions.",
+          "To discuss a RAG project for your content and users, [contact InSol Technologies](/contact/).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is a RAG application?",
+        a: "A RAG application uses retrieval-augmented generation: it searches your own content for passages relevant to a question, then asks a large language model to answer using those passages, usually with citations to the sources.",
+      },
+      {
+        q: "How is RAG different from fine-tuning?",
+        a: "RAG gives the model access to current content at question time, so knowledge can be updated by re-indexing. Fine-tuning changes the model itself and is better suited to consistent style, formats or narrow tasks than to keeping facts current.",
+      },
+      {
+        q: "What do you need to build a RAG application?",
+        a: "You need a defined use case, authoritative source content with owners, a pipeline to clean and chunk that content, a search index, a language model, permission controls, an evaluation set of real questions and monitoring after launch.",
+      },
+      {
+        q: "How do you measure the quality of a RAG application?",
+        a: "Evaluate retrieval and answers separately. Check whether the right passages appear near the top of search results, then whether answers are supported by those passages, relevant, complete and correctly cited. Re-run the same tests after every change.",
+      },
+      {
+        q: "Is RAG secure for confidential company data?",
+        a: "It can be, if access rules are enforced at retrieval time, sensitive data is only indexed when needed, retrieved text is treated as untrusted input and activity is logged. Security has to be designed in from the start rather than added after launch.",
+      },
+    ],
+  },
+  {
     slug: "ai-readiness-assessment",
     title: "AI Readiness Assessment Checklist: How to Score Your Business",
     description:
