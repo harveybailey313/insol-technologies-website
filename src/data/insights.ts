@@ -460,7 +460,7 @@ export const insights: Insight[] = [
       {
         heading: "AI readiness by industry",
         paragraphs: [
-          "The six areas apply everywhere, but the weight on each one changes by sector. In healthcare, governance and data privacy usually dominate, and work involving patient data needs the controls described in our [HIPAA compliant app development](/insights/hipaa-compliant-app-development/) guide. In ecommerce and travel, data integration across storefronts, booking engines, CRM and support tools is often the deciding factor. In technology and SaaS companies, the question is usually whether AI features can be shipped and operated safely inside the product. See how we work across [industries](/industries/) for more detail.",
+          "The six areas apply everywhere, but the weight on each one changes by sector. In healthcare, governance and data privacy usually dominate, and work involving patient data needs the controls described in our [HIPAA compliant app development](/insights/hipaa-compliant-app-development/) guide. In ecommerce and travel, data integration across storefronts, booking engines, CRM and support tools is often the deciding factor; our [ecommerce website development](/insights/ecommerce-website-development/) guide maps the store-side systems involved. In technology and SaaS companies, the question is usually whether AI features can be shipped and operated safely inside the product. See how we work across [industries](/industries/) for more detail.",
         ],
       },
       {
@@ -1939,7 +1939,7 @@ export const insights: Insight[] = [
           {
             heading: "4. Choose the model and architecture",
             paragraphs: [
-              "Compare hosted LLM APIs, open-weight models you run yourself and the AI features inside platforms you already use. Weigh answer quality on your own test questions, response speed, cost per conversation, data handling terms, where data is processed and how easy it is to switch providers later. For most business chatbots, retrieval-augmented generation (RAG) is the starting point: the system searches your content first and asks the model to answer from those results, which makes answers easier to check and update than retraining a model. Fine-tuning is worth considering later for tone or very specific formats.",
+              "Compare hosted LLM APIs, open-weight models you run yourself and the AI features inside platforms you already use. Weigh answer quality on your own test questions, response speed, cost per conversation, data handling terms, where data is processed and how easy it is to switch providers later. For most business chatbots, retrieval-augmented generation (RAG) is the starting point: the system searches your content first and asks the model to answer from those results, which makes answers easier to check and update than retraining a model. Our [RAG application development guide](/insights/rag-application-development/) walks through building that retrieval layer step by step. Fine-tuning is worth considering later for tone or very specific formats.",
             ],
           },
           {
@@ -2858,7 +2858,7 @@ export const insights: Insight[] = [
       {
         heading: "Legacy modernization by industry",
         paragraphs: [
-          "In [healthcare](/industries/healthcare/), modernization often focuses on scheduling, billing and patient-facing systems that need secure integration with health record platforms, with strict access control, audit trails and privacy rules throughout. [Ecommerce](/industries/ecommerce/) businesses commonly modernize order management, inventory and storefront back ends so they can handle peak trading and connect new sales channels. In [travel and hospitality](/industries/travel-hospitality/), reservation, property and distribution systems are frequent candidates because they must exchange data in real time with many partners. [Technology companies](/industries/technology/) often modernize an early product codebase into a cleaner, multi-tenant design, which links to the choices in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/).",
+          "In [healthcare](/industries/healthcare/), modernization often focuses on scheduling, billing and patient-facing systems that need secure integration with health record platforms, with strict access control, audit trails and privacy rules throughout. [Ecommerce](/industries/ecommerce/) businesses commonly modernize order management, inventory and storefront back ends so they can handle peak trading and connect new sales channels; our [ecommerce website development](/insights/ecommerce-website-development/) guide covers the platform choices involved. In [travel and hospitality](/industries/travel-hospitality/), reservation, property and distribution systems are frequent candidates because they must exchange data in real time with many partners. [Technology companies](/industries/technology/) often modernize an early product codebase into a cleaner, multi-tenant design, which links to the choices in our guide to [SaaS foundations that can scale](/insights/building-saas-foundations-that-can-scale/).",
         ],
       },
       {
@@ -3175,7 +3175,7 @@ export const insights: Insight[] = [
       {
         heading: "Step 3: Assess data and systems readiness",
         paragraphs: [
-          "AI is only as good as the data and context it receives. Before committing to a build, check whether the data the use case needs exists, whether it is accurate and complete enough, who owns it, and whether the AI system can legally and technically access it.",
+          "AI is only as good as the data and context it receives. Before committing to a build, check whether the data the use case needs exists, whether it is accurate and complete enough, who owns it, and whether the AI system can legally and technically access it. To score your organization across data, systems, people and governance before you commit budget, use our [AI readiness assessment checklist](/insights/ai-readiness-assessment/).",
           "Look at the systems too. Most business value comes from connecting AI to the CRM, ERP, ticketing tool, booking engine or health record system where work already happens. If those integrations are hard, plan for them now. Our [data and analytics](/services/data-analytics/) team often starts here, and our guide to [data platforms leaders can trust](/insights/data-platforms-leaders-can-trust/) covers the foundations in more detail.",
         ],
         bullets: [
