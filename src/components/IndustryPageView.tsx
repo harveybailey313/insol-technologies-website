@@ -12,10 +12,12 @@ const INDUSTRY_REFS: Record<string, Reference[]> = {
   technology: [REFS.twelve, REFS.dora, REFS.owasp],
 };
 import { Breadcrumb } from "./Breadcrumb";
+import { FAQ, faqJsonLd } from "./FAQ";
 import type { Industry } from "@/data/industries";
 import { services } from "@/data/services";
 import { insights } from "@/data/insights";
 import { CTAS } from "@/lib/site";
+import { absUrl, ORG_ID } from "@/lib/jsonld";
 
 export function IndustryPageView({ industry }: { industry: Industry }) {
   const related = services.filter((s) =>
@@ -25,8 +27,29 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
     a.relatedIndustries.includes(industry.slug)
   );
 
+  const serviceJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name: industry.h1,
+    serviceType: industry.metaTitle,
+    url: absUrl(`/industries/${industry.slug}`),
+    description: industry.metaDescription,
+    provider: { "@id": ORG_ID },
+    areaServed: { "@type": "Country", name: "United States" },
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(faqJsonLd(industry.faqs)),
+        }}
+      />
       <section className="theme-dark inner-hero relative overflow-hidden section-pad !pt-12 lg:!pt-16">
         <div className="pointer-events-none absolute inset-0 gradient-glow opacity-40" />
         <div className="container-insol relative">
@@ -39,7 +62,7 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
           />
           <HeroMark alt={`${industry.title} software development at InSol Technologies`} />
           <p className="eyebrow mb-3">Industries</p>
-          <h1 className="text-display max-w-3xl">{industry.title}</h1>
+          <h1 className="text-display max-w-3xl">{industry.h1}</h1>
           <p className="mt-6 max-w-2xl text-body-lg text-text-secondary">
             {industry.heroSupport}
           </p>
@@ -122,6 +145,10 @@ export function IndustryPageView({ industry }: { industry: Industry }) {
           </div>
         </Section>
       )}
+
+      <Section>
+        <FAQ items={industry.faqs} title="Questions teams usually ask" />
+      </Section>
 
       {INDUSTRY_REFS[industry.slug] && (
         <References items={INDUSTRY_REFS[industry.slug]} />
