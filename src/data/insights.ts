@@ -47,6 +47,219 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "b2b-ecommerce-website-development",
+    title: "B2B Ecommerce Website Development: Features, Integrations and Steps",
+    description:
+      "B2B ecommerce website development explained: company accounts, contract pricing, quotes, quick order, ERP and punchout integrations, build steps and costs.",
+    category: "Ecommerce",
+    date: "2026-11-16",
+    seoTitle: "B2B Ecommerce Website Development Guide",
+    cover: "/insights/covers/b2b-ecommerce-website-development",
+    coverAlt: "Cover reading B2B Ecommerce Website Development: Features, Integrations and Steps, InSol Technologies",
+    relatedServices: ["web-mobile-development", "enterprise-applications", "product-engineering", "quality-engineering", "cloud-devops"],
+    relatedIndustries: ["ecommerce", "technology"],
+    body: [
+      {
+        heading: "What is B2B ecommerce website development?",
+        paragraphs: [
+          "B2B ecommerce website development is the work of building an online ordering site for business buyers: distributors, wholesalers, manufacturers and suppliers selling to companies rather than to individual consumers. The storefront may look like any other online store, but underneath it has to reproduce how business buying actually works: company accounts with several users, negotiated prices, purchase orders, approvals, payment on terms and tight links to the seller's ERP.",
+          "That is why B2B sites are rarely just a consumer store with a login wall. The hard parts are the commercial rules (who can buy what, at what price, on what terms) and the integrations that keep those rules, stock levels and orders in sync with your back-office systems. Our general [ecommerce website development guide](/insights/ecommerce-website-development/) covers platforms, checkout, security and SEO for any online store. This article focuses only on what is different when the buyer is a business.",
+        ],
+      },
+      {
+        heading: "How B2B ecommerce differs from B2C",
+        paragraphs: [
+          "The differences below drive most of the scope, cost and risk in a B2B build. If your plan does not address each row, expect gaps to surface late in the project.",
+        ],
+        table: {
+          caption: "B2B vs B2C ecommerce requirements",
+          headers: ["Area", "Typical B2C store", "Typical B2B ordering site"],
+          rows: [
+            ["Buyer", "One person buying for themselves", "A company with several buyers, approvers and locations"],
+            ["Pricing", "One public price, occasional promotions", "Contract, tiered and customer-specific prices, often from the ERP"],
+            ["Catalog", "Same products for everyone", "Account-specific assortments, restricted items, units of measure and pack sizes"],
+            ["Ordering pattern", "Browse, discover, buy", "Replenish known SKUs in bulk, reorder, upload lists"],
+            ["Checkout", "Card or wallet payment at the time of order", "Purchase order number, net payment terms, credit limits, tax exemptions"],
+            ["Sales involvement", "Mostly self-service", "Quotes, rep-assisted orders and negotiated deals alongside self-service"],
+            ["Systems", "Platform plus payments, shipping and email", "ERP, CRM, PIM, warehouse, tax, and sometimes EDI and procurement systems"],
+          ],
+        },
+      },
+      {
+        heading: "Core features of a B2B ecommerce website",
+        paragraphs: [
+          "Most B2B buyers already know what they need. The site's job is to let them order it quickly, at the right price, within their company's rules. These are the feature groups to scope first.",
+        ],
+        subsections: [
+          {
+            heading: "Company accounts, roles and approvals",
+            paragraphs: [
+              "Model customers as companies, not just individual logins. One company can have several locations, ship-to and bill-to addresses, cost centers and users with different permissions.",
+            ],
+            bullets: [
+              "Company administrators who can add and remove their own users.",
+              "Roles such as buyer, approver and viewer, with spending limits per user or per order.",
+              "Approval workflows that route orders above a limit to a manager before they are submitted.",
+              "Shared order history, saved carts and lists across the company account.",
+            ],
+          },
+          {
+            heading: "Customer-specific catalogs and contract pricing",
+            paragraphs: [
+              "Each account should see only the products it is allowed to buy, at its agreed price. Decide early whether prices are calculated on the site or fetched from the ERP, because that choice affects performance, caching and how quickly price changes appear.",
+            ],
+            bullets: [
+              "Price lists per account or customer group, with volume tiers and breaks.",
+              "Restricted or contract-only items and approved substitutes.",
+              "Units of measure, case packs, minimum order quantities and order multiples.",
+              "Clear messaging when a price needs a quote instead of a list price.",
+            ],
+          },
+          {
+            heading: "Fast ordering: quick order, reorder and bulk upload",
+            paragraphs: [
+              "Design for replenishment, not browsing. Search by SKU, part number and customer part number matters more than lifestyle imagery.",
+            ],
+            bullets: [
+              "Quick order forms where buyers type or paste SKUs and quantities.",
+              "CSV or spreadsheet upload for large orders.",
+              "One-click reorder from past orders and saved requisition lists.",
+              "Real-time or near-real-time availability by warehouse, with lead times for backorders.",
+            ],
+          },
+          {
+            heading: "Quotes and rep-assisted buying",
+            paragraphs: [
+              "Large or configured orders often still need a salesperson. A request-for-quote (RFQ) flow lets buyers build a cart and ask for pricing, while reps can create quotes or draft orders on a customer's behalf and send a link to review and accept. Sync quotes with your CRM so sales teams are not keeping two records.",
+            ],
+          },
+          {
+            heading: "B2B checkout, invoicing and self-service",
+            paragraphs: [
+              "Checkout has to understand who is buying. Support purchase order numbers, payment on net terms within a credit limit, saved company addresses and tax-exempt status tied to the account (in the United States, exemption certificate rules vary by state; the [Streamlined Sales Tax Governing Board](https://www.streamlinedsalestax.org/) is a useful starting point). Many buyers still pay by card for small orders, so keep a card option and follow [PCI DSS](https://www.pcisecuritystandards.org/) for any card data.",
+              "After the order, a self-service portal with order status, shipment tracking, invoices, statements, returns and document downloads (spec sheets, safety data sheets, certificates) removes a large share of routine calls and emails.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Integrations: ERP, PIM, CRM, punchout and EDI",
+        paragraphs: [
+          "In B2B, the website is usually not the system of record. Prices, customers, credit, stock and orders live in the ERP, and product data often lives in a product information management (PIM) system. Agree which system owns each piece of data before choosing tools, then design how data moves, how often, and what happens when a sync fails. This is the same discipline we describe for [enterprise application integration](/services/enterprise-applications/) work generally.",
+        ],
+        table: {
+          caption: "Common B2B ecommerce integrations",
+          headers: ["System", "What it typically provides or receives", "Design question to answer"],
+          rows: [
+            ["ERP", "Customers, prices, credit limits, stock, orders, invoices", "Real-time API calls, scheduled syncs or events, and what the site shows if the ERP is down?"],
+            ["PIM", "Product attributes, descriptions, images, documents", "Which attributes power search filters and comparisons?"],
+            ["CRM", "Accounts, contacts, quotes, sales rep assignments", "Where are quotes created and approved?"],
+            ["Warehouse / OMS", "Availability by location, fulfillment, shipment tracking", "How are split shipments and backorders shown?"],
+            ["Tax engine", "Tax calculation and exemption certificates", "How are exemptions stored and validated per account?"],
+            ["Procurement (punchout)", "Buyer's cart returned as a requisition, then a purchase order", "Which customers need it, and which protocol do they use?"],
+            ["EDI", "Purchase orders, invoices and ship notices exchanged as standard documents", "Which trading partners require EDI, and through which provider?"],
+          ],
+        },
+        subsections: [
+          {
+            heading: "Punchout catalogs: cXML and OCI",
+            paragraphs: [
+              "Some large customers buy only from inside their own procurement system. A punchout catalog lets their employees click through from that system to your site, shop at their contract prices and send the cart back as a requisition for internal approval. The approved purchase order then arrives as a separate message. The two common protocols are [cXML](https://cxml.org/), used by many cloud procurement platforms, and SAP's Open Catalog Interface (OCI). Build punchout when a named customer asks for it and tells you their system and protocol, rather than as a launch feature for everyone.",
+            ],
+          },
+          {
+            heading: "EDI",
+            paragraphs: [
+              "Electronic data interchange (EDI) is still common between larger trading partners. In North America, documents follow [ASC X12](https://x12.org/) standards, such as the 850 purchase order, 856 advance ship notice and 810 invoice. EDI usually runs alongside the website rather than replacing it, so plan how EDI orders and web orders reach the same order history.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "B2B ecommerce website development in 8 steps",
+        paragraphs: [
+          "The order below reduces the most common failure: picking software before agreeing on the business rules it has to enforce.",
+        ],
+        ordered: true,
+        bullets: [
+          "Document how customers buy today. Interview sales, customer service and a handful of buyers. Capture account structures, pricing rules, approval needs, payment terms and the orders that cause the most back-and-forth.",
+          "Define the launch scope. Separate must-have capabilities from later releases, for example launching with quick order and contract pricing before punchout. Our guide to [MVP feature prioritization with MoSCoW](/insights/mvp-feature-prioritization-moscow/) shows one way to do this, and a written [software requirements specification](/insights/software-requirements-specification/) keeps everyone aligned.",
+          "Map data ownership and integrations. For each data type (customer, price, product, stock, order, invoice), name the system of record, the sync method and the failure behavior.",
+          "Choose the platform approach. Compare the B2B features of hosted platforms, open-source platforms, headless commerce and custom development against your rules, not against a generic feature checklist. Custom work is justified when pricing, configuration or integration needs are genuinely unusual.",
+          "Design for buyers and their roles. Prototype quick order, reorder, approval and quote flows with real customers before building them. Follow [WCAG](https://www.w3.org/WAI/standards-guidelines/wcag/) so the site works for every user.",
+          "Build, integrate and secure. Build the storefront, account management and integrations together, with per-account authorization checked on the server for every price, order and document. The [OWASP Application Security Verification Standard](https://owasp.org/www-project-application-security-verification-standard/) is a practical checklist for these controls.",
+          "Test with real accounts and data. Automate tests for pricing rules, approvals, tax exemptions and ERP order handoff, then run a pilot with a small group of friendly customers. Our [test automation strategy](/insights/test-automation-strategy/) guide explains how to prioritize which tests to automate.",
+          "Roll out in waves and measure. Onboard customer segments in stages, train sales and service teams, and track online order share, order errors, quote turnaround and support contacts so you know what to improve next.",
+        ],
+      },
+      {
+        heading: "Search and SEO considerations for B2B catalogs",
+        paragraphs: [
+          "B2B catalogs are often large and technical, so on-site search and filtering need attention: synonyms, part number formats, attribute filters and results that respect each account's assortment. Faceted filters can create huge numbers of crawlable URLs; Google's guidance on [managing faceted navigation](https://developers.google.com/search/docs/crawling-indexing/crawling-managing-faceted-navigation) explains how to control them.",
+          "Decide which pages are public. Many B2B sellers keep product pages, specifications and documentation public so engineers and buyers can find them in search, while hiding prices and ordering behind login. That keeps the catalog discoverable without exposing contract terms.",
+        ],
+      },
+      {
+        heading: "What drives the cost of a B2B ecommerce website?",
+        paragraphs: [
+          "There is no honest fixed price without knowing your rules and systems, but these factors move the budget most:",
+        ],
+        bullets: [
+          "Complexity of pricing and catalog rules, and whether prices are calculated on the site or in the ERP.",
+          "Number of integrations and the quality of the APIs on your ERP and other systems.",
+          "Punchout, EDI and procurement requirements from specific customers.",
+          "Approval workflows, account hierarchies and custom roles.",
+          "Product data quality and the effort to clean and enrich it before launch.",
+          "Migration from an existing ordering portal, including customer accounts and order history.",
+          "Ongoing support, monitoring, hosting and improvement after launch.",
+        ],
+      },
+      {
+        heading: "Common B2B ecommerce mistakes to avoid",
+        paragraphs: [
+          "Most problems on B2B projects are organizational or data-related rather than technical. Watch for these:",
+        ],
+        bullets: [
+          "Treating the project as a website redesign instead of a change to how sales, service and finance work.",
+          "Showing prices that differ from what the ERP invoices, which erodes buyer trust quickly.",
+          "Leaving sales reps out, so they see the site as competition rather than a tool.",
+          "Launching to every customer at once with no pilot group.",
+          "Building punchout or EDI for customers who never asked for it.",
+          "Underestimating product data cleanup.",
+        ],
+      },
+      {
+        heading: "How InSol Technologies builds B2B ecommerce websites",
+        paragraphs: [
+          "InSol Technologies works with [ecommerce](/industries/ecommerce/) and distribution businesses to plan and build B2B ordering sites. Our [web and mobile development](/services/web-mobile-development/) team builds storefronts and buyer portals, our [enterprise applications](/services/enterprise-applications/) team connects them to ERP, CRM, PIM and procurement systems, and our [software engineering](/services/product-engineering/) team builds custom pricing, quoting and approval logic where platforms fall short. [Quality engineering](/services/quality-engineering/) automates pricing and order tests, and [cloud and DevOps](/services/cloud-devops/) keeps the site fast, monitored and safe to release.",
+          "If you are replacing an older ordering portal, our [legacy application modernization](/insights/legacy-application-modernization/) guide explains how to move in stages. To scope a B2B ecommerce project, [contact InSol Technologies](/contact/).",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What features does a B2B ecommerce website need?",
+        a: "Most need company accounts with roles and approvals, customer-specific catalogs and contract pricing, quick order and reorder tools, quote requests, purchase order and net-terms checkout, tax exemptions, a self-service portal for orders and invoices, and integration with the ERP.",
+      },
+      {
+        q: "How is B2B ecommerce website development different from B2C?",
+        a: "B2B sites must model companies with several buyers, negotiated prices, approval rules and payment on terms, and they depend heavily on ERP and other back-office integrations. B2C sites focus more on discovery, merchandising and fast card checkout for individual shoppers.",
+      },
+      {
+        q: "Do I need a custom build for B2B ecommerce?",
+        a: "Not always. Several hosted and open-source platforms include B2B features such as company accounts, price lists and quotes. Custom or headless development makes sense when your pricing, product configuration or integration needs go beyond what those features support.",
+      },
+      {
+        q: "What is a punchout catalog?",
+        a: "A punchout catalog lets a customer's employees open your site from inside their procurement system, shop at their contract prices and return the cart as a requisition for approval. The approved purchase order then comes back to you. Common protocols are cXML and SAP OCI.",
+      },
+      {
+        q: "Should B2B prices be visible to the public?",
+        a: "Many B2B sellers keep product information public for search visibility and show prices only after login, because prices vary by account. Some show list prices publicly and apply contract prices once a buyer signs in. The right choice depends on your market and sales model.",
+      },
+    ],
+  },
+  {
     slug: "rag-application-development",
     title: "RAG Application Development: A Step-by-Step Guide for Business",
     description:
