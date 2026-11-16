@@ -2495,7 +2495,7 @@ export const insights: Insight[] = [
         heading: "What is ecommerce website development?",
         paragraphs: [
           "Ecommerce website development is the process of planning, designing, building and launching an online store where customers can find products, pay and receive orders. It covers much more than a storefront theme: the product catalog, search, cart and checkout, payments, tax and shipping rules, order and inventory integrations, security, performance, accessibility and the analytics that tell you what to improve next.",
-          "Whether you sell to consumers, to other businesses or both, the same principle applies: the store is a system, and the decisions you make early, especially the platform and how data flows between your systems, decide how easy it is to grow later. This guide walks through the steps in the order most teams should take them.",
+          "Whether you sell to consumers, to other businesses or both, the same principle applies: the store is a system, and the decisions you make early, especially the platform and how data flows between your systems, decide how easy it is to grow later. This guide walks through the steps in the order most teams should take them. If you sell mainly to other businesses, read our [B2B ecommerce website development](/insights/b2b-ecommerce-website-development/) guide for company accounts, contract pricing, quotes and ERP integration.",
         ],
       },
       {
