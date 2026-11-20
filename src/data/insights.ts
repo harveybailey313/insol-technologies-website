@@ -47,6 +47,187 @@ export type Insight = {
 
 export const insights: Insight[] = [
   {
+    slug: "kubernetes-cost-optimization",
+    title: "Kubernetes Cost Optimization: 10 Practical Ways to Cut Cluster Spend",
+    description:
+      "Kubernetes cost optimization guide: rightsize requests, autoscale pods and nodes, use Spot capacity, track cost by namespace and stop paying for idle clusters.",
+    category: "Cloud",
+    date: "2026-11-20",
+    seoTitle: "Kubernetes Cost Optimization Guide",
+    cover: "/insights/covers/kubernetes-cost-optimization",
+    coverAlt: "Cover reading Kubernetes Cost Optimization: 10 Practical Ways to Cut Cluster Spend, InSol Technologies",
+    relatedServices: ["cloud-devops", "saas-products", "product-engineering", "data-analytics"],
+    relatedIndustries: ["technology", "ecommerce", "healthcare", "travel-hospitality"],
+    body: [
+      {
+        heading: "What Kubernetes cost optimization means",
+        paragraphs: [
+          "Kubernetes cost optimization is the practice of running the same workloads, at the same reliability, on less infrastructure. In most clusters the bill is driven by nodes that were provisioned for resource requests nobody uses, autoscalers that scale up quickly but rarely scale down, and environments that keep running after everyone has gone home. Kubernetes itself does not know what anything costs; it schedules Pods based on the CPU and memory they request. That is why cost work in Kubernetes starts with requests and capacity, not with discounts.",
+          "This guide is written for engineering leaders, platform teams and startups running Amazon EKS, Google Kubernetes Engine (GKE), Azure Kubernetes Service (AKS) or self-managed clusters. It follows the order the cloud providers themselves recommend, for example in the [Amazon EKS cost optimization best practices](https://docs.aws.amazon.com/eks/latest/best-practices/cost-opt.html): get visibility first, rightsize workloads, remove unused capacity, then buy cheaper capacity for what is left. If you are still deciding whether to move workloads to Kubernetes at all, start with our [cloud migration strategy](/insights/cloud-migration-strategy/) guide.",
+        ],
+      },
+      {
+        heading: "Where Kubernetes costs come from",
+        paragraphs: [
+          "Before changing anything, separate the bill into the parts you can control. The table below lists the usual cost drivers and the main lever for each.",
+        ],
+        table: {
+          caption: "Kubernetes cost drivers and the lever that controls each",
+          headers: ["Cost driver", "Why it grows", "Main lever"],
+          rows: [
+            ["Worker nodes (compute)", "Pods request more CPU and memory than they use, so the scheduler adds nodes", "Rightsize requests, bin-pack, node autoscaling"],
+            ["Idle and non-production clusters", "Dev, staging and preview environments run around the clock", "Schedules, scale-to-zero, shared clusters with namespaces"],
+            ["Purchase model", "All capacity bought at on-demand prices", "Spot or preemptible nodes, commitments for the steady baseline"],
+            ["Control plane and add-ons", "Many small clusters each carry a fixed management and tooling cost", "Consolidate clusters where isolation allows"],
+            ["Storage", "Orphaned persistent volumes, oversized disks, premium storage classes by default", "Reclaim policies, right storage class, regular cleanup"],
+            ["Networking", "Cross-zone and internet egress, NAT gateways, one load balancer per service", "Topology-aware routing, shared ingress, fewer public endpoints"],
+            ["Observability", "High-volume logs and high-cardinality metrics", "Log levels, sampling, retention and metric review"],
+          ],
+        },
+      },
+      {
+        heading: "10 Kubernetes cost optimization best practices",
+        paragraphs: [
+          "Work through these in order. The first few reduce waste; the later ones lower the price of the capacity that remains.",
+        ],
+        subsections: [
+          {
+            heading: "1. Get cost visibility by namespace, team and workload",
+            paragraphs: [
+              "You cannot optimize what you cannot attribute. Apply consistent [labels](https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/) such as team, service, environment and cost center to every workload, and map namespaces to owners. Then use a cost allocation tool to turn node spend into cost per namespace and label. [OpenCost](https://opencost.io/), a [CNCF project](https://www.cncf.io/projects/opencost/), is an open-source option; managed services also offer built-in cost allocation, such as [GKE cost allocation](https://docs.cloud.google.com/kubernetes-engine/docs/best-practices/cost-optimization) and Microsoft Cost Management for AKS.",
+              "Share the numbers with the teams that create them (showback) before you consider charging them back. Visibility alone often prompts teams to clean up forgotten workloads.",
+            ],
+          },
+          {
+            heading: "2. Rightsize CPU and memory requests",
+            paragraphs: [
+              "The scheduler places Pods based on [resource requests](https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/), not actual usage. If a service requests two CPUs and uses a fraction of one, you pay for the difference on every replica. Compare requests against observed usage over a representative period, including peaks, and lower requests that are consistently oversized.",
+              "Treat CPU and memory differently. CPU is compressible: a container that exceeds its share is throttled rather than killed. Memory is not: a container that exceeds its memory limit can be terminated. A common pattern, recommended in the GKE guidance, is to set CPU requests to meet your service levels, and set memory requests equal to memory limits so Pods are not evicted under node pressure.",
+            ],
+          },
+          {
+            heading: "3. Use the Vertical Pod Autoscaler for recommendations",
+            paragraphs: [
+              "The [Vertical Pod Autoscaler (VPA)](https://github.com/kubernetes/autoscaler/tree/master/vertical-pod-autoscaler) watches real usage and recommends CPU and memory requests. Start in recommendation-only mode and feed its suggestions into your manifests or Helm values through normal code review. Only move to automatic updates for workloads that tolerate restarts, and do not let VPA and the Horizontal Pod Autoscaler act on the same CPU or memory metric for the same workload.",
+            ],
+          },
+          {
+            heading: "4. Scale replicas with demand using HPA and KEDA",
+            paragraphs: [
+              "The [Horizontal Pod Autoscaler (HPA)](https://kubernetes.io/docs/concepts/workloads/autoscaling/horizontal-pod-autoscale/) adds and removes replicas based on CPU, memory or custom metrics, so you are not running peak capacity all day. For queue consumers, scheduled jobs and other event-driven workers, [KEDA](https://keda.sh/) can scale on queue length or event sources and scale to zero when there is no work. Set sensible minimum replica counts for user-facing services, and tune scale-down behavior so replicas actually go away after a spike.",
+            ],
+          },
+          {
+            heading: "5. Let node autoscaling remove unused capacity",
+            paragraphs: [
+              "Pod autoscaling only saves money if nodes follow. [Cluster Autoscaler](https://github.com/kubernetes/autoscaler/tree/master/cluster-autoscaler) adds nodes when Pods cannot be scheduled and removes underused nodes when their Pods can move elsewhere. [Karpenter](https://karpenter.sh/docs/), widely used on EKS, provisions nodes that fit pending Pods and can consolidate workloads onto fewer or cheaper nodes. GKE Autopilot and AKS node auto-provisioning offer managed equivalents.",
+              "Check what blocks scale-down. Overly strict [PodDisruptionBudgets](https://kubernetes.io/docs/concepts/workloads/pods/disruptions/), Pods with local storage, and Pods without a controller can keep nearly empty nodes alive indefinitely.",
+            ],
+          },
+          {
+            heading: "6. Improve bin packing with the right node shapes",
+            paragraphs: [
+              "If your nodes are too small, system daemons and per-node overhead take a large share of each machine; if they are too large or the wrong shape, memory-heavy Pods strand CPU or the reverse. Choose instance families that match the CPU-to-memory ratio of your workloads, consider Arm-based instances where your images support them, and group workloads with very different profiles into separate node pools.",
+            ],
+          },
+          {
+            heading: "7. Run fault-tolerant workloads on Spot capacity",
+            paragraphs: [
+              "[AWS Spot Instances](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances.html), [GKE Spot VMs](https://cloud.google.com/kubernetes-engine/docs/concepts/spot-vms) and Azure Spot VMs sell spare capacity at a discount, but the provider can reclaim it at short notice. They suit stateless services with several replicas, batch jobs, CI runners and development environments. Spread Spot nodes across several instance types and zones, handle termination notices gracefully, and keep a smaller on-demand pool for workloads that cannot be interrupted, using [Pod priority](https://kubernetes.io/docs/concepts/scheduling-eviction/pod-priority-preemption/), taints and node affinity to place them.",
+            ],
+          },
+          {
+            heading: "8. Commit only to the steady baseline",
+            paragraphs: [
+              "Savings plans, reserved instances and committed use discounts lower the price of capacity you will run for one to three years. Buy them only after rightsizing and autoscaling, and only for the baseline that remains steady, otherwise you lock in today's waste. Let autoscaled peaks run on on-demand or Spot capacity.",
+            ],
+          },
+          {
+            heading: "9. Set guardrails with quotas and limit ranges",
+            paragraphs: [
+              "Without defaults, a single manifest with an oversized request can add nodes. [ResourceQuotas](https://kubernetes.io/docs/concepts/policy/resource-quotas/) cap the total CPU, memory, storage and object counts per namespace, and [LimitRanges](https://kubernetes.io/docs/concepts/policy/limit-range/) set default and maximum requests for containers that do not specify them. Policy engines such as Kyverno or OPA Gatekeeper can reject workloads that have no requests at all.",
+            ],
+          },
+          {
+            heading: "10. Clean up idle environments, storage and telemetry",
+            paragraphs: [
+              "Scale development and staging namespaces down outside working hours, give preview environments an expiry, and consolidate small clusters into shared clusters with namespaces where security and compliance allow. Review [persistent volumes](https://kubernetes.io/docs/concepts/storage/persistent-volumes/) that are no longer bound, snapshots nobody restores, and load balancers that serve nothing. Finally, audit log levels and metric cardinality; the [AKS cost best practices](https://learn.microsoft.com/en-us/azure/aks/best-practices-cost) and GKE guidance both call out observability as a cost line that grows quietly.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Kubernetes cost optimization on AWS, GCP and Azure",
+        paragraphs: [
+          "The principles are the same on every cloud, but each managed service has its own tools:",
+        ],
+        bullets: [
+          "Amazon EKS: Karpenter or Cluster Autoscaler for nodes, Spot and Graviton instances, split cost allocation data in AWS billing, and the [EKS compute and autoscaling guidance](https://docs.aws.amazon.com/eks/latest/best-practices/cost-opt-compute.html).",
+          "Google Kubernetes Engine: Autopilot, where you pay for requested Pod resources rather than whole nodes, Spot VMs, optimize-utilization autoscaling profiles and GKE cost allocation exported to BigQuery.",
+          "Azure Kubernetes Service: node auto-provisioning, Spot node pools, the cluster autoscaler, VPA, HPA and KEDA add-ons, and Microsoft Cost Management views for AKS.",
+          "Self-managed or on-premises clusters: OpenCost for allocation, Cluster Autoscaler where your infrastructure supports it, and careful capacity planning because hardware cannot be returned at the end of the day.",
+        ],
+      },
+      {
+        heading: "A 30-day Kubernetes cost optimization plan",
+        paragraphs: [
+          "For most teams, a focused month is enough to move from guesswork to a repeatable process:",
+        ],
+        ordered: true,
+        bullets: [
+          "Week 1: label workloads, map namespaces to owners, install cost allocation, and record a baseline of spend, requests and actual usage per namespace.",
+          "Week 2: rightsize the largest over-requested workloads using VPA recommendations, and add LimitRanges and ResourceQuotas to stop new waste.",
+          "Week 3: tune HPA and node autoscaling, fix PodDisruptionBudgets that block scale-down, and schedule non-production environments to scale down out of hours.",
+          "Week 4: move fault-tolerant workloads to Spot node pools, review storage, load balancers and telemetry, then size commitments against the new baseline.",
+          "After that: review cost per namespace in a monthly meeting and add cost checks to your release process, alongside the practices in our [DevOps habits that reduce release risk](/insights/cloud-devops-habits-that-reduce-release-risk/) guide.",
+        ],
+      },
+      {
+        heading: "Common Kubernetes cost mistakes",
+        paragraphs: [
+          "These are the patterns that most often undo cost work:",
+        ],
+        bullets: [
+          "Buying commitments before rightsizing, which locks in the waste you meant to remove.",
+          "Cutting memory requests aggressively and trading a lower bill for out-of-memory restarts and outages.",
+          "Running every workload on Spot without disruption budgets, multiple replicas or graceful shutdown.",
+          "Creating a separate cluster for every team or customer when namespaces and policies would provide enough isolation.",
+          "Treating cost as a one-off project instead of a regular review with clear owners.",
+          "Choosing Kubernetes for small, spiky workloads that would cost less on managed or [serverless architecture](/insights/serverless-architecture-startups/).",
+        ],
+      },
+      {
+        heading: "How InSol Technologies helps reduce Kubernetes costs",
+        paragraphs: [
+          "InSol Technologies works with companies in the USA and worldwide to design, run and tune cloud platforms. Our [cloud and DevOps](/services/cloud-devops/) team reviews cluster spend, rightsizes workloads, sets up pod and node autoscaling, and puts guardrails and cost visibility in place without trading away reliability. For subscription products, our [SaaS product development](/services/saas-products/) team designs multi-tenant platforms that scale cost-efficiently, and our [data analytics](/services/data-analytics/) team can bring cost and usage data into the reporting your leadership already uses. Reliability planning is covered in our [cloud disaster recovery plan](/insights/cloud-disaster-recovery-plan/) guide.",
+          "If your Kubernetes bill is growing faster than your product, [contact InSol Technologies](/contact/) to talk through a cost review of your clusters.",
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: "What is Kubernetes cost optimization?",
+        a: "Kubernetes cost optimization is reducing what you pay to run workloads on Kubernetes without hurting reliability. It combines cost visibility by namespace and team, rightsizing CPU and memory requests, pod and node autoscaling, cheaper capacity such as Spot instances, and cleanup of idle environments, storage and telemetry.",
+      },
+      {
+        q: "What is the fastest way to reduce Kubernetes costs?",
+        a: "Usually it is rightsizing resource requests on your largest workloads and making sure node autoscaling can remove the capacity you free up. Scaling down non-production environments outside working hours is another quick win. Discounts and commitments come after, once the baseline is smaller.",
+      },
+      {
+        q: "What tools help with Kubernetes cost optimization?",
+        a: "Common tools include OpenCost or your cloud's cost allocation for visibility, the Vertical Pod Autoscaler for rightsizing recommendations, the Horizontal Pod Autoscaler and KEDA for replicas, and Cluster Autoscaler or Karpenter for nodes. Managed options such as GKE Autopilot and AKS node auto-provisioning handle part of this for you.",
+      },
+      {
+        q: "Should I use Spot instances for Kubernetes?",
+        a: "Yes, for workloads that tolerate interruption, such as stateless services with several replicas, batch jobs, CI runners and development environments. Spread Spot nodes across instance types and zones, handle termination gracefully, and keep critical or stateful workloads on on-demand capacity.",
+      },
+      {
+        q: "How often should we review Kubernetes costs?",
+        a: "Review cost per namespace and team at least monthly, and check requests against actual usage whenever a service changes significantly. Treat cost as an ongoing operating practice with clear owners rather than a one-time cleanup project.",
+      },
+    ],
+  },
+  {
     slug: "react-native-vs-flutter",
     title: "React Native vs Flutter: Which Is Better for Startups?",
     description:
